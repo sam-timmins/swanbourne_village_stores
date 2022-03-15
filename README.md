@@ -1,108 +1,291 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Swanbourne Village Stores
 
-Welcome USER_NAME,
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+# Table of Contents
+* [Background](#background "Background")
+* [Mission Statement](#mission-statement "Mission Statement")
+* [Target Audience](#target-audience "Target Audience")
+* [Stakeholder Interviews](#stakeholder-interviews "Stakeholder Interviews")
+    * [User Persona](#user-persona "User Persona")
+    * [User Goals](#user-goals "User Goals")
+    * [User Stories](#user-stories "User Stories")
+    * [Requirements and Expectations](#requirements-and-expectations)
+        * Requirements
+        * Expectations
+    * [Strategy](#strategy "Strategy")
+        * Strategy Outline
+        * Strategy Description
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+    * [Wireframes](#wireframes "Wireframes")
+    * [Design Choices](#design-choices "Design Choices")
+        * Fonts
+            * Content
+            * Headings
+        * Colours
+        * Images
+    * [Structure](#structure "Structure")
+        * Site Structure
+        * Data Schema
+        * Models
+        * Forms
+    * [Branches](#branches "Branches")
+    * [Features](#features "Features")
+        * Existing Features
+        * Features to be implemented
+    * [Technologies used](#technologies-used "Technologies used")
+        * Languages
+        * Libraries and Frameworks
+        * Tools
+    * [Testing](#testing "Testing")
+        * Accessibility
+        * UX Testing
+        * Manual Testing
+        * Code Validation
+        * Bugs
+        * Unfixed Bugs
+    * [Deployment](#deployment "Deployment")
+        * Local Deployment
+        * Deployment via Heroku
+    * [Credits](#credits "Credits")
+    * [My Thoughts](#my-thoughts "My Thoughts")
 
-## Gitpod Reminders
+# Background
+Swanbourne Village Stores is a small Post Office and convenience store set in the small village of Swanbourne in Buckinghamshire, England. The store has recently been taken over by Julie and Jean-Claude since the couple returned to the village after living in France for 22 years. 
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+With business slow to nearly non-existent, and Jean-Claude a trained chef, the idea of a high-end restaurant takeaway service was born over a bottle or two of red wine. This has taken off over the past 9 months with approximately 140 regular weekly customers ordering a three-course takeaway meal along with many one-off meals totalling approximately 450 dishes per week, accompanied by 150 bottles of various wines.
 
-`python3 -m http.server`
+All of the store's business is from word of mouth, there has been no advertisement, only a small amount of promotion via Facebook.
 
-A blue button should appear to click: _Make Public_,
+The customer base is 30-year-old professionals to 80 plus-year-old senior citizens, with the bulk of the customers in the 55 plus age groups. The near-complete lack of digital marketing and online presence is what the owners put the fall-off in numbers in the lower age brackets down to.
 
-Another blue button should appear to click: _Open Browser_.
+The current method of dealing with orders is time-consuming and paperwork heavy. On a Monday morning, a menu for the week is emailed out to a mail list of 153 people, no orders are taken via e-mail as mails have been lost in the past leading to customers turning up to pick up an order and it is not prepared. All orders are taken over the phone and manually recorded in an order book along with a collection day, Thursday to Saturday of the same week. When the order has been completed it gets highlighted in the order book in orange and then green on the collection.
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+The customer also only pays on the collection, leading to potential lost revenue if a meal has been prepared and doesn't get collected. To protect slightly from this, if this situation occurs, the meals are frozen and sold during the following week to walk-in customers of the store.
 
-A blue button should appear to click: _Make Public_,
 
-Another blue button should appear to click: _Open Browser_.
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+# Mission Statement
+To create an e-commerce application that will enable Swanbourne Village Stores to increase their customer base for their high-end takeaway business and wine store.
 
-To log into the Heroku toolbelt CLI:
+# Target Audience
+The customers who use Swanbourne Village Stores currently ranges from 30-year-old professionals to 80 plus-year-old senior citizens. However, the owners of the store are looking to increase their 30 to 55 age bracket customers with the convenience of a click, purchase and collect web application, so primarily this is the target audience for the application.
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+# Stakeholder Interviews
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## User Persona
+Interviews were carried out with the owners of Swanbourne Village Store, customers that already use the current service and customers of the convenience store that has not yet used the takeaway service.
 
-------
+I managed to get a varied range of ages in the category of customers that do not yet use the service, however, I was unable to interview anyone in the lower age brackets that do use the take-away service.
 
-## Release History
+| Name | Age | Uses the Service | Meals Ordered per Month
+| -- | -- | -- | --
+| Julie Blanc | 59 | Owner | N/A
+| Jean-Claude Blanc | 62 | Owner | N/A
+| Tom Finchett | 52 | Yes | 6
+| Frankie Fisher | 73 | Yes | 15
+| Ryan Johnston | 57 | Yes | 4
+| Julie Timmins | 65 | No | N/A
+| Robert Nichols | 50 | No | N/A
+| James Tattam | 30 | No | N/A
+| Elaine Morris | 33 | No | N/A
+| Amanda Parker | 38 | No | N/A
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+## User Goals
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+## User Stories
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+## Requirements and Expectations
+### Requirements
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### Expectations
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+## Strategy
+### Strategy Outline
+The items are graded in a 0 - 5 system in both importance and feasibility as per the grading system below.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+&nbsp;
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+| | Score - 0 | Score - 3 | Score - 5 |
+|--|--|--| -- |
+| Importance | Unwise use of time to address | Efforts should be made to accommodate these | Efforts MUST be made to address these
+| Feasibility | Unwise use of time to address| Efforts should be made to accommodate these | Efforts MUST be made to address these
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+&nbsp;
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+The outcome is calculated by combining the scores from the *Importance* and *Feasibility* ratings. This then gives a final strategy rating of what items and where to focus on.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+| | Score - 0 | Score - 5 | Score - 10 |
+|--|--|--| -- |
+| Item Description | Not viable | Efforts should be made | Efforts MUST be made
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+&nbsp;
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Strategy Description
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+|Item Description | Importance Score | Feasibility Score | Outcome |
+| --------------- | ----------| -----------| ----------|
 
-------
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+# Wireframes
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
 
-**So….?**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+## Design Choices
 
-**Can I opt out?**
+### Fonts
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+#### Content 
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+#### Headings
 
-**Anything more?**
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
 
----
+### Colours
 
-Happy coding!
+
+
+# Structure
+## App Flow
+
+## Data Schema
+
+## Models
+
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+
+# Branches
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+
+# Features
+
+## Existing Features
+
+## Features to be Implemented
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Technologies used
+
+## Languages
+
+## Libraries and Frameworks
+| Libraries / Frameworks | Description | Link |
+|--|--|--|
+
+
+
+## Tools
+
+
+# Testing
+
+## Accessibility
+
+
+\
+&nbsp;
+
+### UX Testing
+
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+## Manual Testing
+
+
+\
+&nbsp; 
+
+## Code Validation
+
+### HTML
+
+### CSS
+
+### JS
+
+### Python
+
+
+\
+&nbsp; 
+
+
+## Bugs
+
+
+
+
+## Unfixed Bugs
+
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Deployment
+
+
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Credits
+
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# My Thoughts
+
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;

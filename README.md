@@ -51,7 +51,9 @@
 
 # Background
 
+
 # Mission Statement
+To create an e-commerce application that will enable Swanbourne Village Stores to increase their customer base for their high-end takeaway business and wine store.
 
 # Target Audience
 

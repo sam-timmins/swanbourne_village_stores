@@ -73,6 +73,23 @@ The customers who use Swanbourne Village Stores currently ranges from 30-year-ol
 # Stakeholder Interviews
 
 ## User Persona
+Interviews were carried out with the owners of Swanbourne Village Store, customers that already use the current service and customers of the convenience store that has not yet used the takeaway service.
+
+I managed to get a varied range of ages in the category of customers that do not yet use the service, however, I was unable to interview anyone in the lower age brackets that do use the take-away service.
+
+| Name | Age | Uses the Service | Meals Ordered per Month
+| -- | -- | -- | --
+| Julie Blanc | 59 | Owner | N/A
+| Jean-Claude Blanc | 62 | Owner | N/A
+| Tom Finchett | 52 | Yes | 6
+| Frankie Fisher | 73 | Yes | 15
+| Ryan Johnston | 57 | Yes | 4
+| Julie Timmins | 65 | No | N/A
+| Robert Nichols | 50 | No | N/A
+| James Tattam | 30 | No | N/A
+| Elaine Morris | 33 | No | N/A
+| Amanda Parker | 38 | No | N/A
+
 
 ## User Goals
 

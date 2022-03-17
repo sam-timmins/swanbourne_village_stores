@@ -10,8 +10,6 @@
     * [User Goals](#user-goals "User Goals")
     * [User Stories](#user-stories "User Stories")
     * [Requirements and Expectations](#requirements-and-expectations)
-        * Requirements
-        * Expectations
     * [Strategy](#strategy "Strategy")
         * Strategy Outline
         * Strategy Description
@@ -130,12 +128,19 @@ From the resulting interviews, the user goals have been defined:
 | 17 | Site User | Recover a password if required | Recover access to their account if required
 | 18 | Site User | Have payment information saved | Speed up use for regular customers
 
+&nbsp;
 
 ## Requirements and Expectations
-### Requirements
 
-### Expectations
-
+| Requirement | Expectation
+| -- | --
+| Visually appealing and well laid out | Colours to be complimentary, text to be clear. Navigation to be logical and simple
+| Responsive design (Mobile first) | The screen size to not affect the look of the application 
+| Secure payment method | Card details to be secure
+| CRUD functionality for products | Easily maintain the store's products
+| Search and filter products | Easily refine the product to the user's needs
+ 
+ &nbsp;
 
 ## Strategy
 ### Strategy Outline

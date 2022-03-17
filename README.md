@@ -285,6 +285,8 @@ All of the desired colour combinations have passed the [WebAIM Contrast Checker]
 
 ### Product
 
+FROZEN_STATUS = ((0, 'Frozen'), (1, 'Fresh'))
+
 | Name | Key | Type | Other Details
 | -- | -- | -- | --
 | name | | CharField | max_length=254
@@ -292,6 +294,7 @@ All of the desired colour combinations have passed the [WebAIM Contrast Checker]
 | image |  | ImageField | null=True, blank=True
 | price |  | DecimalField | max_digits=6, decimal_places=2
 | description | | TextField |
+| frozen_item || BooleanField | choices=FROZEN_STATUS, default=1
 | category | FK (Category) | | null=True, blank=True, on_delete=models.SET_NULL
 | wine_category | FK (WineCategory)| | null=True, blank=True, on_delete=models.SET_NULL
 

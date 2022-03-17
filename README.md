@@ -264,7 +264,62 @@ All of the desired colour combinations have passed the [WebAIM Contrast Checker]
 
 ## Data Schema
 
+![Data Schema](readme/docs/structure/data-schema.png)
+
 ## Models
+
+### Category
+
+| Name | Key | Type | Other Details
+| -- | -- | -- | --
+| name || CharField | max_length=254, null=False, blank=False
+| friendly_name || CharField | max_length=254, null=True, blank=True
+
+
+### WineCategory
+
+| Name | Key | Type | Other Details
+| -- | -- | -- | --
+| name || CharField | max_length=254, null=False, blank=False
+| friendly_name || CharField | max_length=254, null=True, blank=True
+
+### Product
+
+FROZEN_STATUS = ((0, 'Frozen'), (1, 'Fresh'))
+
+| Name | Key | Type | Other Details
+| -- | -- | -- | --
+| name | | CharField | max_length=254
+| image_url |  |  URLField | max_length=1024, null=True, blank=True
+| image |  | ImageField | null=True, blank=True
+| price |  | DecimalField | max_digits=6, decimal_places=2
+| description | | TextField |
+| frozen_item || BooleanField | choices=FROZEN_STATUS, default=1
+| category | FK (Category) | | null=True, blank=True, on_delete=models.SET_NULL
+| wine_category | FK (WineCategory)| | null=True, blank=True, on_delete=models.SET_NULL
+
+
+### Order
+
+| Name | Key | Type | Other Details
+| -- | -- | -- | --
+| order_number | CharField |  URLField | max_length=32, null=False, editable=False
+| full_name |  | CharField | max_length=50, null=False, blank=False
+| email |  | DecimalField | max_digits=6, decimal_places=2
+| phone_number | | CharField | max_length=20, null=False, blank=False
+| order_date | | DateTimeField | auto_now_add=True
+| collection_day | | CharField | max_length=32, null=False, blank=False
+| order_total | | DecimalField |max_digits=10, decimal_places=2, null=False, default=0
+| grand_total | | DecimalField |max_digits=10, decimal_places=2, null=False, default=0
+
+### OrderItem
+
+| Name | Key | Type | Other Details
+| -- | -- | -- | --
+| order | FK (Order) | | null=False, blank=False, on_delete=models.CASCADE, related_name='orderitems'
+| product | FK (Product) | | null=False, blank=False, on_delete=models.CASCADE
+| quantity |  | IntegerField | null=False, blank=False, default=0
+| item_total |  | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False
 
 
 \

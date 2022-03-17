@@ -218,11 +218,11 @@ The outcome is calculated by combining the scores from the *Importance* and *Fea
 
 ### Fonts
 
-#### Content 
+The fonts chosen by the client were both selected from Google Fonts.
 
-#### Headings
+* Content - [Jost](https://fonts.google.com/specimen/Jost?category=Sans+Serif&preview.text=Swanbourne%20Village%20Stores&preview.text_type=custom "Jost")
 
-
+* Headings - [Forum](https://fonts.google.com/specimen/Forum?preview.text=Swanbourne%20Village%20Stores&preview.text_type=custom&query=forum "Forum")
 
 ### Colours
 

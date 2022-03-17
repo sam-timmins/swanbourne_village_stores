@@ -10,8 +10,6 @@
     * [User Goals](#user-goals "User Goals")
     * [User Stories](#user-stories "User Stories")
     * [Requirements and Expectations](#requirements-and-expectations)
-        * Requirements
-        * Expectations
     * [Strategy](#strategy "Strategy")
         * Strategy Outline
         * Strategy Description
@@ -77,6 +75,8 @@ Interviews were carried out with the owners of Swanbourne Village Store, custome
 
 I managed to get a varied range of ages in the category of customers that do not yet use the service, however, I was unable to interview anyone in the lower age brackets that do use the take-away service.
 
+&nbsp;
+
 | Name | Age | Uses the Service | Meals Ordered per Month
 | -- | -- | -- | --
 | Julie Blanc | 59 | Owner | N/A
@@ -90,16 +90,57 @@ I managed to get a varied range of ages in the category of customers that do not
 | Elaine Morris | 33 | No | N/A
 | Amanda Parker | 38 | No | N/A
 
+&nbsp;
 
 ## User Goals
+From the resulting interviews, the user goals have been defined:
+
+1. Create, update and delete fresh dishes, frozen dishes and wines
+1. Quickly create orders and securely purchase
+1. Book a day for collection
+1. Login and out functionality
+1. View company contact details
+1. See reviews of the business
+1. Search through products
+
+&nbsp;
 
 ## User Stories
 
+| ID | User Category | User wants to... | So they can... |
+|--|--|--|--|
+| 01 | Store Owner | Add products | Add new items to the store
+| 02 | Store Owner | Edit and update a product | Change the price or any details of a product
+| 03 | Store Owner | Delete products | Remove them from the store
+| 04 | Store Owner | View all orders | See which are completed and which are outstanding
+| 05 | Store Owner | See the number of open orders | Plan their schedule and staff numbers
+| 06 | Shopper | View a list of all the products | Choose products to purchase
+| 07 | Shopper | See individual product details | Have a detailed explanation of the product
+| 08 | Shopper | Have contact information available | Make contact with the store if there is a problem
+| 09 | Shopper | Easily select dishes for purchase | Keep interaction time down 
+| 10 | Shopper | See the items selected for purchase | Keep track of my selections
+| 11 | Shopper | See a running total of shopping basket | Keep track of their spending
+| 12 | Shopper | Select multiple quantities of the same product | Order two of the same product
+| 13 | Shopper | Filter the products | Narrow down the products to ones wanted
+| 14 | Shopper | See the number of search results | See the number of results of the search
+| 15 | Site User | Easily register for an account | view an individual profile
+| 16 | Site User | Easily login and logout | Access personal information
+| 17 | Site User | Recover a password if required | Recover access to their account if required
+| 18 | Site User | Have payment information saved | Speed up use for regular customers
+
+&nbsp;
+
 ## Requirements and Expectations
-### Requirements
 
-### Expectations
-
+| Requirement | Expectation
+| -- | --
+| Visually appealing and well laid out | Colours to be complimentary, text to be clear. Navigation to be logical and simple
+| Responsive design (Mobile first) | The screen size to not affect the look of the application 
+| Secure payment method | Card details to be secure
+| CRUD functionality for products | Easily maintain the store's products
+| Search and filter products | Easily refine the product to the user's needs
+ 
+ &nbsp;
 
 ## Strategy
 ### Strategy Outline
@@ -124,9 +165,26 @@ The outcome is calculated by combining the scores from the *Importance* and *Fea
 
 ### Strategy Description
 
-|Item Description | Importance Score | Feasibility Score | Outcome |
-| --------------- | ----------| -----------| ----------|
-
+| User story ID | Importance Score | Feasibility Score | Outcome |
+| --------------- | ----------| -----------| ---------- |
+| 1 | 5 | 5 | 10 |
+| 2 | 5 | 5 | 10 |
+| 3 | 5 | 5 | 10 |
+| 4 | 5 | 5 | 10 |
+| 5 | 3 | 3 | 6 |
+| 6 | 5 | 5 | 10 |
+| 7 | 5 | 5 | 10 |
+| 8 | 5 | 5 | 10 |
+| 9 | 5 | 5 | 10 |
+| 10 | 5 | 5 | 10 |
+| 11 | 5 | 5 | 10 |
+| 12 | 5 | 5 | 10 |
+| 13 | 5 | 5 | 10 |
+| 14 | 5 | 5 | 10 |
+| 15 | 5 | 5 | 10 |
+| 16 | 5 | 5 | 10 |
+| 17 | 5 | 5 | 10 |
+| 18 | 5 | 5 | 10 |
 
 
 
@@ -138,6 +196,15 @@ The outcome is calculated by combining the scores from the *Importance* and *Fea
 
 
 # Wireframes
+
+[Homepage](readme/docs/wireframes/home-page.png "Homepage")
+
+[Product List](readme/docs/wireframes/products.png "Products")
+
+[Contact](readme/docs/wireframes/contact.png "Contact")
+
+[Authentication](readme/docs/wireframes/home-page.png "Authentication")
+
 
 
 \
@@ -151,14 +218,45 @@ The outcome is calculated by combining the scores from the *Importance* and *Fea
 
 ### Fonts
 
-#### Content 
+The fonts chosen by the client were both selected from Google Fonts.
 
-#### Headings
+* Content - [Jost](https://fonts.google.com/specimen/Jost?category=Sans+Serif&preview.text=Swanbourne%20Village%20Stores&preview.text_type=custom "Jost")
 
-
+* Headings - [Forum](https://fonts.google.com/specimen/Forum?preview.text=Swanbourne%20Village%20Stores&preview.text_type=custom&query=forum "Forum")
 
 ### Colours
 
+Several colour pallets were put to the client, with the only required colour being [white](https://www.color-hex.com/color/ffffff "#FFFFFF") as it was the background colour of the logo.
+
+The final decision was the following.
+
+&nbsp;
+![Colour Pallet](readme/docs/designs/colour-pallet.png)
+
+&nbsp;
+
+The colours will be used as described in the table below
+
+| Hex Value | Root variable name | Text | Button | Background | Opposite Colour
+| -- | -- | -- | -- | -- | --
+| #FFFFFF | white | X | X | X | dark-green, purple, black
+| #CBC7AE | light-green | X | X | X | dark-green, purple, black
+| #2B3A2D | dark-green | X | X | X | white, light-green
+| #482832 | purple | X | X | X| white, light-green
+| #191919 | black | X | X | X| white, light-green
+
+&nbsp;
+
+All of the desired colour combinations have passed the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/ "WebAIM") and the results can be seen below.
+
+| Colour 1 | Colour 2 | Results
+| -- | -- | --
+| light-green | purple | [result](readme/docs/designs/lightgreen-purple.png "result")
+| light-green | dark-green | [result](readme/docs/designs/lightgreen-green.png "result")
+| light-green | black | [result](readme/docs/designs/lightgreen-black.png "result")
+| white | purple | [result](readme/docs/designs/white-purple.png "result")
+| white | dark-green | [result](readme/docs/designs/white-green.png "result")
+| white | black | [result](readme/docs/designs/white-black.png "result")
 
 
 # Structure

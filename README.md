@@ -262,6 +262,13 @@ All of the desired colour combinations have passed the [WebAIM Contrast Checker]
 # Structure
 ## App Flow
 
+### Guest User
+![Guest User](readme/docs/structure/guest-user.png)
+
+### User
+
+### Admin
+
 ## Data Schema
 
 ![Data Schema](readme/docs/structure/data-schema.png)

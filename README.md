@@ -166,7 +166,7 @@ The outcome is calculated by combining the scores from the *Importance* and *Fea
 ### Strategy Description
 
 | User story ID | Importance Score | Feasibility Score | Outcome |
-| --------------- | ----------| -----------| ----------|
+| --------------- | ----------| -----------| ---------- |
 | 1 | 5 | 5 | 10 |
 | 2 | 5 | 5 | 10 |
 | 3 | 5 | 5 | 10 |
@@ -226,6 +226,37 @@ The fonts chosen by the client were both selected from Google Fonts.
 
 ### Colours
 
+Several colour pallets were put to the client, with the only required colour being [white](https://www.color-hex.com/color/ffffff "#FFFFFF") as it was the background colour of the logo.
+
+The final decision was the following.
+
+&nbsp;
+![Colour Pallet](readme/docs/designs/colour-pallet.png)
+
+&nbsp;
+
+The colours will be used as described in the table below
+
+| Hex Value | Root variable name | Text | Button | Background | Opposite Colour
+| -- | -- | -- | -- | -- | --
+| #FFFFFF | white | X | X | X | dark-green, purple, black
+| #CBC7AE | light-green | X | X | X | dark-green, purple, black
+| #2B3A2D | dark-green | X | X | X | white, light-green
+| #482832 | purple | X | X | X| white, light-green
+| #191919 | black | X | X | X| white, light-green
+
+&nbsp;
+
+All of the desired colour combinations have passed the [WebAIM Contrast Checker](https://webaim.org/resources/contrastchecker/ "WebAIM") and the results can be seen below.
+
+| Colour 1 | Colour 2 | Results
+| -- | -- | --
+| light-green | purple | [result](readme/docs/designs/lightgreen-purple.png "result")
+| light-green | dark-green | [result](readme/docs/designs/lightgreen-green.png "result")
+| light-green | black | [result](readme/docs/designs/lightgreen-black.png "result")
+| white | purple | [result](readme/docs/designs/white-purple.png "result")
+| white | dark-green | [result](readme/docs/designs/white-green.png "result")
+| white | black | [result](readme/docs/designs/white-black.png "result")
 
 
 # Structure

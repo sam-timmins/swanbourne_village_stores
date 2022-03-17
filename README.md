@@ -264,6 +264,8 @@ All of the desired colour combinations have passed the [WebAIM Contrast Checker]
 
 ## Data Schema
 
+![Data Schema](readme/docs/structure/data-schema.png)
+
 ## Models
 
 ### Category

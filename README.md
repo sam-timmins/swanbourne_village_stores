@@ -165,9 +165,26 @@ The outcome is calculated by combining the scores from the *Importance* and *Fea
 
 ### Strategy Description
 
-|Item Description | Importance Score | Feasibility Score | Outcome |
+| User story ID | Importance Score | Feasibility Score | Outcome |
 | --------------- | ----------| -----------| ----------|
-
+| 1 | 5 | 5 | 10 |
+| 2 | 5 | 5 | 10 |
+| 3 | 5 | 5 | 10 |
+| 4 | 5 | 5 | 10 |
+| 5 | 3 | 3 | 6 |
+| 6 | 5 | 5 | 10 |
+| 7 | 5 | 5 | 10 |
+| 8 | 5 | 5 | 10 |
+| 9 | 5 | 5 | 10 |
+| 10 | 5 | 5 | 10 |
+| 11 | 5 | 5 | 10 |
+| 12 | 5 | 5 | 10 |
+| 13 | 5 | 5 | 10 |
+| 14 | 5 | 5 | 10 |
+| 15 | 5 | 5 | 10 |
+| 16 | 5 | 5 | 10 |
+| 17 | 5 | 5 | 10 |
+| 18 | 5 | 5 | 10 |
 
 
 

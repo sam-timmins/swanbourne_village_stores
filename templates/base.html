@@ -48,48 +48,53 @@
 
 <body>
     
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid p-0">
+                <a class="navbar-brand text-sm text-header text-dark-green text-sm my-3 ms-3 ms-md-5" href="#">{{ store_name }}</a>
+                <button class="navbar-toggler text-sm rounded-0 me-3 my-3 me-md-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon "></span>
+                </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item text-center">
+                <a class="nav-link ms-5 ms-lg-0 text-sm me-lg-3 me-xl-5 text-dark-green my-3" href="#">Fresh Food</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Link</a>
+              <li class="nav-item text-center">
+                <a class="nav-link ms-5 ms-lg-0 text-sm me-lg-3 me-xl-5 text-dark-green my-3" href="#">Wine Store</a>
+              </li>             
+              <li class="nav-item text-center">
+                <a class="nav-link ms-lg-0 text-sm me-lg-3 me-xl-5 text-dark-green my-3" href="#">The Freezer</a>
               </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown
+              {% if user.is_superuser %}
+              <li class="nav-item dropdown text-center">
+                <a class="nav-link ms-5 ms-lg-0 dropdown-toggle text-sm me-lg-3 me-xl-5 text-dark-green my-3 row" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Admin
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <ul class="dropdown-menu text-center col-8 col-sm-6 col-md-4 m-auto" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item text-sm text-dark-green" href="#">Items here</a></li>
                 </ul>
+
               </li>
-              <li class="nav-item">
-                <a class="nav-link disabled">Disabled</a>
-              </li>
+              {% endif %}
             </ul>
-            <form method="GET" action="">
-                <div class="input-group align-items-center">
-                  <input class="form-control form-control-border text-sm rounded-0" type="text" name="main-search-query"
-                    placeholder="Search our store">
-                  <div class="input-group-append">
-                    <button class="form-control btn rounded-0 text-sm search-btn" type="submit">
-                      <span class="icon">
-                        <i class="fas fa-search"></i>
-                      </span>
-                    </button>
-                  </div>
+            <div class="row">
+                <div class="col-sm-8 col-lg-12 mx-auto">
+                    <form method="GET" action="" class="p-3">
+                        <div class="input-group align-items-center">
+                          <input class="form-control form-control-border text-sm rounded-0" type="text" name="main-search-query"
+                            placeholder="Search our store">
+                          <div class="input-group-append">
+                            <button class="form-control btn rounded-0 text-sm search-btn" type="submit">
+                              <span class="icon">
+                                <i class="fas fa-search"></i>
+                              </span>
+                            </button>
+                          </div>
+                        </div>
+                      </form>  
                 </div>
-              </form>      
+            </div>
+    
           </div>
         </div>
       </nav>

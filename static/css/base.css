@@ -25,8 +25,8 @@ body {
 /* 
     1. Fonts
         1.1 Font Sizes
+        1.2 Font Colours
 */
-
 
 /* 1. Fonts */
 /* 1.1 Font sizes */
@@ -49,4 +49,26 @@ body {
 
 .text-xl {
     font-size: 5rem;
+}
+
+/* 1.2 Font Colours */
+
+.text-white {
+    color: var(--white);
+}
+
+.text-light-green {
+    color: var(--light-green);
+}
+
+.text-dark-green {
+    color: var(--dark-green);
+}
+
+.text-purple {
+    color: var(--purple);
+}
+
+.text-white {
+    color: var(--white);
 }

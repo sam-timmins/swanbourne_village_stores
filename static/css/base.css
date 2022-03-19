@@ -3,3 +3,11 @@
 font-family: 'Forum', cursive;
 font-family: 'Jost', sans-serif;
 */
+
+:root {
+    --white: #FFFFFF;
+    --black: #191919;
+    --light-green: #CBC7AE;
+    --dark-green: #2B3A2D;
+    --purple: #482832;
+}

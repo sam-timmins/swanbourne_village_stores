@@ -190,4 +190,8 @@ body {
     .navbar-brand {
         font-size: 2.5rem;
     }
+
+    .dropdown-item:hover {
+        background-color: var(--light-green);
+    }
   }

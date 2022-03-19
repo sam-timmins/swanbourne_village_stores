@@ -154,6 +154,28 @@ body {
     background-color: var(--light-green);
 }
 
+.nav-link {
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    animation: nav-link-focus;
+    animation-duration: 1s;
+    transition-timing-function: ease-in;
+    animation-fill-mode: forwards;
+}
+
+@keyframes nav-link-focus {
+    0% {
+        border-bottom: 2px solid transparent;
+    }
+
+    100% {
+        border-bottom: 2px solid var(--light-green);
+    }
+}
+
 
 @media (min-width: 992px) {
     .navbar-collapse {

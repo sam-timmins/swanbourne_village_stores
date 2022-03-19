@@ -20,3 +20,33 @@ body {
     font-size: 1.6rem;
     font-family: 'Jost', sans-serif;
 }
+
+/* Contents */
+/* 
+    1. Fonts
+        1.1 Font Sizes
+*/
+
+
+/* 1. Fonts */
+/* 1.1 Font sizes */
+
+.text-xs {
+    font-size: 1.5rem;
+}
+
+.text-sm {
+    font-size: 2rem;
+}
+
+.text-md {
+    font-size: 3rem;
+}
+
+.text-lg {
+    font-size: 4rem;
+}
+
+.text-xl {
+    font-size: 5rem;
+}

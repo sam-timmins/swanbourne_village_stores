@@ -160,24 +160,24 @@ body {
 }
 
 .nav-link {
-    border-bottom: 2px solid transparent;
+    border-bottom: 4px solid transparent;
 }
 
 .nav-link:hover,
 .nav-link:focus {
     animation: nav-link-focus;
-    animation-duration: 1s;
+    animation-duration: 0.8s;
     transition-timing-function: ease-in;
     animation-fill-mode: forwards;
 }
 
 @keyframes nav-link-focus {
     0% {
-        border-bottom: 2px solid transparent;
+        border-bottom: 4px solid transparent;
     }
 
     100% {
-        border-bottom: 2px solid var(--light-green);
+        border-bottom: 4px solid var(--light-green);
     }
 }
 

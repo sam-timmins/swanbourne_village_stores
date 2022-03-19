@@ -88,11 +88,22 @@
                     <li><a class="dropdown-item text-sm text-dark-green px-5" href="#">Items here</a></li>
                     <li><hr class="dropdown-divider m-auto w-50"></li>
                     <li><a class="dropdown-item text-sm text-dark-green px-5" href="#">Items here</a></li>
-
                 </ul>
-
               </li>
               {% endif %}
+
+              <li class="nav-item mx-5 text-center">
+                <a class="nav-link p-0 ms-lg-0 text-sm me-lg-3 me-xl-5 my-3 {% if grand_total %} text-black {% else %} text-dark-green {% endif %}" href="#">
+                    <p class="my-0">
+                        <i class="fas fa-shopping-bag fa-lg me-2"></i>
+                      {% if grand_total %}
+                        €{{ grand_total|floatformat:2 }}
+                      {% else %}
+                        {{ currency }}0.00
+                      {% endif %}
+                    </p>
+                </a>
+              </li>
             </ul>
             <div class="row">
                 <div class="col-sm-8 col-lg-12 mx-auto">

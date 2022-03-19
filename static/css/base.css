@@ -26,6 +26,7 @@ body {
     1. Fonts
         1.1 Font Sizes
         1.2 Font Colours
+        1.3 Header Text
 */
 
 /* 1. Fonts */
@@ -71,4 +72,10 @@ body {
 
 .text-white {
     color: var(--white);
+}
+
+/* 1.3 Header Text */
+
+.text-header {
+    font-family: 'Forum', cursive
 }

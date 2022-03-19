@@ -5,11 +5,11 @@
 
 <head>
     {% block meta %}
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <meta name="Description" content="Enter your description here"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
     {% endblock %}
 
 
@@ -19,9 +19,9 @@
 
 
     {% block corecss %}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-        <link rel="stylesheet" href="{% static 'css/base.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
     {% endblock %}
 
 
@@ -31,110 +31,128 @@
 
 
     {% block corejs %}
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
-        <script src="https://kit.fontawesome.com/522597c1d6.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/522597c1d6.js" crossorigin="anonymous"></script>
     {% endblock %}
 
 
     {% block extra_js %}
 
-    {% endblock %}  
+    {% endblock %}
 
 
     <title>{{ store_name }} {% block title %}{% endblock %}</title>
 </head>
 
 <body>
-    
+
     <nav class="navbar navbar-expand-lg navbar-light py-0 fixed-top background-white">
         <div class="container-fluid p-0">
-                <a class="navbar-brand text-sm text-header text-dark-green text-sm my-4 ms-3 ms-xl-5" href="{% url 'home' %}">{{ store_name }}</a>
-                <button class="navbar-toggler text-sm rounded-0 me-3 my-4 me-xl-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon "></span>
-                </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item dropdown text-center">
-                    <a class="nav-link p-0 ms-lg-0 dropdown-toggle text-sm me-lg-3 me-xl-5 text-dark-green my-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                      The Menu
-                    </a>
-                    <ul class="dropdown-menu text-center m-auto p-0" aria-labelledby="navbarDropdown">
-                        <li>
-                            <a class="dropdown-item text-sm text-dark-green px-5" href="#">Fresh Food</a>
-                          </li>
-                          <li><hr class="dropdown-divider m-auto w-50"></li>
-                          <li>
-                            <a class="dropdown-item text-sm text-dark-green px-5" href="#">Wine Store</a>
-                          </li> 
-                          <li><hr class="dropdown-divider m-auto w-50"></li>            
-                          <li>
-                            <a class="dropdown-item text-sm text-dark-green px-5" href="#">The Freezer</a>
-                          </li>
-    
-                    </ul>
+            <a class="navbar-brand text-sm text-header text-dark-green text-sm my-4 ms-3 ms-xl-5"
+                href="{% url 'home' %}">{{ store_name }}</a>
+            <button class="navbar-toggler text-sm rounded-0 me-3 my-4 me-xl-5" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown text-center">
+                        <a class="nav-link p-0 ms-lg-0 dropdown-toggle text-sm me-lg-3 me-xl-5 text-dark-green my-3"
+                            href="#" id="navbar-menu-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            The Menu
+                        </a>
+                        <ul class="dropdown-menu text-center m-auto p-0" aria-labelledby="navbar-menu-dropdown">
+                            <li>
+                                <a class="dropdown-item text-sm text-dark-green px-5" href="#">Fresh Food</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider m-auto w-50">
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-sm text-dark-green px-5" href="#">Wine Store</a>
+                            </li>
+                            <li>
+                                <hr class="dropdown-divider m-auto w-50">
+                            </li>
+                            <li>
+                                <a class="dropdown-item text-sm text-dark-green px-5" href="#">The Freezer</a>
+                            </li>
+                        </ul>
+                    </li>
 
-              {% if user.is_superuser %}
-              <li class="nav-item dropdown text-center">
-                <a class="nav-link p-0 ms-lg-0 dropdown-toggle text-sm me-lg-3 me-xl-5 text-dark-green my-3" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Admin
-                </a>
-                <ul class="dropdown-menu text-center m-auto p-0" aria-labelledby="navbarDropdown">
-                    <li><a class="dropdown-item text-sm text-dark-green px-5" href="#">Items here</a></li>
-                    <li><hr class="dropdown-divider m-auto w-50"></li>
-                    <li><a class="dropdown-item text-sm text-dark-green px-5" href="#">Items here</a></li>
-                    <li><hr class="dropdown-divider m-auto w-50"></li>
-                    <li><a class="dropdown-item text-sm text-dark-green px-5" href="#">Items here</a></li>
-                    <li><hr class="dropdown-divider m-auto w-50"></li>
-                    <li><a class="dropdown-item text-sm text-dark-green px-5" href="#">Items here</a></li>
+                    {% if user.is_superuser %}
+                        <li class="nav-item dropdown text-center">
+                            <a class="nav-link p-0 ms-lg-0 dropdown-toggle text-sm me-lg-3 me-xl-5 text-dark-green my-3"
+                                href="#" id="navbar-admin-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Admin
+                            </a>
+                            <ul class="dropdown-menu text-center m-auto p-0" aria-labelledby="navbar-admin-dropdown">
+                                <li><a class="dropdown-item text-sm text-dark-green px-5" href="#">Items here</a></li>
+                                <li>
+                                    <hr class="dropdown-divider m-auto w-50">
+                                </li>
+                                <li><a class="dropdown-item text-sm text-dark-green px-5" href="#">Items here</a></li>
+                                <li>
+                                    <hr class="dropdown-divider m-auto w-50">
+                                </li>
+                                <li><a class="dropdown-item text-sm text-dark-green px-5" href="#">Items here</a></li>
+                                <li>
+                                    <hr class="dropdown-divider m-auto w-50">
+                                </li>
+                                <li><a class="dropdown-item text-sm text-dark-green px-5" href="#">Items here</a></li>
+                            </ul>
+                        </li>
+                    {% endif %}
+
+                    <li class="nav-item mx-5 text-center">
+                        <a class="nav-link p-0 ms-lg-0 text-sm me-lg-3 me-xl-5 my-3 {% if grand_total %} text-black {% else %} text-dark-green {% endif %}"
+                            href="#">
+                            <p class="my-0">
+                                <i class="fas fa-shopping-bag fa-lg me-2"></i>
+                                {% if grand_total %}
+                                €{{ grand_total|floatformat:2 }}
+                                {% else %}
+                                {{ currency }}0.00
+                                {% endif %}
+                            </p>
+                        </a>
+                    </li>
                 </ul>
-              </li>
-              {% endif %}
-
-              <li class="nav-item mx-5 text-center">
-                <a class="nav-link p-0 ms-lg-0 text-sm me-lg-3 me-xl-5 my-3 {% if grand_total %} text-black {% else %} text-dark-green {% endif %}" href="#">
-                    <p class="my-0">
-                        <i class="fas fa-shopping-bag fa-lg me-2"></i>
-                      {% if grand_total %}
-                        €{{ grand_total|floatformat:2 }}
-                      {% else %}
-                        {{ currency }}0.00
-                      {% endif %}
-                    </p>
-                </a>
-              </li>
-            </ul>
-            <div class="row">
-                <div class="col-sm-8 col-lg-12 mx-auto">
-                    <form method="GET" action="" class="p-3">
-                        <div class="input-group align-items-center">
-                          <input class="form-control form-control-border text-sm rounded-0" type="text" name="main-search-query"
-                            placeholder="Search our store">
-                          <div class="input-group-append">
-                            <button class="form-control btn rounded-0 text-sm search-btn" type="submit">
-                              <span class="icon">
-                                <i class="fa-solid fa-magnifying-glass"></i>
-                              </span>
-                            </button>
-                          </div>
-                        </div>
-                      </form>  
+                <div class="row">
+                    <div class="col-sm-8 col-lg-12 mx-auto">
+                        <form method="GET" action="" class="p-3">
+                            <div class="input-group align-items-center">
+                                <input class="form-control form-control-border text-sm rounded-0" type="text"
+                                    name="main-search-query" placeholder="Search our store">
+                                <div class="input-group-append">
+                                    <button class="form-control btn rounded-0 text-sm search-btn" type="submit">
+                                        <span class="icon">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
+
             </div>
-    
-          </div>
         </div>
-      </nav>
+    </nav>
 
     {% block content %}
 
     {% endblock %}
 
-  
+
     {% block postloadjs %}
 
     {% endblock %}
 
 </body>
+
 </html>

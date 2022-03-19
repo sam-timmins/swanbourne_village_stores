@@ -11,3 +11,12 @@ font-family: 'Jost', sans-serif;
     --dark-green: #2B3A2D;
     --purple: #482832;
 }
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Jost', sans-serif;
+}

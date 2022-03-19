@@ -154,6 +154,11 @@ body {
     background-color: var(--light-green);
 }
 
+.dropdown-item:hover {
+    background-color: var(--dark-green);
+    color: var(--light-green) !important;
+}
+
 .nav-link {
     border-bottom: 2px solid transparent;
 }

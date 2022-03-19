@@ -31,6 +31,7 @@ body {
     3. Buttons
     4. Forms
     5. Navbar
+    6. Footer 
 */
 
 /* 1. Fonts */
@@ -185,6 +186,14 @@ body {
 }
 
 
+/* 6. Footer */
+
+.footer-link:hover,
+.footer-link:focus {
+    color: var(--light-green) !important;
+}
+
+
 @media (min-width: 992px) {
     .navbar-collapse {
         background-color: transparent;
@@ -198,3 +207,4 @@ body {
         background-color: var(--light-green);
     }
   }
+

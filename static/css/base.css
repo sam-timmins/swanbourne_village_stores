@@ -159,12 +159,15 @@ body {
     color: var(--light-green) !important;
 }
 
-.nav-link {
+.nav-link,
+.navbar-brand {
     border-bottom: 4px solid transparent;
 }
 
 .nav-link:hover,
-.nav-link:focus {
+.nav-link:focus,
+.navbar-brand:hover,
+.navbar-brand:focus {
     animation: nav-link-focus;
     animation-duration: 0.8s;
     transition-timing-function: ease-in;

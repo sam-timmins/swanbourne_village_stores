@@ -27,6 +27,8 @@ body {
         1.1 Font Sizes
         1.2 Font Colours
         1.3 Header Text
+    
+    2. Buttons
 */
 
 /* 1. Fonts */
@@ -78,4 +80,12 @@ body {
 
 .text-header {
     font-family: 'Forum', cursive
+}
+
+/* 2. Buttons */
+
+.search-btn {
+    background-color: var(--dark-green);
+    color: var(--light-green);
+    border: 1px solid var(--dark-green);
 }

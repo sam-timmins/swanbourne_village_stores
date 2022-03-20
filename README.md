@@ -433,7 +433,7 @@ FROZEN_STATUS = ((0, 'Frozen'), (1, 'Fresh'))
 &nbsp;
 
 # Credits
-
+* Code to position the footer at the bottom of the content [radu.link](https://radu.link/make-footer-stay-bottom-page-bootstrap/ "Radu")
 
 \
 &nbsp;

@@ -28,10 +28,11 @@ body {
         1.2 Font Colours
         1.3 Header Text
     2. Background colours
-    3. Buttons
-    4. Forms
-    5. Navbar
-    6. Footer 
+    3. Borders
+    4. Buttons
+    5. Forms
+    6. Navbar
+    7. Footer 
 */
 
 /* 1. Fonts */
@@ -85,7 +86,7 @@ body {
     font-family: 'Forum', cursive
 }
 
-/* Background colours */
+/* 2. Background colours */
 
 .background-white {
     background-color: var(--white);
@@ -117,7 +118,7 @@ body {
     border-bottom: 4px solid var(--light-green);
 }
 
-/* 3. Buttons */
+/* 4. Buttons */
 
 .search-btn {
     background-color: var(--dark-green);
@@ -125,7 +126,7 @@ body {
     border: 1px solid var(--dark-green);
 }
 
-/* 4. Forms */
+/* 5. Forms */
 
 .form-control-border {
     border: 1px solid var(--dark-green);
@@ -150,7 +151,7 @@ body {
   }
 
 
-/* 5. Navbar */
+/* 6. Navbar */
 
 .navbar-toggler:focus {
     box-shadow: 0 0 0 0.25rem var(--light-green)
@@ -195,13 +196,15 @@ body {
 }
 
 
-/* 6. Footer */
+/* 7. Footer */
 
 .footer-link:hover,
 .footer-link:focus {
     color: var(--light-green) !important;
 }
 
+
+/*  Media Queries */
 
 @media (min-width: 992px) {
     .navbar-collapse {

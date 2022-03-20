@@ -49,95 +49,46 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light py-0 fixed-top background-white">
-        <div class="container-fluid p-0">
+        <nav class="navbar navbar-expand-lg navbar-light py-0 fixed-top background-white">
+            <div class="container-fluid p-0">
 
-            <!-- Store name and hamburger -->
-            <a class="navbar-brand text-sm text-header text-dark-green text-sm my-4 ms-3 ms-xl-5"
-                href="{% url 'home' %}" aria-labelledby="store-name">
-                {{ store_name }}
-            </a>
-            <span id="store-name" class="sr-only">
-                A link with green text and white background that navigates back to the homepage
-            </span>
-            
-            <button class="navbar-toggler text-sm rounded-0 me-3 my-4 me-xl-5" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon "></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <!-- Store name and hamburger -->
+                <a class="navbar-brand text-sm text-header text-dark-green text-sm my-4 ms-3 ms-xl-5"
+                    href="{% url 'home' %}" aria-labelledby="store-name">
+                    {{ store_name }}
+                </a>
+                <span id="store-name" class="sr-only">
+                    A link with green text and white background that navigates back to the homepage
+                </span>
+                
+                <button class="navbar-toggler text-sm rounded-0 me-3 my-4 me-xl-5" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon "></span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
 
-                    <!-- Menu links -->
-                    <li class="nav-item dropdown text-center">
-                        <a class="nav-link p-0 ms-lg-0 dropdown-toggle text-sm me-lg-3 me-xl-5 text-dark-green my-3"
-                            href="#" id="navbar-menu-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                            aria-labelledby="menu-dropdown">
-                            The Menu
-                        </a>
-                        <span id="menu-dropdown" class="sr-only">
-                            A link with green text and light green background that opens a dropdown menu with the store's menu categories
-                        </span>
-                        
-                        <ul class="dropdown-menu text-center m-auto p-0">
-                            <li>
-                                <a class="dropdown-item text-sm text-dark-green px-5" href="#" aria-labelledby="navbar-fresh-food">
-                                    Fresh Food
-                                </a>
-                                <span id="navbar-fresh-food" class="sr-only">
-                                    A link with green text and white background that navigates to the products page in the same tab, with only fresh food displayed
-                                </span>
-                            </li>
-
-                            <li>
-                                <hr class="dropdown-divider m-auto w-50">
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item text-sm text-dark-green px-5" href="#" aria-labelledby="navbar-wine-store">
-                                    Wine Store
-                                </a>
-                                <span id="navbar-wine-store" class="sr-only">
-                                    A link with green text and white background that navigates to the products page in the same tab, with only wines displayed
-                                </span>
-                            </li>
-
-                            <li>
-                                <hr class="dropdown-divider m-auto w-50">
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item text-sm text-dark-green px-5" href="#" aria-labelledby="navbar-the-freezer">
-                                    The Freezer
-                                </a>
-                                <span id="navbar-the-freezer" class="sr-only">
-                                    A link with green text and white background that navigates to the products page in the same tab, with only frozen food displayed
-                                </span>
-                            </li>
-
-                        </ul>
-                    </li>
-
-                    <!-- Administration links -->
-                    {% if user.is_superuser %}
+                        <!-- Menu links -->
                         <li class="nav-item dropdown text-center">
                             <a class="nav-link p-0 ms-lg-0 dropdown-toggle text-sm me-lg-3 me-xl-5 text-dark-green my-3"
-                                href="#" id="navbar-admin-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                                aria-labelledby="navbar-admin">
-                                Admin
+                                href="#" id="navbar-menu-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                aria-labelledby="menu-dropdown">
+                                The Menu
                             </a>
-                            <span id="navbar-admin" class="sr-only">
-                                A link with green text and light green background that opens a dropdown menu with the admin categories
+                            <span id="menu-dropdown" class="sr-only">
+                                A link with green text and light green background that opens a dropdown menu with the store's menu categories
                             </span>
-
-                            <!-- Add correct links and accessability tags -->
+                            
                             <ul class="dropdown-menu text-center m-auto p-0">
                                 <li>
-                                    <a class="dropdown-item text-sm text-dark-green px-5" href="#">
-                                        Items here
+                                    <a class="dropdown-item text-sm text-dark-green px-5" href="#" aria-labelledby="navbar-fresh-food">
+                                        Fresh Food
                                     </a>
+                                    <span id="navbar-fresh-food" class="sr-only">
+                                        A link with green text and white background that navigates to the products page in the same tab, with only fresh food displayed
+                                    </span>
                                 </li>
 
                                 <li>
@@ -145,9 +96,12 @@
                                 </li>
 
                                 <li>
-                                    <a class="dropdown-item text-sm text-dark-green px-5" href="#">
-                                        Items here
+                                    <a class="dropdown-item text-sm text-dark-green px-5" href="#" aria-labelledby="navbar-wine-store">
+                                        Wine Store
                                     </a>
+                                    <span id="navbar-wine-store" class="sr-only">
+                                        A link with green text and white background that navigates to the products page in the same tab, with only wines displayed
+                                    </span>
                                 </li>
 
                                 <li>
@@ -155,167 +109,184 @@
                                 </li>
 
                                 <li>
-                                    <a class="dropdown-item text-sm text-dark-green px-5" href="#">
-                                        Items here
+                                    <a class="dropdown-item text-sm text-dark-green px-5" href="#" aria-labelledby="navbar-the-freezer">
+                                        The Freezer
                                     </a>
+                                    <span id="navbar-the-freezer" class="sr-only">
+                                        A link with green text and white background that navigates to the products page in the same tab, with only frozen food displayed
+                                    </span>
                                 </li>
 
-                                <li>
-                                    <hr class="dropdown-divider m-auto w-50">
-                                </li>
-
-                                <li>
-                                    <a class="dropdown-item text-sm text-dark-green px-5" href="#">
-                                        Items here
-                                    </a>
-                                </li>
                             </ul>
                         </li>
-                    {% endif %}
 
-                    <!-- Authentication links -->
-                    <li class="nav-item text-center">
-                        {% if request.user.is_authenticated %}
+                        <!-- Administration links -->
+                        {% if user.is_superuser %}
+                            <li class="nav-item dropdown text-center">
+                                <a class="nav-link p-0 ms-lg-0 dropdown-toggle text-sm me-lg-3 me-xl-5 text-dark-green my-3"
+                                    href="#" id="navbar-admin-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                                    aria-labelledby="navbar-admin">
+                                    Admin
+                                </a>
+                                <span id="navbar-admin" class="sr-only">
+                                    A link with green text and light green background that opens a dropdown menu with the admin categories
+                                </span>
 
-                            <a class="nav-link p-0 ms-lg-0 text-sm m-auto me-lg-3 me-xl-5 my-3 text-dark-green"
-                                href="{% url 'account_logout' %}" aria-labelledby="navbar-logout">
-                                Logout
-                            </a>
-                            <span id="navbar-logout" class="sr-only">
-                                A link with green text and light green background that navigates to the logout page in the same tab
-                            </span>
+                                <!-- Add correct links and accessability tags -->
+                                <ul class="dropdown-menu text-center m-auto p-0">
+                                    <li>
+                                        <a class="dropdown-item text-sm text-dark-green px-5" href="#">
+                                            Items here
+                                        </a>
+                                    </li>
 
-                        {% else %}
+                                    <li>
+                                        <hr class="dropdown-divider m-auto w-50">
+                                    </li>
 
-                            <a class="nav-link p-0 ms-lg-0 text-sm me-lg-3 me-xl-5 my-3 text-dark-green" href="{% url 'account_signup' %}"
-                            aria-labelledby="navbar-register">
-                                Register
-                            </a>
-                            <span id="navbar-register" class="sr-only">
-                                A link with green text and light green background that navigates to the register page in the same tab
-                            </span>
+                                    <li>
+                                        <a class="dropdown-item text-sm text-dark-green px-5" href="#">
+                                            Items here
+                                        </a>
+                                    </li>
 
-                            <a class="nav-link p-0 ms-lg-0 text-sm me-lg-3 me-xl-5 my-3 text-dark-green" href="{% url 'account_login' %}"
-                            aria-labelledby="navbar-login">
-                                Login
-                            </a>
-                            <span id="navbar-login" class="sr-only">
-                                A link with green text and light green background that navigates to the login page in the same tab
-                            </span>
+                                    <li>
+                                        <hr class="dropdown-divider m-auto w-50">
+                                    </li>
 
+                                    <li>
+                                        <a class="dropdown-item text-sm text-dark-green px-5" href="#">
+                                            Items here
+                                        </a>
+                                    </li>
+
+                                    <li>
+                                        <hr class="dropdown-divider m-auto w-50">
+                                    </li>
+
+                                    <li>
+                                        <a class="dropdown-item text-sm text-dark-green px-5" href="#">
+                                            Items here
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
                         {% endif %}
-                    </li>
 
-                    <!-- Session total and link to basket -->
-                    <li class="nav-item me-3 text-center">
-                        <a class="nav-link p-0 ms-lg-0 text-sm me-lg-3 me-xl-5 my-3 {% if grand_total %} text-black {% else %} text-dark-green {% endif %}"
-                            href="#" aria-labelledby="navbar-basket">
-                            <p class="my-0">
-                                <i class="fas fa-shopping-bag fa-lg me-2"></i>
-                                {% if grand_total %}
-                                €{{ grand_total|floatformat:2 }}
-                                {% else %}
-                                {{ currency }}0.00
-                                {% endif %}
-                            </p>
-                        </a>
-                        <span id="navbar-basket" class="sr-only">
-                            A link with green text and light green background and an icon of a shopping bag that navigates to the basket page in the same tab
-                        </span>
-                    </li>
-                </ul>
+                        <!-- Authentication links -->
+                        <li class="nav-item text-center">
+                            {% if request.user.is_authenticated %}
 
-                <!-- Search bar -->
-                <div class="row">
-                    <div class="col-sm-8 col-lg-12 mx-auto">
-                        <form method="GET" action="" class="p-3 me-lg-3 me-xl-5">
-                            <div class="input-group align-items-center">
-                                <input class="form-control form-control-border text-sm rounded-0" type="text"
-                                    name="main-search-query" placeholder="Search our store" aria-label="Search">
-                                <div class="input-group-append">
-                                    <button class="form-control btn rounded-0 text-sm search-btn" type="submit" aria-label="Search">
-                                        <span class="icon">
-                                            <i class="fa-solid fa-magnifying-glass"></i>
-                                        </span>
-                                    </button>
+                                <a class="nav-link p-0 ms-lg-0 text-sm m-auto me-lg-3 me-xl-5 my-3 text-dark-green"
+                                    href="{% url 'account_logout' %}" aria-labelledby="navbar-logout">
+                                    Logout
+                                </a>
+                                <span id="navbar-logout" class="sr-only">
+                                    A link with green text and light green background that navigates to the logout page in the same tab
+                                </span>
+
+                            {% else %}
+
+                                <a class="nav-link p-0 ms-lg-0 text-sm me-lg-3 me-xl-5 my-3 text-dark-green" href="{% url 'account_signup' %}"
+                                aria-labelledby="navbar-register">
+                                    Register
+                                </a>
+                                <span id="navbar-register" class="sr-only">
+                                    A link with green text and light green background that navigates to the register page in the same tab
+                                </span>
+
+                                <a class="nav-link p-0 ms-lg-0 text-sm me-lg-3 me-xl-5 my-3 text-dark-green" href="{% url 'account_login' %}"
+                                aria-labelledby="navbar-login">
+                                    Login
+                                </a>
+                                <span id="navbar-login" class="sr-only">
+                                    A link with green text and light green background that navigates to the login page in the same tab
+                                </span>
+
+                            {% endif %}
+                        </li>
+
+                        <!-- Session total and link to basket -->
+                        <li class="nav-item me-3 text-center">
+                            <a class="nav-link p-0 ms-lg-0 text-sm me-lg-3 me-xl-5 my-3 {% if grand_total %} text-black {% else %} text-dark-green {% endif %}"
+                                href="#" aria-labelledby="navbar-basket">
+                                <p class="my-0">
+                                    <i class="fas fa-shopping-bag fa-lg me-2"></i>
+                                    {% if grand_total %}
+                                    €{{ grand_total|floatformat:2 }}
+                                    {% else %}
+                                    {{ currency }}0.00
+                                    {% endif %}
+                                </p>
+                            </a>
+                            <span id="navbar-basket" class="sr-only">
+                                A link with green text and light green background and an icon of a shopping bag that navigates to the basket page in the same tab
+                            </span>
+                        </li>
+                    </ul>
+
+                    <!-- Search bar -->
+                    <div class="row">
+                        <div class="col-sm-8 col-lg-12 mx-auto">
+                            <form method="GET" action="" class="p-3 me-lg-3 me-xl-5">
+                                <div class="input-group align-items-center">
+                                    <input class="form-control form-control-border text-sm rounded-0" type="text"
+                                        name="main-search-query" placeholder="Search our store" aria-label="Search">
+                                    <div class="input-group-append">
+                                        <button class="form-control btn rounded-0 text-sm search-btn" type="submit" aria-label="Search">
+                                            <span class="icon">
+                                                <i class="fa-solid fa-magnifying-glass"></i>
+                                            </span>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
+                            </form>
+                        </div>
                     </div>
-                </div>
-
-            </div>
-        </div>
-    </nav>
-
-    {% block content %}
-
-    {% endblock %}
-
-    <footer>
-        <hr class="w-75 my-5 mx-auto">
-        <div class="container-fluid">
-        <div class="row background-white">
-            <div class="col-10 col-md-6 col-lg-4 text-center mx-auto my-3 d-flex flex-column align-items-center justify-content-start">
-                <p class="text-sm">Contact</p>
-                <div class="mt-3">
-                    <div class="my-3">
-                        <a href="mailto:swanbourne.store@gmail.com" class="text-md text-dark-green footer-link"><i class="fa-solid fa-square-envelope"></i></a>
-                    </div>
-                    <div class="my-3">
-                        <a href="tel:+441296 720288" class="text-md text-dark-green footer-link"><i class="fa-solid fa-square-phone"></i></a>
-                    </div>
-                </div>
-            </div>
-
-            <hr class="w-75 my-5 mx-auto d-md-none">
-
-            <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 d-flex flex-column align-items-center justify-content-between">
-                <p class="text-sm">Address</p>
-                <p>5 Mursley Road</p>
-                <p>Swanbourne</p>
-                <p>Buckinghamshire</p>
-            </div>
-
-            <hr class="w-75 my-5 mx-auto d-lg-none">
-            
-            <div class="col-10 col-md-6 col-lg-4 mx-auto my-3 d-flex flex-column align-items-center justify-content-start">
-                <p class="text-sm">Social</p>
-                <div class="w-75 m-auto d-flex flex-row align-items-center justify-content-around">
-
-                    <a href="https://www.google.com/maps/place/5+Mursley+Rd,+Swanbourne,+Milton+Keynes+MK17+0SH,+UK/@51.938599,-0.836613,17z/data=!3m1!4b1!4m5!3m4!1s0x4876fecc061ac491:0xdcf505f1debf6cae!8m2!3d51.9385957!4d-0.8344243"
-                    target="_blank" rel="noopener noreferrer" class="text-md text-dark-green footer-link">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </a>
-
-                    <a href="tel:+441296 720288" class="text-md text-dark-green footer-link">
-                        <i class="fa-solid fa-square-phone"></i>
-                    </a>
-
-                    <a href="mailto:swanbourne.store@gmail.com" class="text-md text-dark-green footer-link">
-                        <i class="fa-solid fa-square-envelope"></i>
-                    </a>
-
-
-                    <a href="{{ facebook }}" target="_blank" rel="noopener noreferrer" class="text-md text-dark-green footer-link">
-                        <i class="fa-brands fa-facebook-square"></i>
-                    </a>
-
-                    <a href="{{ instagram }}" target="_blank" rel="noopener noreferrer" class="text-md text-dark-green footer-link">
-                        <i class="fa-brands fa-instagram"></i>
-                    </a>
-
-                    <a href="{{ twitter }}" target="_blank" rel="noopener noreferrer" class="text-md text-dark-green footer-link">
-                        <i class="fa-brands fa-twitter-square"></i>
-                    </a>
 
                 </div>
             </div>
-        </div>
-        </div>
-        <hr class="w-75 my-5 mx-auto">
-    </footer>
+        </nav>
 
+        {% block content %}
+
+        {% endblock %}
+
+        <footer>
+            <div class="container-fluid position-relative row background-white m-0 p-0">
+                    <div class="col-12 col-md-6 col-lg-4 mx-auto my-3 d-flex flex-column align-items-center justify-content-start">
+                        <div class="w-100 d-flex flex-row align-items-center justify-content-around">
+
+                            <a href="https://www.google.com/maps/place/5+Mursley+Rd,+Swanbourne,+Milton+Keynes+MK17+0SH,+UK/@51.938599,-0.836613,17z/data=!3m1!4b1!4m5!3m4!1s0x4876fecc061ac491:0xdcf505f1debf6cae!8m2!3d51.9385957!4d-0.8344243"
+                            target="_blank" rel="noopener noreferrer" class="text-md text-dark-green footer-link">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </a>
+
+                            <a href="tel:+441296 720288" class="text-md text-dark-green footer-link">
+                                <i class="fa-solid fa-square-phone"></i>
+                            </a>
+
+                            <a href="mailto:swanbourne.store@gmail.com" class="text-md text-dark-green footer-link">
+                                <i class="fa-solid fa-square-envelope"></i>
+                            </a>
+
+
+                            <a href="{{ facebook }}" target="_blank" rel="noopener noreferrer" class="text-md text-dark-green footer-link">
+                                <i class="fa-brands fa-facebook-square"></i>
+                            </a>
+
+                            <a href="{{ instagram }}" target="_blank" rel="noopener noreferrer" class="text-md text-dark-green footer-link">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+
+                            <a href="{{ twitter }}" target="_blank" rel="noopener noreferrer" class="text-md text-dark-green footer-link">
+                                <i class="fa-brands fa-twitter-square"></i>
+                            </a>
+
+                        </div>
+                    </div>
+            </div>
+        </footer>
 
     {% block postloadjs %}
 

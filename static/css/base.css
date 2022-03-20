@@ -179,6 +179,10 @@ body {
     border-bottom: 4px solid transparent;
 }
 
+.nav-link {
+    margin-left: 10rem;
+}
+
 .nav-link:hover,
 .nav-link:focus,
 .navbar-brand:hover,
@@ -217,7 +221,20 @@ body {
     .dropdown-menu {
         max-width: 50%;
     }
+
+    .nav-link {
+        margin-left: 12rem;
+    }
   }
+
+
+/* ≥768px */
+@media (min-width: 768px) {
+    .nav-link {
+        margin-left: 18rem;
+    }
+  }
+
 
 /* ≥992px */
 @media (min-width: 992px) {

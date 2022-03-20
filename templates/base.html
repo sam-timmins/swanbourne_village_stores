@@ -284,11 +284,24 @@
                             </a>
 
                         </div>
+                        <p class="text-xs my-2 m-md-4">&copy;<span id="copyright-year"></span> {{ store_name }}</p>
+                        
                     </div>
             </div>
         </footer>
 
     {% block postloadjs %}
+        <script>
+            const copyrightYearRef = document.querySelector('#copyright-year');
+
+            window.onload = function(){
+
+                    // Auto increment of the year in footer
+                    const getFullYear = () => copyrightYearRef.innerHTML = new Date().getFullYear();
+
+                    getFullYear();
+            }
+        </script>
 
     {% endblock %}
 

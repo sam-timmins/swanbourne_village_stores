@@ -170,6 +170,10 @@ body {
     color: var(--light-green) !important;
 }
 
+.dropdown-menu {
+    max-width: 70%;
+}
+
 .nav-link,
 .navbar-brand {
     border-bottom: 4px solid transparent;
@@ -206,6 +210,16 @@ body {
 
 /*  Media Queries */
 
+/* Based on Bootstrap breakpoints - https://getbootstrap.com/docs/5.1/layout/breakpoints/ */
+
+/* ≥576px */
+@media (min-width: 576px) {
+    .dropdown-menu {
+        max-width: 50%;
+    }
+  }
+
+/* ≥992px */
 @media (min-width: 992px) {
     .navbar-collapse {
         background-color: transparent;
@@ -218,6 +232,10 @@ body {
     .dropdown-item:hover {
         background-color: var(--light-green);
         color: var(--dark-green) !important;
+    }
+
+    .dropdown-menu {
+        max-width: 200%;
     }
   }
 

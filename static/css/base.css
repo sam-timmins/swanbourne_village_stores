@@ -7,6 +7,7 @@ font-family: 'Jost', sans-serif;
 :root {
     --white: #FFFFFF;
     --black: #191919;
+    --black-transp: rgba(25, 25, 25, 0.7);
     --light-green: #CBC7AE;
     --dark-green: #2B3A2D;
     --purple: #482832;
@@ -100,6 +101,10 @@ body {
     background-color: var(--black);
 }
 
+.background-black-transp {
+    background-color: var(--black-transp);
+}
+
 .background-dark-green {
     background-color: var(--dark-green);
 }
@@ -125,6 +130,27 @@ body {
     color: var(--light-green);
     border: 1px solid var(--dark-green);
 }
+
+.btn-general {
+    width: 15rem;
+}
+
+.btn-dark {
+    box-shadow: 0px 0px 5px 2px var(--white)
+}
+
+.btn-purple {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+.btn-purple:hover,
+.btn-purple:focus {
+    color: var(--purple);
+    background-color: var(--white);
+    transition: .8s;
+}
+
 
 /* 5. Forms */
 
@@ -215,6 +241,18 @@ body {
 .footer-link:focus {
     color: var(--light-green) !important;
 }
+
+/* 8. Homepage */
+
+.hero-image {
+    background-image: url("/media/hero.jpg");
+    background-color: var(--black);
+    height: 80vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+  }
 
 
 /*  Media Queries */

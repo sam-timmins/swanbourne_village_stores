@@ -1,1 +1,1 @@
-web: gunicorn swanbourne_village_stores.wsgi
+web: gunicorn swanbourne_village_stores.wsgi:application

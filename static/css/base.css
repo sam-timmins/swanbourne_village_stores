@@ -246,7 +246,7 @@ body {
 /* 8. Homepage */
 
 .hero-image {
-    background-image: url("/static/images/hero.jpg");
+    background-image: url("https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg");
     background-color: var(--black);
     height: 80vh;
     background-position: center;

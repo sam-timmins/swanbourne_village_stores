@@ -246,7 +246,7 @@ body {
 /* 8. Homepage */
 
 .hero-image {
-    background-image: url("/media/hero.jpg");
+    background-image: url("/static/images/hero.jpg");
     background-color: var(--black);
     height: 80vh;
     background-position: center;

@@ -136,7 +136,7 @@ body {
     width: 15rem;
 }
 
-.btn-dark {
+.btn-box-shadow-white {
     box-shadow: 0px 0px 5px 2px var(--white)
 }
 
@@ -145,10 +145,22 @@ body {
     color: var(--white);
 }
 
+.btn-light-green {
+    background-color: var(--white);
+    color: var(--purple);
+}
+
 .btn-purple:hover,
 .btn-purple:focus {
     color: var(--purple);
     background-color: var(--white);
+    transition: .8s;
+}
+
+.btn-light-green:hover,
+.btn-light-green:focus {
+    color: var(--purple);
+    background-color: var(--light-green);
     transition: .8s;
 }
 

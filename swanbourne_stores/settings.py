@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-
+    'crispy_forms'
     'home',
 ]
 
@@ -92,6 +92,8 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 SITE_ID = 1
+
+CRISPY_TEMPLATES_PACK = 'bootstrap4'
 
 WSGI_APPLICATION = 'swanbourne_stores.wsgi.application'
 

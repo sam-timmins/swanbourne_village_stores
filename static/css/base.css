@@ -124,6 +124,10 @@ body {
     border-bottom: 4px solid var(--light-green);
 }
 
+.border-light-green {
+    border: 4px solid var(--light-green);
+}
+
 /* 4. Buttons */
 
 .search-btn {
@@ -278,6 +282,12 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
+}
+
+/* Authentication Pages */
+
+.authentication-image {
+    width: 100%;
 }
 
 /*  Media Queries */

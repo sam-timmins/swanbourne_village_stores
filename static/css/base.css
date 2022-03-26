@@ -256,13 +256,16 @@ body {
   }
 
 .about-section-container {
-    height: auto;
+    min-height: auto;
     padding: 5rem 3rem;
 }
 
 .about-image {
-    border: 2px solid var(--purple);
-    box-shadow: 0 0 .5rem .1rem var(--purple)
+    background-image: url("https://res.cloudinary.com/sam-timmins1/image/upload/v1648242081/static/images/about.7339cc50ba4c.jpg");
+    height: 55rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /*  Media Queries */

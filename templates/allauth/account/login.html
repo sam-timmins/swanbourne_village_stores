@@ -2,93 +2,65 @@
 
 {% load i18n %}
 
+{% block authcontent %}
 
-{% block content %}
+  <h1 class="text-header text-md mb-3">Sign In</h1>
 
-<div class="row container-fluid d-flex flex-column flex-md-row align-items-center justify-content-center px-0 py-5 m-auto">
-  <div class="d-none d-lg-inline col-lg-3 p-0 m-0">
-    <!-- Add production images when available -->
-    <img src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648294674/static/images/auth3_yj4lam.jpg" alt="" class="authentication-image">
-    <img src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648295330/static/images/auth5_bchikz.jpg" alt="" class="authentication-image">
-  </div>
-  <div class="col-12 col-md-8 col-lg-6">
-    <div class="row container-fluid d-flex justify-content-center align-items-center py-5 m-auto">
-      <div
-        class="border-light-green col-12 p-3 p-md-5 d-flex flex-column justify-content-center align-items-center background-purple text-white">
+  <!-- Login Form -->
+  <form class="text-sm d-flex flex-column justify-content-center align-items-center" method="POST"
+    action="{% url 'account_login' %}">
+    {% csrf_token %}
 
-        <h1 class="text-header text-md mb-3">{% trans "Sign In" %}</h1>
+    {% if form.errors %}
+      {% for field in form %}
+        {% for error in field.errors %}
+        <p class="m-auto text-sm text-light-green">{{ error|escape }}</p>
+        {% endfor %}
+      {% endfor %}
+        {% for error in form.non_field_errors %}
+        <p class="m-auto text-sm text-light-green">{{ error|escape }}</p>
+        {% endfor %}
+    {% endif %}
 
-        <!-- Login Form -->
-        <form class="text-sm d-flex flex-column justify-content-center align-items-center" method="POST"
-          action="{% url 'account_login' %}">
-          {% csrf_token %}
+    <!-- Form fields -->
+    <div class="my-3 mx-auto mt-md-5">
+      <label for="id_login" aria-labelledby="enter-your-username">
+        <i class="fas fa-user-circle me-3"></i>
+      </label>
 
-          {% if form.errors %}
-            {% for field in form %}
-              {% for error in field.errors %}
-                <p class="m-auto text-sm text-light-green">{{ error|escape }}</p>
-              {% endfor %}
-            {% endfor %}
-            {% for error in form.non_field_errors %}
-              <p class="m-auto text-sm text-light-green">{{ error|escape }}</p>
-            {% endfor %}
-          {% endif %}
-
-          <!-- Form fields -->
-          <div class="my-3 mx-auto mt-md-5">
-            <label for="id_login" aria-labelledby="enter-your-username">
-              <i class="fas fa-user-circle me-3"></i>
-            </label>
-
-            <input type="text" name="login" placeholder="Username" class="fw-light text-purple"
-              autocomplete="username" maxlength="150" required="" id="id_login">
-          </div>
-          <span class="sr-only" id="enter-your-username">Input box for entering your username</span>
-
-          <div class="my-3 mx-auto mt-md-5">
-            <label for="id_password" aria-labelledby="enter-your-password">
-              <i class="fas fa-lock me-3"></i>
-            </label>
-            <input type="password" name="password" placeholder="Password" class="fw-light"
-              autocomplete="current-password" required="" id="id_password">
-          </div>
-          <span class="sr-only" id="enter-your-password">Input box for entering your password</span>
-
-          {% if redirect_field_value %}
-            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-          {% endif %}
-
-          {% if redirect_field_value %}
-            <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-          {% endif %}
-
-          <div class="py-3 text-center">
-            <a class="text-light-green"
-              href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
-            <br>
-            <button
-              class="btn btn-general btn-light-green btn-box-shadow-white text-sm p-3 my-5 mx-3 mx-md-5 rounded-0"
-              type="submit">{% trans "Sign In" %}</button>
-          </div>
-
-        </form>
-
-        <p class="text-xs p-3 text-center">{% blocktrans %}If you have not created an account yet, then please
-          <a href="{{ signup_url }}" class="text-light-green">sign up</a> first.{% endblocktrans %}
-        </p>
-
-      </div>
+      <input type="text" name="login" placeholder="Username" class="fw-light text-purple" autocomplete="username"
+        maxlength="150" required="" id="id_login">
     </div>
-  </div>
+    <span class="sr-only" id="enter-your-username">Input box for entering your username</span>
 
-  <div class="d-none d-md-inline col-md-3 p-0 m-0 overflow-hidden">
-    <!-- Add production images when available -->
-    <img src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648294372/static/images/auth1_rta1wn.jpg" alt="" class="authentication-image">
-    <img src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648294674/static/images/auth3_yj4lam.jpg" alt="" class="authentication-image d-none d-md-inline d-lg-none">
-    <img src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648295295/static/images/auth4_rign35.jpg" alt="" class="authentication-image">
-  </div>
-  
-</div>
-     
+    <div class="my-3 mx-auto mt-md-5">
+      <label for="id_password" aria-labelledby="enter-your-password">
+        <i class="fas fa-lock me-3"></i>
+      </label>
+      <input type="password" name="password" placeholder="Password" class="fw-light" autocomplete="current-password"
+        required="" id="id_password">
+    </div>
+    <span class="sr-only" id="enter-your-password">Input box for entering your password</span>
+
+    {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+
+    {% if redirect_field_value %}
+      <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+    {% endif %}
+
+    <div class="py-3 text-center">
+      <a class="text-light-green" href="{% url 'account_reset_password' %}">Forgot Password?</a>
+      <br>
+      <button class="btn btn-general btn-light-green btn-box-shadow-white text-sm p-3 my-5 mx-3 mx-md-5 rounded-0"
+        type="submit">Sign In</button>
+    </div>
+
+  </form>
+
+  <p class="text-xs p-3 text-center">If you have not created an account yet, then please
+    <a href="{{ signup_url }}" class="text-light-green">sign up</a> first.
+  </p>
 
 {% endblock %}

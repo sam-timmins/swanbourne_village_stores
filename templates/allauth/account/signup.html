@@ -2,20 +2,85 @@
 
 {% load i18n %}
 
-{% block head_title %}{% trans "Signup" %}{% endblock %}
+{% block authcontent %}
 
-{% block content %}
-<h1>{% trans "Sign Up" %}</h1>
+        <h1 class="text-header text-md mb-3">Sign Up</h1>
+        
+        <!-- Signup Form -->
+        <form class="text-sm d-flex flex-column justify-content-center align-items-center" method="POST"
+        action="{% url 'account_signup' %}">
+          {% csrf_token %}
 
-<p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+          {% if form.errors %}
+            {% for field in form %}
+              {% for error in field.errors %}
+                <p class="m-auto text-sm text-light-green text-center">{{ error|escape }}</p>
+              {% endfor %}
+            {% endfor %}
+            {% for error in form.non_field_errors %}
+              <p class="m-auto text-sm text-light-green text-center">{{ error|escape }}</p>
+            {% endfor %}
+          {% endif %}
 
-<form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button type="submit">{% trans "Sign Up" %} &raquo;</button>
-</form>
+          <div class="my-3 mx-auto mt-md-5">
+            <label for="id_email" aria-labelledby="enter-your-signup-email">
+              <i class="fa-solid fa-envelope me-3"></i>
+            </label>
 
+            <input type="email" name="email" placeholder="E-mail address" class="fw-light text-purple"
+              maxlength="150" required id="id_email">
+          </div>
+          <span class="sr-only" id="enter-your-signup-email">Input box for entering your email address</span>
+
+          <div class="my-3 mx-auto mt-md-5">
+            <label for="id_email2" aria-labelledby="enter-your-signup-email-again">
+              <i class="fa-solid fa-envelope me-3"></i>
+            </label>
+
+            <input type="email" name="email2" placeholder="Confirm E-mail" class="fw-light text-purple"
+              maxlength="150" required id="id_email2">
+          </div>
+          <span class="sr-only" id="enter-your-signup-email-again">Input box for confirming your email address</span>
+
+          <div class="my-3 mx-auto mt-md-5">
+            <label for="id_login" aria-labelledby="enter-your-signup-username">
+              <i class="fas fa-user-circle me-3"></i>
+            </label>
+
+            <input type="text" name="username" placeholder="Username" class="fw-light text-purple"
+              maxlength="150" required id="id_username">
+          </div>
+          <span class="sr-only" id="enter-your-signup-username">Input box for entering your username</span>
+
+          <div class="my-3 mx-auto mt-md-5">
+            <label for="id_password" aria-labelledby="enter-your-signup-password">
+              <i class="fas fa-lock me-3"></i>
+            </label>
+            <input type="password" name="password1" placeholder="Password" class="fw-light"
+              required="" id="id_password1">
+          </div>
+          <span class="sr-only" id="enter-your-signup-password">Input box for entering your password</span>
+
+          <div class="my-3 mx-auto mt-md-5">
+            <label for="id_password2" aria-labelledby="enter-your-signup-password-again">
+              <i class="fas fa-lock me-3"></i>
+            </label>
+            <input type="password" name="password2" placeholder="Confirm Password" class="fw-light"
+              required="" id="id_password2">
+          </div>
+          <span class="sr-only" id="enter-your-signup-password-again">Input box for confirming your password</span>
+
+          {% if redirect_field_value %}
+          <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
+          {% endif %}
+          <button
+          class="btn btn-general btn-light-green btn-box-shadow-white text-sm p-3 my-5 mx-3 mx-md-5 rounded-0"
+          type="submit">Sign Up</button>
+
+          <p class="text-xs p-3 text-center">Already have an account? Then please 
+            <a href="{{ login_url }}" class="text-light-green">sign in</a> first.
+          </p>
+
+        </form>
+     
 {% endblock %}

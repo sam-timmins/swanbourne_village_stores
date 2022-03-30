@@ -284,6 +284,11 @@ body {
     background-repeat: no-repeat;
 }
 
+#map {
+    height: 30rem;
+    width: 100%;
+}
+
 /* Authentication Pages */
 
 .authentication-image {

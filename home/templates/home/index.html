@@ -127,11 +127,11 @@
                     </div>
                 </div>
 
-                <div class="col-12 col-lg-6 p-5 d-flex flex-column align-items-center justify-content-center">
+                <div class="col-12 col-lg-6 p-md-3 p-lg-5 d-flex flex-column align-items-center justify-content-center">
                     <!-- Map and social links -->
                     <div class="row container-fluid">
-                        <div class="col-12">
-                            <p>MAP GOES HERE</p>
+                        <div class="col-12 mb-5">
+                            <div id="map"></div>
                         </div>
                         <div class="col-12 container-fluid d-flex flex-row align-items-center justify-content-around">
                             <a href="{{ facebook }}" target="_blank" rel="noopener noreferrer"
@@ -154,5 +154,44 @@
             {% endif %}
         </div>
     </section>
+
+{% endblock %}
+
+{% block postloadjs %}
+<script>
+
+    // Google maps display
+    function initMap() {
+        const options = {
+            zoom: 14,
+            center: {
+                lat: 51.938492,
+                lng: -0.834284,
+            },
+            disableDefaultUI: true,
+            scaleControl: true,
+            fullscreenControl: true,
+            gestureHandling: "greedy",
+        }
+
+        const map = new google.maps.Map(document.querySelector("#map"), options);
+
+        // Position the marker
+        const marker = new google.maps.Marker({
+            position: {
+                lat: 51.938492,
+                lng: -0.834284,
+            },
+            map: map,
+        });
+    }
+    
+
+</script>
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6WOP_W1xQOlqbEqTgw5GlBUe3yljlitA&callback=initMap&v=weekly"
+    async>
+</script>
+
 
 {% endblock %}

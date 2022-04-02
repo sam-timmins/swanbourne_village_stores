@@ -35,9 +35,11 @@ class WineCategory(models.Model):
         )
     name = models.CharField(
         max_length=254,
+        unique=True,
         )
     friendly_name = models.CharField(
         max_length=254,
+        unique=True,
     )
 
     def __str__(self):

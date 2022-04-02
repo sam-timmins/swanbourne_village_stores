@@ -92,3 +92,40 @@ class Dishes(models.Model):
         """ Change verbose name and ordering in admin """
         verbose_name_plural = 'Dishes'
         ordering = ['name']
+
+
+class Wines(models.Model):
+    """ Model for wines """
+    category = models.ForeignKey(
+        'WineCategory',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        )
+    name = models.CharField(
+        max_length=254,
+        unique=True,
+        )
+    slug_name = models.SlugField(
+        max_length=254,
+        unique=True,
+    )
+    image = CloudinaryField(
+        'image',
+        default='placeholder',
+        null=True,
+        blank=True,
+        )
+    description = models.TextField()
+    price = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
+    )
+
+    def __str__(self):
+        return f'{self.name}'
+
+    class Meta:
+        """ Change verbose name and ordering in admin """
+        verbose_name_plural = 'Wines'
+        ordering = ['name']

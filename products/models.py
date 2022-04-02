@@ -129,3 +129,38 @@ class Wines(models.Model):
         """ Change verbose name and ordering in admin """
         verbose_name_plural = 'Wines'
         ordering = ['name']
+
+
+class Bundle(models.Model):
+    """ Model for the bundles """
+    dish = models.ForeignKey(
+        'Dishes',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        )
+    wine = models.ForeignKey(
+        'Wines',
+        null=True,
+        blank=True,
+        on_delete=models.SET_NULL,
+        )
+    name = models.CharField(
+        max_length=254,
+        unique=True,
+        )
+    slug_name = models.SlugField(
+        max_length=254,
+        unique=True,
+    )
+    price = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
+    )
+
+    def __str__(self):
+        return f'{self.name}'
+
+    class Meta:
+        """ Change ordering in admin by name"""
+        ordering = ['name']

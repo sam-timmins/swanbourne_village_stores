@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import DishesCategory, WineCategory, Dishes
+from .models import DishesCategory, WineCategory, Dishes, Wines
 
 
 @admin.register(DishesCategory)
@@ -26,3 +26,12 @@ class DishesAdmin(admin.ModelAdmin):
     list_display = ('name', 'category', 'price', 'status')
     list_filter = ('name', 'category', 'status')
     ordering = ['status', ]
+
+
+@admin.register(Wines)
+class WinesAdmin(admin.ModelAdmin):
+    """ Settings for wines in admin """
+    search_fields = ['name']
+    list_display = ('name', 'category', 'price')
+    list_filter = ('name', 'category')
+    ordering = ['-category', 'name']

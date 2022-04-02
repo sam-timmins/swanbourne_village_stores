@@ -1,11 +1,19 @@
 from django.contrib import admin
 
-from .models import DishesCategory
+from .models import DishesCategory, WineCategory
 
 
 @admin.register(DishesCategory)
 class DishesCategoryAdmin(admin.ModelAdmin):
     """ Settings for dishes categories in admin """
+    search_fields = ['name']
+    list_display = ('name', 'friendly_name')
+    list_filter = ('name', 'friendly_name')
+
+
+@admin.register(WineCategory)
+class WineCategoryAdmin(admin.ModelAdmin):
+    """ Settings for wine categories in admin """
     search_fields = ['name']
     list_display = ('name', 'friendly_name')
     list_filter = ('name', 'friendly_name')

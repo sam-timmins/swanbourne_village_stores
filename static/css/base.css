@@ -128,6 +128,10 @@ body {
     border: 4px solid var(--light-green);
 }
 
+.border-purple {
+    border-color:  var(--purple);
+}
+
 /* 4. Buttons */
 
 .search-btn {
@@ -293,6 +297,17 @@ body {
 
 .authentication-image {
     width: 100%;
+}
+
+/* Pagination */
+.page-link:hover,
+.page-link:focus {
+    background-color: var(--white);
+    border-color: var(--purple);
+}
+
+.page-link:focus {
+    box-shadow: 0 0 8px 2px var(--white);
 }
 
 /*  Media Queries */

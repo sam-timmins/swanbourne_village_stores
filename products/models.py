@@ -1,3 +1,22 @@
 from django.db import models
 
-# Create your models here.
+
+class DishesCategory(models.Model):
+    """Dishes category model"""
+
+    origin = models.CharField(
+        max_length=254,
+        )
+    name = models.CharField(
+        max_length=254,
+        )
+    friendly_name = models.CharField(
+        max_length=254,
+    )
+
+    def __str__(self):
+        return f'{self.name}'
+
+    class Meta:
+        """ Change verbose name in admin """
+        verbose_name_plural = 'Dishes Categories'

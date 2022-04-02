@@ -7,8 +7,8 @@ from .models import DishesCategory, WineCategory, Dishes, Wines, Bundle
 class DishesCategoryAdmin(admin.ModelAdmin):
     """ Settings for dishes categories in admin """
     search_fields = ['name']
-    list_display = ('name', 'friendly_name')
-    list_filter = ('name', 'friendly_name')
+    list_display = ('friendly_name', 'name', 'origin')
+    list_filter = ('name', 'friendly_name', 'origin')
 
 
 @admin.register(WineCategory)

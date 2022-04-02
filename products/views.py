@@ -4,4 +4,12 @@ from django.shortcuts import render
 def products(request):
     """ products view """
 
-    return render(request, 'products/products.html')
+    context = {
+
+    }
+
+    return render(
+        request,
+        'products/products.html',
+        context,
+        )

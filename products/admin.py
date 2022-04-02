@@ -15,8 +15,8 @@ class DishesCategoryAdmin(admin.ModelAdmin):
 class WineCategoryAdmin(admin.ModelAdmin):
     """ Settings for wine categories in admin """
     search_fields = ['name']
-    list_display = ('name', 'friendly_name')
-    list_filter = ('name', 'friendly_name')
+    list_display = ('friendly_name', 'variety', 'origin')
+    list_filter = ('name', 'friendly_name', 'variety', 'origin')
 
 
 @admin.register(Dishes)

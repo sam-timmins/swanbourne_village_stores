@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import DishesCategory, WineCategory, Dishes, Wines
+from .models import DishesCategory, WineCategory, Dishes, Wines, Bundle
 
 
 @admin.register(DishesCategory)
@@ -35,3 +35,12 @@ class WinesAdmin(admin.ModelAdmin):
     list_display = ('name', 'category', 'price')
     list_filter = ('name', 'category')
     ordering = ['-category', 'name']
+
+
+@admin.register(Bundle)
+class BundleAdmin(admin.ModelAdmin):
+    """ Settings for bundles in admin """
+    search_fields = ['name', ]
+    list_display = ('name', 'wine', 'dish')
+    list_filter = ('name', )
+    ordering = ['name', ]

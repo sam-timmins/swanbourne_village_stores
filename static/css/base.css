@@ -299,6 +299,17 @@ body {
     width: 100%;
 }
 
+/* Pagination */
+.page-link:hover,
+.page-link:focus {
+    background-color: var(--white);
+    border-color: var(--purple);
+}
+
+.page-link:focus {
+    box-shadow: 0 0 8px 2px var(--white);
+}
+
 /*  Media Queries */
 
 /* Based on Bootstrap breakpoints - https://getbootstrap.com/docs/5.1/layout/breakpoints/ */

@@ -18,6 +18,7 @@ def products(request):
 
     page_number = request.GET.get('page')
     page_all_products = paginator.get_page(page_number)
+    number_of_pages = 'a' * page_all_products.paginator.num_pages
 
     context = {
         'dishes': dishes,
@@ -25,6 +26,7 @@ def products(request):
         'bundles': bundles,
         'all_products': all_products,
         'page_all_products': page_all_products,
+        'number_of_pages': number_of_pages,
     }
 
     return render(

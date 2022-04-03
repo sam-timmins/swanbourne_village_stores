@@ -144,7 +144,6 @@ def the_works(request):
 
 def product_detail_dishes(request, product_id):
     """ Detailed individual view of a product """
-
     dishes = Dishes.objects.all()
 
     product = get_object_or_404(Dishes, pk=product_id)
@@ -162,6 +161,7 @@ def product_detail_dishes(request, product_id):
 
 def product_details_wines(request, product_id):
     """ Detailed individual view of a wine product """
+    wines = Wines.objects.all()
 
     product = get_object_or_404(Wines, pk=product_id)
 

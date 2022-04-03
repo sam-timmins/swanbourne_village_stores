@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
 
-from .models import Dishes
+from .models import Dishes, Wines
 
 
 def the_menu(request):
@@ -24,5 +24,29 @@ def the_menu(request):
     return render(
         request,
         'products/the-menu.html',
+        context,
+        )
+
+
+def wine_store(request):
+    """ Menu view populating only the wines model with pagination """
+
+    wines = Wines.objects.all()
+
+    paginator = Paginator(wines, 24)
+
+    page_number = request.GET.get('page')
+    page_all_products = paginator.get_page(page_number)
+    number_of_pages = 'a' * page_all_products.paginator.num_pages
+
+    context = {
+        'wines': wines,
+        'page_all_products': page_all_products,
+        'number_of_pages': number_of_pages,
+    }
+
+    return render(
+        request,
+        'products/wine-store.html',
         context,
         )

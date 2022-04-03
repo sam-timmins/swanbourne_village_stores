@@ -8,7 +8,7 @@ from .models import Dishes, Wines, Bundle
 def the_menu(request):
     """ Menu view populating only the dishes model with pagination """
 
-    dishes = Dishes.objects.all()
+    dishes = Dishes.objects.all().order_by('-status')
 
     paginator = Paginator(dishes, 24)
 

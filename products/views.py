@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator
 
-from .models import Dishes, Wines
+from .models import Dishes, Wines, Bundle
 
 
 def the_menu(request):
@@ -101,5 +101,42 @@ def fresh_food(request):
     return render(
         request,
         'products/fresh-food.html',
+        context,
+        )
+
+
+def the_works(request):
+    """
+    Menu view populating only the bundle packages in the bundle
+    model with pagination. Calculates the saving of each field
+    in the bundle model
+    """
+
+    bundle = Bundle.objects.all()
+
+    paginator = Paginator(bundle, 24)
+
+    page_number = request.GET.get('page')
+    page_all_products = paginator.get_page(page_number)
+    number_of_pages = 'a' * page_all_products.paginator.num_pages
+
+    for item in bundle:
+        wine_cost = item.wine.price
+        dish_cost = item.dish.price
+
+        before_cost = wine_cost + dish_cost
+        saving = before_cost - item.price
+
+    context = {
+        'bundle': bundle,
+        'before_cost': before_cost,
+        'saving': saving,
+        'page_all_products': page_all_products,
+        'number_of_pages': number_of_pages,
+    }
+
+    return render(
+        request,
+        'products/the-works.html',
         context,
         )

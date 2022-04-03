@@ -145,10 +145,13 @@ def the_works(request):
 def product_detail_dishes(request, product_id):
     """ Detailed individual view of a product """
 
+    dishes = Dishes.objects.all()
+
     product = get_object_or_404(Dishes, pk=product_id)
 
     context = {
         'product': product,
+        'dishes': dishes,
     }
     return render(
         request,

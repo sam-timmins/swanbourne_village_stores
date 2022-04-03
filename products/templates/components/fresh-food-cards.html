@@ -1,0 +1,30 @@
+{% for product in dishes %}
+<div class="col-12 col-md-6 col-lg-4 my-3 d-flex justify-content-center align-items-center p-md-3 p-lg-5">
+    <a href="#" class="card w-75 background-light-green text-decoration-none" aria-labelledby="{{ product.name }}-card">
+
+        <!-- Default image if none is uploaded -->
+        {% if "placeholder" in product.image.url %}
+            <img class="card-img-top"
+                src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg"
+                alt="Placeholder image for {{ product.name }}">
+        {% else %}
+            <img class="card-img-top" src=" {{ product.image.url }}" alt="Image of {{ product.name }}">
+        {% endif %}
+
+        <div class="card-body">
+                    <h5 class="card-title text-md text-purple text-header my-3 text-center">{{ product.name|title }}
+                    </h5>
+                    <hr class="text-purple">
+                    {% if product.category.origin %}
+                        <p class="card-text text-sm text-purple p-3 m-0">Origin: {{ product.category.origin|upper }}</p>
+                    {% endif %}
+                    <p class="card-text text-sm text-purple p-3 m-0">Price: {{ currency }}{{ product.price }}</p>
+                    
+                    {% if product.status %}
+                        <p class="card-text text-xs background-dark-green text-white p-3 m-0 mt-2 text-uppercase w-100 text-center">Fresh</p>
+                    {% endif %}
+        </div>
+    </a>
+    <span class="sr-only" id="{{ product.name }}-card">A link to the detailed description of {{ product.name }} and purchasing options</span>
+</div>
+{% endfor %}

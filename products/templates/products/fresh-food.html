@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Products -->
+<section class="row container-fluid background-purple m-0">
+
+    <!-- Product header -->
+    {% include 'components/fresh-food-header.html' %}
+
+    <!-- Product cards -->
+    {% include 'components/fresh-food-cards.html' %}
+
+    <!-- Pagination -->
+    {% include 'components/pagination.html' %}
+
+</section>
+
+{% endblock %}
+
+{% block postloadjs %}
+
+
+{% endblock %}

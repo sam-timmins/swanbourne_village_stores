@@ -1,8 +1,7 @@
-from itertools import chain
 from django.shortcuts import render
 from django.core.paginator import Paginator
 
-from .models import Dishes, Wines, Bundle
+from .models import Dishes
 
 
 def the_menu(request):

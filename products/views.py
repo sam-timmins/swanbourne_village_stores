@@ -6,15 +6,11 @@ from .models import Dishes, Wines, Bundle
 
 
 def the_menu(request):
-    """ Products view with pagination"""
+    """ Menu view populating only the dishes model with pagination """
 
     dishes = Dishes.objects.all()
-    wines = Wines.objects.all()
-    bundles = Bundle.objects.all()
 
-    all_products = list(chain(dishes, wines))
-
-    paginator = Paginator(all_products, 24)
+    paginator = Paginator(dishes, 24)
 
     page_number = request.GET.get('page')
     page_all_products = paginator.get_page(page_number)
@@ -22,9 +18,6 @@ def the_menu(request):
 
     context = {
         'dishes': dishes,
-        'wines': wines,
-        'bundles': bundles,
-        'all_products': all_products,
         'page_all_products': page_all_products,
         'number_of_pages': number_of_pages,
     }

@@ -310,6 +310,21 @@ body {
     box-shadow: 0 0 8px 2px var(--white);
 }
 
+/* Products */
+
+.accordion-button {
+    border: 1px solid var(--purple);
+}
+
+.accordion-button:focus,
+.accordion-button:not(.collapsed) {
+    background-color: var(--dark-green) !important;
+    color: var(--white) !important;
+    box-shadow: 0 0 5px 0 var(--purple);
+    border-color: var(--light-green);
+}
+
+
 /*  Media Queries */
 
 /* Based on Bootstrap breakpoints - https://getbootstrap.com/docs/5.1/layout/breakpoints/ */

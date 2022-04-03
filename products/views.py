@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.core.paginator import Paginator
 
 from .models import Dishes, Wines, Bundle
@@ -138,5 +138,20 @@ def the_works(request):
     return render(
         request,
         'products/the-works.html',
+        context,
+        )
+
+
+def product_detail_dishes(request, product_id):
+    """ Detailed individual view of a product """
+
+    product = get_object_or_404(Dishes, pk=product_id)
+
+    context = {
+        'product': product,
+    }
+    return render(
+        request,
+        'products/product-details.html',
         context,
         )

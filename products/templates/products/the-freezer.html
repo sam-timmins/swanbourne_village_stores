@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Products -->
+<section class="row container-fluid background-purple m-0">
+
+    <!-- Product header -->
+    {% include 'components/the-freezer-header.html' %}
+
+    <!-- Product cards -->
+    {% include 'components/the-freezer-cards.html' %}
+
+    <!-- Pagination -->
+    {% include 'components/pagination.html' %}
+
+</section>
+
+{% endblock %}
+
+{% block postloadjs %}
+
+
+{% endblock %}

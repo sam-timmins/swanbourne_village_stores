@@ -1,4 +1,26 @@
-{{product.name}}
-{{product.price}}
-{{product.description}}
-{{product.category.origin}}
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- Product Details -->
+<section class="row container-fluid background-purple m-0">
+
+    <!-- Bundle -->
+    {% include 'components/bundle-details.html' %}
+
+    <!-- Wine -->
+    {% include 'components/wine-details.html' %}
+
+    <!-- Dish -->
+    {% include 'components/dish-details.html' %}
+
+
+</section>
+
+{% endblock %}
+
+{% block postloadjs %}
+
+
+{% endblock %}

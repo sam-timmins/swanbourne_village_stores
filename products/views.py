@@ -155,3 +155,18 @@ def product_detail_dishes(request, product_id):
         'products/product-details.html',
         context,
         )
+
+
+def product_details_wines(request, product_id):
+    """ Detailed individual view of a wine product """
+
+    product = get_object_or_404(Wines, pk=product_id)
+
+    context = {
+        'product': product,
+    }
+    return render(
+        request,
+        'products/product-details.html',
+        context,
+        )

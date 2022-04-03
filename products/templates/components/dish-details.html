@@ -1,3 +1,93 @@
 {% if product in dishes %}
-    <p class="text-white">it's here... {{ product.name }}</p>
+    <div class="col-12 col-md-6 col-lg-4 p-0">
+        {% if "placeholder" in product.image.url %}
+            <img class="card-img-top"
+                src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg"
+                alt="Placeholder image for {{ product.name }}">
+        {% else %}
+            <img class="card-img-top" src=" {{ product.image.url }}" alt="Image of {{ product.name }}">
+        {% endif %}
+    </div>
+
+
+    <div class="col-12 col-md-6 col-lg-4 d-flex flex-column justify-content-between align-items-start ps-lg-5">
+        <p class="text-md text-header text-purple p-3 m-0 align-self-center align-self-lg-start">
+            {{ product.name | title }}
+        </p>
+
+        <p class="text-sm text-purple p-3 m-0">
+            <i class="fa-solid fa-money-bill-wave me-3 text-sm text-purple"></i>
+            {{ currency }}{{ product.price }}
+        </p>
+    </div>
+
+    <div class="col-12 my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-8 m-auto">
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed text-sm text-purple background-light-green"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
+                                    aria-expanded="false" aria-controls="flush-collapseOne">
+                                    <i class="fa-solid fa-circle-info me-3 text-sm"></i>
+                                    Description
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body background-purple text-white">
+                                    <p class="text-sm">{{ product.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button collapsed text-sm text-purple background-light-green"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
+                                    aria-expanded="false" aria-controls="flush-collapseTwo">
+                                    <i class="fa-solid fa-circle-question me-3 text-sm"></i>
+                                    Fresh or Frozen
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body background-purple text-white">
+                                    {% if product.status %}
+                                        <p class="card-text text-sm p-3 m-0 mt-2">
+                                            This dish is fresh and ready for warming and enjoying
+                                        </p>
+                                    {% else %}
+                                        <p class="card-text text-sm p-3 m-0 mt-2">
+                                            This dish is frozen for your convenience
+                                        </p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed text-sm text-purple background-light-green"
+                                    type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
+                                    aria-expanded="false" aria-controls="flush-collapseThree">
+                                    <i class="fa-solid fa-earth-europe me-3 text-sm"></i>
+                                    Origin
+                                </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse"
+                                aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body background-purple text-white">
+                                    <p class="text-sm">{{ product.category.origin | upper }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endif %}

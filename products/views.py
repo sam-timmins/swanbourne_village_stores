@@ -174,11 +174,13 @@ def product_details_wines(request, product_id):
 
 def product_details_bundles(request, product_id):
     """ Detailed individual view of a wine product """
+    bundle = Bundle.objects.all()
 
     product = get_object_or_404(Bundle, pk=product_id)
 
     context = {
         'product': product,
+        'bundle': bundle,
     }
     return render(
         request,

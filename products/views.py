@@ -167,6 +167,7 @@ def product_details_wines(request, product_id):
 
     context = {
         'product': product,
+        'wines': wines,
     }
     return render(
         request,

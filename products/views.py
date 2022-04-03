@@ -5,7 +5,7 @@ from django.core.paginator import Paginator
 from .models import Dishes, Wines, Bundle
 
 
-def products(request):
+def the_menu(request):
     """ Products view with pagination"""
 
     dishes = Dishes.objects.all()
@@ -31,6 +31,6 @@ def products(request):
 
     return render(
         request,
-        'products/products.html',
+        'products/the-menu.html',
         context,
         )

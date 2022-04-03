@@ -1,6 +1,6 @@
 {% for product in dishes %}
 <div class="col-12 col-md-6 col-lg-4 my-3 d-flex justify-content-center align-items-center p-md-3 p-lg-5">
-    <a href="#" class="card w-75 background-light-green text-decoration-none" aria-labelledby="{{ product.name }}-card">
+    <a href="{% url 'product_detail_dishes' product.id %}" class="card w-75 background-light-green text-decoration-none" aria-labelledby="{{ product.name }}-card">
 
         <!-- Default image if none is uploaded -->
         {% if "placeholder" in product.image.url %}

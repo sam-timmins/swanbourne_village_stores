@@ -4,7 +4,9 @@
 {% block content %}
 
 <!-- Product Details -->
-<section class="row container m-auto p-0 d-flex justify-content-center align-items-center" >
+<section class="row container-fluid m-0 p-5 d-flex flex-column flex-md-row">
+    <div class="col-12 col-lg-10 col-xl-8 m-auto">
+        <div class="row">
 
     <!-- Bundle -->
     {% include 'components/bundle-details.html' %}
@@ -15,7 +17,8 @@
     <!-- Dish -->
     {% include 'components/dish-details.html' %}
 
-
+        </div>
+    </div>
 </section>
 
 {% endblock %}

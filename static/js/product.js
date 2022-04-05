@@ -17,6 +17,10 @@ window.onload = function () {
             decreaseCounterRef.style.display = 'flex'
         }
 
+        if (quantity > 24) {
+            increaseCounterRef.style.display = 'none'
+        }
+
     };
 
     decreaseCounter = () => {
@@ -28,6 +32,10 @@ window.onload = function () {
 
         if (quantity == 0) {
             decreaseCounterRef.style.display = 'none'
+        }
+
+        if (quantity < 26) {
+            increaseCounterRef.style.display = 'flex'
         }
 
     };

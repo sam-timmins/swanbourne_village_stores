@@ -6,7 +6,7 @@ const itemQuantityRef = document.querySelector(".item-quantity");
 
 window.onload = function () {
 
-    increaseCounter = () => {
+    increaseCounterRef.addEventListener('click', () => {
 
         let quantity = itemQuantityRef.value
 
@@ -16,14 +16,14 @@ window.onload = function () {
         if (quantity >= 1) {
             decreaseCounterRef.style.display = 'flex'
         }
-
+        
         if (quantity > 24) {
             increaseCounterRef.style.display = 'none'
         }
 
-    };
+    });
 
-    decreaseCounter = () => {
+    decreaseCounterRef.addEventListener('click', () => {
 
         let quantity = itemQuantityRef.value
 
@@ -33,13 +33,11 @@ window.onload = function () {
         if (quantity == 0) {
             decreaseCounterRef.style.display = 'none'
         }
-
+        
         if (quantity < 26) {
             increaseCounterRef.style.display = 'flex'
         }
 
-    };
+    });
 
-    increaseCounterRef.addEventListener('click', increaseCounter)
-    decreaseCounterRef.addEventListener('click', decreaseCounter)
 };

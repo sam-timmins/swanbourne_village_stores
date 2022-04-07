@@ -201,6 +201,8 @@ The outcome is calculated by combining the scores from the *Importance* and *Fea
 
 [Product List](readme/docs/wireframes/products.png "Products")
 
+[Product Description](readme/docs/wireframes/product-description.png "Product Description")
+
 [Contact](readme/docs/wireframes/contact.png "Contact")
 
 [Authentication](readme/docs/wireframes/home-page.png "Authentication")

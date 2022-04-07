@@ -31,7 +31,7 @@
                     </span>
                     <ul class="dropdown-menu m-auto p-0 mb-3 rounded-0">
                         <li>
-                            <a class="dropdown-item text-sm text-dark-green px-5 text-center" href="#" aria-labelledby="navbar-fresh-food">
+                            <a class="dropdown-item text-sm text-dark-green px-5 text-center" href="{% url 'fresh_food' %}" aria-labelledby="navbar-fresh-food">
                                 Fresh Food
                             </a>
                             <span id="navbar-fresh-food" class="sr-only">
@@ -44,7 +44,7 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item text-sm text-dark-green px-5 text-center" href="#" aria-labelledby="navbar-wine-store">
+                            <a class="dropdown-item text-sm text-dark-green px-5 text-center" href="{% url 'wine_store' %}" aria-labelledby="navbar-wine-store">
                                 Wine Store
                             </a>
                             <span id="navbar-wine-store" class="sr-only">
@@ -57,11 +57,24 @@
                         </li>
 
                         <li>
-                            <a class="dropdown-item text-sm text-dark-green px-5 text-center" href="#" aria-labelledby="navbar-the-freezer">
+                            <a class="dropdown-item text-sm text-dark-green px-5 text-center" href="{% url 'the_freezer' %}" aria-labelledby="navbar-the-freezer">
                                 The Freezer
                             </a>
                             <span id="navbar-the-freezer" class="sr-only">
                                 A link with green text and white background that navigates to the products page in the same tab, with only frozen food displayed
+                            </span>
+                        </li>
+
+                        <li>
+                            <hr class="dropdown-divider m-auto w-50">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item text-sm text-dark-green px-5 text-center" href="{% url 'the_works' %}" aria-labelledby="navbar-the-works">
+                                The Works
+                            </a>
+                            <span id="navbar-the-works" class="sr-only">
+                                A link with green text and white background that navigates to the products page in the same tab, with only bundle products are displayed
                             </span>
                         </li>
 

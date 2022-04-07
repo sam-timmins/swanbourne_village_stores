@@ -153,6 +153,11 @@ body {
     color: var(--white);
 }
 
+.btn-white {
+    background-color: var(--white);
+    color: var(--purple);
+}
+
 .btn-light-green {
     background-color: var(--white);
     color: var(--purple);
@@ -162,6 +167,15 @@ body {
 .btn-purple:focus {
     color: var(--purple);
     background-color: var(--white);
+    box-shadow: 0px 0px 5px 2px var(--purple);
+    transition: .8s;
+}
+
+.btn-white:hover,
+.btn-white:focus {
+    color: var(--white);
+    background-color: var(--purple);
+    box-shadow: 0px 0px 5px 2px var(--white);
     transition: .8s;
 }
 
@@ -174,6 +188,19 @@ body {
 
 
 /* 5. Forms */
+
+/* Remove Counters on number inputs (W3 School) */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
 
 .form-control-border {
     border: 1px solid var(--dark-green);
@@ -308,6 +335,20 @@ body {
 
 .page-link:focus {
     box-shadow: 0 0 8px 2px var(--white);
+}
+
+/* Products */
+
+.accordion-button {
+    border: 1px solid var(--purple);
+}
+
+.accordion-button:focus,
+.accordion-button:not(.collapsed) {
+    background-color: var(--dark-green) !important;
+    color: var(--white) !important;
+    box-shadow: 0 0 5px 0 var(--purple);
+    border-color: var(--light-green);
 }
 
 /*  Media Queries */

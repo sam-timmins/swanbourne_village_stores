@@ -351,10 +351,6 @@ input[type=number] {
     border-color: var(--light-green);
 }
 
-.product-detail-card {
-    width: 70%;
-}
-
 /*  Media Queries */
 
 /* Based on Bootstrap breakpoints - https://getbootstrap.com/docs/5.1/layout/breakpoints/ */

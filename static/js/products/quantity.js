@@ -6,8 +6,8 @@ window.onload = function () {
     const quantityHelperRef = document.querySelector(".quantity-helper");
     const submitQuantityRef = document.querySelector(".submit-quantity");
 
-    const lowestQuantity = 1
-    const highestQuantity = 25  
+    const lowestQuantity = 1;
+    const highestQuantity = 25  ;
 
     /**
      * Hides the increase and the submit button and shows helper text if the
@@ -16,18 +16,18 @@ window.onload = function () {
      */
     increaseCounterRef.addEventListener('click', () => {
 
-        let quantity = itemQuantityRef.value
+        let quantity = itemQuantityRef.value;
         quantity++;
         itemQuantityRef.value = quantity;
 
         if (quantity >= lowestQuantity) {
-            decreaseCounterRef.style.setProperty("display", "flex", "important")
+            decreaseCounterRef.style.setProperty("display", "flex", "important");
         }
         
         if (quantity >= highestQuantity) {
-            increaseCounterRef.style.display = 'none'
-            submitQuantityRef.style.opacity = "0"
-            quantityHelperRef.style.setProperty("display", "inline", "important")
+            increaseCounterRef.style.display = 'none';
+            submitQuantityRef.style.opacity = "0";
+            quantityHelperRef.style.setProperty("display", "inline", "important");
         }
     });
 
@@ -38,18 +38,18 @@ window.onload = function () {
      */
     decreaseCounterRef.addEventListener('click', () => {
 
-        let quantity = itemQuantityRef.value
+        let quantity = itemQuantityRef.value;
         quantity--;
         itemQuantityRef.value = quantity;
 
         if (quantity <= lowestQuantity) {
-            decreaseCounterRef.style.display = 'none'
+            decreaseCounterRef.style.display = 'none';
         }
 
         if (quantity <= highestQuantity) {
-            increaseCounterRef.style.display = 'flex'
-            quantityHelperRef.style.setProperty("display", "none", "important")
-            submitQuantityRef.style.opacity = "1"
+            increaseCounterRef.style.display = 'flex';
+            quantityHelperRef.style.setProperty("display", "none", "important");
+            submitQuantityRef.style.opacity = "1";
         }
     });
 

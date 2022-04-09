@@ -10,7 +10,7 @@
             scaleControl: true,
             fullscreenControl: true,
             gestureHandling: "none",
-        }
+        };
 
         const map = new google.maps.Map(document.querySelector("#map"), options);
 

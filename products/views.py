@@ -1,11 +1,16 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.core.paginator import Paginator
+from django.db.models import Q
 
 from .models import Dishes, Wines, Bundle
 
 
 def the_menu(request):
-    """ Menu view populating only the dishes model with pagination """
+    """ 
+    Menu view populating only the dishes model with pagination.
+    Search bar queries the the dishes model based on the dish
+    name or description
+    """
 
     dishes = Dishes.objects.all().order_by('-status')
 
@@ -15,10 +20,22 @@ def the_menu(request):
     page_all_products = paginator.get_page(page_number)
     number_of_pages = 'a' * page_all_products.paginator.num_pages
 
+    query = None
+
+    if request.GET:
+        if 'main-search-query' in request.GET:
+            query = request.GET['main-search-query']
+            if not query:
+                return redirect(reverse('the_menu'))
+
+            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            dishes = dishes.filter(queries)
+
     context = {
         'dishes': dishes,
         'page_all_products': page_all_products,
         'number_of_pages': number_of_pages,
+        'search': query,
     }
 
     return render(

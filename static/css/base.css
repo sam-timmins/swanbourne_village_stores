@@ -140,6 +140,12 @@ body {
     border: 1px solid var(--dark-green);
 }
 
+.product-search-btn {
+    background-color: var(--light-green);
+    color: var(--dark-green);
+    border: 1px solid var(--light-green);
+}
+
 .btn-general {
     width: 15rem;
 }

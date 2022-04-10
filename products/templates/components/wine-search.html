@@ -1,0 +1,61 @@
+<div class="row mb-5 mb-lg-0">
+    <div class="col-12 col-lg-8 mx-auto d-flex flex-column flex-lg-row align-items-center justify-content-center">
+
+        <div class="dropdown align-items-center me-3">
+
+            <button class="form-control text-sm rounded-0 p-0" type="button" id="wine-search-dropdown"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="p-3">Popular Searches</span>
+                <i class="fa-solid fa-angle-down h-100 btn rounded-0 text-sm product-search-btn p-2 px-lg-3"></i>
+            </button>
+
+
+
+            <ul class="dropdown-menu p-0" aria-labelledby="wine-search-dropdown">
+                <li><a href="{% url 'wine_store' %}?sort=price&direction=asc"
+                        class="dropdown-item text-xs text-dark-green px-5">By Price (low to high)</a></li>
+                <li><a href="{% url 'wine_store' %}?sort=price&direction=desc"
+                        class="dropdown-item text-xs text-dark-green px-5">By Price (high to low)</a></li>
+                <li><a href="{% url 'wine_store' %}?sort=category__origin&direction=asc"
+                        class="dropdown-item text-xs text-dark-green px-5">By Origin</a></li>
+                <li><a href="{% url 'wine_store' %}?sort=category__variety&direction=asc"
+                        class="dropdown-item text-xs text-dark-green px-5">By Colour (A to Z)</a></li>
+                <li><a href="{% url 'wine_store' %}?sort=category__variety&direction=desc"
+                        class="dropdown-item text-xs text-dark-green px-5">By Colour (Z to A)</a></li>
+            </ul>
+
+        </div>
+
+        <p class="text-white mt-3 m-lg-0">or</p>
+
+        <form method="GET" action="{% url 'wine_store' %}" class="p-3">
+            <div class="input-group align-items-center">
+                <select name="wine-category-query" class="form-control text-sm rounded-0">
+                    <option value="reset" hidden><a href="{% url 'wine_store' %}"
+                            class="dropdown-item text-xs text-white px-5">Search by Variety</a></option>
+                    {% for variety in ordered_varieties %}
+                    <option value="{{ variety }}" class="dropdown-item text-xs text-white px-5">{{ variety }}</option>
+                    {% endfor %}
+                </select>
+                <div class="input-group-append">
+                    <button class="form-control btn rounded-0 text-sm product-search-btn" type="submit" aria-label="Search">
+                        <span class="icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="col-12 text-center mb-3">
+        <a href="{% url 'wine_store' %}" class="text-decoration-none text-light-green">Reset Search</a>
+    </div>
+
+    {% if query %}
+    <p class="text-white text-center my-5">
+        <a href="{% url 'wine_store' %}" class="text-decoration-none text-light-green">The Wine Store |</a> 
+        Your search for {{ query }} returned {{ wines|length }} products.
+    </p>
+
+    {% endif %}
+</div>

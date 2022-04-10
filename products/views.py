@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.core.paginator import Paginator
 from django.db.models import Q
+from django.db.models.functions import Lower
 
-from .models import Dishes, Wines, Bundle
+from .models import Dishes, Wines, Bundle, WineCategory
 
 
 def the_menu(request):
-    """ 
+    """
     Menu view populating only the dishes model with pagination.
     Search bar queries the the dishes model based on the dish
     name or description
@@ -49,6 +50,15 @@ def wine_store(request):
     """ Menu view populating only the wines model with pagination """
 
     wines = Wines.objects.all()
+    wine_categories = WineCategory.objects.all()
+
+    varieties = []
+
+    for wine in wine_categories:
+        varieties.append(wine.friendly_name.title())
+
+    varieties = list(dict.fromkeys(varieties))
+    ordered_varieties = sorted(varieties)
 
     paginator = Paginator(wines, 24)
 
@@ -56,10 +66,44 @@ def wine_store(request):
     page_all_products = paginator.get_page(page_number)
     number_of_pages = 'a' * page_all_products.paginator.num_pages
 
+    query = None
+    sort = None
+    direction = None
+
+    if request.GET:
+
+        if 'wine-category-query' in request.GET:
+            query = request.GET['wine-category-query']
+
+            if not query or query == 'reset':
+                return redirect(reverse('wine_store'))
+
+            queries = Q(category__friendly_name__icontains=query)
+
+            wines = wines.filter(queries)
+
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                wines = wines.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            wines = wines.order_by(sortkey)
+
+    current_sorting = f'{sort}_{direction}'
+
     context = {
         'wines': wines,
         'page_all_products': page_all_products,
         'number_of_pages': number_of_pages,
+        'ordered_varieties': ordered_varieties,
+        'current_sorting': current_sorting,
+        'query': query,
     }
 
     return render(

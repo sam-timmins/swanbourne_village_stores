@@ -50,12 +50,11 @@ def wine_store(request):
     """ Menu view populating only the wines model with pagination """
 
     wines = Wines.objects.all()
-    wine_categories = WineCategory.objects.all()
 
     varieties = []
 
-    for wine in wine_categories:
-        varieties.append(wine.friendly_name.title())
+    for wine in wines:
+        varieties.append(wine.category.friendly_name.title())
 
     varieties = list(dict.fromkeys(varieties))
     ordered_varieties = sorted(varieties)

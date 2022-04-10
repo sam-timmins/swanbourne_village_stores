@@ -50,12 +50,11 @@ def wine_store(request):
     """ Menu view populating only the wines model with pagination """
 
     wines = Wines.objects.all()
-    wine_categories = WineCategory.objects.all()
 
     varieties = []
 
-    for wine in wine_categories:
-        varieties.append(wine.friendly_name.title())
+    for wine in wines:
+        varieties.append(wine.category.friendly_name.title())
 
     varieties = list(dict.fromkeys(varieties))
     ordered_varieties = sorted(varieties)
@@ -120,16 +119,58 @@ def the_freezer(request):
 
     dishes = Dishes.objects.all().filter(status=False)
 
+    dish_names = []
+
+    for dish in dishes:
+        dish_names.append(dish.name.title())
+
+    dish_names = list(dict.fromkeys(dish_names))
+    ordered_dish_names = sorted(dish_names)
+
     paginator = Paginator(dishes, 24)
 
     page_number = request.GET.get('page')
     page_all_products = paginator.get_page(page_number)
     number_of_pages = 'a' * page_all_products.paginator.num_pages
 
+    query = None
+    sort = None
+    direction = None
+
+    if request.GET:
+
+        if 'freezer-name-query' in request.GET:
+            query = request.GET['freezer-name-query']
+
+            if not query or query == 'reset':
+                return redirect(reverse('the_freezer'))
+
+            queries = Q(name__icontains=query)
+
+            dishes = dishes.filter(queries)
+
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                dishes = dishes.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            dishes = dishes.order_by(sortkey)
+
+    current_sorting = f'{sort}_{direction}'
+
     context = {
         'dishes': dishes,
         'page_all_products': page_all_products,
         'number_of_pages': number_of_pages,
+        'ordered_dish_names': ordered_dish_names,
+        'current_sorting': current_sorting,
+        'query': query,
     }
 
     return render(
@@ -175,6 +216,14 @@ def the_works(request):
 
     bundle = Bundle.objects.all()
 
+    bundle_names = []
+
+    for item in bundle:
+        bundle_names.append(item.name.title())
+
+    bundle_names = list(dict.fromkeys(bundle_names))
+    ordered_bundle_names = sorted(bundle_names)
+
     paginator = Paginator(bundle, 24)
 
     page_number = request.GET.get('page')
@@ -188,12 +237,46 @@ def the_works(request):
         before_cost = wine_cost + dish_cost
         saving = before_cost - item.price
 
+    query = None
+    sort = None
+    direction = None
+
+    if request.GET:
+
+        if 'the-works-query' in request.GET:
+            query = request.GET['the-works-query']
+
+            if not query or query == 'reset':
+                return redirect(reverse('the_works'))
+
+            queries = Q(name__icontains=query)
+
+            bundle = bundle.filter(queries)
+
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                bundle = bundle.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            bundle = bundle.order_by(sortkey)
+
+    current_sorting = f'{sort}_{direction}'
+
     context = {
         'bundle': bundle,
         'before_cost': before_cost,
         'saving': saving,
         'page_all_products': page_all_products,
         'number_of_pages': number_of_pages,
+        'ordered_bundle_names': ordered_bundle_names,
+        'current_sorting': current_sorting,
+        'query': query,
     }
 
     return render(

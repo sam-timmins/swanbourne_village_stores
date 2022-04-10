@@ -50,7 +50,7 @@
     {% if query %}
     <p class="text-white text-center my-5">
         <a href="{% url 'the_freezer' %}" class="text-decoration-none text-light-green">The Freezer |</a> 
-        Your search for {{ query }} returned {{ dishes|length }} products.
+        Your search for {{ query }} returned {{ dishes|length }} product{% if dishes|length > 1 %}s{% endif %}.
     </p>
 
     {% endif %}

@@ -13,7 +13,17 @@ def the_menu(request):
     name or description
     """
 
-    dishes = Dishes.objects.all().order_by('-status')
+    dishes = Dishes.objects.all().order_by('-status')#
+
+    dishes = Dishes.objects.all().filter(status=True)
+
+    dish_names = []
+
+    for dish in dishes:
+        dish_names.append(dish.name.title())
+
+    dish_names = list(dict.fromkeys(dish_names))
+    ordered_dish_names = sorted(dish_names)
 
     paginator = Paginator(dishes, 24)
 
@@ -22,6 +32,8 @@ def the_menu(request):
     number_of_pages = 'a' * page_all_products.paginator.num_pages
 
     query = None
+    sort = None
+    direction = None
 
     if request.GET:
         if 'main-search-query' in request.GET:
@@ -32,11 +44,39 @@ def the_menu(request):
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             dishes = dishes.filter(queries)
 
+        if 'menu-name-query' in request.GET:
+            query = request.GET['menu-name-query']
+
+            if not query or query == 'reset':
+                return redirect(reverse('the_menu'))
+
+            queries = Q(name__icontains=query)
+
+            dishes = dishes.filter(queries)
+
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                dishes = dishes.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            dishes = dishes.order_by(sortkey)
+
+    current_sorting = f'{sort}_{direction}'
+
     context = {
         'dishes': dishes,
         'page_all_products': page_all_products,
         'number_of_pages': number_of_pages,
         'search': query,
+        'ordered_dish_names': ordered_dish_names,
+        'current_sorting': current_sorting,
+        'query': query,
     }
 
     return render(
@@ -188,16 +228,58 @@ def fresh_food(request):
 
     dishes = Dishes.objects.all().filter(status=True)
 
+    dish_names = []
+
+    for dish in dishes:
+        dish_names.append(dish.name.title())
+
+    dish_names = list(dict.fromkeys(dish_names))
+    ordered_dish_names = sorted(dish_names)
+
     paginator = Paginator(dishes, 24)
 
     page_number = request.GET.get('page')
     page_all_products = paginator.get_page(page_number)
     number_of_pages = 'a' * page_all_products.paginator.num_pages
 
+    query = None
+    sort = None
+    direction = None
+
+    if request.GET:
+
+        if 'fresh-name-query' in request.GET:
+            query = request.GET['fresh-name-query']
+
+            if not query or query == 'reset':
+                return redirect(reverse('the_freezer'))
+
+            queries = Q(name__icontains=query)
+
+            dishes = dishes.filter(queries)
+
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                dishes = dishes.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            dishes = dishes.order_by(sortkey)
+
+    current_sorting = f'{sort}_{direction}'
+
     context = {
         'dishes': dishes,
         'page_all_products': page_all_products,
         'number_of_pages': number_of_pages,
+        'ordered_dish_names': ordered_dish_names,
+        'current_sorting': current_sorting,
+        'query': query,
     }
 
     return render(

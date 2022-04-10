@@ -13,9 +13,7 @@ def the_menu(request):
     name or description
     """
 
-    dishes = Dishes.objects.all().order_by('-status')#
-
-    dishes = Dishes.objects.all().filter(status=True)
+    dishes = Dishes.objects.all().order_by('-status')
 
     dish_names = []
 
@@ -318,6 +316,8 @@ def the_works(request):
 
         before_cost = wine_cost + dish_cost
         saving = before_cost - item.price
+
+        print(before_cost, saving)
 
     query = None
     sort = None

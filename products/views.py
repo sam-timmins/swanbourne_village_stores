@@ -216,6 +216,14 @@ def the_works(request):
 
     bundle = Bundle.objects.all()
 
+    bundle_names = []
+
+    for item in bundle:
+        bundle_names.append(item.name.title())
+
+    bundle_names = list(dict.fromkeys(bundle_names))
+    ordered_bundle_names = sorted(bundle_names)
+
     paginator = Paginator(bundle, 24)
 
     page_number = request.GET.get('page')
@@ -229,12 +237,46 @@ def the_works(request):
         before_cost = wine_cost + dish_cost
         saving = before_cost - item.price
 
+    query = None
+    sort = None
+    direction = None
+
+    if request.GET:
+
+        if 'the-works-query' in request.GET:
+            query = request.GET['the-works-query']
+
+            if not query or query == 'reset':
+                return redirect(reverse('the_works'))
+
+            queries = Q(name__icontains=query)
+
+            bundle = bundle.filter(queries)
+
+        if 'sort' in request.GET:
+            sortkey = request.GET['sort']
+            sort = sortkey
+            if sortkey == 'name':
+                sortkey = 'lower_name'
+                bundle = bundle.annotate(lower_name=Lower('name'))
+
+            if 'direction' in request.GET:
+                direction = request.GET['direction']
+                if direction == 'desc':
+                    sortkey = f'-{sortkey}'
+            bundle = bundle.order_by(sortkey)
+
+    current_sorting = f'{sort}_{direction}'
+
     context = {
         'bundle': bundle,
         'before_cost': before_cost,
         'saving': saving,
         'page_all_products': page_all_products,
         'number_of_pages': number_of_pages,
+        'ordered_bundle_names': ordered_bundle_names,
+        'current_sorting': current_sorting,
+        'query': query,
     }
 
     return render(

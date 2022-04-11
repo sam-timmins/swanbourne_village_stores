@@ -310,15 +310,6 @@ def the_works(request):
     page_all_products = paginator.get_page(page_number)
     number_of_pages = 'a' * page_all_products.paginator.num_pages
 
-    for item in bundle:
-        wine_cost = item.wine.price
-        dish_cost = item.dish.price
-
-        before_cost = wine_cost + dish_cost
-        saving = before_cost - item.price
-
-        print(before_cost, saving)
-
     query = None
     sort = None
     direction = None
@@ -352,8 +343,6 @@ def the_works(request):
 
     context = {
         'bundle': bundle,
-        'before_cost': before_cost,
-        'saving': saving,
         'page_all_products': page_all_products,
         'number_of_pages': number_of_pages,
         'ordered_bundle_names': ordered_bundle_names,

@@ -366,7 +366,7 @@ FROZEN_STATUS = ((0, 'Frozen'), (1, 'Fresh'))
 ## Libraries and Frameworks
 | Libraries / Frameworks | Description | Link |
 |--|--|--|
-
+[django-mathfilters](https://pypi.org/project/django-mathfilters/)
 
 
 ## Tools

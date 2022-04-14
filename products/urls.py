@@ -42,4 +42,9 @@ urlpatterns = [
         views.product_details_bundles,
         name='product_details_bundles'
         ),
+    path(
+        'create_dish/',
+        views.add_product,
+        name='add_product'
+    )
 ]

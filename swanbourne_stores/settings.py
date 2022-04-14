@@ -95,7 +95,7 @@ AUTHENTICATION_BACKENDS = [
 
 SITE_ID = 1
 
-CRISPY_TEMPLATES_PACK = 'bootstrap4'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 WSGI_APPLICATION = 'swanbourne_stores.wsgi.application'
 

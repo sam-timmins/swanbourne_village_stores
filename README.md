@@ -437,6 +437,7 @@ FROZEN_STATUS = ((0, 'Frozen'), (1, 'Fresh'))
 # Credits
 * Code to position the footer at the bottom of the content [radu.link](https://radu.link/make-footer-stay-bottom-page-bootstrap/ "Radu")
 * Code for changing animation of dropdown menus [Evochrome](https://stackoverflow.com/questions/34566382/how-to-change-the-animation-of-the-dropdown-menu-in-bootstrap "Evochrome")
+* Code for slugifying content [gabrieleromanato](https://jsfiddle.net/gabrieleromanato/RkpYy/ "gabrieleromanato")
 
 \
 &nbsp;

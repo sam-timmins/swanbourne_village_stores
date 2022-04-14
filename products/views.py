@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Dishes, Wines, Bundle, WineCategory
-from .forms import DishForm, WineForm
+from .forms import DishForm, WineForm, WorksForm
 
 
 def the_menu(request):
@@ -445,3 +445,22 @@ def create_wine(request):
     }
 
     return render(request, 'products/create-wine.html', context)
+
+
+def create_works(request):
+    """ Add a bundle to the store """
+    if request.method == 'POST':
+        form = WorksForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('create_works'))
+        else:
+            print('error message')
+    else:
+        form = WorksForm()
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'products/create-works.html', context)

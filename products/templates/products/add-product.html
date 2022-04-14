@@ -2,6 +2,8 @@
 
 {% load crispy_forms_tags %}
 
+{% load static %}
+
 {% block content %}
 
 <!-- Fresh food products -->
@@ -12,21 +14,25 @@
         <hr class="text-purple w-75 m-auto">
     </div>
 
-    <form action="{% url 'the_menu' %}" method="POST" class="container col-10 col-md-6 col-lg-4 m-auto my-5 text-purple text-sm" enctype="multipart/form-data">
+    <form action="{% url 'add_product' %}" method="POST" class="container col-10 col-md-6 col-lg-4 m-auto my-5 text-purple text-sm" enctype="multipart/form-data">
         {% csrf_token %}
-        <p class="text-xs text-pruple ps-5 mb-5">
-            * required field
-        </p>
-        {{ form | crispy }}
+            <p class="text-xs text-pruple ps-5 mb-5">
+                * required field
+            </p>
+            {{ form | crispy }}
+
         <div class="mt-5 d-flex flex-row justify-content-around">
-        <button type="submit" class="btn btn-general btn-purple text-sm p-1 rounded-0 submit-quantity">Add Product</button>
-        <a href="{% url 'the_menu' %}" class="btn btn-general btn-white text-sm p-1 rounded-0">Cancel</a>
+            <button type="submit" class="btn btn-general btn-purple text-sm p-1 rounded-0 submit-quantity">Add Product</button>
+            <a href="{% url 'the_menu' %}" class="btn btn-general btn-white text-sm p-1 rounded-0">Cancel</a>
         </div>
     </form>
 
-
-
-
 </section>
+
+{% endblock %}
+
+{% block postloadjs %}
+
+    <script src="{% static 'js/products/form-slug-field.js' %}"></script>
 
 {% endblock %}

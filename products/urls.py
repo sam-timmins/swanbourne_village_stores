@@ -52,4 +52,9 @@ urlpatterns = [
         views.create_wine,
         name='create_wine'
     ),
+    path(
+        'create_works/',
+        views.create_works,
+        name='create_works'
+    ),
 ]

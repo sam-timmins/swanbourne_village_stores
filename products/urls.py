@@ -44,7 +44,7 @@ urlpatterns = [
         ),
     path(
         'create_dish/',
-        views.add_product,
-        name='add_product'
+        views.create_dish,
+        name='create_dish'
     )
 ]

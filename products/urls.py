@@ -46,5 +46,10 @@ urlpatterns = [
         'create_dish/',
         views.create_dish,
         name='create_dish'
-    )
+    ),
+    path(
+        'create_wine/',
+        views.create_wine,
+        name='create_wine'
+    ),
 ]

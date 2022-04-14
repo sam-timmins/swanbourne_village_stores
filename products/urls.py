@@ -46,5 +46,15 @@ urlpatterns = [
         'create_dish/',
         views.create_dish,
         name='create_dish'
-    )
+    ),
+    path(
+        'create_wine/',
+        views.create_wine,
+        name='create_wine'
+    ),
+    path(
+        'create_works/',
+        views.create_works,
+        name='create_works'
+    ),
 ]

@@ -4,7 +4,7 @@ from django.db.models import Q
 from django.db.models.functions import Lower
 
 from .models import Dishes, Wines, Bundle, WineCategory
-from .forms import DishForm
+from .forms import DishForm, WineForm, WorksForm
 
 
 def the_menu(request):
@@ -410,7 +410,7 @@ def product_details_bundles(request, product_id):
 
 
 def create_dish(request):
-    """ Add a disht to the store """
+    """ Add a dish to the store """
     if request.method == 'POST':
         form = DishForm(request.POST, request.FILES)
         if form.is_valid():
@@ -426,3 +426,41 @@ def create_dish(request):
     }
 
     return render(request, 'products/create-dish.html', context)
+
+
+def create_wine(request):
+    """ Add a wine to the store """
+    if request.method == 'POST':
+        form = WineForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('create_wine'))
+        else:
+            print('error message')
+    else:
+        form = WineForm()
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'products/create-wine.html', context)
+
+
+def create_works(request):
+    """ Add a bundle to the store """
+    if request.method == 'POST':
+        form = WorksForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('create_works'))
+        else:
+            print('error message')
+    else:
+        form = WorksForm()
+
+    context = {
+        'form': form,
+    }
+
+    return render(request, 'products/create-works.html', context)

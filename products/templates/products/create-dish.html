@@ -22,8 +22,13 @@
             {{ form | crispy }}
 
         <div class="mt-5 d-flex flex-row justify-content-around">
-            <button type="submit" class="btn btn-general btn-purple text-sm p-1 rounded-0 submit-quantity">Add Product</button>
-            <a href="{% url 'the_menu' %}" class="btn btn-general btn-white text-sm p-1 rounded-0">Cancel</a>
+            <button type="submit" class="btn btn-general btn-purple text-sm p-1 rounded-0 submit-quantity" aria-labelledby="add-product-dishes">Add Product</button>
+            <span id="add-product-dishes" class="sr-only">Purple button with white writing that adds to product to the dishes collection</span>
+
+            
+            <a href="{% url 'the_menu' %}" class="btn btn-general btn-white text-sm p-1 rounded-0" aria-labelledby="add-product-dishes">Cancel</a>
+            <span id="cancel-product-dishes" class="sr-only">White button with purple writing that navigates to the menu products page</span>
+
         </div>
     </form>
 

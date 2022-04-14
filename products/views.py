@@ -411,7 +411,15 @@ def product_details_bundles(request, product_id):
 
 def add_product(request):
     """ Add product to the store """
-    form = DishForm()
+    if request.method == 'POST':
+        form = DishForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('add_product'))
+        else:
+            print('error message')
+    else:
+        form = DishForm()
 
     context = {
         'form': form,

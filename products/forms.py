@@ -31,7 +31,8 @@ class DishForm(forms.ModelForm):
             }
 
             slug_classes = {
-                'class': 'background-light-green text-light-green border-0 text-xs',
+                'class': 'background-light-green text-light-green \
+                    border-0 text-xs',
             }
 
             name_field = {

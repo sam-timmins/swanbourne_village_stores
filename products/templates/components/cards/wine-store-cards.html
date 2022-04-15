@@ -1,6 +1,7 @@
 {% for product in wines %}
 <div class="col-12 col-md-6 col-lg-4 my-3 d-flex justify-content-center align-items-center p-md-3 p-lg-5">
-    <a href="{% url 'product_details_wines' product.id %}" class="card w-75 background-light-green text-decoration-none" aria-labelledby="{{ product.name }}-card">
+    <div class="card w-75 background-light-green">
+    <a href="{% url 'product_details_wines' product.id %}" class="text-decoration-none" aria-labelledby="{{ product.name }}-card">
 
         <!-- Default image if none is uploaded -->
         {% if "placeholder" in product.image.url %}
@@ -16,11 +17,21 @@
             <hr class="text-purple">
             {% if product.category.origin %}
                 <p class="card-text text-sm text-purple p-3 m-0">Origin: {{ product.category.origin|upper }}</p>
+            {% else %}
+                <p class="card-text text-sm text-purple p-3 m-0">Origin: Unknown</p>
             {% endif %}
             <p class="card-text text-sm text-purple p-3 m-0">Variety: {{ product.category.variety|title }}</p>
             <p class="card-text text-sm text-purple p-3 m-0">Price: {{ currency }}{{ product.price }}</p>
         </div>
     </a>
     <span class="sr-only" id="{{ product.name }}-card">A link to the detailed description of {{ product.name }} and purchasing options</span>
+
+        <!-- Admin buttons for delete and edit -->
+        {% include 'components/admin-buttons/admin-buttons.html' %}
+
+        <!-- Modal for delete -->
+        {% include 'components/modals/delete-wine-modal.html' %}
+    
+    </div>
 </div>
 {% endfor %}

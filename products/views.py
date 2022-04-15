@@ -467,8 +467,16 @@ def create_works(request):
 
 
 def delete__dish_product(request, product_id):
-    """Delete product"""
+    """Delete dish product"""
     product = get_object_or_404(Dishes, pk=product_id)
 
     product.delete()
     return redirect(reverse('the_menu'))
+
+
+def delete__wine_product(request, product_id):
+    """Delete wine product"""
+    product = get_object_or_404(Wines, pk=product_id)
+
+    product.delete()
+    return redirect(reverse('wine_store'))

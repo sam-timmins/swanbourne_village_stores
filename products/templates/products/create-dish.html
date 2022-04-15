@@ -38,6 +38,7 @@
 
 {% block postloadjs %}
 
-    <script src="{% static 'js/products/form-slug-field.js' %}"></script>
+    {{ block.super }}
+        <script src="{% static 'js/products/form-slug-field.js' %}"></script>
 
 {% endblock %}

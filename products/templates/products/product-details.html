@@ -25,6 +25,7 @@
 
 {% block postloadjs %}
 
-    <script src="{% static 'js/products/quantity.js' %}"></script>
+    {{ block.super }}
+        <script src="{% static 'js/products/quantity.js' %}"></script>
 
 {% endblock %}

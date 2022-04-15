@@ -62,4 +62,9 @@ urlpatterns = [
         views.delete__dish_product,
         name='delete__dish_product'
     ),
+        path(
+        'delete/wine/<int:product_id>',
+        views.delete__wine_product,
+        name='delete__wine_product'
+    ),
 ]

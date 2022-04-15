@@ -1,6 +1,6 @@
 const copyrightYearRef = document.querySelector("#copyright-year");
 
-window.onload = function () {
+
   // Auto increment of the year in footer
   const getFullYear = () =>
     (copyrightYearRef.innerHTML = new Date().getFullYear());
@@ -18,4 +18,9 @@ window.onload = function () {
     $(this).find(".dropdown-menu").first().stop(true, true).slideUp();
   });
 
-};
+
+  // Show the toast
+  $(document).ready(function() {
+    $(".toast").toast('show');
+  });
+

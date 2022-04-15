@@ -2,7 +2,7 @@
 
 {% for product in bundle %}
 <div class="col-12 col-md-6 col-lg-4 my-3 d-flex justify-content-center align-items-center p-md-3 p-lg-5">
-    <a href="{% url 'product_details_bundles' product.id %}" class="card w-75 background-light-green text-decoration-none" aria-labelledby="{{ product.name }}-card">
+    <a href="{% url 'product_details_bundles' product.id %}" class="card w-75 background-light-green text-decoration-none" aria-labelledby="{{ product.slug_name }}-card">
         <img class="card-img-top"
             src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg"
             alt="Placeholder image for {{ product.name }}">
@@ -23,6 +23,6 @@
 
         </div>
     </a>
-    <span class="sr-only" id="{{ product.name }}-card">A link to the detailed description of {{ product.name }} and purchasing options</span>
+    <span class="sr-only" id="{{ product.slug_name }}-card">A link to the detailed description of {{ product.name }} and purchasing options</span>
 </div>
 {% endfor %}

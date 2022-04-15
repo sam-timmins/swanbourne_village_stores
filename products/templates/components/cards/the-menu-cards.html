@@ -1,7 +1,7 @@
 {% for product in dishes %}
 <div class="col-12 col-md-6 col-lg-4 my-3 d-flex justify-content-center align-items-center p-md-3 p-lg-5">
     <div class="card w-75 background-light-green">
-        <a href="{% url 'product_detail_dishes' product.id %}" class="text-decoration-none" aria-labelledby="{{ product.name }}-card">
+        <a href="{% url 'product_detail_dishes' product.id %}" class="text-decoration-none" aria-labelledby="{{ product.slug_name }}-card">
 
             <!-- Default image if none is uploaded -->
             {% if "placeholder" in product.image.url %}
@@ -30,7 +30,7 @@
                         {% endif %}
             </div>
         </a>
-        <span class="sr-only" id="{{ product.name }}-card">A link to the detailed description of {{ product.name }} and purchasing options</span>
+        <span class="sr-only" id="{{ product.slug_name }}-card">A link to the detailed description of {{ product.name }} and purchasing options</span>
         <!-- Admin buttons for delete and edit -->
         {% include 'components/admin-buttons/admin-buttons.html' %}
 

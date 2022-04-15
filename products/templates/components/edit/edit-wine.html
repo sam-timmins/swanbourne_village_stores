@@ -18,12 +18,12 @@
                 {{ form | crispy }}
 
             <div class="mt-5 d-flex flex-row justify-content-around">
-                <button type="submit" class="btn btn-general btn-purple text-sm p-1 rounded-0 submit-quantity" aria-labelledby="edit-product-dishes">Update</button>
-                <span id="edit-product-dishes" class="sr-only">Purple button with white writing that updates the changes to product in the wines collection</span>
+                <button type="submit" class="btn btn-general btn-purple text-sm p-1 rounded-0 submit-quantity" aria-labelledby="edit-product-wines">Update</button>
+                <span id="edit-product-wines" class="sr-only">Purple button with white writing that updates the changes to product in the wines collection</span>
 
                 
-                <a href="{% url 'the_menu' %}" class="btn btn-general btn-white text-sm p-1 rounded-0" aria-labelledby="cancel-edit-product-dishes">Cancel</a>
-                <span id="cancel-edit-product-dishes" class="sr-only">White button with purple writing that navigates to the wine store page</span>
+                <a href="{% url 'wine_store' %}" class="btn btn-general btn-white text-sm p-1 rounded-0" aria-labelledby="cancel-edit-product-wines">Cancel</a>
+                <span id="cancel-edit-product-wines" class="sr-only">White button with purple writing that navigates to the wine store page</span>
 
             </div>
         </form>

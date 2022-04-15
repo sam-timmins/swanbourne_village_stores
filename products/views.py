@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.core.paginator import Paginator
 from django.db.models import Q
 from django.db.models.functions import Lower
+from django.contrib.auth.decorators import login_required
 
 from .models import Dishes, Wines, Bundle, WineCategory
 from .forms import DishForm, WineForm, WorksForm
@@ -466,24 +467,36 @@ def create_works(request):
     return render(request, 'products/create-works.html', context)
 
 
+@login_required
 def delete__dish_product(request, product_id):
     """Delete dish product"""
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
     product = get_object_or_404(Dishes, pk=product_id)
 
     product.delete()
     return redirect(reverse('the_menu'))
 
 
+@login_required
 def delete__wine_product(request, product_id):
     """Delete wine product"""
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
     product = get_object_or_404(Wines, pk=product_id)
 
     product.delete()
     return redirect(reverse('wine_store'))
 
 
+@login_required
 def delete__works_product(request, product_id):
     """Delete works combination product"""
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
     product = get_object_or_404(Bundle, pk=product_id)
 
     product.delete()

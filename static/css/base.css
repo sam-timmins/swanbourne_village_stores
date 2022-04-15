@@ -361,6 +361,16 @@ input[type=number] {
     border-color: var(--light-green);
 }
 
+/* Toasts */
+
+.message-container {
+    position: fixed;
+    top: 8rem;
+    right: 1rem;
+    z-index: 10;
+}
+
+
 /*  Media Queries */
 
 /* Based on Bootstrap breakpoints - https://getbootstrap.com/docs/5.1/layout/breakpoints/ */

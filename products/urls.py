@@ -82,4 +82,9 @@ urlpatterns = [
         views.edit_wine,
         name='edit_wine'
         ),
+    path(
+        'edit-works/<int:product_id>',
+        views.edit_works,
+        name='edit_works'
+        ),
 ]

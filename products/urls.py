@@ -77,4 +77,9 @@ urlpatterns = [
         views.edit_dish,
         name='edit_dish'
         ),
+    path(
+        'edit-wine/<int:product_id>',
+        views.edit_wine,
+        name='edit_wine'
+        ),
 ]

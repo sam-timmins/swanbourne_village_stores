@@ -8,6 +8,8 @@
 
         <a href="{% if product in dishes %}
                     {% url 'edit_dish' product.id %}
+                {% elif product in wines %}
+                    {% url 'edit_wine' product.id %}
                 {% endif %}"
             class="btn btn-general btn-purple text-sm p-1 rounded-0" aria-labelledby="edit-{{ product.slug_name }}-button">Edit</a>
         <span id="edit-{{ product.slug_name }}-button" class="sr-only">Purple button with white text that navigates to the edit page for {{ product.name }}</span>

@@ -505,3 +505,129 @@ def delete__works_product(request, product_id):
 
     messages.success(request, 'The combination has been deleted from the store')
     return redirect(reverse('the_works'))
+
+
+def edit_dish(request, product_id):
+    """ Edit the item in the dishes model """
+    dishes = Dishes.objects.all()
+    product = get_object_or_404(Dishes, pk=product_id)
+
+    if request.method == 'POST':
+        form = DishForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully updated {product.name}')
+            return redirect(
+                reverse(
+                    'product_detail_dishes',
+                    args=[product.id],
+                    )
+                )
+        else:
+            messages.error(
+                request,
+                f'Unable to update {product.name}. \
+                Please ensure all fields are filled out correctly.'
+                )
+    else:
+        form = DishForm()
+
+    form = DishForm(instance=product)
+
+    messages.info(request, f'You are currently editing {product.name}')
+
+    context = {
+        'form': form,
+        'dishes': dishes,
+        'product': product,
+    }
+
+    return render(
+        request,
+        'products/edit-product.html',
+        context
+        )
+
+
+def edit_wine(request, product_id):
+    """ Edit the item in the wines model """
+    wines = Wines.objects.all()
+    product = get_object_or_404(Wines, pk=product_id)
+
+    if request.method == 'POST':
+        form = WineForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully updated {product.name}')
+            return redirect(
+                reverse(
+                    'product_detail_wines',
+                    args=[product.id],
+                    )
+                )
+        else:
+            messages.error(
+                request,
+                f'Unable to update {product.name}. \
+                Please ensure all fields are filled out correctly.'
+                )
+    else:
+        form = WineForm()
+
+    form = WineForm(instance=product)
+
+    messages.info(request, f'You are currently editing {product.name}')
+
+    context = {
+        'form': form,
+        'wines': wines,
+        'product': product,
+    }
+
+    return render(
+        request,
+        'products/edit-product.html',
+        context
+        )
+
+
+def edit_works(request, product_id):
+    """ Edit the item in the bundles model """
+    bundle = Bundle.objects.all()
+    product = get_object_or_404(Bundle, pk=product_id)
+
+    if request.method == 'POST':
+        form = WorksForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully updated {product.name}')
+            return redirect(
+                reverse(
+                    'product_details_bundles',
+                    args=[product.id],
+                    )
+                )
+        else:
+            messages.error(
+                request,
+                f'Unable to update {product.name}. \
+                Please ensure all fields are filled out correctly.'
+                )
+    else:
+        form = WorksForm()
+
+    form = WorksForm(instance=product)
+
+    messages.info(request, f'You are currently editing {product.name}')
+
+    context = {
+        'form': form,
+        'bundle': bundle,
+        'product': product,
+    }
+
+    return render(
+        request,
+        'products/edit-product.html',
+        context
+        )

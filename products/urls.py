@@ -62,7 +62,7 @@ urlpatterns = [
         views.delete__dish_product,
         name='delete__dish_product'
     ),
-        path(
+    path(
         'delete/wine/<int:product_id>',
         views.delete__wine_product,
         name='delete__wine_product'
@@ -72,4 +72,19 @@ urlpatterns = [
         views.delete__works_product,
         name='delete__works_product'
     ),
+    path(
+        'edit-dish/<int:product_id>',
+        views.edit_dish,
+        name='edit_dish'
+        ),
+    path(
+        'edit-wine/<int:product_id>',
+        views.edit_wine,
+        name='edit_wine'
+        ),
+    path(
+        'edit-works/<int:product_id>',
+        views.edit_works,
+        name='edit_works'
+        ),
 ]

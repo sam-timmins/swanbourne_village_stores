@@ -464,3 +464,11 @@ def create_works(request):
     }
 
     return render(request, 'products/create-works.html', context)
+
+
+def delete__dish_product(request, product_id):
+    """Delete product"""
+    product = get_object_or_404(Dishes, pk=product_id)
+
+    product.delete()
+    return redirect(reverse('the_menu'))

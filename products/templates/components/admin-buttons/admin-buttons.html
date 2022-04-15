@@ -6,8 +6,10 @@
         </button>
         <span id="delete-{{ product.slug_name }}-button" class="sr-only">White button with purple text that opens the confirmation modal to delete {{ product.name }}</span>
 
-        <a href="#" class="btn btn-general btn-purple text-sm p-1 rounded-0" 
-        aria-labelledby="edit-{{ product.slug_name }}-button">Edit</a>
+        <a href="{% if product in dishes %}
+                    {% url 'edit_dish' product.id %}
+                {% endif %}"
+            class="btn btn-general btn-purple text-sm p-1 rounded-0" aria-labelledby="edit-{{ product.slug_name }}-button">Edit</a>
         <span id="edit-{{ product.slug_name }}-button" class="sr-only">Purple button with white text that navigates to the edit page for {{ product.name }}</span>
     </div>
 {% endif %}

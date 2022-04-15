@@ -547,3 +547,45 @@ def edit_dish(request, product_id):
         'products/edit-product.html',
         context
         )
+
+
+def edit_wine(request, product_id):
+    """ Edit the item in the dishes model """
+    wines = Wines.objects.all()
+    product = get_object_or_404(Wines, pk=product_id)
+
+    if request.method == 'POST':
+        form = WineForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully updated {product.name}')
+            return redirect(
+                reverse(
+                    'product_detail_wines',
+                    args=[product.id],
+                    )
+                )
+        else:
+            messages.error(
+                request,
+                f'Unable to update {product.name}. \
+                Please ensure all fields are filled out correctly.'
+                )
+    else:
+        form = WineForm()
+
+    form = WineForm(instance=product)
+
+    messages.info(request, f'You are currently editing {product.name}')
+
+    context = {
+        'form': form,
+        'wines': wines,
+        'product': product,
+    }
+
+    return render(
+        request,
+        'products/edit-product.html',
+        context
+        )

@@ -480,3 +480,11 @@ def delete__wine_product(request, product_id):
 
     product.delete()
     return redirect(reverse('wine_store'))
+
+
+def delete__works_product(request, product_id):
+    """Delete works combination product"""
+    product = get_object_or_404(Bundle, pk=product_id)
+
+    product.delete()
+    return redirect(reverse('the_works'))

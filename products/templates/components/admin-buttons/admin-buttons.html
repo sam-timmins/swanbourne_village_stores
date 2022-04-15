@@ -1,0 +1,13 @@
+{% if request.user.is_superuser %}
+    <div class="my-5 d-flex flex-row justify-content-around">
+        <button type="button" class="btn btn-general btn-white text-sm p-1 rounded-0" data-bs-toggle="modal"
+            data-bs-target="#delete-product{{product.id}}" aria-labelledby="delete-{{ product.slug_name }}-button">
+            Delete
+        </button>
+        <span id="delete-{{ product.slug_name }}-button" class="sr-only">White button with purple text that opens the confirmation modal to delete {{ product.name }}</span>
+
+        <a href="#" class="btn btn-general btn-purple text-sm p-1 rounded-0" 
+        aria-labelledby="edit-{{ product.slug_name }}-button">Edit</a>
+        <span id="edit-{{ product.slug_name }}-button" class="sr-only">Purple button with white text that navigates to the edit page for {{ product.name }}</span>
+    </div>
+{% endif %}

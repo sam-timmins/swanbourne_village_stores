@@ -2,27 +2,36 @@
 
 {% for product in bundle %}
 <div class="col-12 col-md-6 col-lg-4 my-3 d-flex justify-content-center align-items-center p-md-3 p-lg-5">
-    <a href="{% url 'product_details_bundles' product.id %}" class="card w-75 background-light-green text-decoration-none" aria-labelledby="{{ product.slug_name }}-card">
-        <img class="card-img-top"
-            src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg"
-            alt="Placeholder image for {{ product.name }}">
+    <div class="card w-75 background-light-green">
+        <a href="{% url 'product_details_bundles' product.id %}" class="text-decoration-none" aria-labelledby="{{ product.slug_name }}-card">
+            <img class="card-img-top"
+                src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg"
+                alt="Placeholder image for {{ product.name }}">
 
-        <div class="card-body">
-                    <h5 class="card-title text-md text-purple text-header my-3 text-center">{{ product.name|title }}
-                    </h5>
-                    <hr class="text-purple">
-                    
-                    <p class="card-text text-sm text-purple p-3 m-0">Wine: {{ product.wine.name}}</p>
-                    <p class="card-text text-sm text-purple p-3 m-0">Dish: {{ product.dish.name}}</p>
+            <div class="card-body">
+                        <h5 class="card-title text-md text-purple text-header my-3 text-center">{{ product.name|title }}
+                        </h5>
+                        <hr class="text-purple">
+                        
+                        <p class="card-text text-sm text-purple p-3 m-0">Wine: {{ product.wine.name}}</p>
+                        <p class="card-text text-sm text-purple p-3 m-0">Dish: {{ product.dish.name}}</p>
 
-                    <p class="card-text text-sm text-purple p-3 m-0">Individual Price: {{ currency }}{{ product.dish.price | addition:product.wine.price }}</p>
-                    <p class="card-text text-sm text-purple p-3 m-0">The Works Price: {{ currency }}{{ product.price }}</p>
-                    
-                    
-                    <p class="card-text text-xs background-dark-green text-white p-3 m-0 mt-2 text-uppercase w-100 text-center">Save: {{ currency }}{{ product.dish.price | addition:product.wine.price | sub:product.price}}</p>
+                        <p class="card-text text-sm text-purple p-3 m-0">Individual Price: {{ currency }}{{ product.dish.price | addition:product.wine.price }}</p>
+                        <p class="card-text text-sm text-purple p-3 m-0">The Works Price: {{ currency }}{{ product.price }}</p>
+                        
+                        
+                        <p class="card-text text-xs background-dark-green text-white p-3 m-0 mt-2 text-uppercase w-100 text-center">Save: {{ currency }}{{ product.dish.price | addition:product.wine.price | sub:product.price}}</p>
 
-        </div>
-    </a>
-    <span class="sr-only" id="{{ product.slug_name }}-card">A link to the detailed description of {{ product.name }} and purchasing options</span>
+            </div>
+        </a>
+        <span class="sr-only" id="{{ product.slug_name }}-card">A link to the detailed description of {{ product.name }} and purchasing options</span>
+
+        <!-- Admin buttons for delete and edit -->
+        {% include 'components/admin-buttons/admin-buttons.html' %}
+
+        <!-- Modal for delete -->
+        {% include 'components/modals/delete-works-modal.html' %}
+
+    </div>
 </div>
 {% endfor %}

@@ -52,6 +52,26 @@
         {% include 'layout/navbar.html' %}
 
         <div class="nav-spacer"></div>
+
+        {% if messages %}
+        <!-- Messages -->
+            <div class="message-container">
+                {% for message in messages %}
+                    {% with message.level as level %}
+                        {% if level == 40 %}
+                            {% include 'components/toasts/toast-error.html' %}
+                        {% elif level == 30 %}
+                            {% include 'components/toasts/toast-warning.html' %}
+                        {% elif level == 25 %}
+                            {% include 'components/toasts/toast-success.html' %}
+                        {% else %}
+                            {% include 'components/toasts/toast-info.html' %}
+                        {% endif %}
+                    {% endwith %}
+                {% endfor %}
+            </div>
+        {% endif %}
+
         {% block content %}
 
         {% endblock %}
@@ -63,7 +83,7 @@
         <script src="{% static 'js/app.js' %}"></script>
         
     {% endblock %}
-
+    
 </body>
 
 </html>

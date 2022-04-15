@@ -57,4 +57,19 @@ urlpatterns = [
         views.create_works,
         name='create_works'
     ),
+    path(
+        'delete/dish/<int:product_id>',
+        views.delete__dish_product,
+        name='delete__dish_product'
+    ),
+        path(
+        'delete/wine/<int:product_id>',
+        views.delete__wine_product,
+        name='delete__wine_product'
+    ),
+    path(
+        'delete/works/<int:product_id>',
+        views.delete__works_product,
+        name='delete__works_product'
+    ),
 ]

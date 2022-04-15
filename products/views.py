@@ -550,7 +550,7 @@ def edit_dish(request, product_id):
 
 
 def edit_wine(request, product_id):
-    """ Edit the item in the dishes model """
+    """ Edit the item in the wines model """
     wines = Wines.objects.all()
     product = get_object_or_404(Wines, pk=product_id)
 
@@ -592,7 +592,7 @@ def edit_wine(request, product_id):
 
 
 def edit_works(request, product_id):
-    """ Edit the item in the dishes model """
+    """ Edit the item in the bundles model """
     bundle = Bundle.objects.all()
     product = get_object_or_404(Bundle, pk=product_id)
 

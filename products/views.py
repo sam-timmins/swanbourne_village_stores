@@ -3,6 +3,7 @@ from django.core.paginator import Paginator
 from django.db.models import Q
 from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 
 from .models import Dishes, Wines, Bundle, WineCategory
 from .forms import DishForm, WineForm, WorksForm
@@ -474,8 +475,9 @@ def delete__dish_product(request, product_id):
         return redirect(reverse('home'))
 
     product = get_object_or_404(Dishes, pk=product_id)
-
     product.delete()
+
+    messages.success(request, 'The dish has been deleted from the store')
     return redirect(reverse('the_menu'))
 
 
@@ -486,8 +488,9 @@ def delete__wine_product(request, product_id):
         return redirect(reverse('home'))
 
     product = get_object_or_404(Wines, pk=product_id)
-
     product.delete()
+
+    messages.success(request, 'The wine has been deleted from the store')
     return redirect(reverse('wine_store'))
 
 
@@ -498,6 +501,7 @@ def delete__works_product(request, product_id):
         return redirect(reverse('home'))
 
     product = get_object_or_404(Bundle, pk=product_id)
-
     product.delete()
+
+    messages.success(request, 'The combination has been deleted from the store')
     return redirect(reverse('the_works'))

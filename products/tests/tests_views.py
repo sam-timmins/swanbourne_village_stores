@@ -1,6 +1,8 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 
+from ..models import Dishes
+
 
 class TestTheMenuView(TestCase):
     """ Test product application views """
@@ -9,6 +11,28 @@ class TestTheMenuView(TestCase):
         """ Set up """
         self.client = Client()
         self.list_url = reverse('the_menu')
+
+        dish_a = Dishes(
+            name='dish 1',
+            slug_name='dish-1',
+            status=1,
+            description='Long description on dish 1',
+            price=10.00
+        )
+
+        dish_a.save()
+        self.dish_a = dish_a
+
+        dish_b = Dishes(
+            name='dish 2',
+            slug_name='dish-2',
+            status=0,
+            description='Long description on dish 2',
+            price=5.00
+        )
+
+        dish_b.save()
+        self.dish_b = dish_b
 
     def test_the_menu_view_renders_correctly(self):
         """ Test the menu view renders """

@@ -5,7 +5,7 @@ from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-from .models import Dishes, Wines, Bundle, WineCategory
+from .models import Dishes, Wines, Bundle
 from .forms import DishForm, WineForm, WorksForm
 
 
@@ -42,7 +42,9 @@ def the_menu(request):
             if not query:
                 return redirect(reverse('the_menu'))
 
-            queries = Q(name__icontains=query) | Q(description__icontains=query)
+            queries = Q(
+                name__icontains=query
+                ) | Q(description__icontains=query)
             dishes = dishes.filter(queries)
 
         if 'menu-name-query' in request.GET:
@@ -524,7 +526,10 @@ def delete__works_product(request, product_id):
     product = get_object_or_404(Bundle, pk=product_id)
     product.delete()
 
-    messages.success(request, 'The combination has been deleted from the store')
+    messages.success(
+        request,
+        'The combination has been deleted from the store'
+        )
     return redirect(reverse('the_works'))
 
 

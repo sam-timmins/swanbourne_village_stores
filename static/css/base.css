@@ -300,36 +300,6 @@ input[type=number] {
     color: var(--light-green) !important;
 }
 
-/* 8. Homepage */
-
-.hero-image {
-    background-image: url("https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg");
-    background-color: var(--black);
-    height: 80vh;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    position: relative;
-  }
-
-.about-section-container {
-    min-height: auto;
-    padding: 5rem 3rem;
-}
-
-.about-image {
-    background-image: url("https://res.cloudinary.com/sam-timmins1/image/upload/v1648242081/static/images/about.7339cc50ba4c.jpg");
-    height: 55rem;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-#map {
-    height: 30rem;
-    width: 100%;
-}
-
 /* Authentication Pages */
 
 .authentication-image {

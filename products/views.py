@@ -442,10 +442,17 @@ def create_wine(request):
     if request.method == 'POST':
         form = WineForm(request.POST, request.FILES)
         if form.is_valid():
+            name = form.cleaned_data.get('name')
+            format_name = name.title()
             form.save()
+            messages.success(request, f'Successfully created {format_name}')
             return redirect(reverse('create_wine'))
         else:
-            print('error message')
+            messages.error(
+                request,
+                'Unable to create the wine. \
+                Please ensure all fields are filled out correctly.'
+                )
     else:
         form = WineForm()
 

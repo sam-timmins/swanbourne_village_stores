@@ -31,8 +31,7 @@
         <form method="GET" action="{% url 'wine_store' %}" class="p-3">
             <div class="input-group align-items-center">
                 <select name="wine-category-query" class="form-control text-sm rounded-0">
-                    <option value="reset" hidden><a href="{% url 'wine_store' %}"
-                            class="dropdown-item text-xs text-white px-5">Search by Variety</a></option>
+                    <option value="reset" hidden class="dropdown-item text-xs text-white px-5">Search by Variety</option>
                     {% for variety in ordered_varieties %}
                     <option value="{{ variety }}" class="dropdown-item text-xs text-white px-5">{{ variety }}</option>
                     {% endfor %}

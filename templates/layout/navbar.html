@@ -21,11 +21,11 @@
 
                 <!-- Menu links -->
                 <li class="nav-item dropdown mt-5 mt-lg-0">
-                    <a class="nav-link p-0 ms-lg-0 text-start text-sm me-lg-3 me-xl-5 text-dark-green my-3"
-                        href="#" id="navbar-menu-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
+                    <p class="nav-link p-0 ms-lg-0 text-start text-sm me-lg-3 me-xl-5 text-dark-green my-3"
+                        id="navbar-menu-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
                         aria-labelledby="menu-dropdown">
                         The Menu<i class="fa-solid fa-angle-down ms-2 text-xs"></i>
-                    </a>
+                </p>
                     <span id="menu-dropdown" class="sr-only">
                         A link with green text and light green background that opens a dropdown menu with the store's menu categories
                     </span>
@@ -81,7 +81,9 @@
                     </ul>
                 </li>
 
-                <hr class="w-75 mx-auto my-0 d-lg-none">
+                <li>
+                    <hr class="w-75 mx-auto my-0 d-lg-none">
+                </li>
 
                 <!-- Administration links -->
                 {% if user.is_superuser %}
@@ -140,8 +142,9 @@
                 <!-- Authentication links -->
                 
                     {% if request.user.is_authenticated %}
-
-                    <hr class="w-75 mx-auto my-0 d-lg-none">
+                    <li>
+                        <hr class="w-75 mx-auto my-0 d-lg-none">
+                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link p-0 ms-lg-0 text-start text-sm me-lg-3 me-xl-5 my-3 text-dark-green"
@@ -165,7 +168,9 @@
                         </span>
                     </li>
 
-                    <hr class="w-75 mx-auto my-0 d-lg-none">
+                    <li>
+                        <hr class="w-75 mx-auto my-0 d-lg-none">
+                    </li>
 
                     <li class="nav-item">
                         <a class="nav-link p-0 ms-lg-0 text-start text-sm me-lg-3 me-xl-5 my-3 text-dark-green" href="{% url 'account_login' %}"
@@ -178,9 +183,10 @@
                     </li>
 
                     {% endif %}
-                </li>
 
-                <hr class="w-75 mx-auto my-0 d-lg-none">
+                    <li>
+                        <hr class="w-75 mx-auto my-0 d-lg-none">
+                    </li>
 
                 <!-- Session total and link to basket -->
                 <li class="nav-item me-3">

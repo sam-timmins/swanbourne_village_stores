@@ -6,7 +6,7 @@ var slug = function(str) {
     replace(/-+/g, '-').
     replace(/^-|-$/g, '');
     return $slug.toLowerCase();
-}
+};
 
 $("#dish-name").on("input", function(){
     $("#slug-name").val(slug($(this).val()));

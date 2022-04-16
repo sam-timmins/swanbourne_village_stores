@@ -24,13 +24,13 @@
 
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <input type="text" name="message-name" placeholder="Your Name"
+                                    <input type="text" name="message-name" placeholder="Your Name" {% if saved_name %} value="{{ saved_name }}" {% endif %}
                                         class="my-3 mt-md-5 p-2 form-control fw-light text-xs" maxlength="150" required
                                         id="message-name">
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <input type="email" name="message-email" placeholder="Your Email"
+                                    <input type="email" name="message-email" placeholder="Your Email" {% if saved_email %} value="{{ saved_email }}" {% endif %}
                                         class="my-3 mt-lg-5 p-2 form-control fw-light text-xs" maxlength="150" required
                                         id="message-email">
                                 </div>
@@ -38,7 +38,7 @@
                                 <div class="col-12">
                                     <textarea name="message" placeholder="Your Message"
                                         class="my-3 mt-lg-5 form-control fw-light p-3 text-xs" maxlength="150" required
-                                        id="message"></textarea>
+                                        id="message">{% if saved_message %}{{ saved_message }}{% endif %}</textarea>
                                 </div>
 
                                 <div class="col-12 text-center">

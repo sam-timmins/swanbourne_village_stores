@@ -292,12 +292,6 @@ input[type=number] {
     color: var(--light-green) !important;
 }
 
-/* Authentication Pages */
-
-.authentication-image {
-    width: 100%;
-}
-
 /* Pagination */
 .page-link:hover,
 .page-link:focus {

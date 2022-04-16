@@ -41,9 +41,16 @@ class TestTheMenuView(TestCase):
 
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'products/the-menu.html')
-    
+
     def test_if_dishes_exist_in_database(self):
         """ Test to see if the dishes saved in the database """
 
         dish_count = Dishes.objects.all().count()
         self.assertEqual(dish_count, 2)
+
+    def test_dishes_context_is_rendered_correctly(self):
+        """ Test context dictionary is rendered to template """
+
+        response = self.client.get(self.list_url)
+
+        self.assertEqual(len(response.context['dishes']), 2)

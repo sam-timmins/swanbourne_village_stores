@@ -156,8 +156,7 @@ class WorksForm(forms.ModelForm):
             }
 
             slug_classes = {
-                'class': 'background-light-green text-light-green \
-                    border-0 text-xs',
+                'class': 'invisible',
             }
 
             name_field = {
@@ -186,3 +185,6 @@ class WorksForm(forms.ModelForm):
             readonly=True,
             id='slug-name'
         )
+        self.fields['slug_name'].error_messages.update({
+            'unique': '',
+        })

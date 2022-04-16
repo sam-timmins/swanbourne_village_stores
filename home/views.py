@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.core.mail import send_mail
 
+
 def index(request):
     """ A view to return the index page
     and send an email when  the contact form is submitted

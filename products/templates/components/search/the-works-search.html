@@ -33,8 +33,7 @@
         <form method="GET" action="{% url 'the_works' %}" class="p-3">
             <div class="input-group align-items-center">
                 <select name="the-works-query" class="form-control text-sm rounded-0">
-                    <option value="reset" hidden><a href="{% url 'the_works' %}"
-                            class="dropdown-item text-xs text-white px-5">Search by Name</a></option>
+                    <option value="reset" hidden class="dropdown-item text-xs text-white px-5">Search by Name</option>
                     {% for item in ordered_bundle_names %}
                     <option value="{{ item }}" class="dropdown-item text-xs text-white px-5">{{ item }}</option>
                     {% endfor %}

@@ -31,8 +31,7 @@ class DishForm(forms.ModelForm):
             }
 
             slug_classes = {
-                'class': 'background-light-green text-light-green \
-                    border-0 text-xs',
+                'class': 'invisible',
             }
 
             name_field = {
@@ -51,6 +50,9 @@ class DishForm(forms.ModelForm):
             placeholder='Dish Name',
             id='dish-name',
             )
+        self.fields['name'].error_messages.update({
+            'unique': 'A dish with this name already exists',
+        })
         self.fields['status'].label = 'Fresh or Frozen'
         self.fields['price'].widget.attrs.update(
             placeholder='Price',
@@ -62,6 +64,9 @@ class DishForm(forms.ModelForm):
             readonly=True,
             id='slug-name'
         )
+        self.fields['slug_name'].error_messages.update({
+            'unique': '',
+        })
 
 
 class WineForm(forms.ModelForm):
@@ -92,8 +97,7 @@ class WineForm(forms.ModelForm):
             }
 
             slug_classes = {
-                'class': 'background-light-green text-light-green \
-                    border-0 text-xs',
+                'class': 'invisible',
             }
 
             name_field = {
@@ -112,6 +116,9 @@ class WineForm(forms.ModelForm):
             placeholder='Dish Name',
             id='dish-name',
             )
+        self.fields['name'].error_messages.update({
+            'unique': 'A wine with this name already exists',
+        })
         self.fields['price'].widget.attrs.update(
             placeholder='Price',
             )
@@ -122,6 +129,9 @@ class WineForm(forms.ModelForm):
             readonly=True,
             id='slug-name'
         )
+        self.fields['slug_name'].error_messages.update({
+            'unique': '',
+        })
 
 
 class WorksForm(forms.ModelForm):
@@ -152,8 +162,7 @@ class WorksForm(forms.ModelForm):
             }
 
             slug_classes = {
-                'class': 'background-light-green text-light-green \
-                    border-0 text-xs',
+                'class': 'invisible',
             }
 
             name_field = {
@@ -168,6 +177,9 @@ class WorksForm(forms.ModelForm):
             placeholder='Combination Name',
             id='dish-name',
             )
+        self.fields['name'].error_messages.update({
+            'unique': 'A combination with this name already exists',
+        })
         self.fields['dish'].label = 'Dish*'
         self.fields['dish'].widget.attrs.update(required=True)
         self.fields['wine'].label = 'Wine*'
@@ -182,3 +194,6 @@ class WorksForm(forms.ModelForm):
             readonly=True,
             id='slug-name'
         )
+        self.fields['slug_name'].error_messages.update({
+            'unique': '',
+        })

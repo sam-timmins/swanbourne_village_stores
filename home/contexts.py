@@ -5,7 +5,10 @@ def site_contexts(request):
     currency = '£'
     store_email = 'swanbourne.store@gmail.com'
     store_phone_number = '+441296720288'
-    store_dropped_pin = 'https://www.google.com/maps/place/5+Mursley+Rd,+Swanbourne,+Milton+Keynes+MK17+0SH,+UK/@51.938599,-0.836613,17z/data=!3m1!4b1!4m5!3m4!1s0x4876fecc061ac491:0xdcf505f1debf6cae!8m2!3d51.9385957!4d-0.8344243'
+    store_dropped_pin = 'https://www.google.com/maps/place/5+Mursley+Rd, \
+        +Swanbourne,+Milton+Keynes+MK17+0SH,+UK/@51.938599,-0.836613,17z/ \
+        data=!3m1!4b1!4m5!3m4!1s0x4876fecc061ac491:0xdcf505f1debf6cae!8m \
+        2!3d51.9385957!4d-0.8344243'
     facebook = 'https://www.facebook.com/SwanbourneStores'
     instagram = 'https://www.instagram.com/'
     twitter = 'https://www.twitter.com/'

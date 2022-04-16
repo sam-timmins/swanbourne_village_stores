@@ -50,6 +50,9 @@ class DishForm(forms.ModelForm):
             placeholder='Dish Name',
             id='dish-name',
             )
+        self.fields['name'].error_messages.update({
+            'unique': 'A dish with this name already exists',
+        })
         self.fields['status'].label = 'Fresh or Frozen'
         self.fields['price'].widget.attrs.update(
             placeholder='Price',
@@ -113,6 +116,9 @@ class WineForm(forms.ModelForm):
             placeholder='Dish Name',
             id='dish-name',
             )
+        self.fields['name'].error_messages.update({
+            'unique': 'A wine with this name already exists',
+        })
         self.fields['price'].widget.attrs.update(
             placeholder='Price',
             )
@@ -171,6 +177,9 @@ class WorksForm(forms.ModelForm):
             placeholder='Combination Name',
             id='dish-name',
             )
+        self.fields['name'].error_messages.update({
+            'unique': 'A combination with this name already exists',
+        })
         self.fields['dish'].label = 'Dish*'
         self.fields['dish'].widget.attrs.update(required=True)
         self.fields['wine'].label = 'Wine*'

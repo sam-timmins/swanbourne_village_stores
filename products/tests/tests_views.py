@@ -10,7 +10,6 @@ class TestTheMenuView(TestCase):
         self.client = Client()
         self.list_url = reverse('the_menu')
 
-
     def test_the_menu_view_renders_correctly(self):
         """ Test the menu view renders """
 

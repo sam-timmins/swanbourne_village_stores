@@ -1,4 +1,5 @@
 from django.shortcuts import render, redirect
+from django.contrib import messages
 
 
 def view_bag(request):
@@ -12,10 +13,21 @@ def add_to_bag(request, item_id):
 
     quantity = int(request.POST.get('item-quantity'))
     redirect_url = request.POST.get('redirect_url')
+    product_name = request.POST.get('product_name')
     bag = request.session.get('bag', {})
 
     if item_id in list(bag.keys()):
         bag[item_id] += quantity
+        if quantity > 1:
+            messages.success(
+                request,
+                f'{quantity} {product_name} dishes added to the basket'
+                )
+        else:
+            messages.success(
+                request,
+                f"{quantity} {product_name} dish added to the basket"
+                )
     else:
         bag[item_id] = quantity
 

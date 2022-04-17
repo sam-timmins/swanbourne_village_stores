@@ -1,9 +1,8 @@
 from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
-from itertools import chain
 
-from products.models import Dishes, Wines, Bundle
+from products.models import Dishes
 
 
 def bag_contents(request):
@@ -20,12 +19,13 @@ def bag_contents(request):
     product_count = int(0)
     bag = request.session.get('bag', {})
 
-    for item_id, quantity in bag.items():
-        product = get_object_or_404(Dishes, pk=item_id)
+    for item_slug, quantity in bag.items():
+        print(item_slug)
+        product = get_object_or_404(Dishes, slug_name=item_slug)
         total += quantity * product.price
         product_count += quantity
         bag_items.append({
-            'item_id': item_id,
+            'item_slug': item_slug,
             'quantity': quantity,
             'product': product,
         })

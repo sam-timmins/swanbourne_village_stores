@@ -191,7 +191,7 @@
                 <!-- Session total and link to basket -->
                 <li class="nav-item me-3">
                     <a class="nav-link p-0 ms-lg-0 text-start text-sm me-lg-3 me-xl-5 my-3 {% if grand_total %} text-black {% else %} text-dark-green {% endif %}"
-                        href="#" aria-labelledby="navbar-basket">
+                        href="{% url 'view_bag' %}" aria-labelledby="navbar-basket">
                         <p class="my-0">
                             <i class="fas fa-shopping-bag fa-lg me-2"></i>
                             {% if grand_total %}

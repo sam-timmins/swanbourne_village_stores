@@ -1,15 +1,122 @@
 {% extends "base.html" %}
 {% load static %}
 
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/bag/bag.css' %}">
+{% endblock %}
+
 {% block content %}
 
 <!-- Basket section -->
-<section class="row container-fluid background-purple p-0 m-0 min-vh-100">
+<section class="row container-fluid p-0 m-0 {% if not bag_items %}background-purple min-vh-100 {% endif %}">
 
     <!-- Basket header -->
     {% include 'components/header/header.html' %}
 
+        <div class="col-12 col-lg-8 container m-auto background-white">
+            {% if bag_items %}
+                <div class="background-light-green px-3 px-sm-5 py-5 my-5">
+                        {% for item in bag_items %}
+                            <div class="row container-fluid my-3 mx-auto border-dark-green p-3">
+                                <div class="col-12 col-md-2 p-0 d-flex align-items-center justify-content-center">
+                                    {% if "placeholder" in item.product.image.url %}
+                                        <img class="bag-image"
+                                            src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg"
+                                            alt="Placeholder image for {{ product.name }}">
+                                    {% else %}
+                                        <img class="bag-image" src=" {{ item.product.image.url }}" alt="Image of {{ item.product.name }}">
+                                    {% endif %}
+                                </div>
+                                <div class="col-12 col-md-6 my-3 d-flex flex-column align-items-center justify-content-center">
+                                    <div class="row container-fluid">
+                                        <div class="col-4">
+                                            <p class="my-0">Item:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="my-0">{{ item.product.name | title }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row container-fluid">
+                                        <div class="col-4">
+                                            <p class="my-0">Price:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="my-0">{{ currency }}{{ item.product.price }}</p>
+                                        </div>
+                                    </div>
+                                    <div class="row container-fluid">
+                                        <div class="col-4">
+                                            <p class="my-0">Quantity:</p>
+                                        </div>
+                                        <div class="col-6">
+                                            <p class="my-0">{{ item.quantity }}</p>
+                                        </div>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        {% endfor %}
+                        
+                        <div class="row container-fluid mt-5 mx-auto justify-content-around">
+                            <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <p class="text-xs text-dark-green"><strong>Bag Total: {{ currency }}{{ total|floatformat:2 }}</strong></p>
+                                    </div>
+                                    <div class="col-12">
+                                        <p class="text-xs text-dark-green">Delivery: {{ currency }}{{ delivery|floatformat:2 }}</p>
+                                    </div>
+                                    <div class="col-12">
+                                        <p class="text-sm text-dark-green" class="mt-4"><strong>Grand Total: {{ currency }}{{ grand_total|floatformat:2 }}</strong></p>
+                                    </div>
+                                    <div class="col-12">
+                                        {% if free_delivery_delta > 0 %}
+                                            <p class="mb-1 text-danger">
+                                                You could get free delivery by spending just <strong>{{ currency }}{{ free_delivery_delta }}</strong> more!
+                                            </p>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+
+                            <hr class="d-md-none text-purple my-3">
+
+                            <div class="col-12 col-md-8 col-lg-6">
+                                <div class="row mt-3">
+                                    <div class="col-12">
+                                        <p class="text-dark-green text-sm text-center">
+                                            If your are happy with your basket, head to the secure checkout. Otherwise please keep shopping.
+                                        </p>
+                                    </div>
+                                    <div class="col-12 my-3 d-flex flex-row align-items-center justify-content-around">
+
+                                        <a href="#" class="btn btn-general btn-purple btn-box-shadow-white text-sm p-1 rounded-0" 
+                                        aria-labelledby="bag-checkout">Checkout</a>
+                                        <span class="sr-only" id="bag-checkout">
+                                            Purple button with white writing navigating to the secure checkout
+                                        </span>
+
+                                        <a href="{% url 'the_menu' %}" class="btn btn-general btn-white btn-box-shadow-white text-sm p-1 rounded-0" 
+                                        aria-labelledby="bag-menu-button">The Menu</a>
+                                        <span class="sr-only" id="bag-menu-button">
+                                            White button with purple writing navigating to to menu with all the dishes, frozen and fresh
+                                        </span>
     
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+                            
+                                
+                                
+
+                </div>
+            {% endif %}
+
+        </div>    
+
 
 </section>
 

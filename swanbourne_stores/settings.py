@@ -198,3 +198,8 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+
+
+# Delivery variables
+FREE_DELIVERY_THRESHOLD = os.environ.get('FREE_DELIVERY_THRESHOLD')
+STANDARD_DELIVERY_PERCENTAGE = os.environ.get('STANDARD_DELIVERY_PERCENTAGE')

@@ -1,0 +1,14 @@
+<div class="col-12">
+
+    <h1 class="text-lg text-white text-header text-center my-5 py-md-3">Your Basket</h1>
+    <p class="text-sm text-white text-center fst-italic mb-5">
+        {% if bag_items %}
+            Welcome to your basket{% if user.is_authenticated %} <span class="fw-bolder">{{ user.username }}</span>{% endif %}.
+        {% else %}
+            {% if user.is_authenticated %} <span class="fw-bolder">{{ user.username | title }}</span>{% endif %} your basket is currently empty.
+        {% endif %}
+    </p>
+
+    <hr class="text-light-green w-lg-75">
+
+</div>

@@ -1,14 +1,51 @@
 <div class="col-12">
 
     <h1 class="text-lg text-white text-header text-center my-5 py-md-3">Your Basket</h1>
-    <p class="text-sm text-white text-center fst-italic mb-5">
-        {% if bag_items %}
+    
+    {% if bag_items %}
+        <p class="text-sm text-white text-center fst-italic mb-5">
             Welcome to your basket{% if user.is_authenticated %} <span class="fw-bolder">{{ user.username }}</span>{% endif %}.
-        {% else %}
-            {% if user.is_authenticated %} <span class="fw-bolder">{{ user.username | title }}</span>{% endif %} your basket is currently empty.
-        {% endif %}
-    </p>
+        </p>
 
-    <hr class="text-light-green w-lg-75">
+        <hr class="text-light-green w-lg-75">
+    {% else %}
+        <p class="text-sm text-white text-center fst-italic mb-5">
+            {% if user.is_authenticated %} <span class="fw-bolder">{{ user.username | title }}</span> y{% else %} Y{% endif %}our basket is currently empty.
+        </p>
+
+        <hr class="text-light-green w-lg-75">
+        
+        <div class="row container m-auto mt-5">
+            <div class="col-12 d-flex justify-content-center">
+                <p class="text-sm text-white text-center my-5">
+                    Please pick a section of the menu to browse through
+                </p>
+            </div>
+            <div class="col-12 col-lg-8 d-flex flex-column flex-lg-row justify-content-center align-items-center mx-auto my-5">
+
+                <a href="{% url 'fresh_food' %}" class="btn btn-general btn-light-green btn-box-shadow-white text-sm p-3 my-5 mx-3 mx-md-5 rounded-0" aria-labelledby="empty-basket-fresh-food">Fresh Food</a>
+                <span class="sr-only" id="empty-basket-fresh-food">White button with purple text that navigates to the fresh food menu</span>
+                
+                <a href="{% url 'the_freezer' %}" class="btn btn-general btn-light-green btn-box-shadow-white text-sm p-3 my-5 mx-3 mx-md-5 rounded-0" aria-labelledby="empty-basket-the-freezer">The Freezer</a>
+                <span class="sr-only" id="empty-basket-the-freezer">White button with purple text that navigates to the freezer menu</span>
+
+                <a href="{% url 'wine_store' %}" class="btn btn-general btn-light-green btn-box-shadow-white text-sm p-3 my-5 mx-3 mx-md-5 rounded-0" aria-labelledby="empty-basket-wine-store">Wine Store</a>
+                <span class="sr-only" id="empty-basket-wine-store">White button with purple text that navigates to the wine store menu</span>
+
+                <a href="{% url 'the_works' %}" class="btn btn-general btn-light-green btn-box-shadow-white text-sm p-3 my-5 mx-3 mx-md-5 rounded-0" aria-labelledby="empty-basket-the-works">The Works</a>
+                <span class="sr-only" id="empty-basket-the-works">White button with purple text that navigates to the works menu</span>
+
+            </div>
+        </div>
+
+
+
+
+
+        
+    {% endif %}
+
+
+    
 
 </div>

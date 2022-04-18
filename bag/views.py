@@ -58,3 +58,15 @@ def update_bag(request, item_slug):
         request.session['bag'] = bag
 
     return redirect(reverse('view_bag'))
+
+
+def remove_from_bag(request, item_slug):
+    """ Removes the item from the bag """
+
+    bag = request.session.get('bag', {})
+    bag.pop(item_slug)
+    request.session['bag'] = bag
+
+    messages.success(request, 'Successfully removed item from your basket')
+
+    return redirect(reverse('view_bag'))

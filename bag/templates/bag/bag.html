@@ -20,7 +20,7 @@
                         {% for item in bag_items %}
                             <div class="row container-fluid my-3 mx-auto border-dark-green p-3">
                                 <div class="col-12 col-md-2 p-0 d-flex align-items-center justify-content-center">
-                                    {% if "placeholder" in item.product.image.url %}
+                                    {% if "placeholder" in item.product.image.url or not item.product.image.url %}
                                         <img class="bag-image"
                                             src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg"
                                             alt="Placeholder image for {{ product.name }}">

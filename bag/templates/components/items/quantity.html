@@ -1,22 +1,33 @@
-<form action="" method="POST" class="row container-fluid my-2">
+<form action="" method="POST" class="row container-fluid my-3">
     {% csrf_token %}
-    <div class="col-4 align-self-center">
-        <label for="item-quantity" class="form-label text-xs me-3 mb-0">Quantity: </label>
-    </div>
-    <div class="col-2 input-group w-auto border border-1 p-0">
-        <span
-            class="input-group-text rounded-0 text-white background-dark-green border-0 decrease-counter">
-            <i class="fa-solid fa-minus text-xs"></i>
-        </span>
-        <input type="number" name="item-quantity"
-            class="text-center form-control text-sm ps-3 border-0 item-quantity" min="1" max="25" value="{{ item.quantity }}"
-            id="item-quantity">
-        <span
-            class="input-group-text rounded-0 text-white background-dark-green border-0 increase-counter">
-            <i class="fa-solid fa-plus text-xs"></i>
-        </span>
-    </div> 
-    <p class="user-select-none quantity-helper text-center mt-3 p-3 background-dark-green text-white text-xs w-75 m-auto d-none">
-        Quantity between 1 and 25 only. Please <a href="{% url 'home' %}#contact-section"
-            class="text-light-green text-decoration-none">contact us</a> for larger orders</p>
+        <div class="col-4 align-self-center">
+            <label for="item-quantity" class="form-label text-xs me-3 mb-0">Quantity: </label>
+        </div>
+        <div class="col-2 input-group w-auto border border-1 p-0">
+            <span class="input-group-text rounded-0 text-white background-dark-green border-0 decrease-counter">
+                <i class="fa-solid fa-minus text-xs"></i>
+            </span>
+            <input type="number" name="item-quantity"
+                class="text-center form-control text-sm ps-3 border-0 item-quantity" min="1" max="25"
+                value="{{ item.quantity }}" id="item-quantity">
+            <span class="input-group-text rounded-0 text-white background-dark-green border-0 increase-counter">
+                <i class="fa-solid fa-plus text-xs"></i>
+            </span>
+        </div>
+        <p
+            class="user-select-none quantity-helper text-center mt-3 p-3 background-dark-green text-white text-xs w-75 m-auto d-none">
+            Quantity between 1 and 25 only. Please <a href="{% url 'home' %}#contact-section"
+                class="text-light-green text-decoration-none">contact us</a> for larger orders</p>
+
+
+        <div class="row mt-5">
+            <div class="col-6 text-center">
+                <input type="submit" value="Update" class="text-purple border-0 background-light-green align-self-end">
+            </div>
+            <div class="col-6   text-center">
+                <a href="" class="text-purple border-0 background-light-green text-decoration-none">Remove</a>
+            </div>
+        </div>
+
+        <input type="hidden" name="item_name" value="{{ item.product.name }}">
 </form>

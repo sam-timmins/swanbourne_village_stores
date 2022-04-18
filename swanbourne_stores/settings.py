@@ -49,8 +49,10 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'mathfilters',
     'crispy_forms',
+
     'home',
     'products',
+    'bag',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +81,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'home.contexts.site_contexts'
+                'home.contexts.site_contexts',
+                'bag.contexts.bag_contents'
             ],
         },
     },
@@ -195,3 +198,10 @@ else:
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
     EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+
+
+# Delivery variables
+FREE_DELIVERY_THRESHOLD = int(os.environ.get('FREE_DELIVERY_THRESHOLD'))
+STANDARD_DELIVERY_PERCENTAGE = int(os.environ.get(
+    'STANDARD_DELIVERY_PERCENTAGE'
+    ))

@@ -1,0 +1,24 @@
+<div class="col-12 col-md-8 col-lg-6">
+    <div class="row mt-3">
+        <div class="col-12">
+            <p class="text-dark-green text-sm text-center">
+                If your are happy with your basket, head to the secure checkout. Otherwise please keep shopping.
+            </p>
+        </div>
+        <div class="col-12 my-3 d-flex flex-row align-items-center justify-content-around">
+
+            <a href="#" class="btn btn-general btn-purple btn-box-shadow-white text-sm p-1 rounded-0" 
+            aria-labelledby="bag-checkout">Checkout</a>
+            <span class="sr-only" id="bag-checkout">
+                Purple button with white writing navigating to the secure checkout
+            </span>
+
+            <a href="{% url 'the_menu' %}" class="btn btn-general btn-white btn-box-shadow-white text-sm p-1 rounded-0" 
+            aria-labelledby="bag-menu-button">The Menu</a>
+            <span class="sr-only" id="bag-menu-button">
+                White button with purple writing navigating to to menu with all the dishes, frozen and fresh
+            </span>
+
+        </div>
+    </div>
+</div>

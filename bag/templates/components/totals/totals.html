@@ -1,0 +1,27 @@
+<div class="row container-fluid mt-5 mx-auto justify-content-around">
+    <div class="col-12 col-md-4 d-flex flex-column align-items-center justify-content-center">
+        <div class="row">
+            <div class="col-12">
+                <p class="text-xs text-dark-green"><strong>Bag Total: {{ currency }}{{ total|floatformat:2 }}</strong></p>
+            </div>
+            <div class="col-12">
+                <p class="text-xs text-dark-green">Delivery: {{ currency }}{{ delivery|floatformat:2 }}</p>
+            </div>
+            <div class="col-12">
+                <p class="text-sm text-dark-green" class="mt-4"><strong>Grand Total: {{ currency }}{{ grand_total|floatformat:2 }}</strong></p>
+            </div>
+            <div class="col-12">
+                {% if free_delivery_delta > 0 %}
+                    <p class="mb-1 text-danger">
+                        You could get free delivery by spending just <strong>{{ currency }}{{ free_delivery_delta }}</strong> more!
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <hr class="d-md-none text-purple my-3">
+
+        <!-- Basket buttons -->
+        {% include 'components/buttons/buttons.html' %}
+</div>

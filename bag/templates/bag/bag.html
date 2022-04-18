@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/bag/bag.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Basket section -->
+<section class="row container-fluid p-0 m-0 {% if not bag_items %}background-purple min-vh-100 {% endif %}">
+
+    <!-- Basket header -->
+    {% include 'components/header/header.html' %}
+
+    <!-- Basket items -->
+    {% include 'components/items/items.html' %}
+  
+</section>
+
+{% endblock %}
+
+{% block postloadjs %}
+
+    {{ block.super }}
+        <script src="{% static 'js/bag/quantity.js' %}"></script>
+
+{% endblock %}

@@ -121,6 +121,10 @@ body {
     border-color:  var(--purple);
 }
 
+.border-dark-green {
+    border: 1px solid var(--purple);
+}
+
 /* 4. Buttons */
 
 .search-btn {

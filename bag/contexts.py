@@ -19,16 +19,24 @@ def bag_contents(request):
     product_count = int(0)
     bag = request.session.get('bag', {})
 
+    dishes = Dishes.objects.all()
+
+    dish_slug_list = []
+
+    for dish in dishes:
+        dish_slug_list.append(dish.slug_name)
+
     for item_slug, quantity in bag.items():
-        print(item_slug)
-        product = get_object_or_404(Dishes, slug_name=item_slug)
-        total += quantity * product.price
-        product_count += quantity
-        bag_items.append({
-            'item_slug': item_slug,
-            'quantity': quantity,
-            'product': product,
-        })
+
+        if item_slug in dish_slug_list:
+            product = get_object_or_404(Dishes, slug_name=item_slug)
+            total += quantity * product.price
+            product_count += quantity
+            bag_items.append({
+                'item_slug': item_slug,
+                'quantity': quantity,
+                'product': product,
+            })
 
     if total < settings.FREE_DELIVERY_THRESHOLD:
         delivery = total * Decimal(

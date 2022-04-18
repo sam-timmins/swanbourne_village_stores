@@ -2,7 +2,7 @@ from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 
-from products.models import Dishes, Wines
+from products.models import Dishes, Wines, Bundle
 
 
 def bag_contents(request):
@@ -21,14 +21,20 @@ def bag_contents(request):
 
     dishes = Dishes.objects.all()
     wines = Wines.objects.all()
+    bundles = Bundle.objects.all()
+
     dish_slug_list = []
     wine_slug_list = []
+    bundle_slug_list = []
 
     for dish in dishes:
         dish_slug_list.append(dish.slug_name)
 
     for wine in wines:
         wine_slug_list.append(wine.slug_name)
+
+    for bundle in bundles:
+        bundle_slug_list.append(bundle.slug_name)
 
     for item_slug, quantity in bag.items():
 
@@ -43,6 +49,15 @@ def bag_contents(request):
             })
         elif item_slug in wine_slug_list:
             product = get_object_or_404(Wines, slug_name=item_slug)
+            total += quantity * product.price
+            product_count += quantity
+            bag_items.append({
+                'item_slug': item_slug,
+                'quantity': quantity,
+                'product': product,
+            })
+        elif item_slug in bundle_slug_list:
+            product = get_object_or_404(Bundle, slug_name=item_slug)
             total += quantity * product.price
             product_count += quantity
             bag_items.append({

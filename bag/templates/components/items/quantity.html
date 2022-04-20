@@ -1,9 +1,11 @@
-<form action="{% url 'update_bag' item.product.slug_name %}" method="POST" class="row container-fluid my-3">
+<form action="{% url 'update_bag' item.product.slug_name %}" method="POST" class="row container-fluid my-3 p-0">
     {% csrf_token %}
-        <div class="col-4 align-self-center">
-            <label for="item-quantity" class="form-label text-xs me-3 mb-0">Quantity: </label>
+        <div class="col-12 align-self-center">
+            <label for="item-quantity" class="form-label my-0 text-sm my-3 px-3">Quantity: </label>
         </div>
-        <div class="col-2 input-group w-auto border border-1 p-0">
+
+        <!-- Quantity counter -->
+        <div class="col-12 basket-qty-counter input-group border border-1 p-0 m-auto">
             <span class="input-group-text rounded-0 text-white background-dark-green border-0 decrease-counter">
                 <i class="fa-solid fa-minus text-xs"></i>
             </span>
@@ -14,23 +16,24 @@
                 <i class="fa-solid fa-plus text-xs"></i>
             </span>
         </div>
+
+        <!-- Helper text -->
         <p
             class="user-select-none quantity-helper text-center mt-3 p-3 background-dark-green text-white text-xs w-75 m-auto d-none">
             Quantity between 1 and 25 only. Please <a href="{% url 'home' %}#contact-section"
                 class="text-light-green text-decoration-none">contact us</a> for larger orders</p>
 
-
+        <!-- Update and remove item -->
         <div class="row mt-5">
-
             <div class="col-6 text-center">
-                <input type="submit" value="Update" class="text-purple border-0 background-light-green align-self-end" aria-labelledby="update-basket-{{item.product.id}}">
+                <input type="submit" value="update" class="basket-form-button text-purple border-0 background-light-green align-self-end" aria-labelledby="update-basket-{{item.product.id}}">
                 <span id="update-basket-{{item.product.id}}" class="sr-only">Purple text that updates the quantity of {{ item.product.name }} in the basket</span>
             </div>
 
             <div class="col-6   text-center">
-                <button type="button" class="text-purple border-0 background-light-green text-decoration-none" data-bs-toggle="modal"
+                <button type="button" class="basket-form-button text-purple border-0 background-light-green text-decoration-none" data-bs-toggle="modal"
                     data-bs-target="#remove_from_basket{{item.product.id}}" aria-labelledby="remove-from-basket{{item.product.id}}">
-                    Remove
+                    remove
                 </button>
                 <span id="remove-from-basket{{item.product.id}}" class="sr-only">
                     Purple text that opens a model for conformation to remove {{ item.product.name }} from the basket

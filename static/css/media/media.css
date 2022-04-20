@@ -19,6 +19,10 @@
     .nav-link {
         margin-left: 18rem;
     }
+
+    .basket-qty-counter {
+        width: 25rem !important;
+    }
   }
 
 

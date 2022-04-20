@@ -6,3 +6,8 @@
 .basket-qty-counter {
     width: 50%;
 }
+
+.basket-form-button:hover,
+.basket-form-button:focus {
+    color: var(--white) !important;
+}

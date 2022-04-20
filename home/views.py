@@ -22,7 +22,7 @@ def index(request):
 
             messages.error(
                 request,
-                'Please add a message so we can help.'
+                'Please include a message so we can help.'
                 )
             return render(request, 'home/index.html', {
                 'saved_name': saved_name,
@@ -35,7 +35,7 @@ def index(request):
 
             messages.error(
                 request,
-                'Please enter your name.'
+                'Please include your name.'
                 )
             return render(request, 'home/index.html', {
                 'saved_message': saved_message,

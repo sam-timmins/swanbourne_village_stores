@@ -3,13 +3,13 @@
     <div class="background-light-green px-3 px-sm-5 py-5 my-5">
         {% for item in bag_items %}
         <div class="row container-fluid my-3 mx-auto border-dark-green p-3">
-            <div class="col-12 col-md-2 p-0 d-flex align-items-center justify-content-center">
+            <div class="col-12 col-md-4 p-0 d-flex align-items-center justify-content-center">
                 {% if "placeholder" in item.product.image.url or not item.product.image.url %}
-                <img class="bag-image"
+                <img class="bag-image card-img-top"
                     src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg"
                     alt="Placeholder image for {{ product.name }}">
                 {% else %}
-                <img class="bag-image" src=" {{ item.product.image.url }}" alt="Image of {{ item.product.name }}">
+                <img class="bag-image card-img-top" src=" {{ item.product.image.url }}" alt="Image of {{ item.product.name }}">
                 {% endif %}
             </div>
             <div class="col-12 col-md-6 my-3 d-flex flex-column align-items-center justify-content-center">

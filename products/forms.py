@@ -19,6 +19,7 @@ class DishForm(forms.ModelForm):
             'status',
             'price',
             'description',
+            'image',
         ]
 
     def __init__(self, *args, **kwargs):
@@ -85,6 +86,7 @@ class WineForm(forms.ModelForm):
             'slug_name',
             'price',
             'description',
+            'image',
         ]
 
     def __init__(self, *args, **kwargs):
@@ -150,6 +152,7 @@ class WorksForm(forms.ModelForm):
             'dish',
             'wine',
             'price',
+            'image',
         ]
 
     def __init__(self, *args, **kwargs):

@@ -152,7 +152,6 @@ class WorksForm(forms.ModelForm):
             'dish',
             'wine',
             'price',
-            'image',
         ]
 
     def __init__(self, *args, **kwargs):

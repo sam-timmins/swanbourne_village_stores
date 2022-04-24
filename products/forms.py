@@ -1,4 +1,5 @@
 from django import forms
+from .widgets import CustomClearableFileInput
 from .models import Dishes, Wines, Bundle
 
 
@@ -19,7 +20,13 @@ class DishForm(forms.ModelForm):
             'status',
             'price',
             'description',
+            'image',
         ]
+
+    image = forms.ImageField(
+        required=False,
+        widget=CustomClearableFileInput,
+        )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -40,6 +47,7 @@ class DishForm(forms.ModelForm):
 
             self.fields[str(field)].widget.attrs.update(extra_attributes)
 
+        self.fields['image'].label = ''
         self.fields['description'].label = 'Description'
         self.fields['description'].widget.attrs.update(
             placeholder='Description'
@@ -85,7 +93,13 @@ class WineForm(forms.ModelForm):
             'slug_name',
             'price',
             'description',
+            'image',
         ]
+
+    image = forms.ImageField(
+        required=False,
+        widget=CustomClearableFileInput,
+        )
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -106,6 +120,7 @@ class WineForm(forms.ModelForm):
 
             self.fields[str(field)].widget.attrs.update(extra_attributes)
 
+        self.fields['image'].label = ''
         self.fields['description'].label = 'Description'
         self.fields['description'].widget.attrs.update(
             placeholder='Description'

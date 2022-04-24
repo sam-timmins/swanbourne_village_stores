@@ -370,7 +370,7 @@ FROZEN_STATUS = ((0, 'Frozen'), (1, 'Fresh'))
 
 
 ## Tools
-
+Pillow
 
 # Testing
 

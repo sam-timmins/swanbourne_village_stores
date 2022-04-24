@@ -587,7 +587,7 @@ def edit_wine(request, product_id):
             messages.success(request, f'Successfully updated {product.name}')
             return redirect(
                 reverse(
-                    'product_detail_wines',
+                    'product_details_wines',
                     args=[product.id],
                     )
                 )

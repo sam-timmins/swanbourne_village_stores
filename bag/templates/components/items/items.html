@@ -6,7 +6,7 @@
             <div class="col-12 col-md-4 p-0 d-flex align-items-center justify-content-center">
                 {% if "placeholder" in item.product.image.url or not item.product.image.url %}
                 <img class="bag-image card-img-top p-0 m-0"
-                    src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg"
+                    src="{{ placeholder_image_url }}"
                     alt="Placeholder image for {{ product.name }}">
                 {% else %}
                 <img class="bag-image card-img-top" src=" {{ item.product.image.url }}" alt="Image of {{ item.product.name }}">

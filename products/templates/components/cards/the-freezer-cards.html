@@ -6,7 +6,7 @@
             <!-- Default image if none is uploaded -->
             {% if "placeholder" in product.image.url %}
                 <img class="card-img-top"
-                    src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg"
+                    src="{{ placeholder_image_url }}"
                     alt="Placeholder image for {{ product.name }}">
             {% else %}
                 <img class="card-img-top" src=" {{ product.image.url }}" alt="Image of {{ product.name }}">

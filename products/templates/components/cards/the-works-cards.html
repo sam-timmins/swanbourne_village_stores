@@ -5,7 +5,7 @@
     <div class="card w-75 background-light-green">
         <a href="{% url 'product_details_bundles' product.id %}" class="text-decoration-none" aria-labelledby="{{ product.slug_name }}-card">
             <img class="card-img-top"
-                src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg"
+                src="{{ placeholder_image_url }}"
                 alt="Placeholder image for {{ product.name }}">
 
             <div class="card-body">

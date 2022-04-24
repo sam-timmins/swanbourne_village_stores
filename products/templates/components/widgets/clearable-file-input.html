@@ -4,16 +4,16 @@
         <div class="col-12">
             <p>{{ widget.initial_text }}:</p>
             {% if 'placeholder' not in widget.value.url %}
-        <a href="{{ widget.value.url }}" class="text-decoration-none ms-5" target="_blank">
-            <img class="preview-image shadow-sm" src="{{ widget.value.url }}" alt="Placeholder image for {{ product.name }}">
-        </a>
-    {% else %}
-        <a href="https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg" class="text-decoration-none ms-5" target="_blank">
-            <img class="preview-image shadow-sm"
-            src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg"
-            alt="Placeholder image for {{ product.name }}">
-        </a>
-    {% endif %}
+                <a href="{{ widget.value.url }}" class="text-decoration-none ms-5" target="_blank">
+                    <img class="preview-image shadow-sm" src="{{ widget.value.url }}" alt="Placeholder image for {{ product.name }}">
+                </a>
+            {% else %}
+                <a href="https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg" class="text-decoration-none ms-5" target="_blank">
+                    <img class="preview-image shadow-sm"
+                    src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg"
+                    alt="Placeholder image for {{ product.name }}">
+                </a>
+            {% endif %}
         </div>
 
         <div class="row container p-0">
@@ -29,17 +29,12 @@
                 {% endif %}
                 {{ widget.input_text }}
             </div>
-
+{% endif %}
             <div class="col-12 my-5 ms-5 text-xs">
                 <div class="file-selector-container p-0 overflow-hidden">
                     <input type="{{ widget.type }}" name="{{ widget.name }}" include "django/forms/widgets/attrs.html" %}>
                 </div>
             </div>
 
-            
         </div>
-
-    
-{% endif %}
-
 </div>

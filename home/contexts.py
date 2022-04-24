@@ -13,6 +13,8 @@ def site_contexts(request):
     instagram = 'https://www.instagram.com/'
     twitter = 'https://www.twitter.com/'
 
+    placeholder_image_url = 'https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg' # noqa
+
     contexts = {
         'store_name': store_name,
         'currency': currency,
@@ -22,6 +24,7 @@ def site_contexts(request):
         'store_dropped_pin': store_dropped_pin,
         'store_phone_number': store_phone_number,
         'store_email': store_email,
+        'placeholder_image_url': placeholder_image_url,
     }
 
     return contexts

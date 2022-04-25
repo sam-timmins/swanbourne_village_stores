@@ -6,6 +6,7 @@ class CollectionDays(models.Model):
     day = models.CharField(
         max_length=9,
         unique=True,
+        blank=False,
     )
 
     def __str__(self):

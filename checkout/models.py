@@ -1,3 +1,5 @@
+import uuid
+
 from django.db import models
 
 from products.models import Dishes, Wines, Bundle
@@ -94,6 +96,12 @@ class Order(models.Model):
 
     def __str__(self):
         return f'{self.order_number}'
+
+    def _generate_order_number(self):
+        """
+        Generate a random, unique order number using UUID
+        """
+        return uuid.uuid4().hex.upper()
 
 
 class OrderItem(models.Model):

@@ -1,5 +1,7 @@
 from django.db import models
 
+from products.models import Dishes, Wines, Bundle
+
 
 class CollectionDays(models.Model):
     """ Model for colection days """
@@ -92,3 +94,47 @@ class Order(models.Model):
 
     def __str__(self):
         return f'{self.order_number}'
+
+
+class OrderItem(models.Model):
+    """ Model for individual order item """
+    order = models.ForeignKey(
+        Order,
+        null=False,
+        blank=False,
+        on_delete=models.CASCADE,
+        related_name='orderitems'
+        )
+    dish = models.ForeignKey(
+        Dishes,
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE
+        )
+    wine = models.ForeignKey(
+        Wines,
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE
+        )
+    bundle = models.ForeignKey(
+        Bundle,
+        null=True,
+        blank=True,
+        on_delete=models.CASCADE
+        )
+    quantity = models.IntegerField(
+        null=False,
+        blank=False,
+        default=0
+        )
+    orderitem_total = models.DecimalField(
+        max_digits=6,
+        decimal_places=2,
+        null=False,
+        blank=False,
+        editable=False
+        )
+
+    def __str__(self):
+        return f'{self.order}'

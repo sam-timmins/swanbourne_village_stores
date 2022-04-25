@@ -118,6 +118,15 @@ class Order(models.Model):
         self.grand_total = self.order_total + self.delivery_cost
         self.save()
 
+    def save(self, *args, **kwargs):
+        """
+        Override the original save method to set the order number
+        if it hasn't been set already.
+        """
+        if not self.order_number:
+            self.order_number = self._generate_order_number()
+        super().save(*args, **kwargs)
+
 
 class OrderItem(models.Model):
     """ Model for individual order item """

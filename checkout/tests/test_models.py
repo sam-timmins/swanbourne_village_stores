@@ -7,7 +7,7 @@ class TestCollectionDayModel(TestCase):
     """ Test collection day model """
 
     def setUp(self):
-        """ Set up an order """
+        """ Set up a collection day """
         self.collection_day = CollectionDays.objects.create(
             day='Thursday'
         )

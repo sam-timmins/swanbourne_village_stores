@@ -50,4 +50,9 @@ class TestOrderModel(TestCase):
             grand_total=110,
         )
 
-        
+    def test_collection_day_exists(self):
+        """ Test the collection day was created """
+        count_days = CollectionDays.objects.all().count()
+        count_orders = Order.objects.all().count()
+        self.assertEqual(count_days, 1)
+        self.assertEqual(count_orders, 1)

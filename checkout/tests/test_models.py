@@ -1,9 +1,10 @@
 import uuid
-
-from django.test import TestCase
 import datetime
 
-from checkout.models import CollectionDays, Order
+from django.test import TestCase
+
+from checkout.models import CollectionDays, Order, OrderItem
+from products.models import Dishes
 
 
 class TestCollectionDayModel(TestCase):
@@ -30,6 +31,22 @@ class TestOrderModel(TestCase):
 
     def setUp(self):
         """ Model setup """
+        self.chicken_dinner = Dishes.objects.create(
+            name='Chicken dinner',
+            slug_name='chicken_dinner',
+            description='A chicken dinner',
+            price=10.99,
+            status=1,
+        )
+
+        self.vegetable_dinner = Dishes.objects.create(
+            name='Vegetable dinner',
+            slug_name='vegetable_dinner',
+            description='A chicken dinner',
+            price=10.99,
+            status=1,
+        )
+
         self.collection_day = CollectionDays.objects.create(
             day='Thursday'
         )
@@ -70,10 +87,12 @@ class TestOrderModel(TestCase):
             grand_total=165,
         )
 
-    def test_collection_day_exists(self):
+    def test_collection_day_and_order_exists(self):
         """ Test the collection day and order were created """
         count_days = CollectionDays.objects.all().count()
         count_orders = Order.objects.all().count()
+        count_dishes = Dishes.objects.all().count()
+        self.assertEqual(count_dishes, 2)
         self.assertEqual(count_days, 1)
         self.assertEqual(count_orders, 2)
 

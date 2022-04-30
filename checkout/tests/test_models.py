@@ -64,9 +64,9 @@ class TestOrderModel(TestCase):
             street_address2='',
             county='Cavan',
             date=datetime.datetime.now(),
-            delivery_cost=10,
-            order_total=100,
-            grand_total=110,
+            delivery_cost=0,
+            order_total=0,
+            grand_total=0,
         )
 
         self.order_two = Order.objects.create(
@@ -85,6 +85,13 @@ class TestOrderModel(TestCase):
             delivery_cost=15,
             order_total=150,
             grand_total=165,
+        )
+
+        self.order_item_one = OrderItem.objects.create(
+            order=self.order_one,
+            dish=self.chicken_dinner,
+            quantity=10,
+            orderitem_total=0,
         )
 
     def test_collection_day_and_order_exists(self):
@@ -113,3 +120,23 @@ class TestOrderModel(TestCase):
             generated_order_number_order_one,
             generated_order_number_order_two
             )
+
+    def test_order_item_model_to_update_order_total(self):
+        """
+        Test order item model to check if the product is
+        in the Dishes model. Multipy the price of the dish by the
+        quantity and save the order total
+        """
+        self.assertTrue(self.order_item_one.dish)
+        self.assertFalse(self.order_item_one.wine)
+        if self.order_item_one.dish:
+            self.order_item_one.orderitem_total = \
+                self.order_item_one.dish.price * \
+                self.order_item_one.quantity
+            self.order_one.order_total = self.order_item_one.orderitem_total
+            self.order_one.save()
+            self.assertEqual(
+                self.order_one.order_total,
+                self.order_item_one.orderitem_total
+                )
+            self.assertEqual(self.order_item_one.orderitem_total, 109.90)

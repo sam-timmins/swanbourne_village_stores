@@ -1,7 +1,27 @@
-{% load crispy_forms_tags %}
+{% load bag_tools %}
 
+{% load crispy_forms_tags %}
 <div class="row container m-auto">
+
     <div class="col-12 col-md-6 m-auto background-light-green p-5 my-5">
         {{ order_form | crispy }}
     </div>
+
+    <div class="col-md-6">
+        <table>
+            <tr>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+            {% for item in bag_items %}
+                <tr>
+                    <td>{{ item.product.name | title }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ currency }}{{ item.product.price | calc_subtotal:item.quantity }}</td>
+                </tr>
+            {% endfor %}
+        </table> 
+    </div>
+
 </div>

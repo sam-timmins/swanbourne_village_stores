@@ -168,5 +168,23 @@ class OrderItem(models.Model):
         editable=False
         )
 
+    def save(self, *args, **kwargs):
+        """
+        Override the original save method to set the orderitem total
+        and update the order total depending on if the.
+        """
+        if self.dish or self.wine or self.bundle:
+            if self.dish:
+                self.orderitem_total = self.dish.price * self.quantity
+                super().save(*args, **kwargs)
+            elif self.wine:
+                self.orderitem_total = self.wine.price * self.quantity
+                super().save(*args, **kwargs)
+            else:
+                self.orderitem_total = self.bundle.price * self.quantity
+                super().save(*args, **kwargs)
+        else:
+            return
+
     def __str__(self):
         return f'{self.order}'

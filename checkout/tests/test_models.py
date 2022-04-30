@@ -71,11 +71,11 @@ class TestOrderModel(TestCase):
         )
 
     def test_collection_day_exists(self):
-        """ Test the collection day was created """
+        """ Test the collection day and order were created """
         count_days = CollectionDays.objects.all().count()
         count_orders = Order.objects.all().count()
         self.assertEqual(count_days, 1)
-        self.assertEqual(count_orders, 1)
+        self.assertEqual(count_orders, 2)
 
     def test_a_unique_order_number_is_created_and_saved(self):
         """ Test order number is created to the correct length, unique

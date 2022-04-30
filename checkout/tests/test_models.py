@@ -121,6 +121,17 @@ class TestOrderModel(TestCase):
             generated_order_number_order_two
             )
 
+    def test_order_item_model_product_foreign_key_is_not_blank(self):
+        """ Test the order item model """
+        if self.order_item_one.dish or \
+                self.order_item_one.wine or \
+                self.order_item_one.bundle:
+            self.assertTrue(self.order_item_one.dish)
+        else:
+            self.assertFalse(self.order_item_one.dish)
+            self.assertFalse(self.order_item_one.wine)
+            self.assertFalse(self.order_item_one.bundle)
+
     def test_order_item_model_to_update_order_total(self):
         """
         Test order item model to check if the product is

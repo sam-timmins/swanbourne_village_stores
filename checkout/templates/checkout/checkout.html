@@ -11,8 +11,15 @@
     <!-- Chekout header -->
     {% include 'components/header/checkout-header.html' %}
 
-    <!-- Chekout form -->
-    {% include 'components/form/checkout-form.html' %}
+    <div class="row container m-auto">
+
+        <!-- Chekout form -->
+        {% include 'components/form/checkout-form.html' %}
+        
+        <!-- Basket items table -->
+        {% include 'components/basket/checkout-basket.html' %}
+
+    </div>
 
 </section>
 

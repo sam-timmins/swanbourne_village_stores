@@ -32,7 +32,7 @@ class OrderForm(forms.ModelForm):
             'phone_number': 'Phone number',
         }
 
-        self.fields[str('full_name')].widget.attrs['autofocus'] = True
+        self.fields[str('collection_day')].widget.attrs['autofocus'] = True
 
         for field in self.fields:
             if self.fields[field].required:

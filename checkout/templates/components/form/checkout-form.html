@@ -26,9 +26,9 @@
                         <td class="my-3">{{ currency }}{{ item.product.price | calc_subtotal:item.quantity }}</td>
                     </tr>
                 {% endfor %}
-                <tfoot>
-                    <td class="my-3"></td>
-                    <td class="my-3">Basket Total:</td>
+                <tfoot class="background-purple text-white">
+                    <td class="my-3">Basket Totals</td>
+                    <td class="my-3">{{ product_count }}</td>
                     <td class="my-3 text-sm">{{ currency }}{{ grand_total }}</td>
                 </tfoot>
             </table> 

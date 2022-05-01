@@ -15,7 +15,7 @@
 
         <!-- Chekout form -->
         {% include 'components/form/checkout-form.html' %}
-        
+
         <!-- Basket items table -->
         {% include 'components/basket/checkout-basket.html' %}
 
@@ -25,3 +25,9 @@
 
 {% endblock %}
 
+{% block postloadjs %}
+
+    {{ block.super }}
+        <script src="{% static 'js/checkout/checkout.js' %}"></script>
+
+{% endblock %}

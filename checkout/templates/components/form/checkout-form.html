@@ -3,25 +3,36 @@
 {% load crispy_forms_tags %}
 <div class="row container m-auto">
 
-    <div class="col-12 col-md-6 m-auto background-light-green p-5 my-5">
+    <div class="col-12 col-md-6 m-auto background-light-green p-3 p-md-5 mt-5 my-md-5">
         {{ order_form | crispy }}
     </div>
 
-    <div class="col-md-6">
-        <table>
-            <tr>
-                <th>Item</th>
-                <th>Quantity</th>
-                <th>Total</th>
-            </tr>
-            {% for item in bag_items %}
-                <tr>
-                    <td>{{ item.product.name | title }}</td>
-                    <td>{{ item.quantity }}</td>
-                    <td>{{ currency }}{{ item.product.price | calc_subtotal:item.quantity }}</td>
-                </tr>
-            {% endfor %}
-        </table> 
+    <div class="col-12 col-md-6 m-auto background-light-green p-3 p-md-5 mb-3 my-md-5">
+        <p class="text-header text-md text-purple text-center my-3">Your Basket</p>
+        <hr class="text-purple my-3 mx-auto w-75">
+        <div class="p-3 table-responsive">
+            <table class="w-100 text-dark-green table table-hover align-middle">
+                <thead class="background-purple text-white fst-italic">
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                {% for item in bag_items %}
+                    <tr>
+                        <td class="my-3">{{ item.product.name | title }}</td>
+                        <td class="my-3">{{ item.quantity }}</td>
+                        <td class="my-3">{{ currency }}{{ item.product.price | calc_subtotal:item.quantity }}</td>
+                    </tr>
+                {% endfor %}
+                <tfoot>
+                    <td class="my-3"></td>
+                    <td class="my-3">Basket Total:</td>
+                    <td class="my-3 text-sm">{{ currency }}{{ grand_total }}</td>
+                </tfoot>
+            </table> 
+        </div>
     </div>
 
 </div>

@@ -124,6 +124,10 @@ def checkout(request):
 
 def checkout_success(request, order_number):
     """ Handles successful checkouts """
+    dishes = Dishes.objects.all()
+    wines = Wines.objects.all()
+    bundles = Bundle.objects.all()
+
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Your order ({order_number}) has been \
         successfully processed. We have sent you a confirmation email \
@@ -134,6 +138,9 @@ def checkout_success(request, order_number):
 
     context = {
         'order': order,
+        'dishes': dishes,
+        'wines': wines,
+        'bundles': bundles,
     }
 
     return render(request, 'checkout/checkout-success.html', context)

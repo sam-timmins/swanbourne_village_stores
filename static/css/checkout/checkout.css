@@ -1,0 +1,21 @@
+.StripeElement {
+    box-sizing: border-box;
+    height: 4rem;
+    padding: 1rem 1.2rem;
+    border-radius: 0px;
+    background-color: var(--white);
+}
+
+.StripeElement--focus {
+    box-shadow: 0px 0px 5px 2px var(--dark-green);
+}
+
+.StripeElement--webkit-autofill {
+    background-color: var(--light-green) !important;
+    color: var(--purple) !important;
+}
+
+.fieldset-label {
+    position: relative;
+    right: .5rem;
+}

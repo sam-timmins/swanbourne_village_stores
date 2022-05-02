@@ -4,8 +4,10 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.conf import settings
 
+from products.models import Dishes, Wines, Bundle
 from bag.contexts import bag_contents
 from .forms import OrderForm
+from .models import OrderItem
 
 
 def checkout(request):
@@ -34,8 +36,65 @@ def checkout(request):
         }
         order_form = OrderForm(form_data)
 
-        print(form_data)
+        if order_form.is_valid():
+            order = order_form.save()
 
+            dishes = Dishes.objects.all()
+            wines = Wines.objects.all()
+            bundles = Bundle.objects.all()
+
+            dish_slug_list = []
+            wine_slug_list = []
+            bundle_slug_list = []
+
+            for dish in dishes:
+                dish_slug_list.append(dish.slug_name)
+
+            for wine in wines:
+                wine_slug_list.append(wine.slug_name)
+
+            for bundle in bundles:
+                bundle_slug_list.append(bundle.slug_name)
+
+            for item_slug, item_data in bag.items():
+                try:
+                    if item_slug in dish_slug_list:
+                        dish = Dishes.objects.get(slug_name=item_slug)
+                        order_item = OrderItem(
+                            order=order,
+                            dish=dish,
+                            quantity=item_data,
+                        )
+                        order_item.save()
+                    if item_slug in wine_slug_list:
+                        wine = Wines.objects.get(slug_name=item_slug)
+                        order_item = OrderItem(
+                            order=order,
+                            wine=wine,
+                            quantity=item_data,
+                        )
+                        order_item.save()
+                    if item_slug in bundle_slug_list:
+                        bundle = Bundle.objects.get(slug_name=item_slug)
+                        order_item = OrderItem(
+                            order=order,
+                            bundle=bundle,
+                            quantity=item_data,
+                        )
+                        order_item.save()
+                except (
+                        Dishes.DoesNotExist,
+                        Wines.DoesNotExist,
+                        Bundle.DoesNotExist
+                        ):
+                    messages.error(request, 'One of the items in your basket was not found \
+                        in our database. Please contact us for assistance.')
+                    order.delete()
+                    return redirect(reverse('view_bag'))
+            return redirect(reverse('checkout_success', args=[order.order_number]))
+        else:
+            messages.error(request, 'There was an error with your order form. \
+                Please double check your information.')
     else:
         bag = request.session.get('bag', {})
         if not bag:

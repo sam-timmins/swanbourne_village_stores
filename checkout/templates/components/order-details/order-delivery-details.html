@@ -1,0 +1,99 @@
+{% if order.street_address1 %}
+    <div class="row">
+
+            <div class="col">
+                <p class="text-xs text-dark-green">Delivering To:</p>
+            </div>
+
+        <div class="col-12 text-md-right text-xs">
+
+            <div class="row justify-content-end">
+                <div class="col-12 col-sm-4">
+                    <p class="text-xs text-dark-green">
+                        Address 1
+                    </p>
+                </div>
+                <div class="col-12 col-sm-4 text-md-right">
+                    <p class="text-xs text-dark-green">
+                        {{ order.street_address1 }}
+                    </p>
+                </div>
+            </div>
+            
+            {% if order.street_address2 %}
+                <div class="row justify-content-end">
+                    <div class="col-12 col-sm-4">
+                        <p class="text-xs text-dark-green">
+                            Address 2
+                        </p>
+                    </div>
+                    <div class="col-12 col-sm-4 text-md-right">
+                        <p class="text-xs text-dark-green">
+                            {{ order.street_address2 }}
+                        </p>
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if order.county %}
+                <div class="row justify-content-end">
+                    <div class="col-12 col-sm-4">
+                        <p class="text-xs text-dark-green">
+                            County
+                        </p>
+                    </div>
+                    <div class="col-12 col-sm-4 text-md-right">
+                        <p class="text-xs text-dark-green">
+                            {{ order.county }}
+                        </p>
+                    </div>
+                </div>
+            {% endif %}
+
+            <div class="row justify-content-end">
+                <div class="col-12 col-sm-4">
+                    <p class="text-xs text-dark-green">
+                        Town or City
+                    </p>
+                </div>
+                <div class="col-12 col-sm-4 text-md-right">
+                    <p class="text-xs text-dark-green">
+                        {{ order.town_or_city }}
+                    </p>
+                </div>
+            </div>
+
+            {% if order.postcode %}
+                <div class="row justify-content-end">
+                    <div class="col-12 col-sm-4">
+                        <p class="text-xs text-dark-green">
+                            Postcode
+                        </p>
+                    </div>
+                    <div class="col-12 col-sm-4 text-md-right">
+                        <p class="text-xs text-dark-green">
+                            {{ order.postcode }}
+                        </p>
+                    </div>
+                </div>
+            {% endif %}
+
+            <div class="row justify-content-end">
+                <div class="col-12 col-sm-4">
+                    <p class="text-xs text-dark-green">
+                        Country
+                    </p>
+                </div>
+                <div class="col-12 col-sm-4 text-md-right">
+                    <p class="text-xs text-dark-green">
+                        {{ order.country }}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
+
+    <hr class="text-purple w-lg-75 mt-0">
+{% endif %}

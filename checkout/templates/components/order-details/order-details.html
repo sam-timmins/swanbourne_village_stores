@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col">
+        <p class="text-xs text-dark-green">Order Details:</p>
+    </div>
+</div>
+
+{% for item in order.orderitems.all %}
+<div class="row justify-content-end">
+    <div class="col-12 col-sm-4">
+        <p class="text-xs text-dark-green">
+            {% if item.dish %}
+                {{ item.dish.name }}
+            {% endif %}
+            {% if item.wine %}
+                {{ item.wine.name }}
+            {% endif %}                            
+            {% if item.bundle %}
+                {{ item.bundle.name }}
+            {% endif %}
+        </p>
+    </div>
+    <div class="col-12 col-sm-4 text-md-right">
+        <p class="text-xs text-dark-green">
+            {% if item.dish %}
+                {{ item.quantity }} @ {{ currency }}{{ item.dish.price }} each
+            {% endif %}
+            {% if item.wine %}
+                {{ item.quantity }} @ {{ currency }}{{ item.wine.price }} each
+            {% endif %}                            
+            {% if item.bundle %}
+                {{ item.quantity }} @ {{ currency }}{{ item.bundle.price }} each
+            {% endif %}
+        </p>
+    </div>
+</div>
+{% endfor %}
+
+<hr class="text-purple w-lg-75 mt-0">

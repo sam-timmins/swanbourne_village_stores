@@ -25,3 +25,20 @@ var card = elements.create('card', {
     hidePostalCode: true,
 });
 card.mount('#card-element');
+
+// Handle realtime validation errors on the card element by
+// adding message to card-errors div in checkout template
+card.addEventListener('change', function (event) {
+    var errorDiv = document.getElementById('card-errors');
+    if (event.error) {
+        var html = `
+            <span class="icon" role="alert">
+                <i class="fa-solid fa-bomb me-2"></i>
+            </span>
+            <span>${event.error.message}</span>
+        `;
+        $(errorDiv).html(html);
+    } else {
+        errorDiv.textContent = '';
+    }
+});

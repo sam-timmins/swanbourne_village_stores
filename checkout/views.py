@@ -1,12 +1,12 @@
 import stripe
 
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib import messages
 from django.conf import settings
 
 from products.models import Dishes, Wines, Bundle
 from bag.contexts import bag_contents
-from .forms import OrderForm
+from .forms import Order, OrderForm
 from .models import OrderItem
 
 
@@ -120,3 +120,20 @@ def checkout(request):
 
         }
         return render(request, 'checkout/checkout.html', context)
+
+
+def checkout_success(request, order_number):
+    """ Handles successful checkouts """
+    order = get_object_or_404(Order, order_number=order_number)
+    messages.success(request, f'Your order ({order_number}) has been \
+        successfully processed. We have sent you a confirmation email \
+            to {order.email}.')
+
+    if 'bag' in request.session:
+        del request.session['bag']
+
+    context = {
+        'order': order,
+    }
+
+    return render(request, 'checkout/checkout-success.html', context)

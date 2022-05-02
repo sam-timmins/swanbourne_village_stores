@@ -1,7 +1,10 @@
+import stripe
+
 from django.shortcuts import render, redirect, reverse
 from django.contrib import messages
 from django.conf import settings
 
+from bag.contexts import bag_contents
 from .forms import OrderForm
 
 
@@ -19,12 +22,22 @@ def checkout(request):
         messages.error(request, 'Your basket is currently empty')
         return redirect(reverse('the_menu'))
 
+    current_bag = bag_contents(request)
+    total = current_bag['grand_total']
+    stripe_total = round(total * 100)
+
+    stripe.api_key = stripe_secret_key
+    intent = stripe.PaymentIntent.create(
+        amount=stripe_total,
+        currency=settings.STRIPE_CURRENCY,
+        )
+
     order_form = OrderForm()
 
     context = {
         'order_form': order_form,
         'stripe_public_key': stripe_public_key,
-        'client_secret': stripe_secret_key,
+        'client_secret': intent.client_secret,
 
     }
     return render(request, 'checkout/checkout.html', context)

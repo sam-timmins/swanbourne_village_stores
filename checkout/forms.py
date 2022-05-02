@@ -22,7 +22,7 @@ class OrderForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         extra_attributes = {
-                'class': 'text-xs p-3 my-3 my-md-4',
+                'class': 'text-xs p-3 my-3 my-md-4 rounded-0 border-0',
             }
 
         placeholders = {

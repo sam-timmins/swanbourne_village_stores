@@ -42,3 +42,36 @@ card.addEventListener('change', function (event) {
         errorDiv.textContent = '';
     }
 });
+
+// Handle form submit, prevents multiple submissions
+var form = document.getElementById('payment-form');
+
+form.addEventListener('submit', function(ev) {
+    ev.preventDefault();
+    card.update({ 'disabled': true});
+    $('#submit-button').attr('disabled', true);
+    // Provide card to Stripe
+    stripe.confirmCardPayment(clientSecret, {
+        payment_method: {
+            card: card,
+        }
+    }).then(function(result) {
+        // Show error message if there are errors
+        if (result.error) {
+            var errorDiv = document.getElementById('card-errors');
+            var html = `
+                <span class="icon" role="alert">
+                    <i class="fa-solid fa-bomb me-2"></i>
+                </span>
+                <span>${result.error.message}</span>`;
+            $(errorDiv).html(html);
+            card.update({ 'disabled': false});
+            $('#submit-button').attr('disabled', false);
+        } else {
+            // Submit form if payment intent succeeded
+            if (result.paymentIntent.status === 'succeeded') {
+                form.submit();
+            }
+        }
+    });
+});

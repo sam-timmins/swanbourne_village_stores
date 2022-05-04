@@ -54,7 +54,15 @@ form.addEventListener('submit', function(ev) {
     $('#loading-overlay').fadeToggle(100);
 
     var saveInfo = Boolean($('#id-save-info').attr('checked'));
+    var csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+    var postData = {
+        'csrfmiddlewaretoken': csrfToken,
+        'client_secret': clientSecret,
+        'save_info': saveInfo,
+    };
+    var url = '/checkout/cache_checkout_data/';
 
+    $post(url, postData).done(function() {
     // Provide card to Stripe
     stripe.confirmCardPayment(clientSecret, {
         payment_method: {
@@ -94,4 +102,6 @@ form.addEventListener('submit', function(ev) {
             }
         }
     });
+    });
+
 });

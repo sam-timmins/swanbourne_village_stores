@@ -13,6 +13,19 @@
             <!-- Stripe form errors -->
             <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
 
+            <!-- Save info checkbox -->
+            {% if user.is_authenticated %}
+                <div class="my-5 p-3 col-8 col-sm-10 mx-auto">
+                    <input class="form-check-input me-3" type="checkbox" id="id-save-info" name="save-info" checked>
+                    <label class="text-xs text-dark-green d-inline text-break" for="id-save-info">Save this information to my profile</label>
+                </div>
+            {% else %}
+                <div class="text-purple text-xs text-center my-5">
+                    <a class="text-purple" href="{% url 'account_signup' %}">Create an account</a> or 
+                    <a class="text-purple" href="{% url 'account_login' %}">login</a> to save this information
+                </div>
+            {% endif %}
+
             <div class="text-center my-5">
                 <button type="submit" class="btn btn-general btn-purple btn-box-shadow-white text-sm p-1 rounded-0"
                     aria-labelledby="checkout-button">

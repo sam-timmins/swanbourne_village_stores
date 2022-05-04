@@ -91,7 +91,12 @@ def checkout(request):
                         in our database. Please contact us for assistance.')
                     order.delete()
                     return redirect(reverse('view_bag'))
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+
+            request.session['save_info'] = 'save-info' in request.POST
+            return redirect(reverse(
+                'checkout_success',
+                args=[order.order_number])
+                )
         else:
             messages.error(request, 'There was an error with your order form. \
                 Please double check your information.')

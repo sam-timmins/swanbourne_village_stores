@@ -19,3 +19,16 @@
     position: relative;
     right: .5rem;
 }
+
+.form-check-input:checked {
+    background-color: var(--purple);
+}
+
+.form-check-input {
+    border: none;
+}
+
+.form-check-input:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 0 0.25rem var(--purple);
+}

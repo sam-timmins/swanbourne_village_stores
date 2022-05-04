@@ -133,6 +133,7 @@ def checkout_success(request, order_number):
     wines = Wines.objects.all()
     bundles = Bundle.objects.all()
 
+    save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
     messages.success(request, f'Your order ({order_number}) has been \
         successfully processed. We have sent you a confirmation email \

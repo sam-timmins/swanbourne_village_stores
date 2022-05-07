@@ -1,0 +1,128 @@
+import json
+import time
+
+from django.http import HttpResponse
+
+from .models import Order, OrderItem
+from products.models import Dishes, Wines, Bundle
+
+class StripeWebhookHandler:
+    """ Handle Stripe webhooks """
+
+    def __init__(self, request):
+        self.request = request
+
+    def handle_event(self, event):
+        """
+        Handle a generic/unknown/unexpected webhook event
+        """
+        return HttpResponse(
+            content=f'Unhandled webhook received: {event["type"]}',
+            status=200)
+
+    def handle_payment_intent_succeeded(self, event):
+        """
+        Handle the payment_intent.succeeded webhook from Stripe
+        """
+        intent = event.data.object
+        pid = intent.id
+        bag = intent.metadata.bag
+        save_info = intent.metadata.save_info
+
+        billing_details = intent.charges.data[0].billing_details
+        grand_total = round(intent.charges.data[0].amount / 100, 2)
+
+        order_exists = False
+        attempt = 1
+        while attempt <= 5:
+            try:
+                order = Order.objects.get(
+                    full_name__iexact=billing_details.name,
+                    email__iexact=billing_details.email,
+                    phone_number__iexact=billing_details.phone,
+                    original_bag=bag,
+                    stripe_pid=pid,
+                )
+                order_exists = True
+                break
+            except Order.DoesNotExist:
+                attempt += 1
+                time.sleep(1)
+        if order_exists:
+            return HttpResponse(
+                content=f'Webhook received: {event["type"]} | SUCCESS: Verified order already in database',
+                status=200)
+        else:
+            order = None
+            try:
+                order = Order.objects.create(
+                    full_name=billing_details.name,
+                    email=billing_details.email,
+                    phone_number=billing_details.phone,
+                    original_bag=bag,
+                    stripe_pid=pid,
+                )
+
+                dishes = Dishes.objects.all()
+                wines = Wines.objects.all()
+                bundles = Bundle.objects.all()
+
+                dish_slug_list = []
+                wine_slug_list = []
+                bundle_slug_list = []
+
+                for dish in dishes:
+                    dish_slug_list.append(dish.slug_name)
+
+                for wine in wines:
+                    wine_slug_list.append(wine.slug_name)
+
+                for bundle in bundles:
+                    bundle_slug_list.append(bundle.slug_name)
+
+                for item_slug, item_data in json.loads(bag).items():
+                    if item_slug in dish_slug_list:
+                        dish = Dishes.objects.get(slug_name=item_slug)
+                        if isinstance(item_data, int):
+                            order_item = OrderItem(
+                                order=order,
+                                dish=dish,
+                                quantity=item_data,
+                            )
+                            order_item.save()
+                    if item_slug in wine_slug_list:
+                        wine = Wines.objects.get(slug_name=item_slug)
+                        if isinstance(item_data, int):
+                            order_item = OrderItem(
+                                order=order,
+                                wine=wine,
+                                quantity=item_data,
+                            )
+                            order_item.save()
+                    if item_slug in bundle_slug_list:
+                        bundle = Bundles.objects.get(slug_name=item_slug)
+                        if isinstance(item_data, int):
+                            order_item = OrderItem(
+                                order=order,
+                                bundle=bundle,
+                                quantity=item_data,
+                            )
+                            order_item.save()
+            except Exception as e:
+                if order:
+                    order.delete()
+                return HttpResponse(
+                    content=f'Webhook received: {event["type"]} | ERROR: {e}',
+                    status=500)
+        return HttpResponse(
+            content=f'Webhook received: {event["type"]} | \
+                SUCCESS: Created order in webhook',
+            status=200)
+
+    def handle_payment_intent_failed(self, event):
+        """
+        Handle the payment intent failed webhook from Stripe
+        """
+        return HttpResponse(
+            content=f'Webhook received: {event["type"]}',
+            status=200)

@@ -22,13 +22,13 @@
     <div class="col-12 col-sm-4 text-md-right">
         <p class="text-xs text-dark-green">
             {% if item.dish %}
-                {{ item.quantity }} @ {{ currency }}{{ item.dish.price }} each
+                {{ item.quantity }} @ {{ currency }}{{ item.dish.price |floatformat:2 }} each
             {% endif %}
             {% if item.wine %}
-                {{ item.quantity }} @ {{ currency }}{{ item.wine.price }} each
+                {{ item.quantity }} @ {{ currency }}{{ item.wine.price |floatformat:2 }} each
             {% endif %}                            
             {% if item.bundle %}
-                {{ item.quantity }} @ {{ currency }}{{ item.bundle.price }} each
+                {{ item.quantity }} @ {{ currency }}{{ item.bundle.price |floatformat:2 }} each
             {% endif %}
         </p>
     </div>

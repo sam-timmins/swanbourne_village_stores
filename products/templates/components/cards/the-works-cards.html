@@ -16,11 +16,11 @@
                         <p class="card-text text-sm text-purple p-3 m-0">Wine: {{ product.wine.name}}</p>
                         <p class="card-text text-sm text-purple p-3 m-0">Dish: {{ product.dish.name}}</p>
 
-                        <p class="card-text text-sm text-purple p-3 m-0">Individual Price: {{ currency }}{{ product.dish.price | addition:product.wine.price }}</p>
-                        <p class="card-text text-sm text-purple p-3 m-0">The Works Price: {{ currency }}{{ product.price }}</p>
+                        <p class="card-text text-sm text-purple p-3 m-0">Individual Price: {{ currency }}{{ product.dish.price | addition:product.wine.price |floatformat:2 }}</p>
+                        <p class="card-text text-sm text-purple p-3 m-0">The Works Price: {{ currency }}{{ product.price |floatformat:2 }}</p>
                         
                         
-                        <p class="card-text text-xs background-dark-green text-white p-3 m-0 mt-2 text-uppercase w-100 text-center">Save: {{ currency }}{{ product.dish.price | addition:product.wine.price | sub:product.price}}</p>
+                        <p class="card-text text-xs background-dark-green text-white p-3 m-0 mt-2 text-uppercase w-100 text-center">Save: {{ currency }}{{ product.dish.price | addition:product.wine.price | sub:product.price |floatformat:2}}</p>
 
             </div>
         </a>

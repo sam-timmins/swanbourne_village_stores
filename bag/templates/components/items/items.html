@@ -21,7 +21,7 @@
                     <hr class="text-purple my-3 mx-auto w-75">
 
                     <div class="col-12 d-flex align-items-center">
-                        <p class="my-0 text-sm my-3 px-3">Price:<span class="ms-3 text-header text-md">{{ currency }}{{ item.product.price }}</span></p>
+                        <p class="my-0 text-sm my-3 px-3">Price:<span class="ms-3 text-header text-md">{{ currency }}{{ item.product.price|floatformat:2 }}</span></p>
                     </div>
                 </div>
 

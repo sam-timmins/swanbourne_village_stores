@@ -21,7 +21,7 @@
                 <p class="card-text text-sm text-purple p-3 m-0">Origin: Unknown</p>
             {% endif %}
             <p class="card-text text-sm text-purple p-3 m-0">Variety: {{ product.category.variety|title }}</p>
-            <p class="card-text text-sm text-purple p-3 m-0">Price: {{ currency }}{{ product.price }}</p>
+            <p class="card-text text-sm text-purple p-3 m-0">Price: {{ currency }}{{ product.price |floatformat:2 }}</p>
         </div>
     </a>
     <span class="sr-only" id="{{ product.slug_name }}-card">A link to the detailed description of {{ product.name }} and purchasing options</span>

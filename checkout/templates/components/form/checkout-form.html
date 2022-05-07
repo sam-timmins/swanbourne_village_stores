@@ -35,7 +35,7 @@
                 <span id="checkout-button" class="sr-only">
                     Purple button with white text that confirms payment
                 </span>
-                <p class="text-purple-text-xs my-3 fst-italic fw-bold">Your card will be charged {{ currency }}{{ grand_total }}</p>
+                <p class="text-purple-text-xs my-3 fst-italic fw-bold">Your card will be charged {{ currency }}{{ grand_total|floatformat:2 }}</p>
             </div>
 
         </form>

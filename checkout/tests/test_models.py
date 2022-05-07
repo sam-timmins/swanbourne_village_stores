@@ -57,14 +57,7 @@ class TestOrderModel(TestCase):
             email='sam@email.com',
             phone_number=1234567890,
             collection_day=CollectionDays.objects.get(id=1),
-            country='Ireland',
-            postcode='A82E4T8',
-            town_or_city='Cavan',
-            street_address1='Main street',
-            street_address2='',
-            county='Cavan',
             date=datetime.datetime.now(),
-            delivery_cost=0,
             order_total=0,
             grand_total=0,
         )
@@ -75,16 +68,9 @@ class TestOrderModel(TestCase):
             email='another@email.com',
             phone_number=1234567890,
             collection_day=CollectionDays.objects.get(id=1),
-            country='Ireland',
-            postcode='A86TRT8',
-            town_or_city='Ballyjamesduff',
-            street_address1='Cavan Road',
-            street_address2='',
-            county='Cavan',
             date=datetime.datetime.now(),
-            delivery_cost=15,
             order_total=150,
-            grand_total=165,
+            grand_total=150,
         )
 
         self.order_item_one = OrderItem.objects.create(

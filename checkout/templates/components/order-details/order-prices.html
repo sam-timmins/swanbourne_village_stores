@@ -3,20 +3,6 @@
         <p class="text-xs text-dark-green">Pricing:</p>
     </div>
     <div class="col-12 text-md-right text-xs">
-        {% if order.delivery_cost %}
-            <div class="row justify-content-end">
-                <div class="col-12 col-sm-4">
-                    <p class="text-xs text-dark-green">
-                        Delivery:
-                    </p>
-                </div>
-                <div class="col-12 col-sm-4 text-md-right">
-                    <p class="text-xs text-dark-green">
-                        {{ currency }}{{ order.delivery_cost }}
-                    </p>
-                </div>
-            </div>
-        {% endif %}
         
         <div class="row justify-content-end">
             <div class="col-12 col-sm-4">

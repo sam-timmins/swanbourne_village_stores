@@ -95,6 +95,17 @@ class Order(models.Model):
         null=False,
         default=0
         )
+    original_bag = models.TextField(
+        null=False,
+        blank=False,
+        default=''
+        )
+    stripe_pid = models.CharField(
+        max_length=254,
+        null=False,
+        blank=False,
+        default=''
+        )
 
     def __str__(self):
         return f'{self.order_number}'

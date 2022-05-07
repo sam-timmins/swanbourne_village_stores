@@ -16,13 +16,13 @@
                 <tr>
                     <td class="my-3">{{ item.product.name | title }}</td>
                     <td class="my-3">{{ item.quantity }}</td>
-                    <td class="my-3">{{ currency }}{{ item.product.price | calc_subtotal:item.quantity }}</td>
+                    <td class="my-3">{{ currency }}{{ item.product.price | calc_subtotal:item.quantity | floatformat:2 }}</td>
                 </tr>
             {% endfor %}
             <tfoot class="background-purple text-white">
                 <td class="my-3">Basket Totals</td>
                 <td class="my-3">{{ product_count }}</td>
-                <td class="my-3 text-sm">{{ currency }}{{ grand_total }}</td>
+                <td class="my-3 text-sm">{{ currency }}{{ grand_total|floatformat:2 }}</td>
             </tfoot>
         </table> 
     </div>

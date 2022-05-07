@@ -18,7 +18,7 @@
             {{ product.name|title }}
         </p>
         <p class="text-md text-purple ps-3 text-center">
-            {{ currency }}{{ product.price }}
+            {{ currency }}{{ product.price |floatformat:2 }}
         </p>
 
         <!-- Add to bag form -->

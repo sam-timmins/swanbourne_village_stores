@@ -21,7 +21,7 @@
                         {% else %}
                             <p class="card-text text-sm text-purple p-3 m-0">Origin: Unknown</p>
                         {% endif %}
-                        <p class="card-text text-sm text-purple p-3 m-0">Price: {{ currency }}{{ product.price }}</p>
+                        <p class="card-text text-sm text-purple p-3 m-0">Price: {{ currency }}{{ product.price |floatformat:2 }}</p>
                         
                         {% if not product.status %}
                             <p class="card-text text-xs background-dark-green text-white p-3 m-0 mt-2 text-uppercase w-100 text-center">Frozen</p>

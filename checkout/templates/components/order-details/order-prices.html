@@ -12,7 +12,7 @@
             </div>
             <div class="col-12 col-sm-4 text-md-right">
                 <p class="text-xs text-dark-green">
-                    {{ currency }}{{ order.grand_total }}
+                    {{ currency }}{{ order.grand_total|floatformat:2 }}
                 </p>
             </div>
         </div>

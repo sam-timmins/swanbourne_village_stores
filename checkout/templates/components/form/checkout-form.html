@@ -12,6 +12,7 @@
             
             <!-- Stripe form errors -->
             <div class="mb-3 text-danger" id="card-errors" role="alert"></div>
+            <input type="hidden" value="{{ client_secret }}" name="client_secret">
 
             <!-- Save info checkbox -->
             {% if user.is_authenticated %}

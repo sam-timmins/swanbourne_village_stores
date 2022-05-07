@@ -30,12 +30,6 @@ def checkout(request):
             'email': request.POST['email'],
             'phone_number': request.POST['phone_number'],
             'collection_day': request.POST['collection_day'],
-            # 'country': request.POST['country'],
-            # 'postcode': request.POST['postcode'],
-            # 'town_or_city': request.POST['town_or_city'],
-            # 'street_address1': request.POST['street_address1'],
-            # 'street_address2': request.POST['street_address2'],
-            # 'county': request.POST['county'],
         }
         order_form = OrderForm(form_data)
 

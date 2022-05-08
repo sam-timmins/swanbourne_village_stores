@@ -357,3 +357,13 @@ input[type=number] {
     margin: 0;
     height: 100%;
 }
+
+/* Tables */
+
+.sub-table {
+    width: 100%;
+}
+
+.sub-table th.item {
+    width: 80%;
+}

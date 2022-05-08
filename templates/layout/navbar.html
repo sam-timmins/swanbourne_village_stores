@@ -230,7 +230,9 @@
                 {% if request.user.is_authenticated %}
                 <li class="nav-item mt-lg-0 mx-3 d-flex align-items-center justify-content-center">
                     <a class="p-2 ms-lg-0 text-start text-sm me-lg-3 me-xl-5 my-3 text-dark-green text-decoration-none"
-                        href="{% url 'profile' %}" aria-labelledby="navbar-profile" title="Profile">
+                        href="{% url 'profile' %}" aria-labelledby="navbar-profile" data-toggle="tooltip" 
+                        data-bs-placement="bottom" data-bs-html="true"
+                        title="<p class='text-xs text-white'>Profile</p>">
                         <p class="my-0 profile-link">
                             {{ user.username | make_list | first | capfirst }}
                         </p>

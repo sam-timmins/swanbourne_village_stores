@@ -17,7 +17,7 @@
                 {% for order in orders %}
                     <tr>
                         <td>
-                            <a href="" data-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                            <a href="{% url 'order_history' order.order_number %}" data-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
                             title="<p class='text-xs text-white'>{{ order.order_number }}</p>"
                             class="text-purple">
 

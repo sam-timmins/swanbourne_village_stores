@@ -1,8 +1,22 @@
 <div class="col-12 background-purple">
     <h1 class="text-lg text-white text-header text-center my-5 py-md-3">Thank you for your order</h1>
-    <p class="text-sm text-white text-center fst-italic mb-5">
-        Your order information is below. A confirmation email will be sent to <span class="fw-bolder">{{ order.email }}</span>.
-    </p>
+    {% if from_profile %}
+        <p class="text-sm text-white text-center fst-italic mb-5">
+            This is a past confirmation for order number {{order_number}}. A confirmation email was sent on {{ order.date | date:"l jS F Y" }} at {{ order.date | date:"H:i" }}.
+        </p>
+        <div class="my-5 text-center">
+            <a href="{% url 'profile' %}" class="btn btn-general btn-white btn-box-shadow-white text-sm p-1 rounded-0"
+            aria-labelledby="success-profile">
+                Profile
+            </a>
+            <span class="sr-only">White button with purple writing that returns to the profile page</span>
+        </div>
+    {% else %}
+        <p class="text-sm text-white text-center fst-italic mb-5">
+            Your order information is below. A confirmation email will be sent to <span class="fw-bolder">{{ order.email }}</span>.
+        </p>
+    {% endif %}
+
 
     <hr class="text-light-green w-lg-75">
 

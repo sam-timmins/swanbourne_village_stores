@@ -20,7 +20,8 @@ class UserProfileForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         extra_attributes = {
-                'class': 'text-xs p-3 my-3 my-md-4 rounded-0 border-0',
+                'class': 'text-xs p-3 ms-md-3 ms-lg-5 my-3 \
+                    my-md-4 rounded-0 border-0',
             }
 
         placeholders = {
@@ -38,4 +39,4 @@ class UserProfileForm(forms.ModelForm):
             })
             self.fields[str(field)].widget.attrs.update(extra_attributes)
 
-        self.fields['default_phone_number'].label = 'Your phone number'
+        self.fields['default_phone_number'].label = 'Phone number'

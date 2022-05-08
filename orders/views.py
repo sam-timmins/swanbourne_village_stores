@@ -6,7 +6,7 @@ from checkout.models import Order
 def orders(request):
     """ A view to return the orders
     """
-    orders = Order.objects.all().order_by('-date')
+    orders = Order.objects.all().order_by('-date').order_by('status')
 
     context = {
         'orders': orders,

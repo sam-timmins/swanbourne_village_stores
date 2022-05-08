@@ -1,8 +1,15 @@
 {% load crispy_forms_tags %}
 
-<div class="col-12 col-lg-4 p-3 p-lg-5 text-purple">
+<div class="col-12 p-3 p-lg-5 mb-5 text-purple">
+
+    <h2 class="text-header text-md text-center">Contact details</h2>
+    <p class="text-sm text-purple text-center fst-italic fw-bold mb-5">
+        Please keep your details up to date.
+    </p>
+    <hr class="text-purple w-lg-75">
     
-    <form action="{% url 'profile' %}" method="POST" id="profile-update-form" class="text-center">
+    <form action="{% url 'profile' %}" method="POST" id="profile-update-form"
+    class="container border-purple d-flex flex-column flex-md-row justify-content-around align-items-center background-light-green py-5 px-2">
         {% csrf_token %}
         {{ form | crispy }}
         <button type="submit" class="btn btn-general btn-box-shadow-white btn-purple text-sm p-3 my-md-5 mx-3 mx-md-5 rounded-0">Update</button>

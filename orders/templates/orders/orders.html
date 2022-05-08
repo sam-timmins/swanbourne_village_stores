@@ -22,11 +22,13 @@
             {% for order in orders %}
                 <tr>
                     <td>
+                        <a href="{% url 'order_details' order.order_number  %}">
                         {% if order.status %}
                             Completed
                         {% else %}
                             Open
                         {% endif %}
+                    </a>
                     </td>
                     <td>
                         <p># - {{ order.order_number }}</p>

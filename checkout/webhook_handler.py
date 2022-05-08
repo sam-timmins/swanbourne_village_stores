@@ -49,6 +49,7 @@ class StripeWebhookHandler:
                     full_name__iexact=billing_details.name,
                     email__iexact=billing_details.email,
                     phone_number__iexact=billing_details.phone,
+                    grand_total=grand_total,
                     original_bag=bag,
                     stripe_pid=pid,
                 )

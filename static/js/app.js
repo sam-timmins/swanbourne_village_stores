@@ -19,8 +19,10 @@ const copyrightYearRef = document.querySelector("#copyright-year");
   });
 
 
-  // Show the toast
+  // Bootstrap
   $(document).ready(function() {
+    // Show the toasts
     $(".toast").toast('show');
+    // Show the tooltips
+    $('[data-toggle="tooltip"]').tooltip();
   });
-

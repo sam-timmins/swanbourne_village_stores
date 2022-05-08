@@ -2,15 +2,15 @@
 {% load static %}
 
 {% block content %}
-<div class="p-3 table-responsive">
+<div class="p-3 table-responsive container">
     <table class="w-100 text-dark-green table align-middle table-hover">
         <thead class="background-purple text-white fst-italic">
             <tr>
                 <th>Status</th>
-                <th>Order Number</th>
-                <th>Date</th>
+                <th>Details</th>
+                <th>Order Date</th>
+                <th>Collection Day</th>
                 <th>Items</th>
-                <th>Order Total</th>
             </tr>
         </thead>
         <tbody class="text-black">
@@ -24,14 +24,11 @@
                         {% endif %}
                     </td>
                     <td>
-                        <a href="#" data-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                        title="<p class='text-xs text-white'>{{ order.order_number }}</p>"
-                        class="text-purple">
-
-                            {{ order.order_number|truncatechars:6 }}
-                        </a>
+                        <p># - {{ order.order_number }}</p>
+                        <p>{{ order.full_name }}</p>
                     </td>
                     <td>{{ order.date | date:"d/m/y"}}</td>
+                    <td>{{ order.collection_day}}</td>
 
                     <td class="colspan-4">
                         <table class="table mb-0 sub-table">
@@ -66,8 +63,6 @@
                             </tbody>
                         </table>
                     </td>
-
-                    <td>${{ order.grand_total }}</td>
                 </tr>
             {% endfor %}
         </tbody>

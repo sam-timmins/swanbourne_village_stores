@@ -5,6 +5,7 @@ from django.http import HttpResponse
 
 from .models import Order, OrderItem
 from products.models import Dishes, Wines, Bundle
+from profiles.models import UserProfile
 
 class StripeWebhookHandler:
     """ Handle Stripe webhooks """
@@ -32,6 +33,14 @@ class StripeWebhookHandler:
         billing_details = intent.charges.data[0].billing_details
         grand_total = round(intent.charges.data[0].amount / 100, 2)
 
+        profile = None
+        username = intent.metadata.username
+        if username != 'AnonymousUser':
+            profile = UserProfile.objects.get(user__username=username)
+            if save_info:
+                profile.default_phone_number = billing_details.phone
+                profile.save()
+
         order_exists = False
         attempt = 1
         while attempt <= 5:
@@ -57,6 +66,7 @@ class StripeWebhookHandler:
             try:
                 order = Order.objects.create(
                     full_name=billing_details.name,
+                    user_profile=profile,
                     email=billing_details.email,
                     phone_number=billing_details.phone,
                     original_bag=bag,

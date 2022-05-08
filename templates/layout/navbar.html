@@ -17,7 +17,7 @@
         </button>
         
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-md-center">
 
                 <!-- Menu links -->
                 <li class="nav-item dropdown mt-5 mt-lg-0">
@@ -205,27 +205,45 @@
                         A link with green text and light green background and an icon of a shopping bag that navigates to the basket page in the same tab
                     </span>
                 </li>
-            </ul>
+            
 
-            <!-- Search bar -->
-            <div class="row mb-5 mb-lg-0">
-                <div class="col-sm-8 col-lg-12 mx-auto">
-                    <form method="GET" action="{% url 'the_menu' %}" class="p-3 me-lg-3 me-xl-5">
-                        <div class="input-group align-items-center">
-                            <input class="form-control form-control-border text-sm rounded-0" type="text"
-                                name="main-search-query" placeholder="Search the menu" aria-label="Search">
-                            <div class="input-group-append">
-                                <button class="form-control btn rounded-0 text-sm search-btn" type="submit" aria-label="Search">
-                                    <span class="icon">
-                                        <i class="fa-solid fa-magnifying-glass"></i>
-                                    </span>
-                                </button>
+                <!-- Search bar -->
+                <li class="row mb-5 mb-lg-0">
+                    <div class="col-sm-8 col-lg-12 mx-auto">
+                        <form method="GET" action="{% url 'the_menu' %}" class="p-3 me-lg-3 me-xl-5">
+                            <div class="input-group align-items-center">
+                                <input class="form-control form-control-border text-sm rounded-0" type="text"
+                                    name="main-search-query" placeholder="Search the menu" aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="form-control btn rounded-0 text-sm search-btn" type="submit" aria-label="Search">
+                                        <span class="icon">
+                                            <i class="fa-solid fa-magnifying-glass"></i>
+                                        </span>
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+                        </form>
+                    </div>
+                </li>
 
+                <!-- Profile -->
+                {% if request.user.is_authenticated %}
+                <li class="nav-item mt-lg-0 mx-3 d-flex align-items-center justify-content-center">
+                    <a class="p-2 ms-lg-0 text-start text-sm me-lg-3 me-xl-5 my-3 text-dark-green text-decoration-none"
+                        href="{% url 'profile' %}" aria-labelledby="navbar-profile" data-toggle="tooltip" 
+                        data-bs-placement="bottom" data-bs-html="true"
+                        title="<p class='text-xs text-white'>Profile</p>">
+                        <p class="my-0 profile-link">
+                            {{ user.username | make_list | first | capfirst }}
+                        </p>
+                    </a>
+                    <span id="navbar-profile" class="sr-only">
+                        A circle link with the letter {{ user.username | make_list | first | capfirst }} 
+                        in green text that navigates to the profile page in the same tab
+                    </span>
+                </li>
+                {% endif %}
+            </ul>
         </div>
     </div>
 </nav>

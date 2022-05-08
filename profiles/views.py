@@ -19,7 +19,7 @@ def profile(request):
                 your details have been updated.')
 
     form = UserProfileForm(instance=user_profile)
-    orders = user_profile.orders.all()
+    orders = user_profile.orders.all().order_by('-date')
 
     context = {
         'form': form,

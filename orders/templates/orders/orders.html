@@ -6,6 +6,7 @@
     <table class="w-100 text-dark-green table align-middle table-hover">
         <thead class="background-purple text-white fst-italic">
             <tr>
+                <th>Status</th>
                 <th>Order Number</th>
                 <th>Date</th>
                 <th>Items</th>
@@ -15,6 +16,13 @@
         <tbody class="text-black">
             {% for order in orders %}
                 <tr>
+                    <td>
+                        {% if order.status %}
+                            Completed
+                        {% else %}
+                            Open
+                        {% endif %}
+                    </td>
                     <td>
                         <a href="#" data-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
                         title="<p class='text-xs text-white'>{{ order.order_number }}</p>"

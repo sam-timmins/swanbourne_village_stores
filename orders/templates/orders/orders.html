@@ -6,75 +6,8 @@
     <!-- Orders header -->
     {% include 'components/header/orders-header.html' %}
 
-<div class="p-3 table-responsive container">
-    <table class="w-100 text-dark-green table align-middle table-hover">
-        <thead class="background-purple text-white fst-italic">
-            <tr>
-                <th>Status</th>
-                <th>Details</th>
-                <th>Order Date</th>
-                <th>Collection Day</th>
-                <th>Items</th>
-            </tr>
-        </thead>
-        <tbody class="text-black">
-            {% for order in orders %}
-                <tr>
-                    <td>
-                        <a href="{% url 'order_details' order.order_number  %}" class="text-sm text-decoration-none btn-purple py-3 px-5"
-                        data-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-                        title="<p class='text-xs text-white'>Update</p>">
-                        {% if order.status %}
-                            Completed
-                        {% else %}
-                            Open
-                        {% endif %}
-                    </a>
-                    </td>
-                    <td>
-                        <p># - {{ order.order_number }}</p>
-                        <p>{{ order.full_name }}</p>
-                    </td>
-                    <td>{{ order.date | date:"d/m/y"}}</td>
-                    <td>{{ order.collection_day}}</td>
+    <!-- Orders table -->
+    {% include 'components/orders-table/orders-table.html' %}
 
-                    <td class="colspan-4">
-                        <table class="table mb-0 sub-table">
-                            <thead class="background-light-green text-purple fst-italic">
-                                <tr>
-                                    <th class="item">Item</th>
-                                    <th class="quantity">Quantity</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for item in order.orderitems.all %}
-                                <tr>
-                                    {% if item.dish.name %}
-                                        <td>{{ item.dish.name | title }}</td>
-                                        <td>{{ item.quantity }}</td>
-                                    {% endif %}
-
-                                    {% if item.wine.name %}
-                                        <td>{{ item.wine.name | title }}</td>
-                                        <td>{{ item.quantity }}</td>
-                                    {% endif %}
-
-                                    {% if item.bundle.name %}
-                                        <td>{{ item.bundle.name | title }}</td>
-                                        <td>{{ item.quantity }}</td>
-                                    {% endif %}
-
-                                </tr>
-                                
-
-                            {% endfor %}
-                            </tbody>
-                        </table>
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
 
 {% endblock %}

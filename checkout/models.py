@@ -23,6 +23,8 @@ class CollectionDays(models.Model):
 class Order(models.Model):
     """ Model for an order """
 
+    COMPLETED = ((0, 'Open'), (1, 'Complete'))
+
     order_number = models.CharField(
         max_length=32,
         null=False,
@@ -81,6 +83,10 @@ class Order(models.Model):
         null=False,
         blank=False,
         default=''
+        )
+    status = models.IntegerField(
+        choices=COMPLETED,
+        default=0,
         )
 
     def __str__(self):

@@ -19,7 +19,7 @@ class UpdateStatusForm(forms.ModelForm):
         """
         super().__init__(*args, **kwargs)
         extra_attributes = {
-                'class': 'text-xs p-3 mb-3 mb-md-4 rounded-0 border-0',
+                'class': 'text-xs p-3 rounded-0 border-0',
             }
 
         self.fields['status'].widget.attrs.update(extra_attributes)

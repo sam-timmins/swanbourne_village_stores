@@ -1,5 +1,10 @@
+from checkout.models import Order
+
+
 def site_contexts(request):
     """ Site contexts variables """
+
+    open_orders_count = Order.objects.all().filter(status=0).count()
 
     store_name = 'Swanbourne Village Stores'
     currency = '£'
@@ -25,6 +30,7 @@ def site_contexts(request):
         'store_phone_number': store_phone_number,
         'store_email': store_email,
         'placeholder_image_url': placeholder_image_url,
+        'open_orders_count': open_orders_count,
     }
 
     return contexts

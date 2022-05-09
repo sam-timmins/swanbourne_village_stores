@@ -49,3 +49,13 @@ def order_details(request, order_number):
     }
 
     return render(request, 'orders/orders_details.html', context)
+
+
+def delete_order(request, order_number):
+    """ Deletes an order based on the order number"""
+    order = Order.objects.get(order_number=order_number)
+    order.delete()
+
+    messages.success(request, 'Order successfully deleted.')
+
+    return redirect('orders')

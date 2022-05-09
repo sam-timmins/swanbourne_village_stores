@@ -22,7 +22,9 @@
             {% for order in orders %}
                 <tr>
                     <td>
-                        <a href="{% url 'order_details' order.order_number  %}">
+                        <a href="{% url 'order_details' order.order_number  %}" class="text-sm text-decoration-none btn-purple py-3 px-5"
+                        data-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                        title="<p class='text-xs text-white'>Update</p>">
                         {% if order.status %}
                             Completed
                         {% else %}

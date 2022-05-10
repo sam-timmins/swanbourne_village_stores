@@ -294,6 +294,15 @@ input[type=number] {
     transition: 0.8s;
 }
 
+.btn-order-numbers {
+    position: fixed;
+    top: 8rem;
+    right: 0;
+    z-index: 10;
+    width: 5rem;
+    height: 5rem;
+}
+
 @keyframes nav-link-focus {
     0% {
         border-bottom: 4px solid transparent;

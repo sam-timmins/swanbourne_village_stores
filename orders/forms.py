@@ -1,6 +1,6 @@
 from django import forms
 
-from checkout.models import Order
+from checkout.models import Order, COMPLETED
 
 
 class UpdateStatusForm(forms.ModelForm):
@@ -22,5 +22,6 @@ class UpdateStatusForm(forms.ModelForm):
                 'class': 'text-xs p-3 rounded-0 border-0',
             }
 
+        self.fields['status'].widget = forms.RadioSelect(choices=COMPLETED)
         self.fields['status'].widget.attrs.update(extra_attributes)
         self.fields['status'].label = ''

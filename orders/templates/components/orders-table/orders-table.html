@@ -13,55 +13,67 @@
             {% for order in orders %}
                 <tr>
                     <td>
-                        <a href="{% url 'order_details' order.order_number  %}" class="text-sm text-decoration-none btn-purple py-3 px-5"
+                        <a href="{% url 'order_details' order.order_number  %}" class="d-block text-purple text-decoration-none text-xs"
                         data-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
                         title="<p class='text-xs text-white'>Update</p>">
                         {% if order.status %}
-                            Completed
+                            <p class="m-0 p-2">Completed</p>
                         {% else %}
-                            Open
+                            <p class="m-0 p-2">Open</p>
                         {% endif %}
                     </a>
                     </td>
                     <td>
-                        <p># - {{ order.order_number }}</p>
-                        <p>{{ order.full_name }}</p>
+                        <a href="{% url 'order_details' order.order_number  %}" class="d-block text-purple text-decoration-none text-xs">
+                            <p class="m-0 p-2"># - {{ order.order_number }}</p>
+                            <p class="m-0 p-2">{{ order.full_name }}</p>
+                        </a>
                     </td>
-                    <td>{{ order.date | date:"d/m/y"}}</td>
-                    <td>{{ order.collection_day}}</td>
+                    <td>
+                        <a href="{% url 'order_details' order.order_number  %}" class="d-block text-purple text-decoration-none text-xs">
+                            {{ order.date | date:"d/m/y"}}
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{% url 'order_details' order.order_number  %}" class="d-block text-purple text-decoration-none text-xs">
+                            {{ order.collection_day}}
+                        </a>
+                        </td>
 
                     <td class="colspan-4">
-                        <table class="table mb-0 sub-table">
-                            <thead class="background-light-green text-purple fst-italic">
-                                <tr>
-                                    <th class="w-75">Item</th>
-                                    <th>Quantity</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for item in order.orderitems.all %}
-                                <tr>
-                                    {% if item.dish.name %}
-                                        <td>{{ item.dish.name | title }}</td>
-                                        <td>{{ item.quantity }}</td>
-                                    {% endif %}
+                        <a href="{% url 'order_details' order.order_number  %}" class="d-block text-purple text-decoration-none text-xs">
+                            <table class="table mb-0 sub-table">
+                                <thead class="background-light-green text-purple fst-italic">
+                                    <tr>
+                                        <th class="w-75">Item</th>
+                                        <th>Quantity</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="text-purple">
+                                    {% for item in order.orderitems.all %}
+                                    <tr>
+                                        {% if item.dish.name %}
+                                            <td>{{ item.dish.name | title }}</td>
+                                            <td>{{ item.quantity }}</td>
+                                        {% endif %}
 
-                                    {% if item.wine.name %}
-                                        <td>{{ item.wine.name | title }}</td>
-                                        <td>{{ item.quantity }}</td>
-                                    {% endif %}
+                                        {% if item.wine.name %}
+                                            <td>{{ item.wine.name | title }}</td>
+                                            <td>{{ item.quantity }}</td>
+                                        {% endif %}
 
-                                    {% if item.bundle.name %}
-                                        <td>{{ item.bundle.name | title }}</td>
-                                        <td>{{ item.quantity }}</td>
-                                    {% endif %}
+                                        {% if item.bundle.name %}
+                                            <td>{{ item.bundle.name | title }}</td>
+                                            <td>{{ item.quantity }}</td>
+                                        {% endif %}
 
-                                </tr>
-                                
+                                    </tr>
+                                    
 
-                            {% endfor %}
-                            </tbody>
-                        </table>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </a>
                     </td>
                 </tr>
             {% endfor %}

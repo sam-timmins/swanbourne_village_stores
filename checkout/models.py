@@ -8,6 +8,9 @@ from products.models import Dishes, Wines, Bundle
 from profiles.models import UserProfile
 
 
+COMPLETED = ((0, 'Open'), (1, 'Complete'))
+
+
 class CollectionDays(models.Model):
     """ Model for colection days """
     day = models.CharField(
@@ -22,8 +25,6 @@ class CollectionDays(models.Model):
 
 class Order(models.Model):
     """ Model for an order """
-
-    COMPLETED = ((0, 'Open'), (1, 'Complete'))
 
     order_number = models.CharField(
         max_length=32,

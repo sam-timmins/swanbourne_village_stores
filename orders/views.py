@@ -79,14 +79,21 @@ def delete_collection_day(request, pk):
     no open orders against the day
     """
     day = CollectionDays.objects.get(pk=pk)
-    all_orders = Order.objects.all()
+    all_orders = Order.objects.filter(status=0)
 
+    day = str(day).lower()
+
+    order_list = []
     for order in all_orders:
-        if order.collection_day == day:
-            messages.error(request, 'There are open orders against this day. \
-                Please complete all orders due and then delete')
-            return redirect('collection_days')
-        else:
-            day.delete()
-            messages.success(request, 'Collection day successfully deleted.')
-            return redirect('collection_days')
+        collection_day = str(order.collection_day).lower()
+        order_list.append(collection_day)
+
+    if day in order_list:
+        messages.error(request, 'There are open orders against. \
+            Please complete all orders due and then delete')
+        return redirect('collection_days')
+    else:
+        day = CollectionDays.objects.get(pk=pk)
+        day.delete()
+        messages.success(request, 'Collection day successfully deleted.')
+        return redirect('collection_days')

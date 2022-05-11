@@ -69,4 +69,24 @@ def collection_days(request):
     context = {
         'days': days,
         }
+
     return render(request, 'orders/collection-days.html', context)
+
+
+def delete_collection_day(request, pk):
+    """
+    Deletes a collection day based on the pk if there are
+    no open orders against the day
+    """
+    day = CollectionDays.objects.get(pk=pk)
+    all_orders = Order.objects.all()
+
+    for order in all_orders:
+        if order.collection_day == day:
+            messages.error(request, 'There are open orders against this day. \
+                Please complete all orders due and then delete')
+            return redirect('collection_days')
+        else:
+            day.delete()
+            messages.success(request, 'Collection day successfully deleted.')
+            return redirect('collection_days')

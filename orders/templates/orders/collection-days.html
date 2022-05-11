@@ -3,6 +3,35 @@
 
 {% block content %}
 
-collection-days.html
+    <!-- Collection days header -->
+    {% include 'components/header/collection-days-header.html' %}
+
+    <div class="row container m-auto">
+        <div class="col-12 col-md-8 col-lg-4 mx-auto">
+
+            {% for day in days %}
+                <div class="row border-purple m-5">
+                    <div class="col-12 col-md-6 d-flex align-items-center text-sm">
+                        <p class="my-3 m-md-0 ps-3">{{ day.day }}</p>
+                    </div>
+                    <div class="col-12 col-md-6 text-center text-md-end">
+                        <button class="btn btn-general btn-box-shadow-white btn-light-green text-xs m-2 p-3 rounded-0 ms-auto"
+                        data-bs-toggle="modal" data-bs-target="#delete-collection-day-modal{{ day.pk }}" aria-labelledby="delete-order-confirmation">
+                            Delete Day
+                        </button>
+        
+                        <!-- Delete order modal -->
+                        {% include 'components/order-modals/delete-collection-day-modal.html' %}
+                    </div>
+                </div>
+
+
+            {% endfor %}
+
+        </div>
+        
+    </div>
+
+
 
 {% endblock %}

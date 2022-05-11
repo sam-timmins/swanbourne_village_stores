@@ -1,7 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.contrib import messages
 
-from checkout.models import Order
+from checkout.models import Order, CollectionDays
 
 from .forms import UpdateStatusForm
 
@@ -59,3 +59,14 @@ def delete_order(request, order_number):
     messages.success(request, 'Order successfully deleted.')
 
     return redirect('orders')
+
+
+def collection_days(request):
+    """ A view to return the collection days
+    """
+    days = CollectionDays.objects.all()
+
+    context = {
+        'days': days,
+        }
+    return render(request, 'orders/collection-days.html', context)

@@ -17,4 +17,9 @@ urlpatterns = [
         views.collection_days,
         name="collection_days"
         ),
+    path(
+        "collection_days/delete/<int:pk>",
+        views.delete_collection_day,
+        name="delete_collection_day"
+        ),
 ]

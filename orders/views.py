@@ -3,7 +3,7 @@ from django.contrib import messages
 
 from checkout.models import Order, CollectionDays
 
-from .forms import UpdateStatusForm
+from .forms import UpdateStatusForm, CreateCollectionDayForm
 
 
 def orders(request):
@@ -62,12 +62,24 @@ def delete_order(request, order_number):
 
 
 def collection_days(request):
-    """ A view to return the collection days
+    """ A view to return the collection days with the ability to
+    create a new collection day on a post request
     """
     days = CollectionDays.objects.all()
+    form = CreateCollectionDayForm()
+
+    if request.method == 'POST':
+        form = CreateCollectionDayForm(request.POST)
+        if form.is_valid():
+            day = form.cleaned_data.get('day')
+            form.save()
+            messages.success(request, f'Successfully added {day} to the \
+                available collection days')
+            return redirect(reverse('collection_days'))
 
     context = {
         'days': days,
+        'form': form,
         }
 
     return render(request, 'orders/collection-days.html', context)

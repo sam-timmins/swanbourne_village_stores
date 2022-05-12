@@ -55,9 +55,9 @@ class Order(models.Model):
         )
     collection_day = models.ForeignKey(
         CollectionDays,
-        on_delete=models.PROTECT,
+        on_delete=models.SET_NULL,
         blank=False,
-        null=False,
+        null=True,
         )
     date = models.DateTimeField(
         auto_now_add=True

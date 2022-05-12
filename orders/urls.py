@@ -12,4 +12,14 @@ urlpatterns = [
         views.delete_order,
         name="delete_order"
         ),
+    path(
+        "collection_days/",
+        views.collection_days,
+        name="collection_days"
+        ),
+    path(
+        "collection_days/delete/<int:pk>",
+        views.delete_collection_day,
+        name="delete_collection_day"
+        ),
 ]

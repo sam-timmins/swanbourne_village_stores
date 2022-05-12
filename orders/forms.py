@@ -1,6 +1,6 @@
 from django import forms
 
-from checkout.models import Order, COMPLETED
+from checkout.models import Order, CollectionDays, COMPLETED
 
 
 class UpdateStatusForm(forms.ModelForm):
@@ -25,3 +25,39 @@ class UpdateStatusForm(forms.ModelForm):
         self.fields['status'].widget = forms.RadioSelect(choices=COMPLETED)
         self.fields['status'].widget.attrs.update(extra_attributes)
         self.fields['status'].label = ''
+
+
+class CreateCollectionDayForm(forms.ModelForm):
+    """ Form for admin to create a collection day """
+    class Meta:
+        """ Form for admin to create a collection day """
+        model = CollectionDays
+        fields = (
+            'day',
+            )
+
+    def __init__(self, *args, **kwargs):
+        """
+        Customize the form with placeholders and
+        add extra styles to fields
+        """
+        super().__init__(*args, **kwargs)
+        extra_attributes = {
+                'class': 'text-xs p-3 rounded-0 border-0',
+            }
+
+        placeholders = {
+            'day': 'Add a day'
+        }
+
+        for field in self.fields:
+            if self.fields[field].required:
+                placeholder = f'{placeholders[field]} *'
+            else:
+                placeholder = placeholders[field]
+
+            self.fields[field].widget.attrs.update({
+                'placeholder': placeholder,
+            })
+            self.fields[str(field)].widget.attrs.update(extra_attributes)
+            self.fields[str(field)].label = ''

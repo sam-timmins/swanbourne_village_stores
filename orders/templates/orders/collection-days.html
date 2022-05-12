@@ -6,16 +6,17 @@
     <!-- Collection days header -->
     {% include 'components/header/collection-days-header.html' %}
 
-    <div class="row container m-auto">
-        <div class="col-12 col-md-8 col-lg-4 mx-auto">
+    <div class="row container-fluid m-auto">
+        <div class="col-12 col-md-8 col-lg-6 mx-auto">
 
             {% for day in days %}
-                <div class="row border-purple m-5">
-                    <div class="col-12 col-md-6 d-flex align-items-center text-sm">
-                        <p class="my-3 m-md-0 ps-3">{{ day.day }}</p>
+                <div class="row m-5 p-3">
+                    <div class="col-12 d-flex align-items-center text-sm">
+                        <p class="my-3 m-md-0 ps-3 text-xs">Collection Day:</p>
+                        <p class="my-3 m-md-0 ps-3 text-sm text-header">{{ day.day }}</p>
                     </div>
-                    <div class="col-12 col-md-6 text-center text-md-end">
-                        <button class="btn btn-general btn-box-shadow-white btn-light-green text-xs m-2 p-3 rounded-0 ms-auto"
+                    <div class="col-12 d-flex justify-content-center">
+                        <button class="btn btn-general btn-box-shadow-white btn-light-green text-xs mx-auto mt-3 mb-3 p-3 rounded-0"
                         data-bs-toggle="modal" data-bs-target="#delete-collection-day-modal{{ day.pk }}" aria-labelledby="delete-order-confirmation">
                             Delete Day
                         </button>
@@ -25,6 +26,7 @@
                     </div>
                 </div>
 
+                <hr class="text-purple m-0 p-0">
 
             {% endfor %}
 

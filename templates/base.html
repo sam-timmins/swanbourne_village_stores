@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="{% static 'css/base.css' %}">
     <link rel="stylesheet" href="{% static 'css/media/media.css' %}">
+    <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css" rel="stylesheet" type="text/css">
     {% endblock %}
 
 
@@ -87,6 +88,8 @@
     {% block postloadjs %}
 
         <script src="{% static 'js/app.js' %}"></script>
+        <script src="{% static 'js/newsletter/newsletter.js' %}"></script>
+        <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script>
         
     {% endblock %}
     

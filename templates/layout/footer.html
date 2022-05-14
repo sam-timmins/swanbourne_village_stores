@@ -35,7 +35,10 @@
 
                 </div>
                 <p class="text-xs my-2 m-md-4">&copy;<span id="copyright-year"></span> {{ store_name }}</p>
-                
+                <a href="{% url 'privacy_policy' %}" class="text-xs my-2 m-md-4 text-dark-green" aria-labelledby="privacy-policy">
+                    <i class="fa-solid fa-lock me-2"></i>Privacy Policy
+                </a>
+                <span class="sr-only" id="privacy-policy">A link with dark green writing that navigates to {{ store_name }}'s privacy policy</span>
             </div>
     </div>
 </footer>

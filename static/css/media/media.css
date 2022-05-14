@@ -23,6 +23,10 @@
     .basket-qty-counter {
         width: 25rem !important;
     }
+
+    .btn-order-numbers {
+        width: 5rem;
+    }
   }
 
 

@@ -9,7 +9,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="Description" content="Enter your description here" />
+    <meta name="keywords" content="Swanbourne, Winslow, Winslow District, food, quality food, takeaway, restaurant, wine, wine store, store, collection, village">
+    <meta name="Description" content="Swanbourne Village Stores, in the Winslow District of Buckinghamshire, provides restaurant-quality food for collection. 
+        These takeaway meals can be accompanied by a wine selected from our wine store.">
     {% endblock %}
 
 
@@ -59,7 +61,7 @@
         
         {% if messages %}
         <!-- Messages -->
-            <div class="message-container">
+            <section class="message-container">
                 {% for message in messages %}
                     {% with message.level as level %}
                         {% if level == 40 %}
@@ -73,7 +75,7 @@
                         {% endif %}
                     {% endwith %}
                 {% endfor %}
-            </div>
+            </section>
         {% endif %}
 
         {% block content %}

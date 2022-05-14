@@ -62,3 +62,9 @@ def privacy_policy(request):
     """ A view to return the privacy policy """
 
     return render(request, 'home/privacy-policy.html')
+
+
+def not_found_404(request, exception):
+    """ A view to return the 404 page """
+
+    return render(request, 'home/404.html')

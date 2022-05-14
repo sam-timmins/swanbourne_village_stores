@@ -13,3 +13,5 @@ urlpatterns = [
     path('profile/', include('profiles.urls')),
     path('orders/', include('orders.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'home.views.not_found_404'

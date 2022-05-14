@@ -61,7 +61,7 @@
         
         {% if messages %}
         <!-- Messages -->
-            <div class="message-container">
+            <section class="message-container">
                 {% for message in messages %}
                     {% with message.level as level %}
                         {% if level == 40 %}
@@ -75,7 +75,7 @@
                         {% endif %}
                     {% endwith %}
                 {% endfor %}
-            </div>
+            </section>
         {% endif %}
 
         {% block content %}

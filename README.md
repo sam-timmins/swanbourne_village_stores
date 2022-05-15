@@ -370,7 +370,10 @@ FROZEN_STATUS = ((0, 'Frozen'), (1, 'Fresh'))
 
 
 ## Tools
+
 Pillow
+
+[Sitemap Generator](https://www.xml-sitemaps.com/ "XML-Sitemaps.com")
 
 # Testing
 

@@ -23,16 +23,19 @@ def add_to_bag(request, item_slug):
                 request,
                 f'{quantity} {product_name} dishes added to the basket'
                 )
+            request.session['bag'] = bag
+            return redirect(redirect_url)
         else:
             messages.success(
                 request,
                 f"{quantity} {product_name} dish added to the basket"
                 )
+            request.session['bag'] = bag
+            return redirect(redirect_url)
     else:
         bag[item_slug] = quantity
 
     request.session['bag'] = bag
-
     return redirect(redirect_url)
 
 

@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<section class="row container mx-auto my-5">
+    <div class="col 12 p-3 p-md-5">
+        <h1 class="text-purple text-lg text-header text-center">We're sorry...</h1>
+        <p class="text-md text-purple text-center">
+            500 <span class="text-sm">- internal server error</span>
+        </p>
+
+        <hr class="text-purple w-lg-75 my-5">
+
+        <p class="text-sm text-purple text-center">
+            Something has gone wrong at our end.
+        </p>
+        <p class="text-sm text-purple text-center">
+            Please try again later or contact us.
+        </p>
+        <div class="text-center my-5">
+            <a href="{% url 'home' %}#contact-section" class="btn btn-general btn-purple text-sm p-1 rounded-0 my-2 mx-3"
+                aria-labelledby="500-home">
+                Contact Form
+            </a>
+            <span class="sr-only" id="500-home">Purple button with white writing that navigates to the home page</span>
+
+            <a href="tel:{{ store_phone_number }}" class="btn btn-general btn-light-green text-sm p-1 rounded-0 my-2 mx-3"
+                aria-labelledby="500-call">
+                Call Us
+            </a>
+            <span class="sr-only" id="500-call">Light green button with white writing that calls {{ store_name }}
+                page</span>
+
+            <a href="mailto:{{ store_email }}" class="btn btn-general btn-purple text-sm p-1 rounded-0 my-2 mx-3"
+                aria-labelledby="500-email">
+                Email Us
+            </a>
+            <span class="sr-only" id="500-email">Purple button with white writing that opens your email provider
+                page</span>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+
+
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/fresh_food/</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/wine_store/</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/the_freezer/</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/the_works/</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/basket/</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/privacy_policy/</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/fresh_food/?sort=price&amp;direction=asc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/fresh_food/?sort=price&amp;direction=desc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/fresh_food/?sort=category__origin&amp;direction=asc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/fresh_food/?sort=name&amp;direction=asc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/fresh_food/?sort=name&amp;direction=desc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/38</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/38</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/39</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/39</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/18</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/18</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/1</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/1</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/41</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/41</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/4</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/4</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/9</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/9</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/10</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/10</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/5</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/5</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/36</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/36</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/25</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/25</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/28</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/28</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/29</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/29</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/33</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/33</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/6</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/6</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/42</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/42</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/8</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/8</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/40</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/40</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/30</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/30</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/37</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/37</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/35</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/35</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/31</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/31</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/32</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/32</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/34</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/34</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/fresh_food/?page=1</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/wine_store/?sort=price&amp;direction=asc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/wine_store/?sort=price&amp;direction=desc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/wine_store/?sort=category__origin&amp;direction=asc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/wine_store/?sort=category__variety&amp;direction=asc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/wine_store/?sort=category__variety&amp;direction=desc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/wine_store/5</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/wine/5</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/wine_store/2</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/wine/2</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/wine_store/1</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/wine/1</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/wine_store/34</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/wine/34</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/wine_store/?page=1</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/the_freezer/?sort=price&amp;direction=asc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/the_freezer/?sort=price&amp;direction=desc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/the_freezer/?sort=category__origin&amp;direction=asc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/3</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/3</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/7</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/dish/7</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/the_freezer/?page=1</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/the_works/?sort=price&amp;direction=asc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/the_works/?sort=price&amp;direction=desc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/the_works/?sort=dish__name&amp;direction=asc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/the_works/?sort=dish__name&amp;direction=desc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/the_works/?sort=wine__name&amp;direction=asc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/the_works/?sort=wine__name&amp;direction=desc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/the_works/7</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/works/7</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/the_works/2</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/works/2</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/the_works/3</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/works/3</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/the_works/1</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=/the_menu/delete/works/1</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/the_works/?page=1</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/password/reset/</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/?sort=price&amp;direction=asc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/?sort=price&amp;direction=desc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/?sort=category__origin&amp;direction=asc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/?sort=name&amp;direction=asc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/?sort=name&amp;direction=desc</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/?page=1</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/the_menu/?page=2</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F38</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F39</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F18</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F1</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F41</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F4</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F9</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F10</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F5</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F36</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F25</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F28</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F29</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F33</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F6</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F42</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F8</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F40</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F30</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F37</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F35</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F31</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F32</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F34</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fwine%2F5</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fwine%2F2</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fwine%2F1</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fwine%2F34</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F3</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fdish%2F7</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fworks%2F7</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fworks%2F2</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fworks%2F3</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/signup/?next=%2Fthe_menu%2Fdelete%2Fworks%2F1</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.51</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F38</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F39</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F18</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F1</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F41</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F4</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F9</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F10</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F5</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F36</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F25</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F28</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F29</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F33</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F6</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F42</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F8</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F40</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F30</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F37</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F35</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F31</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F32</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F34</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fwine%2F5</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fwine%2F2</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fwine%2F1</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fwine%2F34</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F3</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fdish%2F7</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fworks%2F7</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fworks%2F2</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fworks%2F3</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+<url>
+  <loc>https://swanbourne-village-stores.herokuapp.com/accounts/login/?next=%2Fthe_menu%2Fdelete%2Fworks%2F1</loc>
+  <lastmod>2022-05-15T08:14:06+00:00</lastmod>
+  <priority>0.41</priority>
+</url>
+
+
+</urlset>

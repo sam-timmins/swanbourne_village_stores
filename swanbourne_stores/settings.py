@@ -204,7 +204,10 @@ else:
 
 # Stripe
 STRIPE_CURRENCY = 'GBP'
-STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
-STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
+STRIPE_PUBLIC_KEY = os.environ.get('STRIPE_PUBLIC_KEY')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
 
-STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+if DEBUG:
+    STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET_DEVELOP')
+else:
+    STRIPE_WH_SECRET = os.environ.get('STRIPE_WH_SECRET_LIVE')

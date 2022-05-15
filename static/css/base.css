@@ -337,8 +337,19 @@ input[type=number] {
 .message-container {
     position: fixed;
     top: 8rem;
-    right: 1rem;
+    right: 0;
     z-index: 10;
+}
+
+.toast-image {
+    height: 5rem;
+    max-width: 6rem;
+}
+
+.toast-basket-container {
+    height: 12rem;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 /* Loading Spinner */

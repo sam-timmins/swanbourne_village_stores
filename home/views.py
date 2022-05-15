@@ -68,3 +68,9 @@ def not_found_404(request, exception):
     """ A view to return the 404 page """
 
     return render(request, 'home/404.html')
+
+
+def server_error_500(request):
+    """ A view to return the 500 page """
+
+    return render(request, 'home/500.html')

@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /checkout/
+Sitemap: https://swanbourne-village-stores.herokuapp.com/sitemap.xml

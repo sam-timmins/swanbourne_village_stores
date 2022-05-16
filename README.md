@@ -273,7 +273,15 @@ All of the desired colour combinations have passed the [WebAIM Contrast Checker]
 
 ## Data Schema
 
-![Data Schema](readme/docs/structure/data-schema.png)
+### Products
+
+![Products Data Schema](readme/docs/structure/products-data-structure.png)
+
+\
+&nbsp;
+
+### Orders
+![Orders Data Schema](readme/docs/structure/orders-data-structure.png)
 
 ## Models
 

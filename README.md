@@ -265,11 +265,22 @@ All of the desired colour combinations have passed the [WebAIM Contrast Checker]
 ## App Flow
 
 ### Guest User
-![Guest User](readme/docs/structure/guest-user.png)
 
-### User
+![Guest User](readme/docs/structure/guest-user-flow.png)
+
+\
+&nbsp;
+
+### Authenticated User
+
+![Authenticated User](readme/docs/structure/authenticated-user-flow.png)
+
+\
+&nbsp;
 
 ### Admin
+
+![Admin User](readme/docs/structure/admin-user-flow.png)
 
 ## Data Schema
 

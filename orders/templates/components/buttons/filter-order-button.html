@@ -14,27 +14,33 @@
             
             <div class="row">
                 <div class="col-12 my-3 p-3 filter-item">
-                    <a href="{% url 'orders' %}?order=collected" class="text-decoration-none text-purple text.sm d-block">
+                    <a href="{% url 'orders' %}?order=collected" class="text-decoration-none text-purple text-sm d-block">
                         <i class="fa-solid fa-filter me-3"></i>
                         Collected Orders
                     </a>
                 </div>
                 <div class="col-12 my-3 p-3 filter-item">
-                    <a href="{% url 'orders' %}?order=not_collected" class="text-decoration-none text-purple text.sm d-block">
+                    <a href="{% url 'orders' %}?order=not_collected" class="text-decoration-none text-purple text-sm d-block">
                         <i class="fa-solid fa-filter me-3"></i>
                         Not Collected Orders
                     </a>
                 </div>
                 <div class="col-12 my-3 p-3 filter-item">
-                    <a href="{% url 'orders' %}?order=open" class="text-decoration-none text-purple text.sm d-block">
+                    <a href="{% url 'orders' %}?order=open" class="text-decoration-none text-purple text-sm d-block">
                         <i class="fa-solid fa-filter me-3"></i>
                         Open Orders
                     </a>
                 </div>
                 <div class="col-12 my-3 p-3 filter-item">
-                    <a href="{% url 'orders' %}?order=complete" class="text-decoration-none text-purple text.sm d-block">
+                    <a href="{% url 'orders' %}?order=complete" class="text-decoration-none text-purple text-sm d-block">
                         <i class="fa-solid fa-filter me-3"></i>
                         Completed Orders
+                    </a>
+                </div>
+                <div class="col-12 my-3 p-3 filter-item background-purple">
+                    <a href="{% url 'orders' %}" class="text-decoration-none text-white text-sm d-block text-center reset-filter-link">
+                        <i class="fa-solid fa-filter-slash"></i>
+                        Reset Filters
                     </a>
                 </div>
             </div>

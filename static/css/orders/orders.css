@@ -8,3 +8,24 @@
     border-color: var(--white);
     box-shadow: 0px 0px 5px 2px var(--light-green)
 }
+
+.btn-filter-orders {
+    position: fixed;
+    top: 14rem;
+    right: 0;
+    z-index: 10;
+    width: 3rem;
+    height: 5rem;
+}
+
+.filter-item:hover {
+    background-color: var(--light-green);
+}
+
+/* ≥768px */
+@media (min-width: 768px) {
+
+    .btn-filter-orders {
+        width: 5rem;
+    }
+  }

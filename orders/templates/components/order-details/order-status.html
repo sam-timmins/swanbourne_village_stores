@@ -13,6 +13,15 @@
                         Open
                     {% endif %}
                 </p>
+                {% if order.status %}
+                    <p class="text-md text-purple text-break text-uppercase fw-bolder">
+                        {% if order.collected_order %}
+                            Collected
+                        {% else %}
+                            Not collected
+                        {% endif %}
+                    </p>
+                {% endif %}
                 
                 <!-- Order status buttons -->
                 {% include 'components/buttons/update-status-buttons.html' %}

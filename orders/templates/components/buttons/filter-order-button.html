@@ -1,0 +1,45 @@
+{% if request.user.is_superuser %}
+
+    <button class="btn-filter-orders background-dark-green text-white border-white rounded-0" 
+    type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas-filter-orders" aria-controls="offcanvasRight">
+        <i class="fa-solid fa-filter"></i>
+    </button>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvas-filter-orders" aria-labelledby="offcanvasRightLabel">
+        <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel">{{ store_name }}</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body py-5">
+            <h2 class="text-sm text-dark-green mb-5">Filter Orders</h2>
+            
+            <div class="row">
+                <div class="col-12 my-3 p-3 filter-item">
+                    <a href="{% url 'orders' %}?order=collected" class="text-decoration-none text-purple text.sm d-block">
+                        <i class="fa-solid fa-filter me-3"></i>
+                        Collected Orders
+                    </a>
+                </div>
+                <div class="col-12 my-3 p-3 filter-item">
+                    <a href="{% url 'orders' %}?order=not_collected" class="text-decoration-none text-purple text.sm d-block">
+                        <i class="fa-solid fa-filter me-3"></i>
+                        Not Collected Orders
+                    </a>
+                </div>
+                <div class="col-12 my-3 p-3 filter-item">
+                    <a href="{% url 'orders' %}?order=open" class="text-decoration-none text-purple text.sm d-block">
+                        <i class="fa-solid fa-filter me-3"></i>
+                        Open Orders
+                    </a>
+                </div>
+                <div class="col-12 my-3 p-3 filter-item">
+                    <a href="{% url 'orders' %}?order=complete" class="text-decoration-none text-purple text.sm d-block">
+                        <i class="fa-solid fa-filter me-3"></i>
+                        Completed Orders
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+{% endif %}

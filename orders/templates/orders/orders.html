@@ -1,6 +1,12 @@
 {% extends "base.html" %}
 {% load static %}
 
+{% block extra_css %}
+
+    <link rel="stylesheet" href="{% static 'css/orders/orders.css' %}">
+
+{% endblock %}
+
 {% block content %}
 
     <!-- admin orders section -->
@@ -11,6 +17,9 @@
 
         <!-- Orders table -->
         {% include 'components/orders-table/orders-table.html' %}
+
+        <!-- Filter orders -->
+        {% include 'components/buttons/filter-order-button.html' %}
 
     </section>
 

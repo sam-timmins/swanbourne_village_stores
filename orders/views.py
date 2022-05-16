@@ -12,7 +12,19 @@ from .forms import (UpdateStatusForm,
 def orders(request):
     """ A view to return the orders
     """
-    orders = Order.objects.all().order_by('-date').order_by('status')
+    orders = Order.objects.all().order_by('status', 'collected_order')
+
+    if request.GET:
+        if 'order' in request.GET:
+            order = request.GET['order']
+            if order == 'collected':
+                orders = orders.filter(collected_order=1)
+            elif order == 'not_collected':
+                orders = orders.filter(collected_order=0)
+            elif order == 'open':
+                orders = orders.filter(status=0)
+            elif order == 'complete':
+                orders = orders.filter(status=1)
 
     context = {
         'orders': orders,

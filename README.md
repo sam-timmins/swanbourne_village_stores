@@ -285,59 +285,122 @@ All of the desired colour combinations have passed the [WebAIM Contrast Checker]
 
 ## Models
 
-### Category
+### DishesCategory
 
 | Name | Key | Type | Other Details
 | -- | -- | -- | --
-| name || CharField | max_length=254, null=False, blank=False
-| friendly_name || CharField | max_length=254, null=True, blank=True
+| origin || CharField | max_length=254
+| name || CharField | max_length=254
+| friendly_name || CharField | max_length=254
 
+\
+&nbsp;
 
-### WineCategory
-
-| Name | Key | Type | Other Details
-| -- | -- | -- | --
-| name || CharField | max_length=254, null=False, blank=False
-| friendly_name || CharField | max_length=254, null=True, blank=True
-
-### Product
-
-FROZEN_STATUS = ((0, 'Frozen'), (1, 'Fresh'))
+### WinesCategory
 
 | Name | Key | Type | Other Details
 | -- | -- | -- | --
-| name | | CharField | max_length=254
-| image_url |  |  URLField | max_length=1024, null=True, blank=True
-| image |  | ImageField | null=True, blank=True
-| price |  | DecimalField | max_digits=6, decimal_places=2
+| origin || CharField | max_length=254
+| variety || CharField | max_length=254
+| name || CharField | max_length=254
+| friendly_name || CharField | max_length=254
+
+\
+&nbsp;
+
+### Dishes
+
+DISH_STATUS = ((0, 'Frozen'), (1, 'Fresh'))
+
+| Name | Key | Type | Other Details
+| -- | -- | -- | --
+| category | FK (DishesCategory) | | null=True, blank=True, on_delete=models.SET_NULL
+| name | | CharField | max_length=254, unique=True
+| slug_name | | SlugField | max_length=254, unique=True
+| status | | IntegerField | choices=DISH_STATUS, default=1
+| image |  |  CloudinaryField | 'image', default='placeholder, null=True, blank=True
 | description | | TextField |
-| frozen_item || BooleanField | choices=FROZEN_STATUS, default=1
-| category | FK (Category) | | null=True, blank=True, on_delete=models.SET_NULL
-| wine_category | FK (WineCategory)| | null=True, blank=True, on_delete=models.SET_NULL
+| price |  | DecimalField | max_digits=6, decimal_places=2
 
+\
+&nbsp;
+
+### Wines
+
+| Name | Key | Type | Other Details
+| -- | -- | -- | --
+| category | FK (WinesCategory) | | null=True, blank=True, on_delete=models.SET_NULL
+| name | | CharField | max_length=254, unique=True
+| slug_name | | SlugField | max_length=254, unique=True
+| image |  |  CloudinaryField | 'image', default='placeholder, null=True, blank=True
+| description | | TextField |
+| price |  | DecimalField | max_digits=6, decimal_places=2
+
+\
+&nbsp;
+
+### Bundle
+
+| Name | Key | Type | Other Details
+| -- | -- | -- | --
+| dish | FK (Dishes) | | null=True, blank=True, on_delete=models.SET_NULL
+| wine | FK (Wines) | | null=True, blank=True, on_delete=models.SET_NULL
+| name | | CharField | max_length=254, unique=True
+| slug_name | | SlugField | max_length=254, unique=True
+| price |  | DecimalField | max_digits=6, decimal_places=2
+
+\
+&nbsp;
+
+### CollectionDays
+
+| Name | Key | Type | Other Details
+| -- | -- | -- | --
+| day | | CharField | max_length=9, unique=True, blank=False
+
+\
+&nbsp;
 
 ### Order
 
 | Name | Key | Type | Other Details
 | -- | -- | -- | --
-| order_number | CharField |  URLField | max_length=32, null=False, editable=False
+| order_number |  |  CharField | max_length=32, null=False, editable=False
+| user_profile | FK(UserProfile) |  | null=True, blank=True, related_name='orders', on_delete=models.SET_NULL
 | full_name |  | CharField | max_length=50, null=False, blank=False
-| email |  | DecimalField | max_digits=6, decimal_places=2
+| email |  | DecimalField | max_length=254, null=False, blank=False
 | phone_number | | CharField | max_length=20, null=False, blank=False
-| order_date | | DateTimeField | auto_now_add=True
-| collection_day | | CharField | max_length=32, null=False, blank=False
-| order_total | | DecimalField |max_digits=10, decimal_places=2, null=False, default=0
-| grand_total | | DecimalField |max_digits=10, decimal_places=2, null=False, default=0
+| collection_day | FK(UserProfile) |  | null=True, blank=False, on_delete=models.SET_NULL
+| date | | DateTimeField | auto_now_add=True
+| order_total | | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
+| grand_total | | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
+| original_bag | | TextField | null=False, blank=False, default=''
+| stripe_pid | | CharField | null=False, blank=False, default=''
+| status | | IntegerField | choices=DISH_STATUS, default=0
+
+\
+&nbsp;
 
 ### OrderItem
 
 | Name | Key | Type | Other Details
 | -- | -- | -- | --
 | order | FK (Order) | | null=False, blank=False, on_delete=models.CASCADE, related_name='orderitems'
-| product | FK (Product) | | null=False, blank=False, on_delete=models.CASCADE
+| dish | FK (Dishes) | | null=True, blank=True, on_delete=models.CASCADE
+| wine | FK (Wines) | | null=True, blank=True, on_delete=models.CASCADE
+| bundle | FK (Bundle) | | null=True, blank=True, on_delete=models.CASCADE
 | quantity |  | IntegerField | null=False, blank=False, default=0
-| item_total |  | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False
+| orderitem_total |  | DecimalField | max_digits=6, decimal_places=2, null=False, blank=False, editable=False
 
+\
+&nbsp;
+
+### User Profile
+
+| Name | Key | Type | Other Details
+| -- | -- | -- | --
+| user | FK (User) | | on_delete=models.CASCADE
+| default_phone_number | | | max_length=20, null=True, blank=True
 
 \
 &nbsp;

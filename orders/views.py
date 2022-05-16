@@ -3,7 +3,10 @@ from django.contrib import messages
 
 from checkout.models import Order, CollectionDays
 
-from .forms import UpdateStatusForm, CreateCollectionDayForm
+from .forms import (UpdateStatusForm,
+                    CreateCollectionDayForm,
+                    UpdateCollectionStatusForm,
+                    )
 
 
 def orders(request):
@@ -22,11 +25,12 @@ def order_details(request, order_number):
 
     order = get_object_or_404(Order, order_number=order_number)
 
-    form = UpdateStatusForm(data=request.POST)
+    status_form = UpdateStatusForm(data=request.POST)
+    collected_form = UpdateCollectionStatusForm(data=request.POST)
 
-    if form.is_valid():
+    if status_form.is_valid():
 
-        update = form.save(commit=False)
+        update = status_form.save(commit=False)
 
         status = request.POST['status']
 
@@ -41,11 +45,32 @@ def order_details(request, order_number):
             )
 
     else:
-        form = UpdateStatusForm()
+        status_form = UpdateStatusForm()
+
+    if collected_form.is_valid():
+
+        update = collected_form.save(commit=False)
+
+        collected_status = request.POST['collected_order']
+
+        update.order = order
+        order.collected_order = collected_status
+        order.save()
+        messages.success(request, 'Collection status of the order \
+            successfully updated')
+
+        return redirect(reverse(
+            'order_details',
+            args=[order.order_number])
+            )
+
+    else:
+        collected_form = UpdateCollectionStatusForm()
 
     context = {
         'order': order,
-        'form': form,
+        'status_form': status_form,
+        'collected_form': collected_form,
     }
 
     return render(request, 'orders/orders_details.html', context)

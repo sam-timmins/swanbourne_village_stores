@@ -1,24 +1,44 @@
 <div class="row">
     <div class="col-12">
+        <div class="row">
 
-            <div class="col-12 col-lg-6 d-flex justify-content-around">
+            <div class="col-12 col-md-4">
                 <button class="btn btn-general btn-box-shadow-white btn-purple text-xs mt-3 mb-5 p-3 rounded-0"
-                data-bs-toggle="modal" data-bs-target="#update-status-modal" aria-labelledby="update-status-confirmation">
-                    Update Status
-                </button>
-                <span class="sr-only" id="update-status-confirmation">
-                    Purple button with white text that opens up the update status modal
-                </span>
+                data-bs-toggle="modal" data-bs-target="#update-status-modal"
+                aria-labelledby="update-status-confirmation">
+                Update Status
+            </button>
+            <span class="sr-only" id="update-status-confirmation">
+                Purple button with white text that opens up the update status modal
+            </span>
+            </div>
 
-                <button class="btn btn-general btn-box-shadow-white btn-light-green text-xs mt-3 mb-5 p-3 rounded-0"
-                data-bs-toggle="modal" data-bs-target="#delete-order-modal" aria-labelledby="delete-order-confirmation">
+
+            {% if order.status %}
+                <div class="col-12 col-md-4">
+                    <button class="btn btn-general btn-box-shadow-white btn-light-green text-xs mt-3 mb-5 p-3 rounded-0"
+                        data-bs-toggle="modal" data-bs-target="#update-collection-status-modal"
+                        aria-labelledby="update-collection-status-confirmation">
+                        Collection Status
+                    </button>
+                    <span class="sr-only" id="update-collection-status-confirmation">
+                        Green button with purple text that opens up the update collection status modal
+                    </span>
+                </div>
+            {% endif %}
+            <div class="col-12 col-md-4">
+                <button
+                    class="btn btn-general btn-box-shadow-white {% if order.status %}btn-purple{% else %}btn-light-green{% endif %} text-xs mt-3 mb-5 p-3 rounded-0"
+                    data-bs-toggle="modal" data-bs-target="#delete-order-modal" aria-labelledby="delete-order-confirmation">
                     Delete Order
                 </button>
                 <span class="sr-only" id="delete-order-confirmation">
-                    Green button with purple text that opens up the delete order modal
+                    {% if order.status %}Purple{% else %}Green{% endif %} button with {% if order.status %}white{% else %}purple{% endif %} 
+                    text that opens up the delete order modal
                 </span>
-
+    
             </div>
+        </div>
 
     </div>
 </div>

@@ -1,6 +1,6 @@
 from django import forms
 
-from checkout.models import Order, CollectionDays, COMPLETED
+from checkout.models import Order, CollectionDays, COMPLETED, COLLECTED_ORDER
 
 
 class UpdateStatusForm(forms.ModelForm):
@@ -25,6 +25,32 @@ class UpdateStatusForm(forms.ModelForm):
         self.fields['status'].widget = forms.RadioSelect(choices=COMPLETED)
         self.fields['status'].widget.attrs.update(extra_attributes)
         self.fields['status'].label = ''
+
+
+class UpdateCollectionStatusForm(forms.ModelForm):
+    """ Update status of an order form """
+    class Meta:
+        """ Update status of an order form """
+        model = Order
+        fields = (
+            'collected_order',
+        )
+
+    def __init__(self, *args, **kwargs):
+        """
+        Customize the form with placeholders and
+        add extra styles to fields
+        """
+        super().__init__(*args, **kwargs)
+        extra_attributes = {
+                'class': 'text-xs p-3 rounded-0 border-0',
+            }
+
+        self.fields['collected_order'].widget = forms.RadioSelect(
+            choices=COLLECTED_ORDER
+            )
+        self.fields['collected_order'].widget.attrs.update(extra_attributes)
+        self.fields['collected_order'].label = ''
 
 
 class CreateCollectionDayForm(forms.ModelForm):

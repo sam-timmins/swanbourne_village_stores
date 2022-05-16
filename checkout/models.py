@@ -9,6 +9,7 @@ from profiles.models import UserProfile
 
 
 COMPLETED = ((0, 'Open'), (1, 'Complete'))
+COLLECTED_ORDER = ((0, 'Not Collected'), (1, 'Collected'))
 
 
 class CollectionDays(models.Model):
@@ -87,6 +88,10 @@ class Order(models.Model):
         )
     status = models.IntegerField(
         choices=COMPLETED,
+        default=0,
+        )
+    collected_order = models.IntegerField(
+        choices=COLLECTED_ORDER,
         default=0,
         )
 

@@ -2,7 +2,8 @@
     <table class="w-100 text-dark-green table align-middle table-hover">
         <thead class="background-purple text-white fst-italic">
             <tr>
-                <th>Status</th>
+                <th>Status</th>    
+                <th>Collected</th>    
                 <th>Details</th>
                 <th>Order Date</th>
                 <th>Collection Day</th>
@@ -19,7 +20,18 @@
                         {% if order.status %}
                             <p class="m-0 p-2">Completed</p>
                         {% else %}
-                            <p class="m-0 p-2">Open</p>
+                            <p class="m-0 p-2">open</p>
+                        {% endif %}
+                    </a>
+                    </td>
+                    <td>
+                        <a href="{% url 'order_details' order.order_number  %}" class="d-block text-purple text-decoration-none text-xs"
+                        data-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                        title="<p class='text-xs text-white'>Update</p>">
+                        {% if order.collected_order %}
+                            <p class="m-0 p-2"><i class="fa-solid fa-check"></i></p>
+                        {% else %}
+                            <p class="m-0 p-2"><i class="fa-solid fa-x"></i></p>
                         {% endif %}
                     </a>
                     </td>

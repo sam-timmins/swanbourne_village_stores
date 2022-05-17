@@ -6,6 +6,9 @@ def site_contexts(request):
 
     open_orders_count = Order.objects.all().filter(status=0).count()
 
+    completed_orders_not_collected = Order.objects.all().filter(
+        status=1).filter(collected_order=0).count()
+
     store_name = 'Swanbourne Village Stores'
     currency = '£'
     store_email = 'swanbourne.store@gmail.com'
@@ -31,6 +34,7 @@ def site_contexts(request):
         'store_email': store_email,
         'placeholder_image_url': placeholder_image_url,
         'open_orders_count': open_orders_count,
+        'completed_orders_not_collected': completed_orders_not_collected,
     }
 
     return contexts

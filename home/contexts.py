@@ -3,8 +3,14 @@ from checkout.models import Order
 
 def site_contexts(request):
     """ Site contexts variables """
-
+    all_orders = Order.objects.all().count()
     open_orders_count = Order.objects.all().filter(status=0).count()
+
+    completed_orders_not_collected = Order.objects.all().filter(
+        status=1).filter(collected_order=0).count()
+
+    completed_orders_and_collected = Order.objects.all().filter(
+        status=1).filter(collected_order=1).count()
 
     store_name = 'Swanbourne Village Stores'
     currency = '£'
@@ -30,7 +36,10 @@ def site_contexts(request):
         'store_phone_number': store_phone_number,
         'store_email': store_email,
         'placeholder_image_url': placeholder_image_url,
+        'all_orders': all_orders,
         'open_orders_count': open_orders_count,
+        'completed_orders_not_collected': completed_orders_not_collected,
+        'completed_orders_and_collected': completed_orders_and_collected,
     }
 
     return contexts

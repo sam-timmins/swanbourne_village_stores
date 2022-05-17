@@ -515,6 +515,19 @@ def dish_category(request):
 
 
 @login_required
+def delete_dish_category(request, category_id):
+    """Delete dish category"""
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
+    category = get_object_or_404(DishesCategory, pk=category_id)
+    category.delete()
+
+    messages.success(request, 'The category has been deleted')
+    return redirect(reverse('dish_category'))
+
+
+@login_required
 def delete__dish_product(request, product_id):
     """Delete dish product"""
     if not request.user.is_superuser:

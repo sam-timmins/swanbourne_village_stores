@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from .models import Dishes, Wines, Bundle
-from .forms import DishForm, WineForm, WorksForm
+from .forms import DishForm, WineForm, WorksForm, DishCategoryForm
 
 
 def the_menu(request):
@@ -494,8 +494,18 @@ def create_works(request):
 def create_category(request):
     """ Create wine and dish categories """
 
-    context = {
+    dishes_category_form = DishCategoryForm()
 
+    if request.method == 'POST':
+        dishes_category_form = DishCategoryForm(request.POST)
+        if dishes_category_form.is_valid():
+            name = dishes_category_form.cleaned_data.get('name').title()
+            dishes_category_form.save()
+            messages.success(request, f'Successfully created {name}')
+            return redirect(reverse('create_category'))
+
+    context = {
+        'dishes_category_form': dishes_category_form,
     }
 
     return render(request, 'products/categories.html', context)

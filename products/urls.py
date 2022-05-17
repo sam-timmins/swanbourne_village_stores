@@ -58,9 +58,9 @@ urlpatterns = [
         name='create_works'
     ),
     path(
-        'create_category/',
-        views.create_category,
-        name='create_category'
+        'dish_categories/',
+        views.dish_category,
+        name='dish_category'
     ),
     path(
         'delete/dish/<int:product_id>',

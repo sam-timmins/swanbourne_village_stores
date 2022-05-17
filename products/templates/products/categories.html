@@ -33,9 +33,45 @@
         <div class="col-12 col-md-6 col-lg-7 border-purple p-3 p-md-5">
             <h2 class="text-purple text-md text-center text-header">Category list</h2>
             <hr class="text-purple mx-auto my-5">
-            {% for category in categories %}
-                {{ category }}
-            {% endfor %}
+            <div class="p-3 table-responsive">
+                <table class="w-100 text-dark-green table align-middle">
+                    <thead class="background-purple text-white fst-italic">
+                        <tr>
+                            <th>Category</th>
+                            <th>Origin</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-black">
+                        {% for category in categories %}
+                            <tr>
+                                <td>
+                                    <p class="text-purple">
+                                        {{ category.name }}
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="text-purple">
+                                        {{ category.origin }}
+                                    </p>
+                                </td>
+                                <td>
+                                    <a href="#" class="d-block text-purple text-decoration-none text-xs d-block">
+                                        <i class="fa-solid fa-pen-fancy ms-3"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#" class="d-block text-purple text-decoration-none text-xs d-block">
+                                        <i class="fa-solid fa-trash-can ms-3"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            
+                
 
         </div>
     </div>

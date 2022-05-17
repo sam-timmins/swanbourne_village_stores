@@ -19,30 +19,22 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <th scope="row">
-                        <a href="{% url 'orders' %}?order=open" class="text-decoration-none text-dark-green d-block">
+                    <tr>
+                        <th scope="row" class="text-dark-green">
                             Open Orders
-                        </a>
-                    </th>
-                    <td>
-                        <a href="{% url 'orders' %}?order=open" class="text-decoration-none text-dark-green d-block">
+                        </th>
+                        <td class="text-dark-green">
                             {{ open_orders_count }}
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">
-                        <a href="{% url 'orders' %}?order=complete" class="text-decoration-none text-dark-green d-block">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row" class="text-dark-green">
                             Completed Orders
-                        </a>
-                    </th>
-                    <td>
-                        <a href="{% url 'orders' %}?order=complete" class="text-decoration-none text-dark-green d-block">
-                            {{ completed_orders_count }}
-                        </a>
-                    </td>
-                </tr>
+                        </th>
+                        <td class="text-dark-green">
+                            {{ completed_orders }}
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>

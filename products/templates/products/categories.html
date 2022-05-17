@@ -35,7 +35,7 @@
             <hr class="text-purple mx-auto my-5">
             <form action="#" method="POST" id="wines-category-form">
                 {% csrf_token %}
-                <!-- Add create wines category form here -->
+                {{ wines_category_form | crispy }}
                 <div class="row">
                     <div class="col text-center">
                         <button type="submit" class="btn btn-general btn-purple text-sm p-1 rounded-0">Create</button>

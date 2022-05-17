@@ -491,6 +491,16 @@ def create_works(request):
     return render(request, 'products/create-works.html', context)
 
 
+def create_category(request):
+    """ Create wine and dish categories """
+
+    context = {
+
+    }
+
+    return render(request, 'products/categories.html', context)
+
+
 @login_required
 def delete__dish_product(request, product_id):
     """Delete dish product"""

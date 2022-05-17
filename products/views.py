@@ -492,7 +492,7 @@ def create_works(request):
     return render(request, 'products/create-works.html', context)
 
 
-def create_category(request):
+def dish_category(request):
     """ Create wine and dish categories """
 
     dishes_category_form = DishCategoryForm()
@@ -503,7 +503,7 @@ def create_category(request):
             name = dishes_category_form.cleaned_data.get('name').title()
             dishes_category_form.save()
             messages.success(request, f'Successfully created {name}')
-            return redirect(reverse('create_category'))
+            return redirect(reverse('dish_category'))
 
     context = {
         'dishes_category_form': dishes_category_form,

@@ -7,14 +7,45 @@
 {% block content %}
 
 <!-- Add categories section -->
-<section>
+<section class="container-fluid background-light-green m-0 p-0">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-header text-purple text-lg text-center my-5">Categories</h1>
+            <hr class="text-purple w-75 mx-auto mb-5">
+        </div>
+    </div>
+
+    <div class="row container d-flex justify-content-around mx-auto my-5">
+        <div class="col-12 col-md-6 col-lg-4 border-purple p-3 p-md-5">
+            <h2 class="text-purple text-md text-center text-header">Add a dish category</h2>
+            <hr class="text-purple mx-auto my-5">
+            <form action="#" method="POST" id="dishes-category-form">
+                {% csrf_token %}
+                {{ dishes_category_form | crispy }}
+                <div class="row">
+                    <div class="col text-center">
+                        <button type="submit" class="btn btn-general btn-purple text-sm p-1 rounded-0">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-4 border-purple p-3 p-md-5">
+            <h2 class="text-purple text-md text-center text-header">Add a wine category</h2>
+            <hr class="text-purple mx-auto my-5">
+            <form action="#" method="POST" id="wines-category-form">
+                {% csrf_token %}
+                <!-- Add create wines category form here -->
+                <div class="row">
+                    <div class="col text-center">
+                        <button type="submit" class="btn btn-general btn-purple text-sm p-1 rounded-0">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
 
-    <form action="#" method="POST" id="dishes-category-form">
-        {% csrf_token %}
-        {{ dishes_category_form | crispy }}
-        <button type="submit">Create</button>
-    </form>
 
 </section>
 

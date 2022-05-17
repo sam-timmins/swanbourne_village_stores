@@ -1,12 +1,28 @@
 {% extends "base.html" %}
 
+{% load static %}
+
+{% load crispy_forms_tags %}
+
 {% block content %}
 
 <!-- Add categories section -->
 <section>
 
-categories.html
+
+    <form action="#" method="POST" id="dishes-category-form">
+        {% csrf_token %}
+        {{ dishes_category_form | crispy }}
+        <button type="submit">Create</button>
+    </form>
 
 </section>
+
+{% endblock %}
+
+{% block postloadjs %}
+
+    {{ block.super }}
+        <script src="{% static 'js/products/form-slug-field.js' %}"></script>
 
 {% endblock %}

@@ -5,8 +5,8 @@ from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-from .models import Dishes, Wines, Bundle
-from .forms import (DishForm, WineForm, WorksForm, 
+from .models import Dishes, Wines, Bundle, DishesCategory
+from .forms import (DishForm, WineForm, WorksForm,
                     DishCategoryForm,)
 
 
@@ -496,6 +496,7 @@ def dish_category(request):
     """ Create wine and dish categories """
 
     dishes_category_form = DishCategoryForm()
+    categories = DishesCategory.objects.all()
 
     if request.method == 'POST':
         dishes_category_form = DishCategoryForm(request.POST)
@@ -507,6 +508,7 @@ def dish_category(request):
 
     context = {
         'dishes_category_form': dishes_category_form,
+        'categories': categories,
     }
 
     return render(request, 'products/categories.html', context)

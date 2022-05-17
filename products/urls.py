@@ -58,6 +58,11 @@ urlpatterns = [
         name='create_works'
     ),
     path(
+        'create_category/',
+        views.create_category,
+        name='create_category'
+    ),
+    path(
         'delete/dish/<int:product_id>',
         views.delete__dish_product,
         name='delete__dish_product'

@@ -7,7 +7,7 @@ from django.contrib import messages
 
 from .models import Dishes, Wines, Bundle
 from .forms import (DishForm, WineForm, WorksForm, 
-                    DishCategoryForm, WineCategoryForm,)
+                    DishCategoryForm,)
 
 
 def the_menu(request):
@@ -496,7 +496,6 @@ def create_category(request):
     """ Create wine and dish categories """
 
     dishes_category_form = DishCategoryForm()
-    wines_category_form = WineCategoryForm()
 
     if request.method == 'POST':
         dishes_category_form = DishCategoryForm(request.POST)
@@ -508,7 +507,6 @@ def create_category(request):
 
     context = {
         'dishes_category_form': dishes_category_form,
-        'wines_category_form': wines_category_form,
     }
 
     return render(request, 'products/categories.html', context)

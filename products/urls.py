@@ -78,6 +78,11 @@ urlpatterns = [
         name='delete__works_product'
     ),
     path(
+        'delete/dish_category/<int:category_id>',
+        views.delete_dish_category,
+        name='delete_dish_category'
+    ),
+    path(
         'edit-dish/<int:product_id>',
         views.edit_dish,
         name='edit_dish'

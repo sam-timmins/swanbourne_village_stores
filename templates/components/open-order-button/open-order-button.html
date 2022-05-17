@@ -31,6 +31,18 @@
                         </a>
                     </td>
                 </tr>
+                <tr>
+                    <th scope="row">
+                        <a href="{% url 'orders' %}?order=complete" class="text-decoration-none text-dark-green d-block">
+                            Completed Orders
+                        </a>
+                    </th>
+                    <td>
+                        <a href="{% url 'orders' %}?order=complete" class="text-decoration-none text-dark-green d-block">
+                            {{ completed_orders_count }}
+                        </a>
+                    </td>
+                </tr>
                 </tbody>
             </table>
         </div>

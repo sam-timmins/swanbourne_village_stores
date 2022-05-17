@@ -20,29 +20,39 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <th scope="row" class="text-dark-green">
+                        <th scope="row" class="text-dark-green py-5 px-3">
                             Open Orders
                         </th>
-                        <td class="text-dark-green">
+                        <td class="text-dark-green py-5 px-3">
                             {{ open_orders_count }}
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row" class="text-dark-green">
+                        <th scope="row" class="text-dark-green py-5 px-3">
                             Completed Orders Not Collected
                         </th>
-                        <td class="text-dark-green">
+                        <td class="text-dark-green py-5 px-3">
                             {{ completed_orders_not_collected }}
                         </td>
                     </tr>
                     <tr>
-                        <th scope="row" class="text-dark-green">
+                        <th scope="row" class="text-dark-green py-5 px-3">
                             Completed Orders and Collected
                         </th>
-                        <td class="text-dark-green">
+                        <td class="text-dark-green py-5 px-3">
                             {{ completed_orders_and_collected }}
                         </td>
                     </tr>
+                    <tfoot>
+                    <tr>
+                        <th scope="row" class="text-dark-green py-5 px-3">
+                            All Orders
+                        </th>
+                        <td class="text-dark-green py-5 px-3">
+                            {{ all_orders }}
+                        </td>
+                    </tr>
+                </tfoot>
                 </tbody>
             </table>
         </div>

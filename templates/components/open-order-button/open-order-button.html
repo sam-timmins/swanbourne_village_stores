@@ -46,11 +46,20 @@
                     <tfoot>
                     <tr class="background-light-green">
                         <th scope="row" class="text-dark-green py-5 px-3">
-                            All Orders
+                            <a href="{% url 'orders' %}" class="text-dark-green text-decoration-none d-block"
+                            aria-labelledby="order-info-all-orders">
+                                All Orders
+                            </a>
                         </th>
                         <td class="text-dark-green py-5 px-3">
-                            {{ all_orders }}
+                            <a href="{% url 'orders' %}" class="text-dark-green text-decoration-none d-block"
+                            aria-labelledby="order-info-all-orders">
+                                {{ all_orders }}
+                            </a>
                         </td>
+                        <span class="sr-only" id="order-info-all-orders">
+                            White button with purple writing navigating to the orders page
+                        </span>
                     </tr>
                 </tfoot>
                 </tbody>

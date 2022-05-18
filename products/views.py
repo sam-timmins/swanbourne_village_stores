@@ -511,7 +511,7 @@ def dish_category(request):
         'categories': categories,
     }
 
-    return render(request, 'products/categories.html', context)
+    return render(request, 'categories/dish-categories.html', context)
 
 
 def wine_category(request):

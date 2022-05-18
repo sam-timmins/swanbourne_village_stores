@@ -63,6 +63,11 @@ urlpatterns = [
         name='dish_category'
     ),
     path(
+        'wine_categories/',
+        views.wine_category,
+        name='wine_category'
+    ),
+    path(
         'delete/dish/<int:product_id>',
         views.delete__dish_product,
         name='delete__dish_product'

@@ -693,3 +693,45 @@ def edit_works(request, product_id):
         'products/edit-product.html',
         context
         )
+
+
+def edit_dish_category(request, category_id):
+    """ View to edit a dish category """
+    category = get_object_or_404(DishesCategory, pk=category_id)
+
+    if request.method == 'POST':
+        form = DishCategoryForm(request.POST, request.FILES, instance=category)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully \
+                updated {category.name.title()}')
+            return redirect(
+                reverse(
+                    'dish_category',
+                    args=[category.id],
+                    )
+                )
+        else:
+            messages.error(
+                request,
+                f'Unable to update {category.name}. \
+                Please ensure all fields are filled out correctly.'
+                )
+    else:
+        form = DishCategoryForm()
+
+    form = DishCategoryForm(instance=category)
+
+    messages.info(request, f'You are currently \
+        editing {category.name.title()}')
+
+    context = {
+        'form': form,
+        'category': category,
+    }
+
+    return render(
+        request,
+        'categories/edit-dish-categories.html',
+        context
+        )

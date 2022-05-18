@@ -1,5 +1,13 @@
 {% extends "base.html" %}
 
+{% load static %}
+
+{% block extra_css %}
+
+    <link rel="stylesheet" href="{% static 'css/administration/administration.css' %}">
+
+{% endblock %}
+
 {% block content %}
 
 <section class="row container-fluid p-0 m-0">

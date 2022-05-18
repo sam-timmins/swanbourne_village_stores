@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<!-- Add categories section -->
+<section class="container-fluid background-light-green m-0 p-0">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-header text-purple text-lg text-center my-5">Categories</h1>
+            <hr class="text-purple w-75 mx-auto mb-5">
+        </div>
+    </div>
+
+    <div class="row container d-flex justify-content-around mx-auto my-5">
+        <div class="col-12 col-md-6 col-lg-4 border-purple p-3 p-md-5">
+            <h2 class="text-purple text-md text-center text-header">Add a wine category</h2>
+            <hr class="text-purple mx-auto my-5">
+            <form action="#" method="POST" id="wines-category-form">
+                {% csrf_token %}
+                {{ wines_category_form | crispy }}
+                <div class="row">
+                    <div class="col text-center">
+                        <button type="submit" class="btn btn-general btn-purple text-sm p-1 rounded-0">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-12 col-md-6 col-lg-7 border-purple p-3 p-md-5">
+            <h2 class="text-purple text-md text-center text-header">Category list</h2>
+            <hr class="text-purple mx-auto my-5">
+            <div class="p-3 table-responsive">
+                <table class="w-100 text-dark-green table align-middle">
+                    <thead class="background-purple text-white fst-italic">
+                        <tr>
+                            <th>Category</th>
+                            <th>Origin</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-black">
+                        {% for category in categories %}
+                            <tr>
+                                <td>
+                                    <p class="text-purple">
+                                        {{ category.name }}
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="text-purple">
+                                        {{ category.origin }}
+                                    </p>
+                                </td>
+                                <td>
+                                    <a href="{% url 'edit_wine_category' category.id %}" class="d-block text-purple text-decoration-none text-xs d-block">
+                                        <i class="fa-solid fa-pen-fancy ms-3"></i>
+                                    </a>
+                                </td>
+                                <td>
+                                    <a href="#delete-wine-category{{category.id}}" class="d-block text-purple text-decoration-none text-xs d-block"
+                                    data-bs-toggle="modal">
+                                        <i class="fa-solid fa-trash-can ms-3"></i>
+                                        
+                                        <!-- Modal for delete -->
+                                        {% include 'components/modals/delete-dish-category-modal.html' %}
+                                    </a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            
+                
+
+        </div>
+    </div>
+
+
+
+</section>
+
+{% endblock %}
+
+{% block postloadjs %}
+
+    {{ block.super }}
+        <script src="{% static 'js/products/form-slug-field.js' %}"></script>
+
+{% endblock %}

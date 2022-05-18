@@ -102,4 +102,9 @@ urlpatterns = [
         views.edit_dish_category,
         name='edit_dish_category'
         ),
+    path(
+        'edit_wine_category/<int:category_id>',
+        views.edit_wine_category,
+        name='edit_wine_category'
+        ),
 ]

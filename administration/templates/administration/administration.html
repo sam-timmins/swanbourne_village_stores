@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_css %}
+
+    <link rel="stylesheet" href="{% static 'css/administration/administration.css' %}">
+
+{% endblock %}
+
+{% block content %}
+
+<!-- Administration section -->
+<section class="row container-fluid p-0 m-0">
+
+    <!-- Admin header -->
+    {% include 'components/header/administration-header.html' %}
+
+    <!-- Orders card -->
+    {% include 'components/cards/orders-card.html' %}
+
+
+    <!-- Admin cards -->
+    {% include 'components/cards/cards.html' %}
+
+</section>
+
+{% endblock %}

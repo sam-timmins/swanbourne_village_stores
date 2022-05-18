@@ -15,47 +15,10 @@
     <!-- Admin header -->
     {% include 'components/header/administration-header.html' %}
 
-    <div class="row my-5">
-        <div class="col-12 col-md-6 mx-auto my-5">
-            <div class="card text-center background-light-green rounded-0 border-purple">
-                <a href="{% url 'orders' %}" class="text-decoration-none">
-                    <div class="row card-body">
-                        <div class="col-12 col-lg-6 mx-auto">
-                            <h5 class="card-title text-header text-md text-purple pt-5">Your Orders</h5>
-                            <p class="text-sm text-purple py-3">View all your orders</p>
-                            <hr class="text-purple w-75 mx-auto">
-                        </div>
-                        <div
-                            class="col-12 col-lg-4 d-flex align-items-center justify-content-center justify-content-lg-start mx-auto">
-                            <div class="row my-3">
-                                <div class="col-12">
-                                    <p class="text-xs text-purple text-lg-start">
-                                        Open Orders
-                                        <span
-                                            class="badge background-black-transp text-white ms-3">{{ open_orders_count }}</span>
-                                    </p>
-                                </div>
-                                <div class="col-12">
-                                    <p class="text-xs text-purple text-lg-start">
-                                        Not Collected
-                                        <span
-                                            class="badge background-black-transp text-white ms-3">{{ completed_orders_not_collected }}</span>
-                                    </p>
-                                </div>
-                                <div class="col-12">
-                                    <p class="text-xs text-purple text-lg-start">
-                                        Collected
-                                        <span
-                                            class="badge background-black-transp text-white ms-3">{{ completed_orders_and_collected }}</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
+    <!-- Orders card -->
+    {% include 'components/cards/orders-card.html' %}
+
+
 
     <div class="row mb-5">
         <div class="col-12 col-md-6 col-lg-4 mx-auto my-3">

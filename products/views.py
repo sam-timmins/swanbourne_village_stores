@@ -521,12 +521,14 @@ def wine_category(request):
     categories = WineCategory.objects.all()
 
     if request.method == 'POST':
-        wines_category_form = DishCategoryForm(request.POST)
+        wines_category_form = WineCategoryForm(request.POST)
         if wines_category_form.is_valid():
-            name = wines_category_form.cleaned_data.get('name').title()
+            name = wines_category_form.cleaned_data.get('variety').title()
+            origin = wines_category_form.cleaned_data.get('origin').title()
             wines_category_form.save()
-            messages.success(request, f'Successfully created {name}')
-            return redirect(reverse('dish_category'))
+            messages.success(request, f'Successfully created {name} \
+                from {origin}')
+            return redirect(reverse('wine_category'))
 
     context = {
         'wines_category_form': wines_category_form,

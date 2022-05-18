@@ -87,77 +87,15 @@
 
                 <!-- Administration links -->
                 {% if user.is_superuser %}
-                    <li class="nav-item dropdown">
-                        <a class="nav-link p-0 ms-lg-0 text-start text-sm me-lg-3 me-xl-5 text-dark-green my-3"
-                            href="#" id="navbar-admin-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                            aria-labelledby="navbar-admin">
-                            Admin<i class="fa-solid fa-angle-down ms-2 text-xs"></i>
-                        </a>
-                        <span id="navbar-admin" class="sr-only">
-                            A link with green text and light green background that opens a dropdown menu with the admin categories
-                        </span>
-
-                        <!-- Add correct links and accessability tags -->
-                        <ul class="dropdown-menu m-auto p-0 mb-3 rounded-0">
-                            <li>
-                                <a class="dropdown-item text-sm text-dark-green px-5 text-center" href="{% url 'create_dish' %}">
-                                    Create a Dish
-                                </a>
-                            </li>
-
-                            <li>
-                                <hr class="dropdown-divider m-auto w-50">
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item text-sm text-dark-green px-5 text-center" href="{% url 'create_wine' %}">
-                                    Add a Wine
-                                </a>
-                            </li>
-
-                            <li>
-                                <hr class="dropdown-divider m-auto w-50">
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item text-sm text-dark-green px-5 text-center" href="{% url 'dish_category' %}">
-                                    Dish Categories
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item text-sm text-dark-green px-5 text-center" href="{% url 'wine_category' %}">
-                                    Wine Categories
-                                </a>
-                            </li>
-
-                            <li>
-                                <hr class="dropdown-divider m-auto w-50">
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item text-sm text-dark-green px-5 text-center" href="{% url 'create_works' %}">
-                                    Create a Works
-                                </a>
-                            </li>
-
-                            <li>
-                                <hr class="dropdown-divider m-auto w-50">
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item text-sm text-dark-green px-5 text-center" href="{% url 'collection_days' %}">
-                                    Collection Days
-                                </a>
-                            </li>
-
-                            <li>
-                                <a class="dropdown-item text-sm text-dark-green px-5 text-center" href="{% url 'orders' %}">
-                                    Orders
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+                <li class="nav-item">
+                    <a class="nav-link p-0 ms-lg-0 text-start text-sm me-lg-3 me-xl-5 my-3 text-dark-green"
+                        href="{% url 'administration' %}" aria-labelledby="navbar-admin">
+                        Admin
+                    </a>
+                    <span id="navbar-admin" class="sr-only">
+                        A link with green text and light green background that navigates to the admin page in the same tab
+                    </span>
+                </li>
                 {% endif %}
 
 

@@ -53,6 +53,10 @@ body {
     font-size: 4rem;
 }
 
+.text-xl {
+    font-size: 5rem;
+}
+
 /* 1.2 Font Colours */
 
 .text-white {

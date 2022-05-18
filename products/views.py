@@ -5,9 +5,9 @@ from django.db.models.functions import Lower
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-from .models import Dishes, Wines, Bundle, DishesCategory
+from .models import Dishes, Wines, Bundle, DishesCategory, WineCategory
 from .forms import (DishForm, WineForm, WorksForm,
-                    DishCategoryForm,)
+                    DishCategoryForm, WineCategoryForm)
 
 
 def the_menu(request):
@@ -512,6 +512,28 @@ def dish_category(request):
     }
 
     return render(request, 'products/categories.html', context)
+
+
+def wine_category(request):
+    """ Create, view and delete wine categories """
+
+    wines_category_form = WineCategoryForm()
+    categories = WineCategory.objects.all()
+
+    if request.method == 'POST':
+        wines_category_form = DishCategoryForm(request.POST)
+        if wines_category_form.is_valid():
+            name = wines_category_form.cleaned_data.get('name').title()
+            wines_category_form.save()
+            messages.success(request, f'Successfully created {name}')
+            return redirect(reverse('dish_category'))
+
+    context = {
+        'wines_category_form': wines_category_form,
+        'categories': categories,
+    }
+
+    return render(request, 'categories/wine-categories.html', context)
 
 
 @login_required

@@ -37,8 +37,9 @@
                 <table class="w-100 text-dark-green table align-middle">
                     <thead class="background-purple text-white fst-italic">
                         <tr>
-                            <th>Category</th>
                             <th>Origin</th>
+                            <th>Variety</th>
+                            <th>Category</th>
                             <th>Edit</th>
                             <th>Delete</th>
                         </tr>
@@ -48,12 +49,17 @@
                             <tr>
                                 <td>
                                     <p class="text-purple">
-                                        {{ category.name }}
+                                        {{ category.origin }}
                                     </p>
                                 </td>
                                 <td>
                                     <p class="text-purple">
-                                        {{ category.origin }}
+                                        {{ category.variety }}
+                                    </p>
+                                </td>
+                                <td>
+                                    <p class="text-purple">
+                                        {{ category.name }}
                                     </p>
                                 </td>
                                 <td>

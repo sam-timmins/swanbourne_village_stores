@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <!-- Product Details -->
+    <section class="row container-fluid m-0 p-5 d-flex flex-column flex-md-row background-light-green">
+        <div class="container col-12 col-md-6 col-xl-4 m-auto">
+            <div class="row">
+
+                <!-- Edit dish category {{ category.name }} -->
+                <div class="row container-fluid background-light-green p-0 m-0">
+            
+                    <div class="col-12">
+                        <h1 class="text-header text-purple text-lg text-center my-5">Edit {{ category.name | title }}</h1>
+                        <hr class="text-purple w-75 m-auto">
+                    </div>
+            
+                    <form action="{% url 'edit_dish_category' category.id %}" method="POST" class="container m-auto my-5 text-purple text-sm">
+                        {% csrf_token %}
+                            <p class="text-xs text-pruple ps-5 mb-5">
+                                * required field
+                            </p>
+                            {{ form | crispy }}
+            
+                        <div class="mt-5 d-flex flex-row justify-content-around">
+                            <button type="submit" class="btn btn-general btn-purple text-sm p-1 rounded-0" aria-labelledby="edit-dishes-category">Update</button>
+                            <span id="edit-dishes-category" class="sr-only">Purple button with white writing that updates the changes to the dishes category</span>
+            
+                            
+                            <a href="{% url 'dish_category' %}" class="btn btn-general btn-white text-sm p-1 rounded-0" aria-labelledby="cancel-edit-dishes-category">Cancel</a>
+                            <span id="cancel-edit-dishes-category" class="sr-only">White button with purple writing that navigates to the dishes category page</span>
+            
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
+
+{% block postloadjs %}
+
+    {{ block.super }}
+        <script src="{% static 'js/products/form-slug-field.js' %}"></script>
+
+{% endblock %}

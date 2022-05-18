@@ -58,6 +58,16 @@ urlpatterns = [
         name='create_works'
     ),
     path(
+        'dish_categories/',
+        views.dish_category,
+        name='dish_category'
+    ),
+    path(
+        'wine_categories/',
+        views.wine_category,
+        name='wine_category'
+    ),
+    path(
         'delete/dish/<int:product_id>',
         views.delete__dish_product,
         name='delete__dish_product'
@@ -73,6 +83,11 @@ urlpatterns = [
         name='delete__works_product'
     ),
     path(
+        'delete/dish_category/<int:category_id>',
+        views.delete_dish_category,
+        name='delete_dish_category'
+    ),
+    path(
         'edit-dish/<int:product_id>',
         views.edit_dish,
         name='edit_dish'
@@ -83,8 +98,13 @@ urlpatterns = [
         name='edit_wine'
         ),
     path(
-        'edit-works/<int:product_id>',
-        views.edit_works,
-        name='edit_works'
+        'edit_dish_category/<int:category_id>',
+        views.edit_dish_category,
+        name='edit_dish_category'
+        ),
+    path(
+        'edit_wine_category/<int:category_id>',
+        views.edit_wine_category,
+        name='edit_wine_category'
         ),
 ]

@@ -708,7 +708,6 @@ def edit_dish_category(request, category_id):
             return redirect(
                 reverse(
                     'dish_category',
-                    args=[category.id],
                     )
                 )
         else:

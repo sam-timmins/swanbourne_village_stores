@@ -98,6 +98,11 @@ urlpatterns = [
         name='edit_wine'
         ),
     path(
+        'edit-works/<int:product_id>',
+        views.edit_works,
+        name='edit_works'
+        ),
+    path(
         'edit_dish_category/<int:category_id>',
         views.edit_dish_category,
         name='edit_dish_category'

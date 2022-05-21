@@ -5,15 +5,15 @@
                 If your are happy with your basket, head to the secure checkout. Otherwise please keep shopping.
             </p>
         </div>
-        <div class="col-12 my-3 d-flex flex-row align-items-center justify-content-around">
+        <div class="col-12 mt-5 d-flex flex-column flex-sm-row justify-content-around align-items-center">
 
-            <a href="{% url 'checkout' %}" class="btn btn-general btn-purple btn-box-shadow-white text-sm p-1 rounded-0" 
+            <a href="{% url 'checkout' %}" class="btn btn-general btn-purple btn-box-shadow-white text-sm p-1 my-3 rounded-0" 
             aria-labelledby="bag-checkout">Checkout</a>
             <span class="sr-only" id="bag-checkout">
                 Purple button with white writing navigating to the secure checkout
             </span>
 
-            <a href="{% url 'the_menu' %}" class="btn btn-general btn-white btn-box-shadow-white text-sm p-1 rounded-0" 
+            <a href="{% url 'the_menu' %}" class="btn btn-general btn-white btn-box-shadow-white text-sm p-1 my-3 rounded-0" 
             aria-labelledby="bag-menu-button">The Menu</a>
             <span class="sr-only" id="bag-menu-button">
                 White button with purple writing navigating to to menu with all the dishes, frozen and fresh

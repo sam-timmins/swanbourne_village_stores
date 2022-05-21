@@ -1,12 +1,10 @@
 <!-- Edit {{ product.name }} section -->
 <section class="row container-fluid background-light-green p-0 m-0">
 
-    <div class="col-12">
-        <h1 class="text-header text-purple text-lg text-center my-5">Edit {{ product.name }}</h1>
-        <hr class="text-purple w-75 m-auto">
-    </div>
+    <!-- Edit dish header -->
+    {% include 'components/header/edit-dish-header.html' %}
 
-    <!-- Admin cards -->
+    <!-- Edit dish form -->
     {% include 'components/edit/edit-dish-form.html' %}
 
 </section>

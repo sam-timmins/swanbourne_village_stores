@@ -473,22 +473,6 @@ def delete_dish_category(request, dish_id):
     return redirect(reverse('dish_category'))
 
 
-@login_required
-def delete__works_product(request, product_id):
-    """Delete works combination product"""
-    if not request.user.is_superuser:
-        return redirect(reverse('home'))
-
-    product = get_object_or_404(Bundle, pk=product_id)
-    product.delete()
-
-    messages.success(
-        request,
-        'The combination has been deleted from the store'
-        )
-    return redirect(reverse('the_works'))
-
-
 def edit_works(request, product_id):
     """ Edit the item in the bundles model """
     bundle = Bundle.objects.all()

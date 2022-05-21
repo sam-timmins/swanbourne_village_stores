@@ -554,43 +554,6 @@ def delete__works_product(request, product_id):
     return redirect(reverse('the_works'))
 
 
-def edit_dish(request, dish_id):
-    """ Edit the item in the dishes model """
-    dishes = Dishes.objects.all()
-    product = get_object_or_404(Dishes, pk=dish_id)
-
-    if request.method == 'POST':
-        form = DishForm(request.POST, request.FILES, instance=product)
-        if form.is_valid():
-            form.save()
-            messages.success(request, f'Successfully updated {product.name}')
-            return redirect(reverse('dishes'))
-        else:
-            messages.error(
-                request,
-                f'Unable to update {product.name}. \
-                Please ensure all fields are filled out correctly.'
-                )
-    else:
-        form = DishForm()
-
-    form = DishForm(instance=product)
-
-    messages.info(request, f'You are currently editing {product.name}')
-
-    context = {
-        'form': form,
-        'dishes': dishes,
-        'product': product,
-    }
-
-    return render(
-        request,
-        'products/edit-product.html',
-        context
-        )
-
-
 def edit_wine(request, product_id):
     """ Edit the item in the wines model """
     wines = Wines.objects.all()

@@ -421,6 +421,7 @@ def create_dish(request):
         return redirect(reverse('home'))
 
     dishes = Dishes.objects.all()
+    count_dishes = Dishes.objects.all().count()
 
     if request.method == 'POST':
         form = DishForm(request.POST, request.FILES)
@@ -442,6 +443,7 @@ def create_dish(request):
     context = {
         'form': form,
         'dishes': dishes,
+        'count_dishes': count_dishes,
     }
 
     return render(request, 'products/create-dish.html', context)

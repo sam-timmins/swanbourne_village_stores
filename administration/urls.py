@@ -15,6 +15,11 @@ urlpatterns = [
         name='wines'
     ),
     path(
+        'the_works/',
+        views.works,
+        name='works'
+    ),
+    path(
         'delete/dish/<int:dish_id>',
         views.delete_dish_product,
         name='delete_dish_product'
@@ -34,5 +39,4 @@ urlpatterns = [
         views.edit_wine,
         name='edit_wine'
         ),
-
 ]

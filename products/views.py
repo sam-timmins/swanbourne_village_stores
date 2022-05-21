@@ -6,7 +6,6 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from .models import Dishes, Wines, Bundle, DishesCategory, WineCategory
-from .forms import WineCategoryForm
 
 
 def the_menu(request):
@@ -410,69 +409,4 @@ def product_details_bundles(request, product_id):
         request,
         'products/product-details.html',
         context,
-        )
-
-
-def wine_category(request):
-    """ Create, view and delete wine categories """
-
-    wines_category_form = WineCategoryForm()
-    categories = WineCategory.objects.all()
-
-    if request.method == 'POST':
-        wines_category_form = WineCategoryForm(request.POST)
-        if wines_category_form.is_valid():
-            name = wines_category_form.cleaned_data.get('variety').title()
-            origin = wines_category_form.cleaned_data.get('origin').title()
-            wines_category_form.save()
-            messages.success(request, f'Successfully created {name} \
-                from {origin}')
-            return redirect(reverse('wine_category'))
-
-    context = {
-        'wines_category_form': wines_category_form,
-        'categories': categories,
-    }
-
-    return render(request, 'categories/wine-categories.html', context)
-
-
-def edit_wine_category(request, category_id):
-    """ View to edit a wine category """
-    category = get_object_or_404(WineCategory, pk=category_id)
-
-    if request.method == 'POST':
-        form = WineCategoryForm(request.POST, request.FILES, instance=category)
-        if form.is_valid():
-            form.save()
-            messages.success(request, f'Successfully \
-                updated {category.name.title()}')
-            return redirect(
-                reverse(
-                    'wine_category',
-                    )
-                )
-        else:
-            messages.error(
-                request,
-                f'Unable to update {category.name}. \
-                Please ensure all fields are filled out correctly.'
-                )
-    else:
-        form = WineCategoryForm()
-
-    form = WineCategoryForm(instance=category)
-
-    messages.info(request, f'You are currently \
-        editing {category.name.title()}')
-
-    context = {
-        'form': form,
-        'category': category,
-    }
-
-    return render(
-        request,
-        'categories/edit-wine-categories.html',
-        context
         )

@@ -1,6 +1,16 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/products/products.css' %}">
+{% endblock %}
+
+{% block content %}
+
 <!-- Edit {{ product.name }} section -->
 <section class="row container-fluid background-light-green p-0 m-0">
-    <div class="container col-12 m-auto">
+    <div class="container col-12 col-md-8 col-lg-6 col-xl-4 m-auto">
         <div class="row">
 
             <!-- Edit dish header -->
@@ -12,3 +22,10 @@
         </div>
     </div>
 </section>
+
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'js/products/form-slug-field.js' %}"></script>
+{% endblock %}

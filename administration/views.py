@@ -46,7 +46,7 @@ def dishes(request):
         'count_dishes': count_dishes,
     }
 
-    return render(request, 'administration/create-dish.html', context)
+    return render(request, 'administration/dishes.html', context)
 
 
 @login_required

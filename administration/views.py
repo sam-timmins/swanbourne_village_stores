@@ -154,3 +154,45 @@ def delete_wine_product(request, wine_id):
 
     messages.success(request, 'The wine has been deleted from the store')
     return redirect(reverse('wines'))
+
+
+@login_required
+def edit_wine(request, wine_id):
+    """ Edit the item in the wines model """
+    if not request.user.is_superuser:
+        messages.info(request, 'Only store owners can edit a wine')
+        return redirect(reverse('home'))
+
+    wines = Wines.objects.all()
+    product = get_object_or_404(Wines, pk=wine_id)
+
+    if request.method == 'POST':
+        form = WineForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully updated {product.name}')
+            return redirect(reverse('wines'))
+        else:
+            messages.error(
+                request,
+                f'Unable to update {product.name}. \
+                Please ensure all fields are filled out correctly.'
+                )
+    else:
+        form = WineForm()
+
+    form = WineForm(instance=product)
+
+    messages.info(request, f'You are currently editing {product.name}')
+
+    context = {
+        'form': form,
+        'wines': wines,
+        'product': product,
+    }
+
+    return render(
+        request,
+        'components/edit/edit-wine.html',
+        context
+        )

@@ -277,11 +277,31 @@ def edit_works(request, works_id):
         return redirect(reverse('home'))
 
     works = Bundle.objects.all()
+    dishes = Dishes.objects.all()
+    wines = Wines.objects.all()
     product = get_object_or_404(Bundle, pk=works_id)
 
     if request.method == 'POST':
         form = WorksForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
+            form_dish = form.cleaned_data.get('dish')
+            form_wine = form.cleaned_data.get('wine')
+            form_price = form.cleaned_data.get('price')
+
+            for dish in dishes:
+                if form_dish == dish:
+                    dish_price = dish.price
+            for wine in wines:
+                if form_wine == wine:
+                    wine_price = wine.price
+
+            total = dish_price + wine_price
+
+            if total <= form_price:
+                messages.error(request, f'There was no discount on \
+                    {product.name} so the new price was not saved')
+                return redirect(reverse('works'))
+
             form.save()
             messages.success(request, f'Successfully updated {product.name}')
             return redirect(reverse('works'))

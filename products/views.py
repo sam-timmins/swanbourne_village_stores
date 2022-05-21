@@ -416,6 +416,10 @@ def product_details_bundles(request, product_id):
 
 def create_dish(request):
     """ Add a dish to the store """
+    if not request.user.is_superuser:
+        messages.info(request, 'Only store owners can create a dish')
+        return redirect(reverse('home'))
+
     dishes = Dishes.objects.all()
 
     if request.method == 'POST':

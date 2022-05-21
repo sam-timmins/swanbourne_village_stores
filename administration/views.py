@@ -207,6 +207,8 @@ def works(request):
         return redirect(reverse('home'))
 
     the_works = Bundle.objects.all()
+    dishes = Dishes.objects.all()
+    wines = Wines.objects.all()
     count_works = Bundle.objects.all().count()
 
     if request.method == 'POST':
@@ -214,6 +216,24 @@ def works(request):
         if form.is_valid():
             name = form.cleaned_data.get('name')
             format_name = name.title()
+            form_dish = form.cleaned_data.get('dish')
+            form_wine = form.cleaned_data.get('wine')
+            form_price = form.cleaned_data.get('price')
+
+            for dish in dishes:
+                if form_dish == dish:
+                    dish_price = dish.price
+            for wine in wines:
+                if form_wine == wine:
+                    wine_price = wine.price
+
+            total = dish_price + wine_price
+
+            if total <= form_price:
+                messages.error(request, 'There was no discount on this \
+                    combination so it was not saved')
+                return redirect(reverse('works'))
+
             form.save()
             messages.success(request, f'Successfully created {format_name}')
             return redirect(reverse('works'))

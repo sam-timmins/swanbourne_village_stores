@@ -4,12 +4,12 @@
         {% if 'placeholder' not in widget.value.url %}
         <a href="{{ widget.value.url }}" class="text-decoration-none ms-5" target="_blank">
             <img class="preview-image shadow-sm" src="{{ widget.value.url }}"
-                alt="Placeholder image for {{ product.name }}">
+                alt="Image for product">
         </a>
         {% else %}
         <a href="https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg" class="text-decoration-none ms-5" target="_blank">
             <img class="preview-image shadow-sm" src="https://res.cloudinary.com/sam-timmins1/image/upload/v1648242080/static/images/hero.b0249628474d.jpg"
-                alt="Placeholder image for {{ product.name }}">
+                alt="Placeholder image">
         </a>
         {% endif %}
 

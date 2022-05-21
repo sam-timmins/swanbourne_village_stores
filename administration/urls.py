@@ -49,4 +49,19 @@ urlpatterns = [
         views.edit_works,
         name='edit_works'
         ),
+    path(
+        'dish_categories/',
+        views.dish_category,
+        name='dish_category'
+        ),
+    path(
+        'delete/dish_category/<int:category_id>',
+        views.delete_dish_category,
+        name='delete_dish_category'
+        ),
+    path(
+        'edit_dish_category/<int:category_id>',
+        views.edit_dish_category,
+        name='edit_dish_category'
+        ),
 ]

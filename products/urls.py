@@ -43,24 +43,9 @@ urlpatterns = [
         name='product_details_bundles'
         ),
     path(
-        'dish_categories/',
-        views.dish_category,
-        name='dish_category'
-        ),
-    path(
         'wine_categories/',
         views.wine_category,
         name='wine_category'
-        ),
-    path(
-        'delete/dish_category/<int:category_id>',
-        views.delete_dish_category,
-        name='delete_dish_category'
-        ),
-    path(
-        'edit_dish_category/<int:category_id>',
-        views.edit_dish_category,
-        name='edit_dish_category'
         ),
     path(
         'edit_wine_category/<int:category_id>',

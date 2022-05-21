@@ -21,7 +21,7 @@
           modal</span>
 
         <a href="{% url 'delete_dish_category' category.id %}"
-          class="btn btn-general btn-white text-sm p-1 rounded-0" aria-labelledby="delete-modal-{{ category.id }}">Delete</a>
+          class="btn btn-general btn-white text-sm p-1 rounded-0 disabled" aria-labelledby="delete-modal-{{ category.id }}">Delete</a>
         <span id="delete-modal-{{ category.id }}" class="sr-only">White button with purple text that deletes the
           {{ category.name }} from the store</span>
 

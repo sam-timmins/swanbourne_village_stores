@@ -43,11 +43,6 @@ urlpatterns = [
         name='product_details_bundles'
         ),
     path(
-        'dishes/',
-        views.dishes,
-        name='dishes'
-    ),
-    path(
         'create_wine/',
         views.create_wine,
         name='create_wine'

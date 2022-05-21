@@ -61,8 +61,6 @@ def delete_dish_product(request, dish_id):
     bundle = Bundle.objects.all()
     product = get_object_or_404(Dishes, pk=dish_id)
 
-    print(f'Product: {type(product.name)}')
-
     for item in bundle:
         item = str(item.dish)
         if item == product.name:

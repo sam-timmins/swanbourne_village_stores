@@ -3,9 +3,9 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-from products.models import Dishes, Wines, Bundle
+from products.models import Dishes, Wines, Bundle, DishesCategory
 
-from .forms import DishForm, WineForm, WorksForm
+from .forms import DishForm, WineForm, WorksForm, DishCategoryForm
 
 
 def administration(request):
@@ -344,5 +344,94 @@ def edit_works(request, works_id):
     return render(
         request,
         'components/edit/edit-works.html',
+        context
+        )
+
+
+@login_required
+def dish_category(request):
+    """ Create wine and dish categories """
+    if not request.user.is_superuser:
+        messages.info(request, 'Only store owners can view the \
+            dish categories')
+        return redirect(reverse('home'))
+
+    dishes_category_form = DishCategoryForm()
+    categories = DishesCategory.objects.all()
+
+    if request.method == 'POST':
+        dishes_category_form = DishCategoryForm(request.POST)
+        if dishes_category_form.is_valid():
+            name = dishes_category_form.cleaned_data.get('name').title()
+            dishes_category_form.save()
+            messages.success(request, f'Successfully created {name}')
+            return redirect(reverse('dish_category'))
+
+    context = {
+        'dishes_category_form': dishes_category_form,
+        'categories': categories,
+    }
+
+    return render(request, 'categories/dish-categories.html', context)
+
+
+@login_required
+def delete_dish_category(request, category_id):
+    """Delete dish category"""
+    if not request.user.is_superuser:
+        messages.info(request, 'Only store owners can delete the \
+            dish categories')
+        return redirect(reverse('home'))
+
+    category = get_object_or_404(DishesCategory, pk=category_id)
+    category.delete()
+
+    messages.success(request, 'The category has been deleted')
+    return redirect(reverse('dish_category'))
+
+
+@login_required
+def edit_dish_category(request, category_id):
+    """ View to edit a dish category """
+    if not request.user.is_superuser:
+        messages.info(request, 'Only store owners can edit the \
+            dish categories')
+        return redirect(reverse('home'))
+
+    category = get_object_or_404(DishesCategory, pk=category_id)
+
+    if request.method == 'POST':
+        form = DishCategoryForm(request.POST, request.FILES, instance=category)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully \
+                updated {category.name.title()}')
+            return redirect(
+                reverse(
+                    'dish_category',
+                    )
+                )
+        else:
+            messages.error(
+                request,
+                f'Unable to update {category.name}. \
+                Please ensure all fields are filled out correctly.'
+                )
+    else:
+        form = DishCategoryForm()
+
+    form = DishCategoryForm(instance=category)
+
+    messages.info(request, f'You are currently \
+        editing {category.name.title()}')
+
+    context = {
+        'form': form,
+        'category': category,
+    }
+
+    return render(
+        request,
+        'categories/edit-dish-categories.html',
         context
         )

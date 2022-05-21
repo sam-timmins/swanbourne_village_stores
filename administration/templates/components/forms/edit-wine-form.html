@@ -1,0 +1,19 @@
+{% load crispy_forms_tags %}
+
+<form action="{% url 'edit_wine' product.id %}" method="POST" class="container m-auto my-5 text-purple text-sm" enctype="multipart/form-data">
+    {% csrf_token %}
+        <p class="text-xs text-pruple ps-5 mb-5">
+            * required field
+        </p>
+        {{ form | crispy }}
+
+    <div class="mt-5 d-flex flex-row justify-content-around">
+        <button type="submit" class="btn btn-general btn-purple text-sm p-1 rounded-0 submit-quantity" aria-labelledby="edit-product-wines">Update</button>
+        <span id="edit-product-wines" class="sr-only">Purple button with white writing that updates the changes to product in the wines collection</span>
+
+        
+        <a href="{% url 'wines' %}" class="btn btn-general btn-white text-sm p-1 rounded-0" aria-labelledby="cancel-edit-product-wines">Cancel</a>
+        <span id="cancel-edit-product-wines" class="sr-only">White button with purple writing that navigates to the wines administration page</span>
+
+    </div>
+</form>

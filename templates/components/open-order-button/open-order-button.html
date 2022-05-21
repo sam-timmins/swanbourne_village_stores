@@ -43,6 +43,7 @@
                             {{ completed_orders_and_collected }}
                         </td>
                     </tr>
+                </tbody>
                     <tfoot>
                     <tr class="background-light-green">
                         <th scope="row" class="text-dark-green">
@@ -56,13 +57,13 @@
                             aria-labelledby="order-info-all-orders">
                                 {{ all_orders }}
                             </a>
+                            <span class="sr-only" id="order-info-all-orders">
+                                White button with purple writing navigating to the orders page
+                            </span>
                         </td>
-                        <span class="sr-only" id="order-info-all-orders">
-                            White button with purple writing navigating to the orders page
-                        </span>
                     </tr>
                 </tfoot>
-                </tbody>
+                
             </table>
         </div>
     </div>

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/products/products.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <!-- Works administration page -->
+    <section class="container-fluid background-light-green m-0 p-0">
+
+        <!-- Works administration header -->
+        {% include 'components/header/works-header.html' %}
+
+        <div class="row container d-flex justify-content-around mx-auto my-5">
+
+            <!-- Works administration create works form -->
+            {% include 'components/forms/create-works-form.html' %}
+
+            <!-- Works administration all works table -->
+            {% include 'components/tables/works-table.html' %}
+
+        </div>
+
+
+    </section>
+
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'js/products/form-slug-field.js' %}"></script>
+{% endblock %}

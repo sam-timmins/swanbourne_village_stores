@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/products/products.css' %}">
+{% endblock %}
+
+{% block content %}
+
+    <!-- Wines administration page -->
+    <section class="container-fluid background-light-green m-0 p-0">
+
+        <!-- Wines administration header -->
+        {% include 'components/header/wines-header.html' %}
+
+        <div class="row container d-flex justify-content-around mx-auto my-5">
+
+            <!-- Wines administration create dish form -->
+            {% include 'components/forms/create-wine-form.html' %}
+
+            <!-- Wines administration all Wines table -->
+            {% include 'components/tables/wines-table.html' %}
+
+        </div>
+
+
+    </section>
+
+{% endblock %}
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script src="{% static 'js/products/form-slug-field.js' %}"></script>
+{% endblock %}

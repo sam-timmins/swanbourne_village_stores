@@ -5,36 +5,92 @@
 {% load static %}
 
 {% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/products/products.css' %}">
+<link rel="stylesheet" href="{% static 'css/products/products.css' %}">
 {% endblock %}
 
 {% block content %}
 
 <!-- Fresh food products -->
-<section class="row container-fluid background-light-green p-0 m-0">
+<section class="container-fluid background-light-green m-0 p-0">
 
-    <div class="col-12">
-        <h1 class="text-header text-purple text-lg text-center my-5">Create a dish</h1>
-        <hr class="text-purple w-75 m-auto">
+    <div class="row">
+        <div class="col-12">
+            <h1 class="text-header text-purple text-lg text-center my-5">Dishes</h1>
+            <hr class="text-purple w-75 mx-auto mb-5">
+        </div>
     </div>
 
-    <form action="{% url 'create_dish' %}" method="POST" class="container col-10 col-md-6 col-lg-4 m-auto my-5 text-purple text-sm" enctype="multipart/form-data">
-        {% csrf_token %}
-            <p class="text-xs text-pruple ps-5 mb-5">
-                * required field
-            </p>
-            {{ form | crispy }}
+    <div class="row container d-flex justify-content-around mx-auto my-5">
+        <div class="col-12 col-md-6 col-lg-4 border-purple p-3 p-md-5">
+            <h2 class="text-purple text-md text-center text-header">Create a dish</h2>
+            <hr class="text-purple mx-auto my-5">
+            <form action="{% url 'create_dish' %}" method="POST" enctype="multipart/form-data">
+                <div class="col text-center mb-5">
+                    {% csrf_token %}
+                    {{ form | crispy }}
+                </div>
 
-        <div class="mt-5 d-flex flex-row justify-content-around">
-            <button type="submit" class="btn btn-general btn-purple text-sm p-1 rounded-0 submit-quantity" aria-labelledby="add-product-dishes">Add Product</button>
-            <span id="add-product-dishes" class="sr-only">Purple button with white writing that adds to product to the dishes collection</span>
+                <div class="col text-center mt-5">
+                    <button type="submit" class="btn btn-general btn-purple text-sm p-1 rounded-0 submit-quantity"
+                        aria-labelledby="add-product-dishes">
+                        Create
+                    </button>
+                    <span id="add-product-dishes" class="sr-only">Purple button with white writing that adds to product
+                        to the dishes collection</span>
+                </div>
+            </form>
+        </div>
 
-            
-            <a href="{% url 'the_menu' %}" class="btn btn-general btn-white text-sm p-1 rounded-0" aria-labelledby="add-product-dishes">Cancel</a>
-            <span id="cancel-product-dishes" class="sr-only">White button with purple writing that navigates to the menu products page</span>
+        <div class="col-12 col-md-6 col-lg-7 border-purple p-3 p-md-5">
+            <h2 class="text-purple text-md text-center text-header">Category list</h2>
+            <hr class="text-purple mx-auto my-5">
+            <div class="p-3 table-responsive">
+                <table class="w-100 text-dark-green table align-middle">
+                    <thead class="background-purple text-white fst-italic">
+                        <tr>
+                            <th>Category</th>
+                            <th>Origin</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-black">
+                        {% for dish in dishes %}
+                        <tr>
+                            <td>
+                                <p class="text-purple">
+                                    {{ dish.name }}
+                                </p>
+                            </td>
+                            <td>
+                                <p class="text-purple">
+                                    {{ dish.price }}
+                                </p>
+                            </td>
+                            <td>
+                                <a href=""
+                                    class="d-block text-purple text-decoration-none text-xs d-block">
+                                    <i class="fa-solid fa-pen-fancy ms-3"></i>
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#delete-dish-product{{dish.id}}"
+                                    class="d-block text-purple text-decoration-none text-xs d-block"
+                                    data-bs-toggle="modal">
+                                    <i class="fa-solid fa-trash-can ms-3"></i>
+
+                                    <!-- Modal for delete -->
+                                    {% include 'components/modals/delete-dish-modal.html' %}
+                                </a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
 
         </div>
-    </form>
+
 
 </section>
 
@@ -42,7 +98,7 @@
 
 {% block postloadjs %}
 
-    {{ block.super }}
-        <script src="{% static 'js/products/form-slug-field.js' %}"></script>
+{{ block.super }}
+<script src="{% static 'js/products/form-slug-field.js' %}"></script>
 
 {% endblock %}

@@ -10,6 +10,11 @@ urlpatterns = [
         name='dishes'
     ),
     path(
+        'wines/',
+        views.wines,
+        name='wines'
+    ),
+    path(
         'delete/dish/<int:dish_id>',
         views.delete_dish_product,
         name='delete_dish_product'

@@ -4,8 +4,8 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from products.models import Dishes, Wines
-from products.forms import WineForm
-from .forms import DishForm
+
+from .forms import DishForm, WineForm
 
 
 def administration(request):

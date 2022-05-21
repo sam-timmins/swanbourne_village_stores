@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from .models import Dishes, Wines, Bundle, DishesCategory, WineCategory
-from .forms import (DishForm, WineForm, WorksForm,
+from .forms import (WineForm, WorksForm,
                     DishCategoryForm, WineCategoryForm)
 
 

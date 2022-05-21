@@ -229,6 +229,10 @@ input[type=number] {
     color: var(--white);
 }
 
+.form-control:focus::placeholder {
+    color: var(--light-green);
+} 
+
 .form-control[readonly] {
     background-color: var(--light-green);
 }

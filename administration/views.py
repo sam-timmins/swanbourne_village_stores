@@ -247,3 +247,45 @@ def delete_works_product(request, works_id):
 
     messages.success(request, 'The works has been deleted from the store')
     return redirect(reverse('works'))
+
+
+@login_required
+def edit_works(request, works_id):
+    """ Edit the item in the works model """
+    if not request.user.is_superuser:
+        messages.info(request, 'Only store owners can edit the works')
+        return redirect(reverse('home'))
+
+    works = Bundle.objects.all()
+    product = get_object_or_404(Bundle, pk=works_id)
+
+    if request.method == 'POST':
+        form = WorksForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully updated {product.name}')
+            return redirect(reverse('works'))
+        else:
+            messages.error(
+                request,
+                f'Unable to update {product.name}. \
+                Please ensure all fields are filled out correctly.'
+                )
+    else:
+        form = WorksForm()
+
+    form = WorksForm(instance=product)
+
+    messages.info(request, f'You are currently editing {product.name}')
+
+    context = {
+        'form': form,
+        'works': works,
+        'product': product,
+    }
+
+    return render(
+        request,
+        'components/edit/edit-works.html',
+        context
+        )

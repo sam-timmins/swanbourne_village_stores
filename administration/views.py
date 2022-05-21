@@ -140,3 +140,17 @@ def wines(request):
     }
 
     return render(request, 'administration/wines.html', context)
+
+
+@login_required
+def delete_wine_product(request, wine_id):
+    """Delete wine product"""
+    if not request.user.is_superuser:
+        messages.info(request, 'Only store owners can delete a wine')
+        return redirect(reverse('home'))
+
+    product = get_object_or_404(Wines, pk=wine_id)
+    product.delete()
+
+    messages.success(request, 'The wine has been deleted from the store')
+    return redirect(reverse('wines'))

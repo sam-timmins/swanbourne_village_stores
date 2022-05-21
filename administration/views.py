@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -47,3 +47,16 @@ def dishes(request):
     }
 
     return render(request, 'administration/create-dish.html', context)
+
+
+@login_required
+def delete_dish_product(request, dish_id):
+    """Delete dish product"""
+    if not request.user.is_superuser:
+        return redirect(reverse('home'))
+
+    product = get_object_or_404(Dishes, pk=dish_id)
+    product.delete()
+
+    messages.success(request, 'The dish has been deleted from the store')
+    return redirect(reverse('dishes'))

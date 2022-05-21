@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from .models import Dishes, Wines, Bundle, DishesCategory, WineCategory
-from .forms import (WineForm, WorksForm,
+from .forms import (WorksForm,
                     DishCategoryForm, WineCategoryForm)
 
 
@@ -414,32 +414,6 @@ def product_details_bundles(request, product_id):
         )
 
 
-def create_wine(request):
-    """ Add a wine to the store """
-    if request.method == 'POST':
-        form = WineForm(request.POST, request.FILES)
-        if form.is_valid():
-            name = form.cleaned_data.get('name')
-            format_name = name.title()
-            form.save()
-            messages.success(request, f'Successfully created {format_name}')
-            return redirect(reverse('create_wine'))
-        else:
-            messages.error(
-                request,
-                'Unable to create the wine. \
-                Please ensure all fields are filled out correctly.'
-                )
-    else:
-        form = WineForm()
-
-    context = {
-        'form': form,
-    }
-
-    return render(request, 'products/create-wine.html', context)
-
-
 def create_works(request):
     """ Add a bundle to the store """
     if request.method == 'POST':
@@ -526,19 +500,6 @@ def delete_dish_category(request, dish_id):
 
 
 @login_required
-def delete__wine_product(request, product_id):
-    """Delete wine product"""
-    if not request.user.is_superuser:
-        return redirect(reverse('home'))
-
-    product = get_object_or_404(Wines, pk=product_id)
-    product.delete()
-
-    messages.success(request, 'The wine has been deleted from the store')
-    return redirect(reverse('wine_store'))
-
-
-@login_required
 def delete__works_product(request, product_id):
     """Delete works combination product"""
     if not request.user.is_superuser:
@@ -552,48 +513,6 @@ def delete__works_product(request, product_id):
         'The combination has been deleted from the store'
         )
     return redirect(reverse('the_works'))
-
-
-def edit_wine(request, product_id):
-    """ Edit the item in the wines model """
-    wines = Wines.objects.all()
-    product = get_object_or_404(Wines, pk=product_id)
-
-    if request.method == 'POST':
-        form = WineForm(request.POST, request.FILES, instance=product)
-        if form.is_valid():
-            form.save()
-            messages.success(request, f'Successfully updated {product.name}')
-            return redirect(
-                reverse(
-                    'product_details_wines',
-                    args=[product.id],
-                    )
-                )
-        else:
-            messages.error(
-                request,
-                f'Unable to update {product.name}. \
-                Please ensure all fields are filled out correctly.'
-                )
-    else:
-        form = WineForm()
-
-    form = WineForm(instance=product)
-
-    messages.info(request, f'You are currently editing {product.name}')
-
-    context = {
-        'form': form,
-        'wines': wines,
-        'product': product,
-    }
-
-    return render(
-        request,
-        'products/edit-product.html',
-        context
-        )
 
 
 def edit_works(request, product_id):

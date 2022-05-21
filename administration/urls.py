@@ -64,4 +64,19 @@ urlpatterns = [
         views.edit_dish_category,
         name='edit_dish_category'
         ),
+    path(
+        'wine_categories/',
+        views.wine_category,
+        name='wine_category'
+        ),
+    path(
+        'edit_wine_category/<int:category_id>',
+        views.edit_wine_category,
+        name='edit_wine_category'
+        ),
+    path(
+        'delete/wine_category/<int:category_id>',
+        views.delete_wine_category,
+        name='delete_wine_category'
+        ),
 ]

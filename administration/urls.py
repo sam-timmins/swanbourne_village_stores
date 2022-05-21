@@ -44,4 +44,9 @@ urlpatterns = [
         views.edit_wine,
         name='edit_wine'
         ),
+    path(
+        'edit-works/<int:works_id>',
+        views.edit_works,
+        name='edit_works'
+        ),
 ]

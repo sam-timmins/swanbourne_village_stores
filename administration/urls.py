@@ -79,4 +79,14 @@ urlpatterns = [
         views.delete_wine_category,
         name='delete_wine_category'
         ),
+    path(
+        "collection_days/",
+        views.collection_days,
+        name="collection_days"
+        ),
+    path(
+        "collection_days/delete/<int:pk>",
+        views.delete_collection_day,
+        name="delete_collection_day"
+        ),
 ]

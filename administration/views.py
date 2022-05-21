@@ -373,7 +373,11 @@ def dish_category(request):
         'categories': categories,
     }
 
-    return render(request, 'categories/dish-categories.html', context)
+    return render(
+        request,
+        'components/categories/dish-categories.html',
+        context
+        )
 
 
 @login_required
@@ -433,7 +437,7 @@ def edit_dish_category(request, category_id):
 
     return render(
         request,
-        'categories/edit-dish-categories.html',
+        'components/categories/edit-dish-categories.html',
         context
         )
 
@@ -464,7 +468,11 @@ def wine_category(request):
         'categories': categories,
     }
 
-    return render(request, 'categories/wine-categories.html', context)
+    return render(
+        request,
+        'components/categories/wine-categories.html',
+        context
+        )
 
 
 @login_required
@@ -523,6 +531,6 @@ def edit_wine_category(request, category_id):
 
     return render(
         request,
-        'categories/edit-wine-categories.html',
+        'components/categories/edit-wine-categories.html',
         context
         )

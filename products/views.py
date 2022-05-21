@@ -6,8 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 from .models import Dishes, Wines, Bundle, DishesCategory, WineCategory
-from .forms import (WorksForm,
-                    DishCategoryForm, WineCategoryForm)
+from .forms import DishCategoryForm, WineCategoryForm
 
 
 def the_menu(request):

@@ -233,3 +233,17 @@ def works(request):
     }
 
     return render(request, 'administration/works.html', context)
+
+
+@login_required
+def delete_works_product(request, works_id):
+    """Delete works product"""
+    if not request.user.is_superuser:
+        messages.info(request, 'Only store owners can delete a works')
+        return redirect(reverse('home'))
+
+    product = get_object_or_404(Bundle, pk=works_id)
+    product.delete()
+
+    messages.success(request, 'The works has been deleted from the store')
+    return redirect(reverse('works'))

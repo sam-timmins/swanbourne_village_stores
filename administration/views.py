@@ -3,7 +3,8 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-from products.models import Dishes, Wines
+from products.models import Dishes, Wines, Bundle
+from products.forms import WorksForm
 
 from .forms import DishForm, WineForm
 
@@ -196,3 +197,39 @@ def edit_wine(request, wine_id):
         'components/edit/edit-wine.html',
         context
         )
+
+
+@login_required
+def works(request):
+    """ Add a dish to the store """
+    if not request.user.is_superuser:
+        messages.info(request, 'Only store owners can create the works')
+        return redirect(reverse('home'))
+
+    the_works = Bundle.objects.all()
+    count_works = Bundle.objects.all().count()
+
+    if request.method == 'POST':
+        form = WorksForm(request.POST, request.FILES)
+        if form.is_valid():
+            name = form.cleaned_data.get('name')
+            format_name = name.title()
+            form.save()
+            messages.success(request, f'Successfully created {format_name}')
+            return redirect(reverse('works'))
+        else:
+            messages.error(
+                request,
+                'Unable to create the dish. \
+                Please ensure all fields are filled out correctly.'
+                )
+    else:
+        form = WorksForm()
+
+    context = {
+        'form': form,
+        'the_works': the_works,
+        'count_works': count_works,
+    }
+
+    return render(request, 'administration/works.html', context)

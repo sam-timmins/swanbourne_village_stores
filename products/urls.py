@@ -78,11 +78,6 @@ urlpatterns = [
         name='delete_dish_category'
     ),
     path(
-        'edit-dish/<int:dish_id>',
-        views.edit_dish,
-        name='edit_dish'
-        ),
-    path(
         'edit-wine/<int:product_id>',
         views.edit_wine,
         name='edit_wine'

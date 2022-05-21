@@ -3,7 +3,7 @@
 :root {
     --white: #FFFFFF;
     --black: #191919;
-    --black-transp: rgba(25, 25, 25, 0.7);
+    --black-transp: rgba(25, 25, 25, 0.5);
     --light-green: #CBC7AE;
     --dark-green: #2B3A2D;
     --purple: #482832;

@@ -416,6 +416,8 @@ def product_details_bundles(request, product_id):
 
 def create_dish(request):
     """ Add a dish to the store """
+    dishes = Dishes.objects.all()
+
     if request.method == 'POST':
         form = DishForm(request.POST, request.FILES)
         if form.is_valid():
@@ -435,6 +437,7 @@ def create_dish(request):
 
     context = {
         'form': form,
+        'dishes': dishes,
     }
 
     return render(request, 'products/create-dish.html', context)
@@ -539,12 +542,12 @@ def wine_category(request):
 
 
 @login_required
-def delete_dish_category(request, category_id):
+def delete_dish_category(request, dish_id):
     """Delete dish category"""
     if not request.user.is_superuser:
         return redirect(reverse('home'))
 
-    category = get_object_or_404(DishesCategory, pk=category_id)
+    category = get_object_or_404(DishesCategory, pk=dish_id)
     category.delete()
 
     messages.success(request, 'The category has been deleted')
@@ -552,7 +555,7 @@ def delete_dish_category(request, category_id):
 
 
 @login_required
-def delete__dish_product(request, product_id):
+def delete_dish_product(request, product_id):
     """Delete dish product"""
     if not request.user.is_superuser:
         return redirect(reverse('home'))

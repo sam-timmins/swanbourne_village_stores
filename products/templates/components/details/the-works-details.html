@@ -43,14 +43,17 @@
                     </div>
                 </div>
             </div>
+
             <!-- Helper text -->
             <p class="quantity-helper text-center mt-3 p-3 background-dark-green text-white text-xs w-75 m-auto d-none">
                 Quantity between 1 and 25 only. Please <a href="{% url 'home' %}#contact-section"
                     class="text-light-green text-decoration-none">contact us</a> for larger orders</p>
-            <div class="mt-5 d-flex flex-row justify-content-around">
-                <input type="submit" class="btn btn-general btn-purple text-sm p-1 rounded-0 submit-quantity"
+
+            <!-- Buttons -->
+            <div class="mt-5 d-flex flex-column flex-sm-row justify-content-around align-items-center">
+                <input type="submit" class="btn btn-general btn-purple text-sm p-1 my-3 rounded-0 submit-quantity"
                     value="Add to Bag">
-                <a href="{% url 'the_works' %}" class="btn btn-general btn-white text-sm p-1 rounded-0" 
+                <a href="{% url 'the_works' %}" class="btn btn-general btn-white text-sm p-1 my-3 rounded-0" 
                 aria-labelledby="product-description-bundle-button">The Works</a>
                 <span class="sr-only" id="product-description-bundle-button">
                     White button with purple writing navigating to the works menu

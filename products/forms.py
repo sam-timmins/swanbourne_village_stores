@@ -125,10 +125,10 @@ class WineForm(forms.ModelForm):
         self.fields['description'].widget.attrs.update(
             placeholder='Description'
             )
-        self.fields['name'].label = 'Dish Name'
+        self.fields['name'].label = 'Wine Name'
         self.fields['name'].widget.attrs.update(
             name_field,
-            placeholder='Dish Name',
+            placeholder='Wine Name',
             id='dish-name',
             )
         self.fields['name'].error_messages.update({

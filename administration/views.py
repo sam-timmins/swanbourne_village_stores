@@ -159,7 +159,16 @@ def delete_wine_product(request, wine_id):
         messages.info(request, 'Only store owners can delete a wine')
         return redirect(reverse('home'))
 
+    bundle = Bundle.objects.all()
     product = get_object_or_404(Wines, pk=wine_id)
+
+    for item in bundle:
+        item = str(item.wine)
+        if item == product.name:
+            messages.error(request, f'The wine is included in one or more The Works \
+                products. Please delete these before deleting {product.name} ')
+            return redirect(reverse('wines'))
+
     product.delete()
 
     messages.success(request, 'The wine has been deleted from the store')

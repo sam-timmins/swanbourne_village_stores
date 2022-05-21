@@ -473,48 +473,6 @@ def delete_dish_category(request, dish_id):
     return redirect(reverse('dish_category'))
 
 
-def edit_works(request, product_id):
-    """ Edit the item in the bundles model """
-    bundle = Bundle.objects.all()
-    product = get_object_or_404(Bundle, pk=product_id)
-
-    if request.method == 'POST':
-        form = WorksForm(request.POST, request.FILES, instance=product)
-        if form.is_valid():
-            form.save()
-            messages.success(request, f'Successfully updated {product.name}')
-            return redirect(
-                reverse(
-                    'product_details_bundles',
-                    args=[product.id],
-                    )
-                )
-        else:
-            messages.error(
-                request,
-                f'Unable to update {product.name}. \
-                Please ensure all fields are filled out correctly.'
-                )
-    else:
-        form = WorksForm()
-
-    form = WorksForm(instance=product)
-
-    messages.info(request, f'You are currently editing {product.name}')
-
-    context = {
-        'form': form,
-        'bundle': bundle,
-        'product': product,
-    }
-
-    return render(
-        request,
-        'products/edit-product.html',
-        context
-        )
-
-
 def edit_dish_category(request, category_id):
     """ View to edit a dish category """
     category = get_object_or_404(DishesCategory, pk=category_id)

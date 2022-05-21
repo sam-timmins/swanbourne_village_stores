@@ -1,105 +1,35 @@
 {% extends "base.html" %}
 
-{% load crispy_forms_tags %}
-
 {% load static %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/products/products.css' %}">
+    <link rel="stylesheet" href="{% static 'css/products/products.css' %}">
 {% endblock %}
 
 {% block content %}
 
-<!-- Fresh food products -->
-<section class="container-fluid background-light-green m-0 p-0">
+    <!-- Dishes administration page -->
+    <section class="container-fluid background-light-green m-0 p-0">
 
-    <div class="row">
-        <div class="col-12">
-            <h1 class="text-header text-purple text-lg text-center my-5">Dishes</h1>
-            <hr class="text-purple w-75 mx-auto mb-5">
-        </div>
-    </div>
+        <!-- Admin cards -->
+        {% include 'components/header/dishes-header.html' %}
 
-    <div class="row container d-flex justify-content-around mx-auto my-5">
-        <div class="col-12 col-md-6 col-lg-4 border-purple p-3 p-md-5">
-            <h2 class="text-purple text-md text-center text-header">Create a dish</h2>
-            <hr class="text-purple mx-auto my-5">
-            <form action="{% url 'dishes' %}" method="POST" enctype="multipart/form-data">
-                <div class="col text-center mb-5">
-                    {% csrf_token %}
-                    {{ form | crispy }}
-                </div>
+        <div class="row container d-flex justify-content-around mx-auto my-5">
 
-                <div class="col text-center mt-5">
-                    <button type="submit" class="btn btn-general btn-purple text-sm p-1 rounded-0 submit-quantity"
-                        aria-labelledby="add-product-dishes">
-                        Create
-                    </button>
-                    <span id="add-product-dishes" class="sr-only">Purple button with white writing that adds to product
-                        to the dishes collection</span>
-                </div>
-            </form>
-        </div>
+            <!-- Admin cards -->
+            {% include 'components/forms/create-dish-form.html' %}
 
-        <div class="col-12 col-md-6 col-lg-7 border-purple p-3 p-md-5">
-            <h3 class="text-purple text-md text-center text-header d-flex align-items-center justify-content-center">Dishes list <span
-                class="badge background-black-transp text-white ms-3 my-auto text-sm">{{ count_dishes }}</span></h3>
-            <hr class="text-purple mx-auto my-5">
-            <div class="p-3 table-responsive">
-                <table class="w-100 text-dark-green table align-middle">
-                    <thead class="background-purple text-white fst-italic">
-                        <tr>
-                            <th>Category</th>
-                            <th>Origin</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-black">
-                        {% for dish in dishes %}
-                        <tr>
-                            <td>
-                                <p class="text-purple">
-                                    {{ dish.name }}
-                                </p>
-                            </td>
-                            <td>
-                                <p class="text-purple">
-                                    {{ dish.price }}
-                                </p>
-                            </td>
-                            <td>
-                                <a href="{% url 'edit_dish' dish.id %}"
-                                    class="d-block text-purple text-decoration-none text-xs d-block">
-                                    <i class="fa-solid fa-pen-fancy ms-3"></i>
-                                </a>
-                            </td>
-                            <td>
-                                <a href="#delete-dish{{dish.id}}"
-                                    class="d-block text-purple text-decoration-none text-xs d-block"
-                                    data-bs-toggle="modal">
-                                    <i class="fa-solid fa-trash-can ms-3"></i>
-
-                                    <!-- Modal for delete -->
-                                    {% include 'components/modals/delete-dish-modal.html' %}
-                                </a>
-                            </td>
-                        </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
+            <!-- Admin cards -->
+            {% include 'components/tables/dishes-table.html' %}
 
         </div>
 
 
-</section>
+    </section>
 
 {% endblock %}
 
 {% block postloadjs %}
-
-{{ block.super }}
-<script src="{% static 'js/products/form-slug-field.js' %}"></script>
-
+    {{ block.super }}
+    <script src="{% static 'js/products/form-slug-field.js' %}"></script>
 {% endblock %}

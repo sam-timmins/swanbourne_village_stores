@@ -602,22 +602,17 @@ def delete__works_product(request, product_id):
     return redirect(reverse('the_works'))
 
 
-def edit_dish(request, product_id):
+def edit_dish(request, dish_id):
     """ Edit the item in the dishes model """
     dishes = Dishes.objects.all()
-    product = get_object_or_404(Dishes, pk=product_id)
+    product = get_object_or_404(Dishes, pk=dish_id)
 
     if request.method == 'POST':
         form = DishForm(request.POST, request.FILES, instance=product)
         if form.is_valid():
             form.save()
             messages.success(request, f'Successfully updated {product.name}')
-            return redirect(
-                reverse(
-                    'product_detail_dishes',
-                    args=[product.id],
-                    )
-                )
+            return redirect(reverse('create_dish'))
         else:
             messages.error(
                 request,

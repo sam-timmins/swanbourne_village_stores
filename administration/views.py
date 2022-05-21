@@ -58,7 +58,18 @@ def delete_dish_product(request, dish_id):
         messages.info(request, 'Only store owners can delete a dish')
         return redirect(reverse('home'))
 
+    bundle = Bundle.objects.all()
     product = get_object_or_404(Dishes, pk=dish_id)
+
+    print(f'Product: {type(product.name)}')
+
+    for item in bundle:
+        item = str(item.dish)
+        if item == product.name:
+            messages.error(request, f'The dish is included in one or more The Works \
+                products. Please delete these before deleting {product.name} ')
+            return redirect(reverse('dishes'))
+
     product.delete()
 
     messages.success(request, 'The dish has been deleted from the store')

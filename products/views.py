@@ -414,32 +414,6 @@ def product_details_bundles(request, product_id):
         )
 
 
-def create_works(request):
-    """ Add a bundle to the store """
-    if request.method == 'POST':
-        form = WorksForm(request.POST, request.FILES)
-        if form.is_valid():
-            name = form.cleaned_data.get('name')
-            format_name = name.title()
-            form.save()
-            messages.success(request, f'Successfully created {format_name}')
-            return redirect(reverse('create_works'))
-        else:
-            messages.error(
-                request,
-                'Unable to create the combination. \
-                Please ensure all fields are filled out correctly.'
-                )
-    else:
-        form = WorksForm()
-
-    context = {
-        'form': form,
-    }
-
-    return render(request, 'products/create-works.html', context)
-
-
 def dish_category(request):
     """ Create wine and dish categories """
 

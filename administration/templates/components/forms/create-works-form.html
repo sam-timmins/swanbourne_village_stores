@@ -1,0 +1,21 @@
+{% load crispy_forms_tags %}
+
+<div class="col-12 col-md-6 col-lg-4 border-purple p-3 p-md-5">
+    <h2 class="text-purple text-md text-center text-header">Create a works</h2>
+    <hr class="text-purple mx-auto my-5">
+    <form action="{% url 'works' %}" method="POST" enctype="multipart/form-data">
+        <div class="col text-center mb-5">
+            {% csrf_token %}
+            {{ form | crispy }}
+        </div>
+
+        <div class="col text-center mt-5">
+            <button type="submit" class="btn btn-general btn-purple text-sm p-1 rounded-0 submit-quantity"
+                aria-labelledby="add-product-dishes">
+                Create
+            </button>
+            <span id="add-product-dishes" class="sr-only">Purple button with white writing that adds to product
+                to the works collection</span>
+        </div>
+    </form>
+</div>

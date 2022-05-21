@@ -414,41 +414,6 @@ def product_details_bundles(request, product_id):
         )
 
 
-def dishes(request):
-    """ Add a dish to the store """
-    if not request.user.is_superuser:
-        messages.info(request, 'Only store owners can create a dish')
-        return redirect(reverse('home'))
-
-    dishes = Dishes.objects.all()
-    count_dishes = Dishes.objects.all().count()
-
-    if request.method == 'POST':
-        form = DishForm(request.POST, request.FILES)
-        if form.is_valid():
-            name = form.cleaned_data.get('name')
-            format_name = name.title()
-            form.save()
-            messages.success(request, f'Successfully created {format_name}')
-            return redirect(reverse('dishes'))
-        else:
-            messages.error(
-                request,
-                'Unable to create the dish. \
-                Please ensure all fields are filled out correctly.'
-                )
-    else:
-        form = DishForm()
-
-    context = {
-        'form': form,
-        'dishes': dishes,
-        'count_dishes': count_dishes,
-    }
-
-    return render(request, 'products/create-dish.html', context)
-
-
 def create_wine(request):
     """ Add a wine to the store """
     if request.method == 'POST':

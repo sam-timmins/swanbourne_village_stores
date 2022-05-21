@@ -1,32 +1,14 @@
-{% extends "base.html" %}
-{% load static %}
+<!-- Edit {{ product.name }} section -->
+<section class="row container-fluid background-light-green p-0 m-0">
+    <div class="container col-12 m-auto">
+        <div class="row">
 
-{% block extra_css %}
-    <link rel="stylesheet" href="{% static 'css/products/products.css' %}">
-{% endblock %}
+            <!-- Edit dish header -->
+            {% include 'components/header/edit-dish-header.html' %}
 
-{% block content %}
+            <!-- Edit dish form -->
+            {% include 'components/forms/edit-dish-form.html' %}
 
-    <!-- Edit {{ product.name }} section -->
-    <section class="row container-fluid m-0 p-5 d-flex flex-column flex-md-row background-light-green">
-        <div class="container col-12 col-md-6 col-xl-4 m-auto">
-            <div class="row">
-
-                <!-- Edit dish header -->
-                {% include 'components/header/edit-dish-header.html' %}
-
-                <!-- Edit dish form -->
-                {% include 'components/forms/edit-dish-form.html' %}
-
-            </div>
         </div>
-    </section>
-
-{% endblock %}
-
-{% block postloadjs %}
-
-    {{ block.super }}
-        <script src="{% static 'js/products/form-slug-field.js' %}"></script>
-
-{% endblock %}
+    </div>
+</section>

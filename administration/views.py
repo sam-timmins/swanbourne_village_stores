@@ -53,6 +53,7 @@ def dishes(request):
 def delete_dish_product(request, dish_id):
     """Delete dish product"""
     if not request.user.is_superuser:
+        messages.info(request, 'Only store owners can delete a dish')
         return redirect(reverse('home'))
 
     product = get_object_or_404(Dishes, pk=dish_id)

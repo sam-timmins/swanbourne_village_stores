@@ -3,9 +3,10 @@ from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
-from products.models import Dishes, Wines, Bundle, DishesCategory
+from products.models import Dishes, Wines, Bundle, DishesCategory, WineCategory
 
-from .forms import DishForm, WineForm, WorksForm, DishCategoryForm
+from .forms import (DishForm, WineForm, WorksForm, DishCategoryForm,
+                    WineCategoryForm)
 
 
 def administration(request):
@@ -433,5 +434,95 @@ def edit_dish_category(request, category_id):
     return render(
         request,
         'categories/edit-dish-categories.html',
+        context
+        )
+
+
+@login_required
+def wine_category(request):
+    """ Create, view and delete wine categories """
+    if not request.user.is_superuser:
+        messages.info(request, 'Only store owners can view the \
+            wine categories')
+        return redirect(reverse('home'))
+
+    wines_category_form = WineCategoryForm()
+    categories = WineCategory.objects.all()
+
+    if request.method == 'POST':
+        wines_category_form = WineCategoryForm(request.POST)
+        if wines_category_form.is_valid():
+            name = wines_category_form.cleaned_data.get('variety').title()
+            origin = wines_category_form.cleaned_data.get('origin').title()
+            wines_category_form.save()
+            messages.success(request, f'Successfully created {name} \
+                from {origin}')
+            return redirect(reverse('wine_category'))
+
+    context = {
+        'wines_category_form': wines_category_form,
+        'categories': categories,
+    }
+
+    return render(request, 'categories/wine-categories.html', context)
+
+
+@login_required
+def delete_wine_category(request, category_id):
+    """Delete wine category"""
+    if not request.user.is_superuser:
+        messages.info(request, 'Only store owners can delete the \
+            wine categories')
+        return redirect(reverse('home'))
+
+    category = get_object_or_404(WineCategory, pk=category_id)
+    category.delete()
+
+    messages.success(request, 'The category has been deleted')
+    return redirect(reverse('wine_category'))
+
+
+@login_required
+def edit_wine_category(request, category_id):
+    """ View to edit a wine category """
+    if not request.user.is_superuser:
+        messages.info(request, 'Only store owners can view the \
+            dish categories')
+        return redirect(reverse('home'))
+    category = get_object_or_404(WineCategory, pk=category_id)
+
+    if request.method == 'POST':
+        form = WineCategoryForm(request.POST, request.FILES, instance=category)
+        if form.is_valid():
+            form.save()
+            messages.success(request, f'Successfully \
+                updated {category.name.title()}')
+            return redirect(
+                reverse(
+                    'wine_category',
+                    )
+                )
+        else:
+            messages.error(
+                request,
+                f'Unable to update {category.name}. \
+                Please ensure all fields are filled out correctly.'
+                )
+    else:
+        form = WineCategoryForm()
+
+    form = WineCategoryForm(instance=category)
+
+    messages.info(request, f'You are currently \
+        editing {category.name.title()}')
+
+    context = {
+        'form': form,
+        'category': category,
+    }
+
+    return render(
+        request,
+        'categories/edit-wine-categories.html',
         context
         )

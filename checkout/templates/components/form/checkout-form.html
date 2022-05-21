@@ -5,7 +5,6 @@
             The collection day will the be next selected day after the order date
         </p>
 
-
         <form action="{% url 'checkout' %}" method="POST" id="payment-form">
             {% csrf_token %}
 
@@ -21,7 +20,7 @@
             <!-- Save info checkbox -->
             {% if user.is_authenticated %}
                 <div class="my-5 p-3 col-8 col-sm-10 mx-auto">
-                    <input class="form-check-input me-3" type="checkbox" id="id-save-info" name="save-info" checked>
+                    <input class="form-check-input me-3" type="checkbox" id="id-save-info" name="save-info">
                     <label class="text-xs text-dark-green d-inline text-break" for="id-save-info">Save this information to my profile</label>
                 </div>
             {% else %}

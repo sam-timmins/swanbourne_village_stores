@@ -414,7 +414,7 @@ def product_details_bundles(request, product_id):
         )
 
 
-def create_dish(request):
+def dishes(request):
     """ Add a dish to the store """
     if not request.user.is_superuser:
         messages.info(request, 'Only store owners can create a dish')
@@ -430,7 +430,7 @@ def create_dish(request):
             format_name = name.title()
             form.save()
             messages.success(request, f'Successfully created {format_name}')
-            return redirect(reverse('create_dish'))
+            return redirect(reverse('dishes'))
         else:
             messages.error(
                 request,
@@ -570,7 +570,7 @@ def delete_dish_product(request, dish_id):
     product.delete()
 
     messages.success(request, 'The dish has been deleted from the store')
-    return redirect(reverse('create_dish'))
+    return redirect(reverse('dishes'))
 
 
 @login_required
@@ -612,7 +612,7 @@ def edit_dish(request, dish_id):
         if form.is_valid():
             form.save()
             messages.success(request, f'Successfully updated {product.name}')
-            return redirect(reverse('create_dish'))
+            return redirect(reverse('dishes'))
         else:
             messages.error(
                 request,

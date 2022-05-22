@@ -18,12 +18,9 @@ class UpdateStatusForm(forms.ModelForm):
         add extra styles to fields
         """
         super().__init__(*args, **kwargs)
-        extra_attributes = {
-                'class': 'text-xs p-3 rounded-0 border-0',
-            }
 
         self.fields['status'].widget = forms.RadioSelect(choices=COMPLETED)
-        self.fields['status'].widget.attrs.update(extra_attributes)
+        # self.fields['status'].widget.attrs.update(extra_attributes)
         self.fields['status'].label = ''
 
 

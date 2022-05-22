@@ -552,7 +552,37 @@ Pillow
 ### Python
 | File Name | File Path | Result | PEP8 | Comments |
 |--|--|--|--|--|
-| contexts.py | home/contexts.py | PASS | [link](readme/docs/validation/python/home-contexts.png "link") ||
+| forms.py | administration/forms.py | PASS | [link](readme/docs/validation/python/administration/forms.png "link") ||
+| urls.py | administration/urls.py | PASS | [link](readme/docs/validation/python/administration/urls.png "link") ||
+| views.py | administration/views.py | PASS | [link](readme/docs/validation/python/administration/views.png "link") ||
+| contexts.py | bag/contexts.py | PASS | [link](readme/docs/validation/python/bag/contexts.png "link") ||
+| urls.py | bag/urls.py | PASS | [link](readme/docs/validation/python/bag/urls.png "link") ||
+| views.py | bag/views.py | PASS | [link](readme/docs/validation/python/bag/views.png "link") ||
+| admin.py | checkout/admin.py | PASS | [link](readme/docs/validation/python/checkout/admin.png "link") ||
+| forms.py | checkout/forms.py | PASS | [link](readme/docs/validation/python/checkout/forms.png "link") ||
+| models.py | checkout/models.py | PASS | [link](readme/docs/validation/python/checkout/models.png "link") ||
+| signals.py | checkout/signals.py | PASS | [link](readme/docs/validation/python/checkout/signals.png "link") ||
+| urls.py | checkout/urls.py | PASS | [link](readme/docs/validation/python/checkout/urls.png "link") ||
+| views.py | checkout/views.py | PASS | [link](readme/docs/validation/python/checkout/views.png "link") ||
+| webhook_handler.py | checkout/webhook_handler.py | PASS | [link](readme/docs/validation/python/checkout/webhook_handler.png "link") ||
+| webhooks.py | checkout/webhooks.py | PASS | [link](readme/docs/validation/python/checkout/webhooks.png "link") ||
+| contexts.py | home/contexts.py | PASS | [link](readme/docs/validation/python/home/contexts.png "link") ||
+| urls.py | home/urls.py | PASS | [link](readme/docs/validation/python/home/urls.png "link") ||
+| views.py | home/views.py | PASS | [link](readme/docs/validation/python/home/views.png "link") ||
+| forms.py | orders/forms.py | PASS | [link](readme/docs/validation/python/orders/forms.png "link") ||
+| urls.py | orders/urls.py | PASS | [link](readme/docs/validation/python/orders/urls.png "link") ||
+| views.py | orders/views.py | PASS | [link](readme/docs/validation/python/orders/views.png "link") ||
+| admin.py | products/admin.py | PASS | [link](readme/docs/validation/python/products/admin.png "link") ||
+| models.py | products/models.py | PASS | [link](readme/docs/validation/python/products/models.png "link") ||
+| urls.py | products/urls.py | PASS | [link](readme/docs/validation/python/products/urls.png "link") ||
+| views.py | products/views.py | PASS | [link](readme/docs/validation/python/products/views.png "link") ||
+| widgets.py | products/widgets.py | PASS | [link](readme/docs/validation/python/products/widgets.png "link") ||
+| forms.py | profiles/forms.py | PASS | [link](readme/docs/validation/python/profiles/forms.png "link") ||
+| models.py | profiles/models.py | PASS | [link](readme/docs/validation/python/profiles/models.png "link") ||
+| urls.py | profiles/urls.py | PASS | [link](readme/docs/validation/python/profiles/urls.png "link") ||
+| views.py | profiles/views.py | PASS | [link](readme/docs/validation/python/profiles/views.png "link") ||
+| settings.py | swanbourne_stores/settings.py | PASS | [link](readme/docs/validation/python/project/settings.png "link") ||
+| urls.py | swanbourne_stores/urls.py | PASS | [link](readme/docs/validation/python/project/urls.png "link") ||
  
 \
 &nbsp; 

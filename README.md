@@ -457,6 +457,7 @@ Pillow
 
 [Sitemap Generator](https://www.xml-sitemaps.com/ "XML-Sitemaps.com")
 [HTML Validation](https://validator.w3.org/ "W3C")
+[JS Validation](https://jshint.com/ "JSHint")
 
 # Testing
 
@@ -519,7 +520,7 @@ Pillow
 
 
 ### CSS
-| File Name | File Path | Result | PEP8 | Comments |
+| File Name | File Path | Result | W3C | Comments |
 |--|--|--|--|--|
 | base.css | static/css/base.css | PASS | [link](readme/docs/validation/css/base.png "link") |[5 warnings](readme/docs/validation/css/base-warnings.png "link")|
 | administration.css | static/css/administration/administration.css | PASS | [link](readme/docs/validation/css/administration.png "link") | |
@@ -534,6 +535,19 @@ Pillow
 
 
 ### JS
+| File Name | File Path | Result | JSHint | Comments |
+|--|--|--|--|--|
+| app.js | static/js/app.js | PASS | [link](readme/docs/validation/js/app.png "link") ||
+| quantity.js | static/js/bag/quantity.js | PASS | [link](readme/docs/validation/js/quantity.png "link") ||
+| checkout.js | static/js/checkout/checkout.js | PASS | [link](readme/docs/validation/js/checkout.png "link") | One undefined variable, this is from the Stripe documentation |
+| footer.js | static/js/home/footer.js | PASS | [link](readme/docs/validation/js/footer.png "link") ||
+| map.js | static/js/home/map.js | PASS | [link](readme/docs/validation/js/map.png "link") | One undefined and two unused variables, both from Google documentation |
+| newsletter.js | static/js/newsletter/newsletter.js | PASS | [link](readme/docs/validation/js/newsletter.png "link") | Two undefined and one unused variables, both from Mailchimp documentation |
+| form-slug-field.js | static/js/products/form-slug-field.js | PASS | [link](readme/docs/validation/js/form-slug-field.png "link") ||
+| quantity.js | static/js/products/quantity.js | PASS | [link](readme/docs/validation/js/quantity.png "link") ||
+
+
+
 
 ### Python
 | File Name | File Path | Result | PEP8 | Comments |

@@ -1,6 +1,10 @@
 <div class="row container-fluid mx-auto">
-    <div class="col-12 p-0 m-0">
-        <h1 class="text-header text-purple text-lg text-center my-5">Wines</h1>
+    <div class="col-12 p-0 m-0 text-center">
+        <h1 class="text-header text-purple text-lg my-5">Wines</h1>
+        <a href="{% url 'administration' %}" class="btn btn-general btn-purple text-sm p-1 mb-3 rounded-0" aria-labelledby="wines-admin-link">
+            Admin
+        </a>
+      <span id="wines-admin-link" class="sr-only">Purple button with white text that navigated to the administration page</span>
         <hr class="text-purple w-75 mx-auto mb-5">
     </div>
 </div>

@@ -519,6 +519,19 @@ Pillow
 
 
 ### CSS
+| File Name | File Path | Result | PEP8 | Comments |
+|--|--|--|--|--|
+| base.css | static/css/base.css | PASS | [link](readme/docs/validation/css/base.png "link") |[5 warnings](readme/docs/validation/css/base-warnings.png "link")|
+| administration.css | static/css/administration/administration.css | PASS | [link](readme/docs/validation/css/administration.png "link") | |
+| auth.css | static/css/auth/auth.css | PASS | [link](readme/docs/validation/css/auth.png "link") ||
+| bag.css | static/css/bag/bag.css | PASS | [link](readme/docs/validation/css/bag.png "link") | [1 warning](readme/docs/validation/css/bag-warnings.png "link")|
+| checkout.css | static/css/checkout/checkout.css | PASS | [link](readme/docs/validation/css/checkout.png "link") |[7 warnings](readme/docs/validation/css/checkout-warnings.png "link")|
+| home.css | static/css/home/home.css | PASS | [link](readme/docs/validation/css/home.png "link") |[1 warning](readme/docs/validation/css/home-warnings.png "link")|
+| media.css | static/css/media/media.css | PASS | [link](readme/docs/validation/css/media.png "link") |[2 warnings](readme/docs/validation/css/media-warnings.png "link")|
+| orders.css | static/css/orders/orders.css | PASS | [link](readme/docs/validation/css/orders.png "link") |[5 warnings](readme/docs/validation/css/orders-warnings.png "link")|
+| products.css | static/css/products/products.css | PASS | [link](readme/docs/validation/css/products.png "link") |[11 warnings](readme/docs/validation/css/products-warnings.png "link")|
+
+
 
 ### JS
 

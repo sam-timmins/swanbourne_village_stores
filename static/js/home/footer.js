@@ -4,7 +4,7 @@ window.onload = function () {
     // also present on the page
 
     const icons = document.querySelectorAll("i");
-    socialIcons = [];
+    let socialIcons = [];
 
     for (let icon of icons) {
         if (icon.classList.contains('fa-facebook-square') || icon.classList.contains('fa-twitter-square') || icon.classList.contains('fa-instagram')) {
@@ -14,7 +14,7 @@ window.onload = function () {
     }
 
     if (socialIcons.length == 6) {
-        sliceDuplicates = socialIcons.slice(3,6);
+        let sliceDuplicates = socialIcons.slice(3,6);
         
         for (let duplicate of sliceDuplicates) {
             duplicate.parentNode.style.display = "none";

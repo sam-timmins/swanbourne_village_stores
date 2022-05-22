@@ -22,7 +22,7 @@ window.onload = function () {
                 let quantity = quantityValue.value;
                     
                 quantity++;
-                quantityValue.value = quantity
+                quantityValue.value = quantity;
 
                 if (quantity >= lowestQuantity) {
                     decreaseCounter.style.setProperty("display", "flex", "important");
@@ -33,7 +33,7 @@ window.onload = function () {
                     helperText.style.setProperty("display", "inline", "important");
                 }
             }
-        )
+        );
     });
 
     /**
@@ -53,7 +53,7 @@ window.onload = function () {
                 let quantity = quantityValue.value;
 
                 quantity--;
-                quantityValue.value = quantity
+                quantityValue.value = quantity;
 
                 if (quantity <= lowestQuantity) {
                     counter.style.display = 'none';
@@ -64,7 +64,7 @@ window.onload = function () {
                     helperText.style.setProperty("display", "none", "important");
                 }
             }
-        )
-    })
+        );
+    });
 };
     

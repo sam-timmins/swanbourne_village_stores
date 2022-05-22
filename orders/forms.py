@@ -20,7 +20,6 @@ class UpdateStatusForm(forms.ModelForm):
         super().__init__(*args, **kwargs)
 
         self.fields['status'].widget = forms.RadioSelect(choices=COMPLETED)
-        # self.fields['status'].widget.attrs.update(extra_attributes)
         self.fields['status'].label = ''
 
 
@@ -39,14 +38,10 @@ class UpdateCollectionStatusForm(forms.ModelForm):
         add extra styles to fields
         """
         super().__init__(*args, **kwargs)
-        extra_attributes = {
-                'class': 'text-xs p-3 rounded-0 border-0',
-            }
 
         self.fields['collected_order'].widget = forms.RadioSelect(
             choices=COLLECTED_ORDER
             )
-        self.fields['collected_order'].widget.attrs.update(extra_attributes)
         self.fields['collected_order'].label = ''
 
 

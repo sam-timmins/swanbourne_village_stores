@@ -320,8 +320,9 @@ All of the desired colour combinations have passed the [WebAIM Contrast Checker]
 &nbsp;
 
 ### Dishes
-
+```py
 DISH_STATUS = ((0, 'Frozen'), (1, 'Fresh'))
+```
 
 | Name | Key | Type | Other Details
 | -- | -- | -- | --
@@ -374,6 +375,13 @@ DISH_STATUS = ((0, 'Frozen'), (1, 'Fresh'))
 
 ### Order
 
+```py
+COMPLETED = ((0, 'Open'), (1, 'Complete'))
+
+COLLECTED_ORDER = ((0, 'Not Collected'), (1, 'Collected'))
+```
+
+
 | Name | Key | Type | Other Details
 | -- | -- | -- | --
 | order_number |  |  CharField | max_length=32, null=False, editable=False
@@ -387,7 +395,8 @@ DISH_STATUS = ((0, 'Frozen'), (1, 'Fresh'))
 | grand_total | | DecimalField | max_digits=10, decimal_places=2, null=False, default=0
 | original_bag | | TextField | null=False, blank=False, default=''
 | stripe_pid | | CharField | null=False, blank=False, default=''
-| status | | IntegerField | choices=DISH_STATUS, default=0
+| status | | IntegerField | choices=COMPLETED, default=0
+| collected_order | | IntegerField | choices=COLLECTED_ORDER, default=0
 
 \
 &nbsp;
@@ -457,7 +466,10 @@ Pillow
 
 [Sitemap Generator](https://www.xml-sitemaps.com/ "XML-Sitemaps.com")
 [HTML Validation](https://validator.w3.org/ "W3C")
+[CSS Validation](https://jigsaw.w3.org/css-validator/ "W3C")
 [JS Validation](https://jshint.com/ "JSHint")
+[PEP8](http://pep8online.com/ "PEP8")
+[Lucid](https://lucid.co/ "Lucid")
 
 # Testing
 

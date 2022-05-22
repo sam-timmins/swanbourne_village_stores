@@ -108,7 +108,8 @@ class Order(models.Model):
         """
         Update grand total each time a order item is added
         """
-        self.order_total = self.orderitems.aggregate(Sum('orderitem_total'))['orderitem_total__sum'] or 0
+        self.order_total = self.orderitems.aggregate(
+            Sum('orderitem_total'))['orderitem_total__sum'] or 0
 
         self.grand_total = self.order_total
         self.save()

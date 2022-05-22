@@ -24,7 +24,7 @@
   
           <a href="{% url 'remove_from_bag' item.product.slug_name %}"
             class="btn btn-general btn-white text-sm p-1 rounded-0" aria-labelledby="remove-from-basket-{{ item.product.slug_name }}">Remove</a>
-          <span id="remove-from-basket{{ item.product.slug_name }}" class="sr-only">White button with purple text that removes the
+          <span id="remove-from-basket-{{ item.product.slug_name }}" class="sr-only">White button with purple text that removes the
             {{ item.product.name }} from the basket</span>
   
         </div>

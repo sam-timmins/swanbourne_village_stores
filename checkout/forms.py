@@ -21,26 +21,25 @@ class OrderForm(forms.ModelForm):
         add extra styles to fields
         """
         super().__init__(*args, **kwargs)
-        extra_attributes = {
+        for field in self.fields:
+
+            extra_attributes = {
                 'class': 'text-xs p-3 my-3 my-md-4 rounded-0 border-0',
             }
 
-        placeholders = {
-            'collection_day': 'Collection Day',
-            'full_name': 'Full Name',
-            'email': 'Email Address',
-            'phone_number': 'Phone number',
-        }
+            self.fields[str(field)].widget.attrs.update(extra_attributes)
 
         self.fields[str('collection_day')].widget.attrs['autofocus'] = True
 
-        for field in self.fields:
-            if self.fields[field].required:
-                placeholder = f'{placeholders[field]} *'
-            else:
-                placeholder = placeholders[field]
-
-            self.fields[field].widget.attrs.update({
-                'placeholder': placeholder,
-            })
-            self.fields[str(field)].widget.attrs.update(extra_attributes)
+        self.fields['full_name'].label = 'Full Name *'
+        self.fields['full_name'].widget.attrs.update(
+            placeholder='Full Name *'
+            )
+        self.fields['email'].label = 'Email *'
+        self.fields['email'].widget.attrs.update(
+            placeholder='Email *'
+            )
+        self.fields['phone_number'].label = 'Phone Number *'
+        self.fields['phone_number'].widget.attrs.update(
+            placeholder='Phone Number *'
+            )

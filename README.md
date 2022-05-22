@@ -483,14 +483,49 @@ Pillow
 ## Code Validation
 
 ### HTML
+| File Name | File Path | Result | W3C | Comments |
+|--|--|--|--|--|
+| index.html | home/templates/home/index.html | PASS | [link](readme/docs/validation/html/homepage.png "link") ||
+| privacy-policy.html | home/templates/home/privacy-policy.html | PASS | [link](readme/docs/validation/html/privacy-policy.png "link") ||
+| 400.html | home/templates/home/400.html | PASS | [link](readme/docs/validation/html/400.png "link") ||
+| 500.html | home/templates/home/500.html | |  ||
+| signup.html | templates/allauth/account/signup.html | PASS | [link](readme/docs/validation/html/signup.png "link") ||
+| verification_sent.html | templates/allauth/account/verification_sent.html | PASS | [link](readme/docs/validation/html/verify-email.png "link") ||
+| login.html | templates/allauth/account/login.html | PASS | [link](readme/docs/validation/html/login.png "link") ||
+| logout.html | templates/allauth/account/logout.html | PASS | [link](readme/docs/validation/html/logout.png "link") ||
+| profile.html | profiles/templates/profiles/profiles.html | PASS | [link](readme/docs/validation/html/profiles.png "link") ||
+| the-menu.html | products/templates/products/the-menu.html | PASS | [link](readme/docs/validation/html/the-menu.png "link") ||
+| fresh-food.html | products/templates/products/fresh-food.html | PASS | [link](readme/docs/validation/html/fresh-food.png "link") ||
+| wine-store.html | products/templates/products/wine-store.html | PASS | [link](readme/docs/validation/html/wine-store.png "link") ||
+| the-freezer.html | products/templates/products/the-freezer.html | PASS | [link](readme/docs/validation/html/the-freezer.png "link") ||
+| the-works.html | products/templates/products/the-works.html | PASS | [link](readme/docs/validation/html/the-works.png "link") ||
+| product-details.html | products/templates/products/product-details.html | PASS | [link](readme/docs/validation/html/product-details.png "link") ||
+| bag.html | bag/templates/bag/bag.html | PASS | [link](readme/docs/validation/html/basket.png "link") ||
+| checkout.html | checkout/templates/checkout/checkout.html | PASS | [link](readme/docs/validation/html/checkout.png "link") ||
+| checkout-success.html | checkout/templates/checkout/checkout-success.html | PASS | [link](readme/docs/validation/html/checkout-success.png "link") ||
+| orders.html | orders/templates/orders/orders.html | PASS | [link](readme/docs/validation/html/orders.png "link") ||
+| order_details.html | orders/templates/orders/order_details.html | PASS | [link](readme/docs/validation/html/order-details.png "link") ||
+| administration.html | administration/templates/administration/administration.html | PASS | [link](readme/docs/validation/html/administration.png "link") ||
+| dishes.html | administration/templates/administration/dishes.html | PASS | [link](readme/docs/validation/html/admin-dishes.png "link") ||
+| wines.html | administration/templates/administration/wines.html | PASS | [link](readme/docs/validation/html/admin-wines.png "link") ||
+| works.html | administration/templates/administration/works.html | PASS | [link](readme/docs/validation/html/admin-works.png "link") ||
+| dish-categories.html | administration/templates/components/categories/dish-categories.html | PASS | [link](readme/docs/validation/html/admin-dish-categories.png "link") ||
+| wine-categories.html | administration/templates/components/categories/wine-categories.html | PASS | [link](readme/docs/validation/html/admin-wine-categories.png "link") ||
+| edit-dish-categories.html | administration/templates/components/categories/edit-dish-categories.html | PASS | [link](readme/docs/validation/html/admin-edit-dish-categories.png "link") ||
+| edit-wine-categories.html | administration/templates/components/categories/edit-wine-categories.html | PASS | [link](readme/docs/validation/html/admin-edit-wine-categories.png "link") ||
+| collection-days.html | administration/templates/administration/collection-days.html | PASS | [link](readme/docs/validation/html/admin-collection-days.png "link") ||
+
+
 
 ### CSS
 
 ### JS
 
 ### Python
-
-
+| File Name | File Path | Result | PEP8 | Comments |
+|--|--|--|--|--|
+| contexts.py | home/contexts.py | PASS | [link](readme/docs/validation/python/home-contexts.png "link") ||
+ 
 \
 &nbsp; 
 

@@ -466,7 +466,10 @@ Pillow
 
 [Sitemap Generator](https://www.xml-sitemaps.com/ "XML-Sitemaps.com")
 [HTML Validation](https://validator.w3.org/ "W3C")
+[CSS Validation](https://jigsaw.w3.org/css-validator/ "W3C")
 [JS Validation](https://jshint.com/ "JSHint")
+[PEP8](http://pep8online.com/ "PEP8")
+[Lucid](https://lucid.co/ "Lucid")
 
 # Testing
 

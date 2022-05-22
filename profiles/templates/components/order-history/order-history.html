@@ -31,7 +31,6 @@
                         </td>
 
                         <td class="colspan-4">
-                            <a href="{% url 'order_history' order.order_number %}" class="d-block text-purple text-decoration-none text-xs">
                                 <table class="table mb-0">
                                     <thead class="background-light-green text-purple fst-italic">
                                         <tr>
@@ -42,29 +41,50 @@
                                     <tbody>
                                         {% for item in order.orderitems.all %}
                                         <tr>
-                                            <a href="{% url 'order_history' order.order_number %}" class="d-block text-purple text-decoration-none text-xs">
                                                 {% if item.dish.name %}
-                                                    <td>{{ item.dish.name | title }}</td>
-                                                    <td>{{ item.quantity }}</td>
+                                                    <td>
+                                                        <a href="{% url 'order_history' order.order_number %}" class="d-block text-purple text-decoration-none text-xs">
+                                                            {{ item.dish.name | title }}
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="{% url 'order_history' order.order_number %}" class="d-block text-purple text-decoration-none text-xs">
+                                                            {{ item.quantity }}
+                                                        </a>
+                                                    </td>
                                                 {% endif %}
 
                                                 {% if item.wine.name %}
-                                                    <td>{{ item.wine.name | title }}</td>
-                                                    <td>{{ item.quantity }}</td>
+                                                    <td>
+                                                        <a href="{% url 'order_history' order.order_number %}" class="d-block text-purple text-decoration-none text-xs">
+                                                            {{ item.wine.name | title }}
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="{% url 'order_history' order.order_number %}" class="d-block text-purple text-decoration-none text-xs">
+                                                            {{ item.quantity }}
+                                                        </a>
+                                                    </td>
                                                 {% endif %}
 
                                                 {% if item.bundle.name %}
-                                                    <td>{{ item.bundle.name | title }}</td>
-                                                    <td>{{ item.quantity }}</td>
+                                                    <td>
+                                                        <a href="{% url 'order_history' order.order_number %}" class="d-block text-purple text-decoration-none text-xs">
+                                                            {{ item.bundle.name | title }}
+                                                        </a>
+                                                    </td>
+                                                    <td>
+                                                        <a href="{% url 'order_history' order.order_number %}" class="d-block text-purple text-decoration-none text-xs">
+                                                            {{ item.quantity }}
+                                                        </a>
+                                                    </td>
                                                 {% endif %}
-                                            </a>
                                         </tr>
                                         
 
                                     {% endfor %}
                                     </tbody>
                                 </table>
-                            </a>
                         </td>
 
                         <td>

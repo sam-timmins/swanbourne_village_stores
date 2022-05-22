@@ -456,6 +456,7 @@ DISH_STATUS = ((0, 'Frozen'), (1, 'Fresh'))
 Pillow
 
 [Sitemap Generator](https://www.xml-sitemaps.com/ "XML-Sitemaps.com")
+[HTML Validation](https://validator.w3.org/ "W3C")
 
 # Testing
 

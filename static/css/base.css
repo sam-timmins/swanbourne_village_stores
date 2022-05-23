@@ -305,6 +305,10 @@ input[type=number] {
     transition: 0.8s;
 }
 
+.active {
+    border-bottom: 4px solid var(--purple);
+}
+
 @keyframes nav-link-focus {
     0% {
         border-bottom: 4px solid transparent;

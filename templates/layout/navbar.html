@@ -89,6 +89,7 @@
                 </li>
             {% endif %}
 
+            <!-- Authentication links -->
             {% if request.user.is_authenticated %}
                 <li class="nav-item me-lg-3 me-xl-5">
                     <a class="nav-link text-sm text-white text-center p-3 p-lg-0" href="{% url 'account_logout' %}" aria-labelledby="navbar-logout">
@@ -120,6 +121,7 @@
                 </li>
             {% endif %}
 
+            <!-- Grand total -->
             <li class="nav-item me-lg-3 me-xl-5">
                 <a class="nav-link text-white text-sm text-center p-3 p-lg-0"
                 href="{% url 'view_bag' %}" aria-labelledby="navbar-basket">
@@ -137,6 +139,7 @@
 
         </ul>
 
+        <!-- Search form -->
         <form method="GET" action="{% url 'the_menu' %}" class="px-5 mx-sm-5 px-lg-0 mx-lg-0 me-lg-3 me-xl-5">
             <div class="input-group align-items-center">
                 <input class="form-control form-control-border text-sm rounded-0" type="text"
@@ -151,21 +154,22 @@
             </div>
         </form>
 
+        <!-- Profile link -->
         {% if request.user.is_authenticated %}
-        <div class="d-flex justify-self-end my-5 my-lg-0">
-            <a class="nav-link mx-auto text-purple" href="{% url 'profile' %}" 
-            aria-labelledby="navbar-profile" data-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
-            title="<p class='text-xs text-white'>Profile</p>">
-                <p class="my-0 profile-link">
-                    {{ user.username | make_list | first | capfirst }}
-                </p>
-            </a>
-            <span id="navbar-profile" class="sr-only">
-                A circle link with the letter {{ user.username | make_list | first | capfirst }} 
-                in green text that navigates to the profile page in the same tab
-            </span>
-        </div>
-    {% endif %}
+            <div class="d-flex justify-self-end my-5 my-lg-0">
+                <a class="nav-link mx-auto text-purple" href="{% url 'profile' %}" 
+                aria-labelledby="navbar-profile" data-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                title="<p class='text-xs text-white'>Profile</p>">
+                    <p class="my-0 profile-link">
+                        {{ user.username | make_list | first | capfirst }}
+                    </p>
+                </a>
+                <span id="navbar-profile" class="sr-only">
+                    A circle link with the letter {{ user.username | make_list | first | capfirst }} 
+                    in green text that navigates to the profile page in the same tab
+                </span>
+            </div>
+        {% endif %}
 
 
 

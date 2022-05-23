@@ -1,209 +1,178 @@
-<nav class="navbar navbar-expand-lg navbar-light py-0 fixed-top background-white border-bottom-light-green">
+<nav class="navbar navbar-expand-lg navbar-light py-0 px-lg-3 fixed-top background-white border-bottom-light-green">
     <div class="container-fluid p-0">
-
         <!-- Store name and hamburger -->
-        <a class="navbar-brand text-sm text-header text-dark-green text-sm my-4 ms-3 ms-xl-5"
-            href="{% url 'home' %}" aria-labelledby="store-name">
+        <a class="navbar-brand text-sm text-header text-dark-green ms-3"
+        href="{% url 'home' %}" aria-labelledby="store-name">
             {{ store_name }}
         </a>
         <span id="store-name" class="sr-only">
             A link with green text and white background that navigates back to the homepage
         </span>
-        
-        <button class="navbar-toggler text-sm rounded-0 me-3 my-4 me-xl-5" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon "></span>
+
+        <button class="navbar-toggler text-sm rounded-0 me-3 my-4 me-xl-5" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
         </button>
-        
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0 d-flex align-items-md-center">
 
-                <!-- Menu links -->
-                <li class="nav-item dropdown mt-5 mt-lg-0">
-                    <p class="nav-link p-0 ms-lg-0 text-start text-sm me-lg-3 me-xl-5 text-dark-green my-3"
-                        id="navbar-menu-dropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false"
-                        aria-labelledby="menu-dropdown">
-                        The Menu<i class="fa-solid fa-angle-down ms-2 text-xs"></i>
-                </p>
-                    <span id="menu-dropdown" class="sr-only">
-                        A link with green text and light green background that opens a dropdown menu with the store's menu categories
-                    </span>
-                    <ul class="dropdown-menu m-auto p-0 mb-3 rounded-0">
-                        <li>
-                            <a class="dropdown-item text-sm text-dark-green px-5 text-center" href="{% url 'fresh_food' %}" aria-labelledby="navbar-fresh-food">
-                                Fresh Food
-                            </a>
-                            <span id="navbar-fresh-food" class="sr-only">
-                                A link with green text and white background that navigates to the products page in the same tab, with only fresh food displayed
-                            </span>
-                        </li>
 
-                        <li>
-                            <hr class="dropdown-divider m-auto w-50">
-                        </li>
+        <!-- Menu links -->
+      <div class="collapse navbar-collapse text-sm" id="navbarTogglerDemo02">
+        <ul class="navbar-nav ms-auto p-5 p-lg-0">
 
-                        <li>
-                            <a class="dropdown-item text-sm text-dark-green px-5 text-center" href="{% url 'wine_store' %}" aria-labelledby="navbar-wine-store">
-                                Wine Store
-                            </a>
-                            <span id="navbar-wine-store" class="sr-only">
-                                A link with green text and white background that navigates to the products page in the same tab, with only wines displayed
-                            </span>
-                        </li>
+            <li class="nav-item dropdown me-lg-3 me-xl-5">
+                <span class="nav-link dropdown-toggle text-sm text-white text-center p-3 p-lg-0" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-labelledby="menu-dropdown">
+                    The Menu
+                </span>
+                <span id="menu-dropdown" class="sr-only">
+                    A link with green text and light green background that opens a dropdown menu with the store's menu categories
+                </span>
 
-                        <li>
-                            <hr class="dropdown-divider m-auto w-50">
-                        </li>
+                <ul class="dropdown-menu mx-auto p-0 text-sm rounded-0 border-purple text-center" aria-labelledby="navbarScrollingDropdown">
+                    <li class="nav-item">
+                        <a class="dropdown-item p-3 px-lg-5 text-sm test-dark-green" href="{% url 'fresh_food' %}" aria-labelledby="navbar-fresh-food">
+                            Fresh Food
+                        </a>
+                        <span id="navbar-fresh-food" class="sr-only">
+                            A link with green text and white background that navigates to the products page in the same tab, with only fresh food displayed
+                        </span>
+                    </li>
 
-                        <li>
-                            <a class="dropdown-item text-sm text-dark-green px-5 text-center" href="{% url 'the_freezer' %}" aria-labelledby="navbar-the-freezer">
-                                The Freezer
-                            </a>
-                            <span id="navbar-the-freezer" class="sr-only">
-                                A link with green text and white background that navigates to the products page in the same tab, with only frozen food displayed
-                            </span>
-                        </li>
+                    <li>
+                        <hr class="w-75 mx-auto my-0 d-lg-none">
+                    </li>
 
-                        <li>
-                            <hr class="dropdown-divider m-auto w-50">
-                        </li>
+                    <li class="nav-item">
+                        <a class="dropdown-item p-3 px-lg-5text-sm test-dark-green" href="{% url 'wine_store' %}" aria-labelledby="navbar-wine-store">
+                        Wine Store
+                        </a>
+                        <span id="navbar-wine-store" class="sr-only">
+                            A link with green text and white background that navigates to the products page in the same tab, with only wines displayed
+                        </span>
+                    </li>
 
-                        <li>
-                            <a class="dropdown-item text-sm text-dark-green px-5 text-center" href="{% url 'the_works' %}" aria-labelledby="navbar-the-works">
-                                The Works
-                            </a>
-                            <span id="navbar-the-works" class="sr-only">
-                                A link with green text and white background that navigates to the products page in the same tab, with only bundle products are displayed
-                            </span>
-                        </li>
+                    <li>
+                        <hr class="w-75 mx-auto my-0 d-lg-none">
+                    </li>
 
-                    </ul>
-                </li>
+                    <li class="nav-item">
+                        <a class="dropdown-item p-3 px-lg-5 test-dark-green" href="{% url 'the_freezer' %}" aria-labelledby="navbar-the-freezer">
+                        The Freezer
+                        </a>
+                        <span id="navbar-the-freezer" class="sr-only">
+                            A link with green text and white background that navigates to the products page in the same tab, with only frozen food displayed
+                        </span>
+                    </li>
 
-                <li>
-                    <hr class="w-75 mx-auto my-0 d-lg-none">
-                </li>
+                    <li>
+                        <hr class="w-75 mx-auto my-0 d-lg-none">
+                    </li>
 
-                <!-- Administration links -->
-                {% if user.is_superuser %}
-                <li class="nav-item">
-                    <a class="nav-link p-0 ms-lg-0 text-start text-sm me-lg-3 me-xl-5 my-3 text-dark-green"
-                        href="{% url 'administration' %}" aria-labelledby="navbar-admin">
+                    <li class="nav-item">
+                        <a class="dropdown-item p-3 px-lg-5 test-dark-green" href="{% url 'the_works' %}" aria-labelledby="navbar-the-works">
+                        The Works
+                        </a>
+                        <span id="navbar-the-works" class="sr-only">
+                            A link with green text and white background that navigates to the products page in the same tab, with only bundle products are displayed
+                        </span>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- Administration links -->
+            {% if user.is_superuser %}
+                <li class="nav-item me-lg-3 me-xl-5">
+                    <a class="nav-link text-sm text-white text-center p-3 p-lg-0" href="{% url 'administration' %}" aria-labelledby="navbar-admin">
                         Admin
                     </a>
                     <span id="navbar-admin" class="sr-only">
                         A link with green text and light green background that navigates to the admin page in the same tab
                     </span>
                 </li>
-                {% endif %}
+            {% endif %}
 
+            <!-- Authentication links -->
+            {% if request.user.is_authenticated %}
+                <li class="nav-item me-lg-3 me-xl-5">
+                    <a class="nav-link text-sm text-white text-center p-3 p-lg-0" href="{% url 'account_logout' %}" aria-labelledby="navbar-logout">
+                        Logout
+                    </a>
+                    <span id="navbar-logout" class="sr-only">
+                        A link with green text and light green background that navigates to the logout page in the same tab
+                    </span>
+                </li>
 
-                <!-- Authentication links -->
-                
-                    {% if request.user.is_authenticated %}
-                    <li>
-                        <hr class="w-75 mx-auto my-0 d-lg-none">
-                    </li>
+            {% else %}
 
-                    <li class="nav-item">
-                        <a class="nav-link p-0 ms-lg-0 text-start text-sm me-lg-3 me-xl-5 my-3 text-dark-green"
-                            href="{% url 'account_logout' %}" aria-labelledby="navbar-logout">
-                            Logout
-                        </a>
-                        <span id="navbar-logout" class="sr-only">
-                            A link with green text and light green background that navigates to the logout page in the same tab
-                        </span>
-                    </li>
+                <li class="nav-item me-lg-3 me-xl-5">
+                    <a class="nav-link text-sm text-white text-center p-3 p-lg-0" href="{% url 'account_signup' %}" aria-labelledby="navbar-register">
+                        Register
+                    </a>
+                    <span id="navbar-register" class="sr-only">
+                        A link with green text and light green background that navigates to the register page in the same tab
+                    </span>
+                </li>
 
+                <li class="nav-item me-lg-3 me-xl-5">
+                    <a class="nav-link text-sm text-white text-center p-3 p-lg-0" href="{% url 'account_login' %}" aria-labelledby="navbar-login">
+                        Login
+                    </a>
+                    <span id="navbar-login" class="sr-only">
+                        A link with green text and light green background that navigates to the login page in the same tab
+                    </span>
+                </li>
+            {% endif %}
+
+            <!-- Grand total -->
+            <li class="nav-item me-lg-3 me-xl-5">
+                <a class="nav-link text-white text-sm text-center p-3 p-lg-0"
+                href="{% url 'view_bag' %}" aria-labelledby="navbar-basket">
+                    <i class="fas fa-shopping-bag fa-lg me-2"></i>
+                    {% if grand_total %}
+                    {{ currency }}{{ grand_total|floatformat:2 }}
                     {% else %}
-
-                    <li class="nav-item">
-                        <a class="nav-link p-0 ms-lg-0 text-start text-sm me-lg-3 me-xl-5 my-3 text-dark-green" href="{% url 'account_signup' %}"
-                        aria-labelledby="navbar-register">
-                            Register
-                        </a>
-                        <span id="navbar-register" class="sr-only">
-                            A link with green text and light green background that navigates to the register page in the same tab
-                        </span>
-                    </li>
-
-                    <li>
-                        <hr class="w-75 mx-auto my-0 d-lg-none">
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link p-0 ms-lg-0 text-start text-sm me-lg-3 me-xl-5 my-3 text-dark-green" href="{% url 'account_login' %}"
-                        aria-labelledby="navbar-login">
-                            Login
-                        </a>
-                        <span id="navbar-login" class="sr-only">
-                            A link with green text and light green background that navigates to the login page in the same tab
-                        </span>
-                    </li>
-
+                    {{ currency }}0.00
                     {% endif %}
+                </a>
+                <span id="navbar-basket" class="sr-only">
+                    A link with green text and light green background and an icon of a shopping bag that navigates to the basket page in the same tab
+                </span>
+            </li>
 
-                    <li>
-                        <hr class="w-75 mx-auto my-0 d-lg-none">
-                    </li>
+        </ul>
 
-                <!-- Session total and link to basket -->
-                <li class="nav-item me-3">
-                    <a class="nav-link p-0 ms-lg-0 text-start text-sm me-lg-3 me-xl-5 my-3 {% if grand_total %} text-black {% else %} text-dark-green {% endif %}"
-                        href="{% url 'view_bag' %}" aria-labelledby="navbar-basket">
-                        <p class="my-0">
-                            <i class="fas fa-shopping-bag fa-lg me-2"></i>
-                            {% if grand_total %}
-                            {{ currency }}{{ grand_total|floatformat:2 }}
-                            {% else %}
-                            {{ currency }}0.00
-                            {% endif %}
-                        </p>
-                    </a>
-                    <span id="navbar-basket" class="sr-only">
-                        A link with green text and light green background and an icon of a shopping bag that navigates to the basket page in the same tab
-                    </span>
-                </li>
-            
+        <!-- Search form -->
+        <form method="GET" action="{% url 'the_menu' %}" class="px-5 mx-sm-5 px-lg-0 mx-lg-0 me-lg-3 me-xl-5">
+            <div class="input-group align-items-center">
+                <input class="form-control form-control-border text-sm rounded-0" type="text"
+                    name="main-search-query" placeholder="Search the menu" aria-label="Search">
+                <div class="input-group-append">
+                    <button class="form-control btn rounded-0 text-sm search-btn" type="submit" aria-label="Search">
+                        <span class="icon">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
 
-                <!-- Search bar -->
-                <li class="row mb-5 mb-lg-0">
-                    <div class="col-sm-8 col-lg-12 mx-auto">
-                        <form method="GET" action="{% url 'the_menu' %}" class="p-3 me-lg-3 me-xl-5">
-                            <div class="input-group align-items-center">
-                                <input class="form-control form-control-border text-sm rounded-0" type="text"
-                                    name="main-search-query" placeholder="Search the menu" aria-label="Search">
-                                <div class="input-group-append">
-                                    <button class="form-control btn rounded-0 text-sm search-btn" type="submit" aria-label="Search">
-                                        <span class="icon">
-                                            <i class="fa-solid fa-magnifying-glass"></i>
-                                        </span>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </li>
+        <!-- Profile link -->
+        {% if request.user.is_authenticated %}
+            <div class="d-flex justify-self-end my-5 my-lg-0">
+                <a class="nav-link mx-auto text-purple" href="{% url 'profile' %}" 
+                aria-labelledby="navbar-profile" data-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                title="<p class='text-xs text-white'>Profile</p>">
+                    <p class="my-0 profile-link">
+                        {{ user.username | make_list | first | capfirst }}
+                    </p>
+                </a>
+                <span id="navbar-profile" class="sr-only">
+                    A circle link with the letter {{ user.username | make_list | first | capfirst }} 
+                    in green text that navigates to the profile page in the same tab
+                </span>
+            </div>
+        {% endif %}
 
-                <!-- Profile -->
-                {% if request.user.is_authenticated %}
-                <li class="nav-item mt-lg-0 mx-3 d-flex align-items-center justify-content-center">
-                    <a class="p-2 ms-lg-0 text-start text-sm me-lg-3 me-xl-5 my-3 text-dark-green text-decoration-none"
-                        href="{% url 'profile' %}" aria-labelledby="navbar-profile" data-toggle="tooltip" 
-                        data-bs-placement="bottom" data-bs-html="true"
-                        title="<p class='text-xs text-white'>Profile</p>">
-                        <p class="my-0 profile-link">
-                            {{ user.username | make_list | first | capfirst }}
-                        </p>
-                    </a>
-                    <span id="navbar-profile" class="sr-only">
-                        A circle link with the letter {{ user.username | make_list | first | capfirst }} 
-                        in green text that navigates to the profile page in the same tab
-                    </span>
-                </li>
-                {% endif %}
-            </ul>
-        </div>
+
+
+      </div>
     </div>
-</nav>
+  </nav>

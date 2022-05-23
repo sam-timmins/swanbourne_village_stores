@@ -263,7 +263,8 @@ input[type=number] {
 }
 
 .navbar-collapse {
-    background-color: var(--light-green);
+    background-color: var(--purple);
+    border-bottom: 4px solid var(--white);
 }
 
 .dropdown-item:hover {
@@ -271,17 +272,9 @@ input[type=number] {
     color: var(--light-green) !important;
 }
 
-.dropdown-menu {
-    max-width: 70%;
-}
-
 .nav-link,
 .navbar-brand {
     border-bottom: 4px solid transparent;
-}
-
-.nav-link {
-    margin-left: 10rem;
 }
 
 .nav-link:hover,
@@ -293,12 +286,13 @@ input[type=number] {
     transition-timing-function: ease-in;
     animation-fill-mode: forwards;
 }
-
+ 
 .profile-link {
     height: 4rem;
     width: 4rem;
     border-radius: 50%;
-    border: 2px solid var(--dark-green);
+    border: 2px solid var(--light-green);
+    background-color: var(--white);
     display: flex;
     justify-content: center;
     align-items: center;

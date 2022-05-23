@@ -12,6 +12,10 @@
   .btn-order-numbers {
       width: 5rem;
   }
+
+  .navbar-brand {
+      font-size: 2.5rem;
+  }
 }
 
 

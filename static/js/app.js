@@ -1,35 +1,19 @@
 const copyrightYearRef = document.querySelector("#copyright-year");
 
 
-  // Auto increment of the year in footer
-  const getFullYear = () =>
-    (copyrightYearRef.innerHTML = new Date().getFullYear());
+// Auto increment of the year in footer
+const getFullYear = () =>
+  (copyrightYearRef.innerHTML = new Date().getFullYear());
 
-  getFullYear(); 
+getFullYear();
 
-  // Add slidedown animation to dropdown-menu
-  $(".dropdown").on("show.bs.dropdown", function (e) {
-    $(".dropdown-menu").removeClass("invisible");
-    $(this).find(".dropdown-menu").first().stop(true, true).slideDown();
-  });
+$(document).ready(function () {
+  // Bootstrap
+  // Show the toasts
+  $(".toast").toast('show');
+  // Show the tooltips
+  $('[data-toggle="tooltip"]').tooltip();
 
-  // Add slideup animation to dropdown-menu
-  $(".dropdown").on("hide.bs.dropdown", function (e) {
-    $(this).find(".dropdown-menu").first().stop(true, true).slideUp();
-  });
-
-
- 
-  $(document).ready(function() {
-    // Bootstrap
-    // Show the toasts
-    $(".toast").toast('show');
-    // Show the tooltips
-    $('[data-toggle="tooltip"]').tooltip();
-
-
-    // Remove disabled class from buttons
-    $('.btn').removeClass('disabled');
-  });
-
-
+  // Remove disabled class from buttons
+  $('.btn').removeClass('disabled');
+});

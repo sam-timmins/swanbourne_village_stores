@@ -19,7 +19,8 @@
         <ul class="navbar-nav ms-auto p-5 p-lg-0">
 
             <li class="nav-item dropdown me-lg-3 me-xl-5">
-                <span class="nav-link dropdown-toggle text-sm text-white text-center p-3 p-lg-0" id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-labelledby="menu-dropdown">
+                <span class="nav-link dropdown-toggle text-sm text-white text-center p-3 p-lg-0 {% if '/the_menu' in request.path %}active{% endif %}" 
+                id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" aria-labelledby="menu-dropdown">
                     The Menu
                 </span>
                 <span id="menu-dropdown" class="sr-only">
@@ -80,7 +81,8 @@
             <!-- Administration links -->
             {% if user.is_superuser %}
                 <li class="nav-item me-lg-3 me-xl-5">
-                    <a class="nav-link text-sm text-white text-center p-3 p-lg-0" href="{% url 'administration' %}" aria-labelledby="navbar-admin">
+                    <a class="nav-link text-sm text-white text-center p-3 p-lg-0 {% if '/administration' in request.path %}active{% endif %}" 
+                    href="{% url 'administration' %}" aria-labelledby="navbar-admin">
                         Admin
                     </a>
                     <span id="navbar-admin" class="sr-only">
@@ -92,7 +94,8 @@
             <!-- Authentication links -->
             {% if request.user.is_authenticated %}
                 <li class="nav-item me-lg-3 me-xl-5">
-                    <a class="nav-link text-sm text-white text-center p-3 p-lg-0" href="{% url 'account_logout' %}" aria-labelledby="navbar-logout">
+                    <a class="nav-link text-sm text-white text-center p-3 p-lg-0 {% if '/accounts' in request.path %}active{% endif %}" 
+                    href="{% url 'account_logout' %}" aria-labelledby="navbar-logout">
                         Logout
                     </a>
                     <span id="navbar-logout" class="sr-only">
@@ -103,7 +106,8 @@
             {% else %}
 
                 <li class="nav-item me-lg-3 me-xl-5">
-                    <a class="nav-link text-sm text-white text-center p-3 p-lg-0" href="{% url 'account_signup' %}" aria-labelledby="navbar-register">
+                    <a class="nav-link text-sm text-white text-center p-3 p-lg-0 {% if '/accounts' in request.path %}active{% endif %}" 
+                    href="{% url 'account_signup' %}" aria-labelledby="navbar-register">
                         Register
                     </a>
                     <span id="navbar-register" class="sr-only">
@@ -112,7 +116,8 @@
                 </li>
 
                 <li class="nav-item me-lg-3 me-xl-5">
-                    <a class="nav-link text-sm text-white text-center p-3 p-lg-0" href="{% url 'account_login' %}" aria-labelledby="navbar-login">
+                    <a class="nav-link text-sm text-white text-center p-3 p-lg-0 {% if '/accounts' in request.path %}active{% endif %}" 
+                    href="{% url 'account_login' %}" aria-labelledby="navbar-login">
                         Login
                     </a>
                     <span id="navbar-login" class="sr-only">
@@ -123,7 +128,7 @@
 
             <!-- Grand total -->
             <li class="nav-item me-lg-3 me-xl-5">
-                <a class="nav-link text-white text-sm text-center p-3 p-lg-0"
+                <a class="nav-link text-white text-sm text-center p-3 p-lg-0 {% if '/basket' in request.path %}active{% endif %}"
                 href="{% url 'view_bag' %}" aria-labelledby="navbar-basket">
                     <i class="fas fa-shopping-bag fa-lg me-2"></i>
                     {% if grand_total %}
@@ -157,10 +162,10 @@
         <!-- Profile link -->
         {% if request.user.is_authenticated %}
             <div class="d-flex justify-self-end my-5 my-lg-0">
-                <a class="nav-link mx-auto text-purple" href="{% url 'profile' %}" 
+                <a class="nav-link mx-auto text-purple {% if '/profile' in request.path %}active{% endif %}" href="{% url 'profile' %}" 
                 aria-labelledby="navbar-profile" data-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
                 title="<p class='text-xs text-white'>Profile</p>">
-                    <p class="my-0 profile-link">
+                    <p class="my-0 profile-link {% if '/profile' in request.path %}active-profile{% endif %}">
                         {{ user.username | make_list | first | capfirst }}
                     </p>
                 </a>

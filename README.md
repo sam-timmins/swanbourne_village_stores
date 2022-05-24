@@ -54,7 +54,7 @@ With business slow to nearly non-existent, and Jean-Claude a trained chef, the i
 
 All of the store's business is from word of mouth, there has been no advertisement, only a small amount of promotion via Facebook.
 
-The customer base is 30-year-old professionals to 80 plus-year-old senior citizens, with the bulk of the customers in the 55 plus age groups. The near-complete lack of digital marketing and online presence is what the owners put the fall-off in numbers in the lower age brackets down to.
+The customer base is 30-year-old professionals to 80 plus-year-old senior citizens, with the bulk of the customers in the 55 plus age group. The near-complete lack of digital marketing and online presence is what the owners put the fall-off in numbers in the lower age brackets down to.
 
 The current method of dealing with orders is time-consuming and paperwork heavy. On a Monday morning, a menu for the week is emailed out to a mail list of 153 people, no orders are taken via e-mail as mails have been lost in the past leading to customers turning up to pick up an order and it is not prepared. All orders are taken over the phone and manually recorded in an order book along with a collection day, Thursday to Saturday of the same week. When the order has been completed it gets highlighted in the order book in orange and then green on the collection.
 
@@ -66,7 +66,7 @@ The customer also only pays on the collection, leading to potential lost revenue
 To create an e-commerce application that will enable Swanbourne Village Stores to increase their customer base for their high-end takeaway business and wine store.
 
 # Target Audience
-The customers who use Swanbourne Village Stores currently ranges from 30-year-old professionals to 80 plus-year-old senior citizens. However, the owners of the store are looking to increase their 30 to 55 age bracket customers with the convenience of a click, purchase and collect web application, so primarily this is the target audience for the application.
+The customers who use Swanbourne Village Stores currently range from 30-year-old professionals to 80 plus-year-old senior citizens. However, the owners of the store are looking to increase their 30 to 55 age bracket customers with the convenience of a click, purchase and collect web application, so primarily this is the target audience for the application.
 
 # Stakeholder Interviews
 
@@ -121,7 +121,7 @@ From the resulting interviews, the user goals have been defined:
 | 10 | Shopper | See the items selected for purchase | Keep track of my selections
 | 11 | Shopper | See a running total of shopping basket | Keep track of their spending
 | 12 | Shopper | Select multiple quantities of the same product | Order two of the same product
-| 13 | Shopper | Filter the products | Narrow down the products to ones wanted
+| 13 | Shopper | Filter the products | Narrow down the products to the ones wanted
 | 14 | Shopper | See the number of search results | See the number of results of the search
 | 15 | Site User | Easily register for an account | view an individual profile
 | 16 | Site User | Easily login and logout | Access personal information
@@ -431,6 +431,10 @@ COLLECTED_ORDER = ((0, 'Not Collected'), (1, 'Collected'))
 
 # Branches
 
+Branches were used throughout the project, however, there was the odd occasion where I was a little too eager and accidentally pushed to the main branch. The branches were linked to issues for example adding an active class to the navbar branch can be seen [here](https://github.com/sam-timmins/swanbourne_village_stores/commit/20ee2e56d31a6fff3101dd7bc41c5722405d86d1 "branch")
+
+All stale branches have been deleted from the project, this can be seen [here](https://github.com/sam-timmins/swanbourne_village_stores/branches/all "branches")
+
 \
 &nbsp;
 [Back to Top](#table-of-contents)
@@ -441,6 +445,63 @@ COLLECTED_ORDER = ((0, 'Not Collected'), (1, 'Collected'))
 # Features
 
 ## Existing Features
+
+### Navbar
+
+The navigation bar is fully responsive to all screen sizes. it includes a search bar that searches the menu and the user's session basket total. The basic view is if a user is not logged in, then there are other differences depending on the user's login access: 
+
+- The user is not logged in, this is the basic view.
+
+![Desktop](readme/docs/features/navbar/desktop.png "link")
+
+![Mobile](readme/docs/features/navbar/mobile.png "link")
+
+- The user is logged in as a standard user, and the profile link is then shown displaying the first letter of the user's username in uppercase.
+
+![Desktop](readme/docs/features/navbar/desktop-standard-user.png "link")
+
+![Mobile](readme/docs/features/navbar/mobile-standard-user.png "link")
+
+- The user is logged in as admin, and the profile link is shown along with the admin link. 
+
+![Desktop](readme/docs/features/navbar/desktop-admin-user.png "link")
+
+![Mobile](readme/docs/features/navbar/mobile-admin-user.png "link")
+
+
+### Footer
+
+The footer, like the navbar, has different looks depending on if the user is an admin or not. If the user is not admin then the newsletter is displayed, however, if they are admin then it is not. Also, only on the homepage for a cleaner look, instead of having the same links in the contact section and the footer if any of the icons are duplicated, then they are not shown in the footer.
+
+- Standard user
+
+![Footer](readme/docs/features/footer/footer.png "Footer")
+
+- Admin user
+
+![Footer](readme/docs/features/footer/admin-footer.png "Footer")
+
+- Homepage
+
+![Footer](readme/docs/features/footer/homepage-footer.png "Homepage")
+
+### Homepage
+The home page consists of four sections:
+- Hero Image, includes simple button navigation to the menu
+
+![Hero Image](readme/docs/features/homepage/hero.png "Hero")
+
+- About, a brief description of the store
+
+![About](readme/docs/features/homepage/about.png "About")
+
+- The Menu, background to the menu and a button navigating to it
+
+![Menu](readme/docs/features/homepage/menu.png "Menu")
+
+- Contact, contact for that emails the store owner. This is set to the store owner's email currently but will be changed when required.
+
+![Contact](readme/docs/features/homepage/contact.png "Contact")
 
 ## Features to be Implemented
 

@@ -446,6 +446,63 @@ All stale branches have been deleted from the project, this can be seen [here](h
 
 ## Existing Features
 
+### Navbar
+
+The navigation bar is fully responsive to all screen sizes. it includes a search bar that searches the menu and the user's session basket total. The basic view is if a user is not logged in, then there are other differences depending on the user's login access: 
+
+- The user is not logged in, this is the basic view.
+
+![Desktop](readme/docs/features/navbar/desktop.png "link")
+
+![Mobile](readme/docs/features/navbar/mobile.png "link")
+
+- The user is logged in as a standard user, profile link is then shown displaying the first letter of the user's username in uppercase.
+
+![Desktop](readme/docs/features/navbar/desktop-standard-user.png "link")
+
+![Mobile](readme/docs/features/navbar/mobile-standard-user.png "link")
+
+- The user is logged in as admin, profile link is shown along with the admin link. 
+
+![Desktop](readme/docs/features/navbar/desktop-admin-user.png "link")
+
+![Mobile](readme/docs/features/navbar/mobile-admin-user.png "link")
+
+
+### Footer
+
+The footer, like the navbar has different looks depending on if the user is admin or not. If the user is not admin then the newsletter is displayed, however if they are admin then it is not. Also, only on the homepage for a cleaner look, instead of having the same links in the contact section and in the footer if any of the icons are duplicated, then they are not shown in the footer.
+
+- Standard user
+
+![Footer](readme/docs/features/footer/footer.png "Footer")
+
+- Admin user
+
+![Footer](readme/docs/features/footer/admin-footer.png "Footer")
+
+- Homepage
+
+![Footer](readme/docs/features/footer/homepage-footer.png "Homepage")
+
+### Homepage
+The home page consists of four sections:
+- Hero Image, includes a simple button navigation to the menu
+
+![Hero Image](readme/docs/features/homepage/hero.png "Hero")
+
+- About, brief description of the store
+
+![About](readme/docs/features/homepage/about.png "About")
+
+- The Menu, background to the menu and a button navigating to it
+
+![Menu](readme/docs/features/homepage/menu.png "Menu")
+
+- Contact, contact for that emails the store owner. This is set to the store owners email currently but will be changed when required.
+
+![Contact](readme/docs/features/homepage/contact.png "Contact")
+
 ## Features to be Implemented
 
 \

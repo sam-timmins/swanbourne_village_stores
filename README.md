@@ -452,22 +452,30 @@ The navigation bar is fully responsive to all screen sizes. it includes a search
 
 - The user is not logged in, this is the basic view.
 
-![Desktop](readme/docs/features/navbar/desktop.png "link")
+![Desktop](readme/docs/features/navbar/desktop.png "Desktop")
 
-![Mobile](readme/docs/features/navbar/mobile.png "link")
+![Mobile](readme/docs/features/navbar/mobile.png "Mobile")
 
 - The user is logged in as a standard user, and the profile link is then shown displaying the first letter of the user's username in uppercase.
 
-![Desktop](readme/docs/features/navbar/desktop-standard-user.png "link")
+![Desktop](readme/docs/features/navbar/desktop-standard-user.png "Desktop")
 
-![Mobile](readme/docs/features/navbar/mobile-standard-user.png "link")
+![Mobile](readme/docs/features/navbar/mobile-standard-user.png "Mobile")
 
 - The user is logged in as admin, and the profile link is shown along with the admin link. 
 
-![Desktop](readme/docs/features/navbar/desktop-admin-user.png "link")
+![Desktop](readme/docs/features/navbar/desktop-admin-user.png "Desktop")
 
-![Mobile](readme/docs/features/navbar/mobile-admin-user.png "link")
+![Mobile](readme/docs/features/navbar/mobile-admin-user.png "Mobile")
 
+
+### Admin orders tab
+
+For admin users to easily see the status of orders, and their collection status a small tab is accessible. This tab opens up an off-canvas menu with order quantities and quick information. the All orders table footer also acts as a link to the orders page
+
+![Orders Tab](readme/docs/features/orders-tab/tab.png "Tab")
+
+![Orders Menu](readme/docs/features/orders-tab/orders.png "Orders")
 
 ### Footer
 
@@ -502,6 +510,62 @@ The home page consists of four sections:
 - Contact, contact for that emails the store owner. This is set to the store owner's email currently but will be changed when required.
 
 ![Contact](readme/docs/features/homepage/contact.png "Contact")
+
+### Menu Pages
+
+The menu pages all follow the same layout, with the menu section header, and search bars that give the user an option to search through the products by popular searches or by the product. Then the products are displayed as cards with the image and details. There are small differences on the cards, if the food product is fresh or frozen, this is displayed, and on a *The Works* product the discount figure is displayed.
+
+![Header](readme/docs/features/products/header.png "Header")
+
+* Fresh product
+
+![Fresh](readme/docs/features/products/fresh.png "Fresh")
+
+* Frozen product
+
+![Frozen](readme/docs/features/products/frozen.png "Frozen")
+
+* The Works
+
+![The Works](readme/docs/features/products/works.png "The Works")
+
+### Basket
+
+The basket when empty informs the user and encourages them to start shopping with links to the various product sections
+
+![Basket](readme/docs/features/basket/empty.png "Basket")
+
+If the basket has items in it they are displayed below. Here the user has the opportunity to update the quantity of the chosen items, or delete them from the basket. the options are then available to the user to either proceed to the checkout or go back to the menu.
+
+![Basket](readme/docs/features/basket/basket.png "Basket")
+
+### Checkout 
+
+The checkout page displays a table of the user's basket items and then the billing information form. This includes the required collection day dropdown, the options here are set by admin. The full name, email and phone number and card number fields are all also required. There is also a checkbox option for the user to save their details, however, this is only available to users that are signed up and logged in.
+
+![Checkout](readme/docs/features/basket/checkout.png "Checkout")
+
+After hitting the purchase button, a spin loader covers the screen until Stripe has processed the payment (only set up for test payments at the minute) and then navigated to the order details page.
+
+![Details](readme/docs/features/basket/details.png "Details")
+
+The user is then emailed details of their order for their reference.
+
+![Email](readme/docs/features/basket/email.png "Email")
+
+
+### Profile
+
+The profile page allows the user, who has the saved details checkbox selected on the checkout page to alter and save their phone number. it also has all the orders associated with the logged-in user and by clicking on the row, it navigated the user to the order details view previously shown.
+
+![Profile](readme/docs/features/profile/profile.png "Profile")
+
+### Administration
+
+The admin section is the section that I am most pleased with. A simple but effective interface with small additional details to help the user.
+
+![Admin](readme/docs/features/admin/admin.png "Admin")
+
 
 ## Features to be Implemented
 

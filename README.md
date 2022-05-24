@@ -431,6 +431,10 @@ COLLECTED_ORDER = ((0, 'Not Collected'), (1, 'Collected'))
 
 # Branches
 
+Branches were used throughout the project, however, there was the odd occasion where I was a little too eager and accidentally pushed to the main branch. The branches were linked to issues for example adding an active class to the navbar branch can be seen [here](https://github.com/sam-timmins/swanbourne_village_stores/commit/20ee2e56d31a6fff3101dd7bc41c5722405d86d1 "branch")
+
+All stale branches have been deleted from the project, this can be seen [here](https://github.com/sam-timmins/swanbourne_village_stores/branches/all "branches")
+
 \
 &nbsp;
 [Back to Top](#table-of-contents)

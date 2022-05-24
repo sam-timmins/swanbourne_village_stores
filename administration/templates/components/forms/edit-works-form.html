@@ -1,5 +1,3 @@
-{% load crispy_forms_tags %}
-
 <form action="{% url 'edit_works' product.id %}" method="POST" class="container m-auto my-5 text-purple text-sm" enctype="multipart/form-data">
     {% csrf_token %}
         <p class="text-xs text-pruple ps-5 mb-5">

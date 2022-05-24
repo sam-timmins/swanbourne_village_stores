@@ -4,6 +4,7 @@
 <html lang="en">
 
 <head>
+    <!-- Meta tags -->
     {% block meta %}
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta charset="UTF-8">
@@ -14,12 +15,12 @@
         These takeaway meals can be accompanied by a wine selected from our wine store.">
     {% endblock %}
 
-
+    <!-- Extra meta -->
     {% block extra_meta %}
 
     {% endblock %}
 
-
+    <!-- Core JS -->
     {% block corecss %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -28,12 +29,12 @@
     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7_dtp.css" rel="stylesheet" type="text/css">
     {% endblock %}
 
-
+    <!-- Extra CSS -->
     {% block extra_css %}
 
     {% endblock %}
 
-
+    <!-- Core CSS -->
     {% block corejs %}
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
@@ -43,25 +44,27 @@
     <script src="https://js.stripe.com/v3/"></script>
     {% endblock %}
 
-
+    <!-- Extra JS -->
     {% block extra_js %}
 
     {% endblock %}
 
 
-    <title>{{ store_name }} {% block title %}{% endblock %}</title>
+    <title>{{ store_name }} | {% block title %}{% endblock %}</title>
 </head>
 
 <body class="d-flex flex-column min-vh-100">
 
+        <!-- Navbar -->
         {% include 'layout/navbar.html' %}
 
+        <!-- Navbar spacer -->
         <div class="nav-spacer"></div>
 
         {% include 'components/open-order-button/open-order-button.html' %}
         
         {% if messages %}
-        <!-- Messages -->
+        <!-- Messages section -->
             <section class="message-container">
                 {% for message in messages %}
                     {% with message.level as level %}
@@ -83,8 +86,10 @@
 
         {% endblock %}
 
+        <!-- Footer -->
         {% include 'layout/footer.html' %}
 
+    <!-- Postload JS -->
     {% block postloadjs %}
 
         <script src="{% static 'js/app.js' %}"></script>

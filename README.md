@@ -1,5 +1,12 @@
 # Swanbourne Village Stores
+![Mockup](readme/docs/designs/am-i-responsive.png "Mockup")
 
+\
+&nbsp;
+Live link can be found here - [Swanbourne Village Stores](https://swanbourne-village-stores.herokuapp.com/ "Swanbourne Village Stores")
+
+\
+&nbsp;
 
 # Table of Contents
 * [Background](#background "Background")
@@ -657,7 +664,7 @@ There are a few ideas that I would like to implement in the future:
 ## Tools
 
 Pillow
-
+[Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/index.php "Mockup Generator")
 [Sitemap Generator](https://www.xml-sitemaps.com/ "XML-Sitemaps.com")
 [HTML Validation](https://validator.w3.org/ "W3C")
 [CSS Validation](https://jigsaw.w3.org/css-validator/ "W3C")

@@ -562,12 +562,72 @@ The profile page allows the user, who has the saved details checkbox selected on
 
 ### Administration
 
-The admin section is the section that I am most pleased with. A simple but effective interface with small additional details to help the user.
+The admin section is the section that I am most pleased with. A simple but effective interface with small additional details to help the user experience.
 
 ![Admin](readme/docs/features/admin/admin.png "Admin")
 
+The layout of each of the pages is the same, except for *collection days* and *orders*, with the form to create the appropriate item, in the example below it is the *Create a dish* form along with a table of each of the items in the query set. Each item then has an *edit* button that navigates to the edit page and a *delete* button that opens up a confirmation modal. Administration cards on the admin page are:
+* Orders
+* Dishes
+* Wines
+* The Works
+* Dish Categories
+* Wine Categories
+* Collection Days
+
+![Dishes](readme/docs/features/admin/dishes.png "Dishes")
+
+* Delete modal
+
+![Delete Modal](readme/docs/features/admin/modal.png "Delete Modal")
+
+* Edit item
+
+![Edit](readme/docs/features/admin/edit.png "Edit")
+
+The collection days administration page has far less information on it so the page is cleaned up for a simpler view. The page includes a form to create a day and just simple delete functionality via a modal the same as illustrated above. 
+
+![Collection Days](readme/docs/features/admin/collection-days.png "Collection Days")
+
+The orders card on the admin page gives the user a quick look at order information similar to the orders off-canvas menu. When navigated to the orders page, a table is displayed with all the orders in the query set. These orders are ordered firstly, if the order is an open order, and then secondly if the order has not been collected. Each row in the table acts as a link to the orders details page where the status and collection status can be adjusted.
+
+![Orders](readme/docs/features/admin/orders.png "Orders")
+
+Order details for the administration page have different editing buttons available depending on the status of the order. Initially, when the order status is set to *open* there are two available buttons, update and delete. The delete opens a modal that looks for confirmation and the *Update status* opens another modal asking to confirm the status update. If the status is changed to *complete* then another button is rendered to the page to update the *collection status*. This button again opens a modal looking for confirmation.
+
+* *Open* order
+
+![Open Order](readme/docs/features/admin/order-details.png "Open Order")
+
+* Change order status
+
+![Status](readme/docs/features/admin/status.png "Status")
+
+* Completed order
+
+![Completed](readme/docs/features/admin/completed.png "Completed")
+
+* Collected order status
+
+![Collected](readme/docs/features/admin/collected-modal.png "Collected")
+
+* Collected order
+
+![Collected](readme/docs/features/admin/collected.png "Collected")
+
+
+* Delete order
+
+![Delete](readme/docs/features/admin/delete.png "Delete")
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
 
 ## Features to be Implemented
+
 
 \
 &nbsp;

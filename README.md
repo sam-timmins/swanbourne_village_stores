@@ -39,8 +39,7 @@ Live link can be found here - [Swanbourne Village Stores](https://swanbourne-vil
         * Features to be implemented
     * [Technologies used](#technologies-used "Technologies used")
         * Languages
-        * Libraries and Frameworks
-        * Tools
+        * Libraries, Frameworks and Tools
     * [Testing](#testing "Testing")
         * Accessibility
         * UX Testing
@@ -655,22 +654,45 @@ There are a few ideas that I would like to implement in the future:
 
 ## Languages
 
-## Libraries and Frameworks
-| Libraries / Frameworks | Description | Link |
+| Languages | Link |
+|--|--|
+|HTML|[HTML](https://en.wikipedia.org/wiki/HTML5 "HTML") 
+|CSS|[CSS](https://en.wikipedia.org/wiki/CSS "CSS")
+|JavaScript|[JavaScript](https://en.wikipedia.org/wiki/JavaScript "JS")
+|jQuery|[jQuery](https://jquery.com/ "jQuery")
+|Python|[Python](https://en.wikipedia.org/wiki/Python_(programming_language) "Python")
+|Markdown|[Markdown](https://en.wikipedia.org/wiki/Markdown)
+ 
+## Libraries, Frameworks and Tools
+| Libraries / Frameworks / Tools| Description | Link |
 |--|--|--|
-[django-mathfilters](https://pypi.org/project/django-mathfilters/)
+|Django|Database Driven Framework| [django](https://en.wikipedia.org/wiki/Django_(web_framework) "django")|
+|gunicorn|HTTP Interface Server|[gunicorn](https://en.wikipedia.org/wiki/Gunicorn "gunicorn")|
+|psycopg2| Database adaptor | [psycopg2](https://wiki.postgresql.org/wiki/Psycopg "psycogg2")
+|cloudinary |Image management|[cloudinary](https://cloudinary.com/ "cloudinary")|
+|django auth|User authentication|[auth](https://docs.djangoproject.com/en/3.2/topics/auth/ "auth")|
+|django mathfilters | Any maths within the templates |[django-mathfilters](https://pypi.org/project/django-mathfilters/)
+| django crispy forms | Styling forms | [crispy-forms](https://django-crispy-forms.readthedocs.io/en/latest/ "crispy-forms")
+|Site mockup| Mockup of site on different screen sizes|[Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/index.php "Mockup Generator")
+|Sitemap Generator| Generating the site map|[xml-sitemaps](https://www.xml-sitemaps.com/ "XML-Sitemaps.com")
+|HTML Validation| Validating HTML|[w3.org](https://validator.w3.org/ "W3C")
+|CSS Validation| Validating CSS|[w3.org](https://jigsaw.w3.org/css-validator/ "W3C")
+|JS Validation|Validating JS & jQuery|[jshint](https://jshint.com/ "JSHint")
+|PEP8|Validating python|[PEP8](http://pep8online.com/ "PEP8")
+| Lucid | Site structure design | [Lucid](https://lucid.co/ "Lucid")
+| LOADING.IO | Spin Loader | [loading.io](https://loading.io/ "loading.io")
+| Unsplash | Images |[Unsplash](https://unsplash.com/ "Unsplash")
+| GitPod | Development environment |[Gitpod](https://www.gitpod.io/ "Gitpod")
+| Balsamic | Wireframes |[Balsamic](https://balsamiq.com/wireframes/ "Balsamic")
+| Bootstrap | Responsive design |[Bootstrap](https://getbootstrap.com "Bootstrap")
+| Font Awesome | Icons |[Font Awesome library](https://fontawesome.com/ "Font Awesome")
+| miniwebtool | Secret Key |[Secret Key Generator](https://miniwebtool.com/django-secret-key-generator/ "miniwebtool")
+| Colours|Colour pallet| [coolors](https://coolors.co/ "coolors")|
+| Google Fonts| Fonts |[Google Fonts](https://fonts.google.com/ "Fonts")|
+| WebAIM| Colour contrast checks |[WebAIM](https://webaim.org/resources/contrastchecker/ "WebAIM")|
+|Pillow| Image processing tool | [Pillow](https://pillow.readthedocs.io/en/stable/ "Pillow")
+|generateprivacypolicy.com|Privacy Policy Generator| [Generate Privacy Policy](https://www.generateprivacypolicy.com/)
 
-
-## Tools
-
-Pillow
-[Multi Device Website Mockup Generator](https://techsini.com/multi-mockup/index.php "Mockup Generator")
-[Sitemap Generator](https://www.xml-sitemaps.com/ "XML-Sitemaps.com")
-[HTML Validation](https://validator.w3.org/ "W3C")
-[CSS Validation](https://jigsaw.w3.org/css-validator/ "W3C")
-[JS Validation](https://jshint.com/ "JSHint")
-[PEP8](http://pep8online.com/ "PEP8")
-[Lucid](https://lucid.co/ "Lucid")
 
 # Testing
 

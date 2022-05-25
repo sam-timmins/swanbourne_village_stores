@@ -628,6 +628,12 @@ Order details for the administration page have different editing buttons availab
 
 ## Features to be Implemented
 
+There are a few ideas that I would like to implement in the future:
+* Login via social media account or Google.
+* Administration section to change a user to superuser status so the store owners can manage their own staff's login abilities.
+* Add tracking for when an order status is changed to completed or collected. The time, data and username would be recorded against it.
+* Scroll to the top button to be visible on smaller screens
+* Customisable email with images and style instead of plain text.
 
 \
 &nbsp;

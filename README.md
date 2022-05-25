@@ -849,9 +849,17 @@ There are a few ideas that I would like to implement in the future:
 
 # Credits
 * Code to position the footer at the bottom of the content [radu.link](https://radu.link/make-footer-stay-bottom-page-bootstrap/ "Radu")
-* Code for changing animation of dropdown menus [Evochrome](https://stackoverflow.com/questions/34566382/how-to-change-the-animation-of-the-dropdown-menu-in-bootstrap "Evochrome")
 * Code for slugifying content [gabrieleromanato](https://jsfiddle.net/gabrieleromanato/RkpYy/ "gabrieleromanato")
 * Code for table width styling [stackoverflow](https://stackoverflow.com/questions/928849/setting-table-column-width "stackoverflow")
+
+* [Code Institute](https://codeinstitute.net/all-access-coding-challenge/?gclsrc=aw.ds&&msclkid=1915e48bf28d11888d1785dfd2b04125&utm_source=bing&utm_medium=cpc&utm_campaign=a%26c_SEA_IRL_BR_Brand_Code_Institute&utm_term=code%20institute&utm_content=exa_Brand "CI") for the template
+* [Code Institute's Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1/) for Stripe payments and guidance
+* [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin") for advice and direction and continual support
+* [CodingEntrepreneurs](https://www.youtube.com/channel/UCWEHue8kksIaktO8KTTN_zg "CodingEntrepreneurs") for help on Django and testing
+* [Codemy.com](https://www.youtube.com/channel/UCFB0dxMudkws1q8w5NJEAmw "Codemy.com") for help on Django
+* For gentle helping nudges, the Code Institute tutors
+* For testing and feedback, my 'testing focus group' (they know who they are!)
+
 \
 &nbsp;
 [Back to Top](#table-of-contents)

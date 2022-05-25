@@ -589,9 +589,12 @@ The collection days administration page has far less information on it so the pa
 
 ![Collection Days](readme/docs/features/admin/collection-days.png "Collection Days")
 
-The orders card on the admin page gives the user a quick look at order information similar to the orders off-canvas menu. When navigated to the orders page, a table is displayed with all the orders in the query set. These orders are ordered firstly, if the order is an open order, and then secondly if the order has not been collected. Each row in the table acts as a link to the orders details page where the status and collection status can be adjusted.
+The orders card on the admin page gives the user a quick look at order information similar to the orders off-canvas menu. When navigated to the orders page, a table is displayed with all the orders in the query set. These orders are ordered firstly, if the order is an open order, and then secondly if the order has not been collected. Each row in the table acts as a link to the orders details page where the status and collection status can be adjusted. Also, there is a filters tab on the side of the screen that allows the user to narrow down the table of orders
 
 ![Orders](readme/docs/features/admin/orders.png "Orders")
+
+![Filters](readme/docs/features/admin/filters.png "Filters")
+
 
 Order details for the administration page have different editing buttons available depending on the status of the order. Initially, when the order status is set to *open* there are two available buttons, update and delete. The delete opens a modal that looks for confirmation and the *Update status* opens another modal asking to confirm the status update. If the status is changed to *complete* then another button is rendered to the page to update the *collection status*. This button again opens a modal looking for confirmation.
 

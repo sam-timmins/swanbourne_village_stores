@@ -655,6 +655,15 @@ There are a few ideas that I would like to implement in the future:
 
 ## Languages
 
+| Languages | Link |
+|--|--|
+|HTML|[HTML](https://en.wikipedia.org/wiki/HTML5 "HTML") 
+|CSS|[CSS](https://en.wikipedia.org/wiki/CSS "CSS")
+|JavaScript|[JavaScript](https://en.wikipedia.org/wiki/JavaScript "JS")
+|jQuery|[jQuery](https://jquery.com/ "jQuery")
+|Python|[Python](https://en.wikipedia.org/wiki/Python_(programming_language) "Python")
+|Markdown|[Markdown](https://en.wikipedia.org/wiki/Markdown)
+
 ## Libraries and Frameworks
 | Libraries / Frameworks | Description | Link |
 |--|--|--|

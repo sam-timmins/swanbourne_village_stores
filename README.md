@@ -705,6 +705,26 @@ There are a few ideas that I would like to implement in the future:
 
 ### UX Testing
 
+| ID |  User wants to... | Issue Number | Comments
+|--|--|--| -- |
+| 01 | Add products | [Issue #5](https://github.com/sam-timmins/swanbourne_village_stores/issues/5 "Issue #5") | Items can be added as a dish, wine or works via the administration page
+| 02 | Edit and update a product | [Issue #6](https://github.com/sam-timmins/swanbourne_village_stores/issues/6 "Issue #6") | All details of a product, dish, wine or works can be edited via the administration page
+| 03 | Delete products | [Issue #7](https://github.com/sam-timmins/swanbourne_village_stores/issues/7 "Issue #7") | All products can be deleted from the store via the administration page
+| 04 | View all orders | [Issue #8](https://github.com/sam-timmins/swanbourne_village_stores/issues/8 "Issue #8") | Available in the administration page on the orders card and via the off-canvas orders popout.
+| 05 | See the number of open orders | [Issue #9](https://github.com/sam-timmins/swanbourne_village_stores/issues/9 "Issue #9") | Available on the administration page on the orders card and via the off-canvas orders popout.
+| 06 | View a list of all the products | [Issue #10](https://github.com/sam-timmins/swanbourne_village_stores/issues/10 "Issue #10") | Users can view all the products in the 3 sections, dishes, wines and the works
+| 07 | See individual product details | [Issue #11](https://github.com/sam-timmins/swanbourne_village_stores/issues/11 "Issue #11") | Detailed explanations of the product available
+| 08 | Have contact information available | [Issue #12](https://github.com/sam-timmins/swanbourne_village_stores/issues/12 "Issue #12") | Social links, contact form, telephone number, email and google maps 
+| 09 | Easily select dishes for purchase | [Issue #13](https://github.com/sam-timmins/swanbourne_village_stores/issues/13 "Issue #13") | Two clicks are required to select an item to purchase. 
+| 10 | See the items selected for purchase | [Issue #14](https://github.com/sam-timmins/swanbourne_village_stores/issues/14 "Issue #14") | the basket view gives the user ability to view items selected and also 
+| 11 | See a running total of shopping basket | [Issue #15](https://github.com/sam-timmins/swanbourne_village_stores/issues/15 "Issue #15") | The basket is visible in the navbar at all times and updated accordingly
+| 12 | Select multiple quantities of the same product | [Issue #16](https://github.com/sam-timmins/swanbourne_village_stores/issues/16 "Issue #16") | Ability to do this on the product details page or in the basket
+| 13 | Filter the products | [Issue #17](https://github.com/sam-timmins/swanbourne_village_stores/issues/17 "Issue #17") | Multiple filters available on the navbar and in the header of each product collection
+| 14 | See the number of search results | [Issue #18](https://github.com/sam-timmins/swanbourne_village_stores/issues/18 "Issue #18") | Search results number available to the user after a search has been carried out
+| 15 | Easily register for an account | [Issue #19](https://github.com/sam-timmins/swanbourne_village_stores/issues/19 "Issue #19") |  Register page is available in the navbar to a non logged in user. 
+| 16 | Easily login and logout | [Issue #20](https://github.com/sam-timmins/swanbourne_village_stores/issues/20 "Issue #20") | Simple view for logging in and loging out.
+| 17 | Recover a password if required | [Issue #21](https://github.com/sam-timmins/swanbourne_village_stores/issues/21 "Issue #21") | Completed using allauth
+| 18 | Have payment information saved | [Issue #22](https://github.com/sam-timmins/swanbourne_village_stores/issues/22 "Issue #22") | Save checkbox in the checkout view and update phone number in the profile view
 
 \
 &nbsp;

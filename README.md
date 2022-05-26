@@ -734,6 +734,35 @@ There are a few ideas that I would like to implement in the future:
 
 ## Manual Testing
 
+| Issue Number |  Title | Comments 
+|--|--|--|
+| [Issue #35](https://github.com/sam-timmins/swanbourne_village_stores/issues/35 "Issue #35") | Homepage | Layout changed |
+| [Issue #27](https://github.com/sam-timmins/swanbourne_village_stores/issues/27 "Issue #27") | Navbar & Footer | Layout changed | 
+| [Issue #64](https://github.com/sam-timmins/swanbourne_village_stores/issues/64 "Issue #64") | Contact Form | Contact form able to be submitted with whitespace |
+| [Issue #73](https://github.com/sam-timmins/swanbourne_village_stores/issues/73 "Issue #73") | Contact form error message | Change contact form error message and pre fill form with correct information  |
+| [Issue #79](https://github.com/sam-timmins/swanbourne_village_stores/issues/79 "Issue #79") | Delivery functionallity | Customer decided that they did not want the delivery functionallity so the delivery logic was left in but removed from the templates. To keep inline with Code institute's clean code requirement, all delivery code was later removed from the project altogether. |
+| [Issue #87](https://github.com/sam-timmins/swanbourne_village_stores/issues/87 "Issue #87") | Table column width | Set table column widths for better visual effect |
+| [Issue #92](https://github.com/sam-timmins/swanbourne_village_stores/issues/92 "Issue #92") | Orders table link to detailed order | Change the link to the detailed view from being a button at the end to the whole row |
+| [Issue #101](https://github.com/sam-timmins/swanbourne_village_stores/issues/101 "Issue #101") | Open orders tab | Fixed styling issue |
+| [Issue #114](https://github.com/sam-timmins/swanbourne_village_stores/issues/114 "Issue #114") | Open orders tab | Fixed text alignment in about section for different screen sizes |
+| [Issue #116](https://github.com/sam-timmins/swanbourne_village_stores/issues/116 "Issue #116") | Add to basket toasts | Add toast feedback|
+| [Issue #120](https://github.com/sam-timmins/swanbourne_village_stores/issues/120 "Issue #120") | Collected order option | Client requested a option to mark off an order as collected |
+| [Issue #131](https://github.com/sam-timmins/swanbourne_village_stores/issues/131 "Issue #131") | Administration | Change administration pages to look the same, form on the left and table on the right |
+| [Issue #133](https://github.com/sam-timmins/swanbourne_village_stores/issues/133 "Issue #133") | Form control placeholder colour | Changed colour of placeholder |
+| [Issue #135](https://github.com/sam-timmins/swanbourne_village_stores/issues/135 "Issue #135") | Update and Remove in basket | Add icons to the update and remove buttons in the basket |
+| [Issue #137](https://github.com/sam-timmins/swanbourne_village_stores/issues/137 "Issue #137") | Checkout collection day | Add clarification text to the collection day field in the checkout page |
+| [Issue #138](https://github.com/sam-timmins/swanbourne_village_stores/issues/138 "Issue #138") | Save info checkbox | Change the default to be unchecked |
+| [Issue #141](https://github.com/sam-timmins/swanbourne_village_stores/issues/141 "Issue #141") | Cards in admin view | Cards in the admin view were not centered |
+| [Issue #143](https://github.com/sam-timmins/swanbourne_village_stores/issues/143 "Issue #143") | Buttons overlapping | Buttons on various scrrens overlapped when the screen size was less that 380px |
+| [Issue #145](https://github.com/sam-timmins/swanbourne_village_stores/issues/145 "Issue #145") | Hero image | Hero image was getting mistaken for a pop-up |
+| [Issue #147](https://github.com/sam-timmins/swanbourne_village_stores/issues/147 "Issue #147") | Adding to the basket before the document is loaded | User could add to the basket before the toast script was loaded so no feedback was displayed |
+| [Issue #151](https://github.com/sam-timmins/swanbourne_village_stores/issues/151 "Issue #151") | Admin layout | Form and table missing space between them on smaller screens |
+| [Issue #153](https://github.com/sam-timmins/swanbourne_village_stores/issues/153 "Issue #153") | Side scroll | Side scroll caused by header on various templates |
+| [Issue #154](https://github.com/sam-timmins/swanbourne_village_stores/issues/154 "Issue #154") | Admin link | Quick link back to administration page for any page navigated from the daministration cards |
+| [Issue #163](https://github.com/sam-timmins/swanbourne_village_stores/issues/163 "Issue #163") | Navbar responsivness | Poor responsivness of navbar on smaller screens |
+| [Issue #162](https://github.com/sam-timmins/swanbourne_village_stores/issues/162 "Issue #162") | Active class to the navbar | Add active class to the navbar links |
+| [Issue #167](https://github.com/sam-timmins/swanbourne_village_stores/issues/167 "Issue #167") | About image on homepage | Image height changed |
+
 
 \
 &nbsp; 

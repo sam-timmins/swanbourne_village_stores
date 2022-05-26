@@ -692,6 +692,7 @@ There are a few ideas that I would like to implement in the future:
 | WebAIM| Colour contrast checks |[WebAIM](https://webaim.org/resources/contrastchecker/ "WebAIM")|
 |Pillow| Image processing tool | [Pillow](https://pillow.readthedocs.io/en/stable/ "Pillow")
 |generateprivacypolicy.com|Privacy Policy Generator| [Generate Privacy Policy](https://www.generateprivacypolicy.com/)
+|Stripe| online payments| [Stripe](https://stripe.com/en-gb "Stripe")
 
 
 # Testing
@@ -704,6 +705,26 @@ There are a few ideas that I would like to implement in the future:
 
 ### UX Testing
 
+| ID |  User wants to... | Issue Number | Comments
+|--|--|--| -- |
+| 01 | Add products | [Issue #5](https://github.com/sam-timmins/swanbourne_village_stores/issues/5 "Issue #5") | Items can be added as a dish, wine or works via the administration page
+| 02 | Edit and update a product | [Issue #6](https://github.com/sam-timmins/swanbourne_village_stores/issues/6 "Issue #6") | All details of a product, dish, wine or works can be edited via the administration page
+| 03 | Delete products | [Issue #7](https://github.com/sam-timmins/swanbourne_village_stores/issues/7 "Issue #7") | All products can be deleted from the store via the administration page
+| 04 | View all orders | [Issue #8](https://github.com/sam-timmins/swanbourne_village_stores/issues/8 "Issue #8") | Available in the administration page on the orders card and via the off-canvas orders popout.
+| 05 | See the number of open orders | [Issue #9](https://github.com/sam-timmins/swanbourne_village_stores/issues/9 "Issue #9") | Available on the administration page on the orders card and via the off-canvas orders popout.
+| 06 | View a list of all the products | [Issue #10](https://github.com/sam-timmins/swanbourne_village_stores/issues/10 "Issue #10") | Users can view all the products in the 3 sections, dishes, wines and the works
+| 07 | See individual product details | [Issue #11](https://github.com/sam-timmins/swanbourne_village_stores/issues/11 "Issue #11") | Detailed explanations of the product available
+| 08 | Have contact information available | [Issue #12](https://github.com/sam-timmins/swanbourne_village_stores/issues/12 "Issue #12") | Social links, contact form, telephone number, email and google maps 
+| 09 | Easily select dishes for purchase | [Issue #13](https://github.com/sam-timmins/swanbourne_village_stores/issues/13 "Issue #13") | Two clicks are required to select an item to purchase. 
+| 10 | See the items selected for purchase | [Issue #14](https://github.com/sam-timmins/swanbourne_village_stores/issues/14 "Issue #14") | the basket view gives the user ability to view items selected and also 
+| 11 | See a running total of shopping basket | [Issue #15](https://github.com/sam-timmins/swanbourne_village_stores/issues/15 "Issue #15") | The basket is visible in the navbar at all times and updated accordingly
+| 12 | Select multiple quantities of the same product | [Issue #16](https://github.com/sam-timmins/swanbourne_village_stores/issues/16 "Issue #16") | Ability to do this on the product details page or in the basket
+| 13 | Filter the products | [Issue #17](https://github.com/sam-timmins/swanbourne_village_stores/issues/17 "Issue #17") | Multiple filters available on the navbar and in the header of each product collection
+| 14 | See the number of search results | [Issue #18](https://github.com/sam-timmins/swanbourne_village_stores/issues/18 "Issue #18") | Search results number available to the user after a search has been carried out
+| 15 | Easily register for an account | [Issue #19](https://github.com/sam-timmins/swanbourne_village_stores/issues/19 "Issue #19") |  Register page is available in the navbar to a non logged in user. 
+| 16 | Easily login and logout | [Issue #20](https://github.com/sam-timmins/swanbourne_village_stores/issues/20 "Issue #20") | Simple view for logging in and loging out.
+| 17 | Recover a password if required | [Issue #21](https://github.com/sam-timmins/swanbourne_village_stores/issues/21 "Issue #21") | Completed using allauth
+| 18 | Have payment information saved | [Issue #22](https://github.com/sam-timmins/swanbourne_village_stores/issues/22 "Issue #22") | Save checkbox in the checkout view and update phone number in the profile view
 
 \
 &nbsp;
@@ -712,6 +733,35 @@ There are a few ideas that I would like to implement in the future:
 &nbsp;
 
 ## Manual Testing
+
+| Issue Number |  Title | Comments 
+|--|--|--|
+| [Issue #35](https://github.com/sam-timmins/swanbourne_village_stores/issues/35 "Issue #35") | Homepage | Layout changed |
+| [Issue #27](https://github.com/sam-timmins/swanbourne_village_stores/issues/27 "Issue #27") | Navbar & Footer | Layout changed | 
+| [Issue #64](https://github.com/sam-timmins/swanbourne_village_stores/issues/64 "Issue #64") | Contact Form | Contact form able to be submitted with whitespace |
+| [Issue #73](https://github.com/sam-timmins/swanbourne_village_stores/issues/73 "Issue #73") | Contact form error message | Change contact form error message and pre fill form with correct information  |
+| [Issue #79](https://github.com/sam-timmins/swanbourne_village_stores/issues/79 "Issue #79") | Delivery functionallity | Customer decided that they did not want the delivery functionallity so the delivery logic was left in but removed from the templates. To keep inline with Code institute's clean code requirement, all delivery code was later removed from the project altogether. |
+| [Issue #87](https://github.com/sam-timmins/swanbourne_village_stores/issues/87 "Issue #87") | Table column width | Set table column widths for better visual effect |
+| [Issue #92](https://github.com/sam-timmins/swanbourne_village_stores/issues/92 "Issue #92") | Orders table link to detailed order | Change the link to the detailed view from being a button at the end to the whole row |
+| [Issue #101](https://github.com/sam-timmins/swanbourne_village_stores/issues/101 "Issue #101") | Open orders tab | Fixed styling issue |
+| [Issue #114](https://github.com/sam-timmins/swanbourne_village_stores/issues/114 "Issue #114") | Open orders tab | Fixed text alignment in about section for different screen sizes |
+| [Issue #116](https://github.com/sam-timmins/swanbourne_village_stores/issues/116 "Issue #116") | Add to basket toasts | Add toast feedback|
+| [Issue #120](https://github.com/sam-timmins/swanbourne_village_stores/issues/120 "Issue #120") | Collected order option | Client requested a option to mark off an order as collected |
+| [Issue #131](https://github.com/sam-timmins/swanbourne_village_stores/issues/131 "Issue #131") | Administration | Change administration pages to look the same, form on the left and table on the right |
+| [Issue #133](https://github.com/sam-timmins/swanbourne_village_stores/issues/133 "Issue #133") | Form control placeholder colour | Changed colour of placeholder |
+| [Issue #135](https://github.com/sam-timmins/swanbourne_village_stores/issues/135 "Issue #135") | Update and Remove in basket | Add icons to the update and remove buttons in the basket |
+| [Issue #137](https://github.com/sam-timmins/swanbourne_village_stores/issues/137 "Issue #137") | Checkout collection day | Add clarification text to the collection day field in the checkout page |
+| [Issue #138](https://github.com/sam-timmins/swanbourne_village_stores/issues/138 "Issue #138") | Save info checkbox | Change the default to be unchecked |
+| [Issue #141](https://github.com/sam-timmins/swanbourne_village_stores/issues/141 "Issue #141") | Cards in admin view | Cards in the admin view were not centered |
+| [Issue #143](https://github.com/sam-timmins/swanbourne_village_stores/issues/143 "Issue #143") | Buttons overlapping | Buttons on various scrrens overlapped when the screen size was less that 380px |
+| [Issue #145](https://github.com/sam-timmins/swanbourne_village_stores/issues/145 "Issue #145") | Hero image | Hero image was getting mistaken for a pop-up |
+| [Issue #147](https://github.com/sam-timmins/swanbourne_village_stores/issues/147 "Issue #147") | Adding to the basket before the document is loaded | User could add to the basket before the toast script was loaded so no feedback was displayed |
+| [Issue #151](https://github.com/sam-timmins/swanbourne_village_stores/issues/151 "Issue #151") | Admin layout | Form and table missing space between them on smaller screens |
+| [Issue #153](https://github.com/sam-timmins/swanbourne_village_stores/issues/153 "Issue #153") | Side scroll | Side scroll caused by header on various templates |
+| [Issue #154](https://github.com/sam-timmins/swanbourne_village_stores/issues/154 "Issue #154") | Admin link | Quick link back to administration page for any page navigated from the daministration cards |
+| [Issue #163](https://github.com/sam-timmins/swanbourne_village_stores/issues/163 "Issue #163") | Navbar responsivness | Poor responsivness of navbar on smaller screens |
+| [Issue #162](https://github.com/sam-timmins/swanbourne_village_stores/issues/162 "Issue #162") | Active class to the navbar | Add active class to the navbar links |
+| [Issue #167](https://github.com/sam-timmins/swanbourne_village_stores/issues/167 "Issue #167") | About image on homepage | Image height changed |
 
 
 \
@@ -849,9 +899,17 @@ There are a few ideas that I would like to implement in the future:
 
 # Credits
 * Code to position the footer at the bottom of the content [radu.link](https://radu.link/make-footer-stay-bottom-page-bootstrap/ "Radu")
-* Code for changing animation of dropdown menus [Evochrome](https://stackoverflow.com/questions/34566382/how-to-change-the-animation-of-the-dropdown-menu-in-bootstrap "Evochrome")
 * Code for slugifying content [gabrieleromanato](https://jsfiddle.net/gabrieleromanato/RkpYy/ "gabrieleromanato")
 * Code for table width styling [stackoverflow](https://stackoverflow.com/questions/928849/setting-table-column-width "stackoverflow")
+
+* [Code Institute](https://codeinstitute.net/all-access-coding-challenge/?gclsrc=aw.ds&&msclkid=1915e48bf28d11888d1785dfd2b04125&utm_source=bing&utm_medium=cpc&utm_campaign=a%26c_SEA_IRL_BR_Brand_Code_Institute&utm_term=code%20institute&utm_content=exa_Brand "CI") for the template
+* [Code Institute's Boutique Ado](https://github.com/Code-Institute-Solutions/boutique_ado_v1/) for Stripe payments and guidance
+* [Simen Daehlin](https://github.com/Eventyret "Simen Daehlin") for advice and direction and continual support
+* [CodingEntrepreneurs](https://www.youtube.com/channel/UCWEHue8kksIaktO8KTTN_zg "CodingEntrepreneurs") for help on Django and testing
+* [Codemy.com](https://www.youtube.com/channel/UCFB0dxMudkws1q8w5NJEAmw "Codemy.com") for help on Django
+* For gentle helping nudges, the Code Institute tutors
+* For testing and feedback, my 'testing focus group' (they know who they are!)
+
 \
 &nbsp;
 [Back to Top](#table-of-contents)

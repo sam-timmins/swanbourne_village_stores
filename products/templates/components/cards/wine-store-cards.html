@@ -5,11 +5,11 @@
 
         <!-- Default image if none is uploaded -->
         {% if "placeholder" in product.image.url %}
-            <img class="card-img-top"
+            <img class="card-img-top products-card-image"
                 src="{{ placeholder_image_url }}"
                 alt="Placeholder image for {{ product.name }}">
         {% else %}
-            <img class="card-img-top" src=" {{ product.image.url }}" alt="Image of {{ product.name }}">
+            <img class="card-img-top products-card-image" src=" {{ product.image.url }}" alt="Image of {{ product.name }}">
         {% endif %}
 
         <div class="card-body">

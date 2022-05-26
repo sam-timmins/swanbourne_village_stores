@@ -384,3 +384,12 @@ input[type=number] {
     margin: 0;
     height: 100%;
 }
+
+/* Products cards */
+
+.products-card-image {
+    object-fit: cover;
+    height: 25rem;
+  }
+
+

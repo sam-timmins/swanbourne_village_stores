@@ -763,7 +763,7 @@ There are a few ideas that I would like to implement in the future:
 | [Issue #162](https://github.com/sam-timmins/swanbourne_village_stores/issues/162 "Issue #162") | Active class to the navbar | Add active class to the navbar links |
 | [Issue #167](https://github.com/sam-timmins/swanbourne_village_stores/issues/167 "Issue #167") | About image on homepage | Image height changed |
 | [Issue #173](https://github.com/sam-timmins/swanbourne_village_stores/issues/173 "Issue #173") | Product cards | Card height is dependent on the image. The height needs to be set to keep the cards a standard size. |
-
+| [Issue #176](https://github.com/sam-timmins/swanbourne_village_stores/issues/176 "Issue #176") | Descriptions on the works detail view | The product descriptions in the works detail view rendered the product name instead of the description |
 
 \
 &nbsp; 

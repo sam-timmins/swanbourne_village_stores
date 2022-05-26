@@ -15,7 +15,7 @@
 
 .about-image {
     background-image: url("https://res.cloudinary.com/sam-timmins1/image/upload/v1648242081/static/images/about.7339cc50ba4c.jpg");
-    height: 55rem;
+    min-height: 100%;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;

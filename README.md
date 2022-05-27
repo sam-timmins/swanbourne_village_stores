@@ -876,11 +876,24 @@ There are a few ideas that I would like to implement in the future:
 
 ## Bugs
 
+| Issue Number |  Title | Comments 
+|--|--|--|
+| [Issue #26](https://github.com/sam-timmins/swanbourne_village_stores/issues/26 "Issue #26") | Navbar authentication links | Login and register links are stacked when the user is unauthenticated |
+| [Issue #61](https://github.com/sam-timmins/swanbourne_village_stores/issues/61 "Issue #61") | Create product form slug error | When there is an error during creating a product, the slug error text shows and throws off the styling.|
+| [Issue #51](https://github.com/sam-timmins/swanbourne_village_stores/issues/51 "Issue #51") | Dropdown Menu | The dropdown menu class has a style applied to it giving a max-width. |
+| [Issue #110](https://github.com/sam-timmins/swanbourne_village_stores/issues/110 "Issue #110") | Webhooks | Webhooks are not working, getting a 401 error in Stripe |
+| [Issue #129](https://github.com/sam-timmins/swanbourne_village_stores/issues/129 "Issue #129") | Edit works link in navbar not working | Edit works link in navbar not working, giving a 500 error |
 
-
+\
+&nbsp;
 
 ## Unfixed Bugs
 
+There are two errors that I am getting in the console when inspecting the application through Chrome.
+
+
+* [Error one](readme/docs/bugs/error.png "error") appears on all pages across the application
+* [Error two](readme/docs/bugs/error-checkout.png "error") appears only on the *Checkout* page
 
 \
 &nbsp;

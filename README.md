@@ -41,7 +41,6 @@ Live link can be found here - [Swanbourne Village Stores](https://swanbourne-vil
         * Languages
         * Libraries, Frameworks and Tools
     * [Testing](#testing "Testing")
-        * Accessibility
         * UX Testing
         * Manual Testing
         * Code Validation
@@ -673,6 +672,10 @@ There are a few ideas that I would like to implement in the future:
 * Add tracking for when an order status is changed to completed or collected. The time, data and username would be recorded against it.
 * Scroll to the top button to be visible on smaller screens
 * Customisable email with images and style instead of plain text.
+* I'd like to include a checkbox selection of all the dish or wine categories when selecting a category during creating a new dish or wine. At the minute the dropdown is very poor as the user can't really see what category is being selected.
+* Ability to  add a profile picture.
+* Customer feedback section with the ability to reply by admin.
+* Ability for the admin to see a list of all the users and adjust their access rights if required.
 
 \
 &nbsp;
@@ -726,9 +729,6 @@ There are a few ideas that I would like to implement in the future:
 
 
 # Testing
-
-## Accessibility
-
 
 \
 &nbsp;
@@ -1107,6 +1107,11 @@ This project is using Gmail as its email provider. Other providers can be used b
 
 # My Thoughts
 
+This is my final project and the completion of the Code Insitute's Diploma in Full Stack Software Development. I am happy with the application that I have produced, there are a few features that I would have liked to have implemented, however when working full time and completing this mostly at weekends, time is a factor.
+
+I am very happy with the aesthetics of the application and in particular the administration dashboard and administration app in general. I still have a long way to go in my automated testing, it is something I have just really struggled to get my head around and is lacking from this project in any depth.
+
+Overall, a very enjoyable project!
 
 \
 &nbsp;

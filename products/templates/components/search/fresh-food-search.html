@@ -31,9 +31,9 @@
         <form method="GET" action="{% url 'fresh_food' %}" class="p-3">
             <div class="input-group align-items-center">
                 <select name="fresh-name-query" class="form-control text-sm rounded-0">
-                    <option value="reset" hidden class="dropdown-item text-xs text-white px-5">Search by Dish</option>
+                    <option value="reset" hidden class="text-xs text-white px-5">Search by Dish</option>
                     {% for dish in ordered_dish_names %}
-                    <option value="{{ dish }}" class="dropdown-item text-xs text-white px-5">{{ dish }}</option>
+                    <option value="{{ dish }}" class="text-xs text-white px-5">{{ dish }}</option>
                     {% endfor %}
                 </select>
                 <div class="input-group-append">

@@ -1107,6 +1107,11 @@ This project is using Gmail as its email provider. Other providers can be used b
 
 # My Thoughts
 
+This is my final project and the completion of the Code Insitute's Diploma in Full Stack Software Development. I am happy with the application that I have produced, there are a few features that I would have liked to have implemented, however when working full time and completing this mostly at weekends, time is a factor.
+
+I am very happy with the aesthetics of the application and in particular the administration dashboard and administration app in general. I still have a long way to go in my automated testing, it is something I have just really struggled to get my head around and is lacking from this project in any depth.
+
+Overall, a very enjoyable project!
 
 \
 &nbsp;

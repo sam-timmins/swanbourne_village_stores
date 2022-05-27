@@ -20,7 +20,7 @@ Live link can be found here - [Swanbourne Village Stores](https://swanbourne-vil
     * [Strategy](#strategy "Strategy")
         * Strategy Outline
         * Strategy Description
-
+    * [Marketing](#marketing "Marketing")
     * [Wireframes](#wireframes "Wireframes")
     * [Design Choices](#design-choices "Design Choices")
         * Fonts
@@ -191,6 +191,36 @@ The outcome is calculated by combining the scores from the *Importance* and *Fea
 | 16 | 5 | 5 | 10 |
 | 17 | 5 | 5 | 10 |
 | 18 | 5 | 5 | 10 |
+
+
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
+# Marketing
+
+Facebook is a current marketing strategy carried out by Swanbourne Village Stores. Currently, there is already a page created however it is lacking in a few extra details to improve its performance. Because of this and myself not having access to change it, I have created a dummy page for the store.
+
+The page includes the images from the application for continuity for its home and profile pictures and also has a relevant tag and description as a food service provider. There is also a tab linking to the menu where the owner can add their products.
+
+![Profile](readme/docs/marketing/facebook-profile.png "Profile")
+
+The offers tab allows for easy advertisement of products within *The Works*
+
+![Offers](readme/docs/marketing/facebook-offer-tab.png "Offers")
+
+![Offers](readme/docs/marketing/facebook-offer.png "Offers")
+
+Posts can also be directly published to any followers or promoted via paid promotions.
+
+![Post](readme/docs/marketing/facebook-post.png "Post")
+
+Finally, the details section allows followers to have thorough details of the store including, location, contact methods, opening times and a brief description of its services.
+
+![About](readme/docs/marketing/facebook-about.png "About")
 
 
 

@@ -675,6 +675,7 @@ There are a few ideas that I would like to implement in the future:
 * I'd like to include a checkbox selection of all the dish or wine categories when selecting a category during creating a new dish or wine. At the minute the dropdown is very poor as the user can't really see what category is being selected.
 * Ability to  add a profile picture.
 * Customer feedback section with the ability to reply by admin.
+* Ability for the admin to see a list of all the users and adjust their access rights if required.
 
 \
 &nbsp;

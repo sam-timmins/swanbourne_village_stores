@@ -673,6 +673,9 @@ There are a few ideas that I would like to implement in the future:
 * Add tracking for when an order status is changed to completed or collected. The time, data and username would be recorded against it.
 * Scroll to the top button to be visible on smaller screens
 * Customisable email with images and style instead of plain text.
+* I'd like to include a checkbox selection of all the dish or wine categories when selecting a category during creating a new dish or wine. At the minute the dropdown is very poor as the user can't really see what category is being selected.
+* Ability to  add a profile picture.
+* Customer feedback section with the ability to reply by admin.
 
 \
 &nbsp;

@@ -41,7 +41,6 @@ Live link can be found here - [Swanbourne Village Stores](https://swanbourne-vil
         * Languages
         * Libraries, Frameworks and Tools
     * [Testing](#testing "Testing")
-        * Accessibility
         * UX Testing
         * Manual Testing
         * Code Validation
@@ -729,9 +728,6 @@ There are a few ideas that I would like to implement in the future:
 
 
 # Testing
-
-## Accessibility
-
 
 \
 &nbsp;

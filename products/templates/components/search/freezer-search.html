@@ -18,6 +18,11 @@
                         class="dropdown-item text-xs text-dark-green px-5">By Price (high to low)</a></li>
                 <li><a href="{% url 'the_freezer' %}?sort=category__origin&direction=asc"
                         class="dropdown-item text-xs text-dark-green px-5">By Origin</a></li>
+                <li><a href="{% url 'the_freezer' %}?sort=name&direction=asc"
+                            class="dropdown-item text-xs text-dark-green px-5">By Dish (A to Z)</a></li>
+                <li><a href="{% url 'the_freezer' %}?sort=name&direction=desc"
+                            class="dropdown-item text-xs text-dark-green px-5">By Dish (Z to A)</a></li>
+    
             </ul>
 
         </div>

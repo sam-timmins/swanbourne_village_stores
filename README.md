@@ -916,6 +916,9 @@ This is the part of creating the application, I have found hard to get my head a
 | views.py | profiles/views.py | PASS | [link](readme/docs/validation/python/profiles/views.png "link") ||
 | settings.py | swanbourne_stores/settings.py | PASS | [link](readme/docs/validation/python/project/settings.png "link") ||
 | urls.py | swanbourne_stores/urls.py | PASS | [link](readme/docs/validation/python/project/urls.png "link") ||
+| test_models.py | checkout/tests/test_models.py | PASS | [link](readme/docs/validation/python/tests/checkout-models.png "link") ||
+| test_urls.py | checkout/tests/test_urls.py | PASS | [link](readme/docs/validation/python/tests/checkout-urls.png "link") ||
+| test_views.py | products/tests/test_views.py | PASS | [link](readme/docs/validation/python/tests/products-views.png "link") ||
  
 \
 &nbsp; 

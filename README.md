@@ -726,6 +726,7 @@ There are a few ideas that I would like to implement in the future:
 |Pillow| Image processing tool | [Pillow](https://pillow.readthedocs.io/en/stable/ "Pillow")
 |generateprivacypolicy.com|Privacy Policy Generator| [Generate Privacy Policy](https://www.generateprivacypolicy.com/)
 |Stripe| online payments| [Stripe](https://stripe.com/en-gb "Stripe")
+|favicon.io| Create the favicon| [favicon.io](https://favicon.io/ "favicon.io")
 
 
 # Testing

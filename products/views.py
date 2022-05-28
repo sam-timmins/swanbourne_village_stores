@@ -92,6 +92,7 @@ def wine_store(request):
     wines = Wines.objects.all()
 
     varieties = []
+    is_sorted = False
 
     for wine in wines:
         varieties.append(wine.category.friendly_name.title())
@@ -122,19 +123,40 @@ def wine_store(request):
             wines = wines.filter(queries)
 
         if 'sort' in request.GET:
+            is_sorted = True
             sortkey = request.GET['sort']
             sort = sortkey
-            if sortkey == 'name':
-                sortkey = 'lower_name'
-                wines = wines.annotate(lower_name=Lower('name'))
 
-            if 'direction' in request.GET:
-                direction = request.GET['direction']
-                if direction == 'desc':
-                    sortkey = f'-{sortkey}'
+            if sortkey == 'category__origin':
+                sort = 'Origin'
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+                    if direction == 'asc':
+                        direction = 'from A - Z'
+
+            if sortkey == 'price':
+                sort = 'Price'
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+                    if direction == 'asc':
+                        direction = 'from low to high'
+                    if direction == 'desc':
+                        sortkey = f'-{sortkey}'
+                        direction = 'from high to low'
+
+            if sortkey == 'category__variety':
+                sort = 'Variety'
+                wines = wines.annotate(lower_name=Lower('name'))
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+                    if direction == 'asc':
+                        direction = 'from A - Z'
+                    if direction == 'desc':
+                        sortkey = f'-{sortkey}'
+                        direction = 'from Z - A'
             wines = wines.order_by(sortkey)
 
-    current_sorting = f'{sort}_{direction}'
+    current_sorting = f'Search by: {sort} {direction}'
 
     context = {
         'wines': wines,
@@ -143,6 +165,7 @@ def wine_store(request):
         'ordered_varieties': ordered_varieties,
         'current_sorting': current_sorting,
         'query': query,
+        'is_sorted': is_sorted,
     }
 
     return render(

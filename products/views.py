@@ -16,6 +16,7 @@ def the_menu(request):
     dishes = Dishes.objects.all().order_by('-status')
 
     dish_names = []
+    is_sorted = False
 
     for dish in dishes:
         dish_names.append(dish.name.title())
@@ -55,19 +56,42 @@ def the_menu(request):
             dishes = dishes.filter(queries)
 
         if 'sort' in request.GET:
+            is_sorted = True
             sortkey = request.GET['sort']
             sort = sortkey
+
+            if sortkey == 'category__origin':
+                sort = 'Origin'
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+                    if direction == 'asc':
+                        direction = 'from A - Z'
+
+            if sortkey == 'price':
+                sort = 'Price'
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+                    if direction == 'asc':
+                        direction = 'from low to high'
+                    if direction == 'desc':
+                        sortkey = f'-{sortkey}'
+                        direction = 'from high to low'
+
             if sortkey == 'name':
                 sortkey = 'lower_name'
                 dishes = dishes.annotate(lower_name=Lower('name'))
+                sort = 'Dish'
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+                    if direction == 'asc':
+                        direction = 'from A - Z'
+                    if direction == 'desc':
+                        sortkey = f'-{sortkey}'
+                        direction = 'from Z - A'
 
-            if 'direction' in request.GET:
-                direction = request.GET['direction']
-                if direction == 'desc':
-                    sortkey = f'-{sortkey}'
             dishes = dishes.order_by(sortkey)
 
-    current_sorting = f'{sort}_{direction}'
+    current_sorting = f'Search by: {sort} {direction}'
 
     context = {
         'dishes': dishes,
@@ -77,6 +101,7 @@ def the_menu(request):
         'ordered_dish_names': ordered_dish_names,
         'current_sorting': current_sorting,
         'query': query,
+        'is_sorted': is_sorted,
     }
 
     return render(

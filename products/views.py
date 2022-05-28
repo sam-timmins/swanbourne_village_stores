@@ -397,6 +397,7 @@ def the_works(request):
     bundle = Bundle.objects.all()
 
     bundle_names = []
+    is_sorted = False
 
     for item in bundle:
         bundle_names.append(item.name.title())
@@ -427,19 +428,43 @@ def the_works(request):
             bundle = bundle.filter(queries)
 
         if 'sort' in request.GET:
+            is_sorted = True
             sortkey = request.GET['sort']
             sort = sortkey
-            if sortkey == 'name':
-                sortkey = 'lower_name'
-                bundle = bundle.annotate(lower_name=Lower('name'))
 
-            if 'direction' in request.GET:
-                direction = request.GET['direction']
-                if direction == 'desc':
-                    sortkey = f'-{sortkey}'
+            if sortkey == 'dish__name':
+                sort = 'Dish'
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+                    if direction == 'asc':
+                        direction = 'from A - Z'
+                    if direction == 'desc':
+                        sortkey = f'-{sortkey}'
+                        direction = 'from Z - A'
+
+            if sortkey == 'wine__name':
+                sort = 'Wine'
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+                    if direction == 'asc':
+                        direction = 'from A - Z'
+                    if direction == 'desc':
+                        sortkey = f'-{sortkey}'
+                        direction = 'from Z - A'
+
+            if sortkey == 'price':
+                sort = 'Price'
+                if 'direction' in request.GET:
+                    direction = request.GET['direction']
+                    if direction == 'asc':
+                        direction = 'from low to high'
+                    if direction == 'desc':
+                        sortkey = f'-{sortkey}'
+                        direction = 'from high to low'
+
             bundle = bundle.order_by(sortkey)
 
-    current_sorting = f'{sort}_{direction}'
+    current_sorting = f'Search by: {sort} {direction}'
 
     context = {
         'bundle': bundle,
@@ -448,6 +473,7 @@ def the_works(request):
         'ordered_bundle_names': ordered_bundle_names,
         'current_sorting': current_sorting,
         'query': query,
+        'is_sorted': is_sorted,
     }
 
     return render(

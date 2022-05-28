@@ -51,10 +51,16 @@
     </div>
 
     {% if query %}
+        <p class="text-white text-center my-5">
+            <a href="{% url 'wine_store' %}" class="text-decoration-none text-light-green">The Wine Store |</a> 
+            Your search for {{ query }} returned {{ wines|length }} product{% if wines|length > 1 %}s{% endif %}.
+        </p>
+    {% endif %}
+
+    {% if is_sorted %}
     <p class="text-white text-center my-5">
         <a href="{% url 'wine_store' %}" class="text-decoration-none text-light-green">The Wine Store |</a> 
-        Your search for {{ query }} returned {{ wines|length }} product{% if wines|length > 1 %}s{% endif %}.
+        {{ current_sorting }}
     </p>
-
-    {% endif %}
+{% endif %}
 </div>

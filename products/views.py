@@ -244,6 +244,7 @@ def the_freezer(request):
                     if direction == 'asc':
                         direction = 'from A - Z'
                     if direction == 'desc':
+                        sortkey = f'-{sortkey}'
                         direction = 'from Z - A'
 
             dishes = dishes.order_by(sortkey)

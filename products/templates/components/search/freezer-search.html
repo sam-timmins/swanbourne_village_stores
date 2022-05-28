@@ -18,6 +18,11 @@
                         class="dropdown-item text-xs text-dark-green px-5">By Price (high to low)</a></li>
                 <li><a href="{% url 'the_freezer' %}?sort=category__origin&direction=asc"
                         class="dropdown-item text-xs text-dark-green px-5">By Origin</a></li>
+                <li><a href="{% url 'the_freezer' %}?sort=name&direction=asc"
+                            class="dropdown-item text-xs text-dark-green px-5">By Dish (A to Z)</a></li>
+                <li><a href="{% url 'the_freezer' %}?sort=name&direction=desc"
+                            class="dropdown-item text-xs text-dark-green px-5">By Dish (Z to A)</a></li>
+    
             </ul>
 
         </div>
@@ -47,10 +52,16 @@
     </div>
 
     {% if query %}
-    <p class="text-white text-center my-5">
-        <a href="{% url 'the_freezer' %}" class="text-decoration-none text-light-green">The Freezer |</a> 
-        Your search for {{ query }} returned {{ dishes|length }} product{% if dishes|length > 1 %}s{% endif %}.
-    </p>
+        <p class="text-white text-center my-5">
+            <a href="{% url 'the_freezer' %}" class="text-decoration-none text-light-green">The Freezer |</a> 
+            Your search for {{ query }} returned {{ dishes|length }} product{% if dishes|length > 1 %}s{% endif %}.
+        </p>
+    {% endif %}
 
+    {% if is_sorted %}
+        <p class="text-white text-center my-5">
+            <a href="{% url 'the_freezer' %}" class="text-decoration-none text-light-green">The Freezer |</a> 
+            {{ current_sorting }}
+        </p>
     {% endif %}
 </div>

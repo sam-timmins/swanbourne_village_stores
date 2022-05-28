@@ -53,10 +53,16 @@
     </div>
 
     {% if query %}
-    <p class="text-white text-center my-5">
-        <a href="{% url 'the_works' %}" class="text-decoration-none text-light-green">The Works Store |</a> 
-        Your search for {{ query }} returned {{ bundle|length }} product{% if bundle|length > 1 %}s{% endif %}.
-    </p>
+        <p class="text-white text-center my-5">
+            <a href="{% url 'the_works' %}" class="text-decoration-none text-light-green">The Works Store |</a> 
+            Your search for {{ query }} returned {{ bundle|length }} product{% if bundle|length > 1 %}s{% endif %}.
+        </p>
+    {% endif %}
 
+    {% if is_sorted %}
+        <p class="text-white text-center my-5">
+            <a href="{% url 'the_works' %}" class="text-decoration-none text-light-green">The Works Store |</a> 
+            {{ current_sorting }}
+        </p>
     {% endif %}
 </div>

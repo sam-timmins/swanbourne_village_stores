@@ -47,10 +47,16 @@
     </div>
 
     {% if query %}
-    <p class="text-white text-center my-5">
-        <a href="{% url 'the_freezer' %}" class="text-decoration-none text-light-green">The Freezer |</a> 
-        Your search for {{ query }} returned {{ dishes|length }} product{% if dishes|length > 1 %}s{% endif %}.
-    </p>
+        <p class="text-white text-center my-5">
+            <a href="{% url 'the_freezer' %}" class="text-decoration-none text-light-green">The Freezer |</a> 
+            Your search for {{ query }} returned {{ dishes|length }} product{% if dishes|length > 1 %}s{% endif %}.
+        </p>
+    {% endif %}
 
+    {% if is_sorted %}
+        <p class="text-white text-center my-5">
+            <a href="{% url 'the_freezer' %}" class="text-decoration-none text-light-green">The Freezer |</a> 
+            {{ current_sorting }}
+        </p>
     {% endif %}
 </div>

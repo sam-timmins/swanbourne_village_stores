@@ -762,6 +762,23 @@ There are a few ideas that I would like to implement in the future:
 \
 &nbsp;
 
+## Automated Testing
+This is the part of creating the application, I have found hard to get my head around. I have spent a lot of time reading the [django docs](https://docs.djangoproject.com/en/4.0/topics/testing/ "docs") and using the Code Institue lectures to try and help me, but unfortunately, I can admit I have a very long way to go until I'm comfortable creating these.
+
+| App | File Name | Number of Tests | Results
+|--|--|--|--
+|checkout|test_models.py|6| [link](readme/docs/tests/checkout-models.png "link")
+|checkout|test_urls.py|3| [link](readme/docs/tests/checkout-urls.png "link")
+|products|test_views.py|3| [link](readme/docs/tests/products-views.png "link")
+
+
+
+\
+&nbsp;
+[Back to Top](#table-of-contents)
+\
+&nbsp;
+
 ## Manual Testing
 
 | Issue Number |  Title | Comments 

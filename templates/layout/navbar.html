@@ -145,7 +145,7 @@
         </ul>
 
         <!-- Search form -->
-        <form method="GET" action="{% url 'the_menu' %}" class="px-5 mx-sm-5 px-lg-0 mx-lg-0 me-lg-3 me-xl-5">
+        <form method="GET" action="{% url 'the_menu' %}" class="px-5 mx-sm-5 px-lg-0 mx-lg-0 me-lg-3 me-xl-5 {% if not request.user.is_authenticated %}mb-5{% endif %}">
             <div class="input-group align-items-center">
                 <input class="form-control form-control-border text-sm rounded-0" type="text"
                     name="main-search-query" placeholder="Search the menu" aria-label="Search">

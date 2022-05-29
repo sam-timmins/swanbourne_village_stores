@@ -812,6 +812,7 @@ This is the part of creating the application, I have found hard to get my head a
 | [Issue #167](https://github.com/sam-timmins/swanbourne_village_stores/issues/167 "Issue #167") | About image on homepage | Image height changed |
 | [Issue #173](https://github.com/sam-timmins/swanbourne_village_stores/issues/173 "Issue #173") | Product cards | Card height is dependent on the image. The height needs to be set to keep the cards a standard size. |
 | [Issue #176](https://github.com/sam-timmins/swanbourne_village_stores/issues/176 "Issue #176") | Descriptions on the works detail view | The product descriptions in the works detail view rendered the product name instead of the description |
+| [Issue #194](https://github.com/sam-timmins/swanbourne_village_stores/issues/194 "Issue #194") | Products search | No feedback to the user if they used the 'Popular Searches' to filter the items |
 | [Issue #196](https://github.com/sam-timmins/swanbourne_village_stores/issues/196 "Issue #196") | Nav emnu on mobile | Margin bottom needed tobe added to the search bar when the user is not logged in |
 
 \

@@ -1,1 +1,0 @@
-web: gunicorn swanbourne_stores.wsgi:application
